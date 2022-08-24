@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\entra21\\Desktop\\Pi---Esporte.Kindle-main\\Esporte.Kindle\\Esporte.Kindle\\Esporte.Kindle\\WEBPresentationLayer\\WEBPresentationLayer.csproj": {}
+    "C:\\Users\\djedr\\Downloads\\aaa\\WEBPresentationLayer\\WEBPresentationLayer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\entra21\\Desktop\\Pi---Esporte.Kindle-main\\Esporte.Kindle\\Esporte.Kindle\\Esporte.Kindle\\BusinessLogicalLayer\\BusinessLogicalLayer.csproj": {
+    "C:\\Users\\djedr\\Downloads\\aaa\\BusinessLogicalLayer\\BusinessLogicalLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\entra21\\Desktop\\Pi---Esporte.Kindle-main\\Esporte.Kindle\\Esporte.Kindle\\Esporte.Kindle\\BusinessLogicalLayer\\BusinessLogicalLayer.csproj",
+        "projectUniqueName": "C:\\Users\\djedr\\Downloads\\aaa\\BusinessLogicalLayer\\BusinessLogicalLayer.csproj",
         "projectName": "BusinessLogicalLayer",
-        "projectPath": "C:\\Users\\entra21\\Desktop\\Pi---Esporte.Kindle-main\\Esporte.Kindle\\Esporte.Kindle\\Esporte.Kindle\\BusinessLogicalLayer\\BusinessLogicalLayer.csproj",
-        "packagesPath": "C:\\Users\\entra21\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\entra21\\Desktop\\Pi---Esporte.Kindle-main\\Esporte.Kindle\\Esporte.Kindle\\Esporte.Kindle\\BusinessLogicalLayer\\obj\\",
+        "projectPath": "C:\\Users\\djedr\\Downloads\\aaa\\BusinessLogicalLayer\\BusinessLogicalLayer.csproj",
+        "packagesPath": "C:\\Users\\djedr\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\djedr\\Downloads\\aaa\\BusinessLogicalLayer\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\entra21\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\djedr\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,14 +32,14 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\entra21\\Desktop\\Pi---Esporte.Kindle-main\\Esporte.Kindle\\Esporte.Kindle\\Esporte.Kindle\\DataAccessLayer\\DataAccessLayer.csproj": {
-                "projectPath": "C:\\Users\\entra21\\Desktop\\Pi---Esporte.Kindle-main\\Esporte.Kindle\\Esporte.Kindle\\Esporte.Kindle\\DataAccessLayer\\DataAccessLayer.csproj"
+              "C:\\Users\\djedr\\Downloads\\aaa\\DataAccessLayer\\DataAccessLayer.csproj": {
+                "projectPath": "C:\\Users\\djedr\\Downloads\\aaa\\DataAccessLayer\\DataAccessLayer.csproj"
               },
-              "C:\\Users\\entra21\\Desktop\\Pi---Esporte.Kindle-main\\Esporte.Kindle\\Esporte.Kindle\\Esporte.Kindle\\Entities\\Entities.csproj": {
-                "projectPath": "C:\\Users\\entra21\\Desktop\\Pi---Esporte.Kindle-main\\Esporte.Kindle\\Esporte.Kindle\\Esporte.Kindle\\Entities\\Entities.csproj"
+              "C:\\Users\\djedr\\Downloads\\aaa\\Entities\\Entities.csproj": {
+                "projectPath": "C:\\Users\\djedr\\Downloads\\aaa\\Entities\\Entities.csproj"
               },
-              "C:\\Users\\entra21\\Desktop\\Pi---Esporte.Kindle-main\\Esporte.Kindle\\Esporte.Kindle\\Esporte.Kindle\\Shared\\Shared.csproj": {
-                "projectPath": "C:\\Users\\entra21\\Desktop\\Pi---Esporte.Kindle-main\\Esporte.Kindle\\Esporte.Kindle\\Esporte.Kindle\\Shared\\Shared.csproj"
+              "C:\\Users\\djedr\\Downloads\\aaa\\Shared\\Shared.csproj": {
+                "projectPath": "C:\\Users\\djedr\\Downloads\\aaa\\Shared\\Shared.csproj"
               }
             }
           }
@@ -61,8 +65,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -71,21 +74,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\entra21\\Desktop\\Pi---Esporte.Kindle-main\\Esporte.Kindle\\Esporte.Kindle\\Esporte.Kindle\\DataAccessLayer\\DataAccessLayer.csproj": {
+    "C:\\Users\\djedr\\Downloads\\aaa\\DataAccessLayer\\DataAccessLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\entra21\\Desktop\\Pi---Esporte.Kindle-main\\Esporte.Kindle\\Esporte.Kindle\\Esporte.Kindle\\DataAccessLayer\\DataAccessLayer.csproj",
+        "projectUniqueName": "C:\\Users\\djedr\\Downloads\\aaa\\DataAccessLayer\\DataAccessLayer.csproj",
         "projectName": "DataAccessLayer",
-        "projectPath": "C:\\Users\\entra21\\Desktop\\Pi---Esporte.Kindle-main\\Esporte.Kindle\\Esporte.Kindle\\Esporte.Kindle\\DataAccessLayer\\DataAccessLayer.csproj",
-        "packagesPath": "C:\\Users\\entra21\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\entra21\\Desktop\\Pi---Esporte.Kindle-main\\Esporte.Kindle\\Esporte.Kindle\\Esporte.Kindle\\DataAccessLayer\\obj\\",
+        "projectPath": "C:\\Users\\djedr\\Downloads\\aaa\\DataAccessLayer\\DataAccessLayer.csproj",
+        "packagesPath": "C:\\Users\\djedr\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\djedr\\Downloads\\aaa\\DataAccessLayer\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\entra21\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\djedr\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -99,11 +106,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\entra21\\Desktop\\Pi---Esporte.Kindle-main\\Esporte.Kindle\\Esporte.Kindle\\Esporte.Kindle\\Entities\\Entities.csproj": {
-                "projectPath": "C:\\Users\\entra21\\Desktop\\Pi---Esporte.Kindle-main\\Esporte.Kindle\\Esporte.Kindle\\Esporte.Kindle\\Entities\\Entities.csproj"
+              "C:\\Users\\djedr\\Downloads\\aaa\\Entities\\Entities.csproj": {
+                "projectPath": "C:\\Users\\djedr\\Downloads\\aaa\\Entities\\Entities.csproj"
               },
-              "C:\\Users\\entra21\\Desktop\\Pi---Esporte.Kindle-main\\Esporte.Kindle\\Esporte.Kindle\\Esporte.Kindle\\Shared\\Shared.csproj": {
-                "projectPath": "C:\\Users\\entra21\\Desktop\\Pi---Esporte.Kindle-main\\Esporte.Kindle\\Esporte.Kindle\\Esporte.Kindle\\Shared\\Shared.csproj"
+              "C:\\Users\\djedr\\Downloads\\aaa\\Shared\\Shared.csproj": {
+                "projectPath": "C:\\Users\\djedr\\Downloads\\aaa\\Shared\\Shared.csproj"
               }
             }
           }
@@ -139,8 +146,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -149,21 +155,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\entra21\\Desktop\\Pi---Esporte.Kindle-main\\Esporte.Kindle\\Esporte.Kindle\\Esporte.Kindle\\Entities\\Entities.csproj": {
+    "C:\\Users\\djedr\\Downloads\\aaa\\Entities\\Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\entra21\\Desktop\\Pi---Esporte.Kindle-main\\Esporte.Kindle\\Esporte.Kindle\\Esporte.Kindle\\Entities\\Entities.csproj",
+        "projectUniqueName": "C:\\Users\\djedr\\Downloads\\aaa\\Entities\\Entities.csproj",
         "projectName": "Entities",
-        "projectPath": "C:\\Users\\entra21\\Desktop\\Pi---Esporte.Kindle-main\\Esporte.Kindle\\Esporte.Kindle\\Esporte.Kindle\\Entities\\Entities.csproj",
-        "packagesPath": "C:\\Users\\entra21\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\entra21\\Desktop\\Pi---Esporte.Kindle-main\\Esporte.Kindle\\Esporte.Kindle\\Esporte.Kindle\\Entities\\obj\\",
+        "projectPath": "C:\\Users\\djedr\\Downloads\\aaa\\Entities\\Entities.csproj",
+        "packagesPath": "C:\\Users\\djedr\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\djedr\\Downloads\\aaa\\Entities\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\entra21\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\djedr\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -194,8 +204,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -204,21 +213,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\entra21\\Desktop\\Pi---Esporte.Kindle-main\\Esporte.Kindle\\Esporte.Kindle\\Esporte.Kindle\\Shared\\Shared.csproj": {
+    "C:\\Users\\djedr\\Downloads\\aaa\\Shared\\Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\entra21\\Desktop\\Pi---Esporte.Kindle-main\\Esporte.Kindle\\Esporte.Kindle\\Esporte.Kindle\\Shared\\Shared.csproj",
+        "projectUniqueName": "C:\\Users\\djedr\\Downloads\\aaa\\Shared\\Shared.csproj",
         "projectName": "Shared",
-        "projectPath": "C:\\Users\\entra21\\Desktop\\Pi---Esporte.Kindle-main\\Esporte.Kindle\\Esporte.Kindle\\Esporte.Kindle\\Shared\\Shared.csproj",
-        "packagesPath": "C:\\Users\\entra21\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\entra21\\Desktop\\Pi---Esporte.Kindle-main\\Esporte.Kindle\\Esporte.Kindle\\Esporte.Kindle\\Shared\\obj\\",
+        "projectPath": "C:\\Users\\djedr\\Downloads\\aaa\\Shared\\Shared.csproj",
+        "packagesPath": "C:\\Users\\djedr\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\djedr\\Downloads\\aaa\\Shared\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\entra21\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\djedr\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -249,8 +262,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -259,21 +271,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\entra21\\Desktop\\Pi---Esporte.Kindle-main\\Esporte.Kindle\\Esporte.Kindle\\Esporte.Kindle\\WEBPresentationLayer\\WEBPresentationLayer.csproj": {
+    "C:\\Users\\djedr\\Downloads\\aaa\\WEBPresentationLayer\\WEBPresentationLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\entra21\\Desktop\\Pi---Esporte.Kindle-main\\Esporte.Kindle\\Esporte.Kindle\\Esporte.Kindle\\WEBPresentationLayer\\WEBPresentationLayer.csproj",
+        "projectUniqueName": "C:\\Users\\djedr\\Downloads\\aaa\\WEBPresentationLayer\\WEBPresentationLayer.csproj",
         "projectName": "WEBPresentationLayer",
-        "projectPath": "C:\\Users\\entra21\\Desktop\\Pi---Esporte.Kindle-main\\Esporte.Kindle\\Esporte.Kindle\\Esporte.Kindle\\WEBPresentationLayer\\WEBPresentationLayer.csproj",
-        "packagesPath": "C:\\Users\\entra21\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\entra21\\Desktop\\Pi---Esporte.Kindle-main\\Esporte.Kindle\\Esporte.Kindle\\Esporte.Kindle\\WEBPresentationLayer\\obj\\",
+        "projectPath": "C:\\Users\\djedr\\Downloads\\aaa\\WEBPresentationLayer\\WEBPresentationLayer.csproj",
+        "packagesPath": "C:\\Users\\djedr\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\djedr\\Downloads\\aaa\\WEBPresentationLayer\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\entra21\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\djedr\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -287,11 +303,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\entra21\\Desktop\\Pi---Esporte.Kindle-main\\Esporte.Kindle\\Esporte.Kindle\\Esporte.Kindle\\BusinessLogicalLayer\\BusinessLogicalLayer.csproj": {
-                "projectPath": "C:\\Users\\entra21\\Desktop\\Pi---Esporte.Kindle-main\\Esporte.Kindle\\Esporte.Kindle\\Esporte.Kindle\\BusinessLogicalLayer\\BusinessLogicalLayer.csproj"
+              "C:\\Users\\djedr\\Downloads\\aaa\\BusinessLogicalLayer\\BusinessLogicalLayer.csproj": {
+                "projectPath": "C:\\Users\\djedr\\Downloads\\aaa\\BusinessLogicalLayer\\BusinessLogicalLayer.csproj"
               },
-              "C:\\Users\\entra21\\Desktop\\Pi---Esporte.Kindle-main\\Esporte.Kindle\\Esporte.Kindle\\Esporte.Kindle\\DataAccessLayer\\DataAccessLayer.csproj": {
-                "projectPath": "C:\\Users\\entra21\\Desktop\\Pi---Esporte.Kindle-main\\Esporte.Kindle\\Esporte.Kindle\\Esporte.Kindle\\DataAccessLayer\\DataAccessLayer.csproj"
+              "C:\\Users\\djedr\\Downloads\\aaa\\DataAccessLayer\\DataAccessLayer.csproj": {
+                "projectPath": "C:\\Users\\djedr\\Downloads\\aaa\\DataAccessLayer\\DataAccessLayer.csproj"
               }
             }
           }
@@ -323,8 +339,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -336,7 +351,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }
