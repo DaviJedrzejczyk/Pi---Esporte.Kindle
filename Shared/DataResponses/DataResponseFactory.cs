@@ -8,7 +8,7 @@ namespace Shared.DataResponses
 {
     public class DataResponseFactory<T>
     {
-        public static DataResponse<T> CreateSuccessResponse(List<T> itens)
+        public static DataResponse<T> CreateSuccessDataResponse(List<T> itens)
         {
             return new DataResponse<T>()
             {
@@ -17,7 +17,7 @@ namespace Shared.DataResponses
                 Itens = itens
             };
         }
-        public static DataResponse<T> CreateFailureResponse(Exception ex)
+        public static DataResponse<T> CreateFailureDataResponse(Exception ex)
         {
             return new DataResponse<T>()
             {

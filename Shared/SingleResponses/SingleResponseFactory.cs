@@ -8,7 +8,7 @@ namespace Shared.SingleResponses
 {
     public class SingleResponseFactory<T>
     {
-        public static SingleResponse<T> CreateSuccessResponse(T item)
+        public static SingleResponse<T> CreateSuccessSingleResponse(T item)
         {
             return new SingleResponse<T>()
             {
@@ -17,7 +17,7 @@ namespace Shared.SingleResponses
                 Item = item
             };
         }
-        public static SingleResponse<T> CreateFailureResponse(Exception ex)
+        public static SingleResponse<T> CreateFailureSingleResponse(Exception ex)
         {
             return new SingleResponse<T>()
             {

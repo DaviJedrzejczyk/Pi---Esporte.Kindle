@@ -10,7 +10,13 @@ namespace BusinessLogicalLayer.Validator.Clientes
     {
         public InsertValidator()
         {
-
+            ValidateCpf();
+            ValidateEmail();
+            ValidateID();
+            ValidateNome();
+            ValidateRG();
+            ValidateTelefone();
+            ValidateDataNascimento();
         }
     }
 }

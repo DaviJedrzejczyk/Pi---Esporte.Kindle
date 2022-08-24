@@ -10,14 +10,5 @@ namespace Entities
     {
         public int Id { get; set; }
         public string Unidade_Federal { get; set; }
-        public Estado()
-        {
-
-        }
-        public Estado(int id, string unidade_Federal)
-        {
-            Id = id;
-            Unidade_Federal = unidade_Federal;
-        }
     }
 }

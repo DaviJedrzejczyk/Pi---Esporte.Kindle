@@ -13,6 +13,7 @@ namespace DataAccessLayer.Mapping
     {
         public void Configure(EntityTypeBuilder<Endereco> builder)
         {
+            builder.ToTable("ENDERECO");
             builder.Property(e => e.Numero).HasMaxLength(30).IsRequired().IsUnicode(false);
             builder.Property(e => e.Bairro).HasMaxLength(50).IsRequired().IsUnicode(false);
             builder.Property(e => e.Rua).HasMaxLength(50).IsRequired().IsUnicode(false);

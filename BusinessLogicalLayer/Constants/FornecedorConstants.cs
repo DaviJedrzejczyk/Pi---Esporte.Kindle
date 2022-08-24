@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BusinessLogicalLayer.Constants
 {
-    internal class FornecedorConstants
+    internal static class FornecedorConstants
     {
     }
 }
