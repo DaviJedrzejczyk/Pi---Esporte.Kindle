@@ -13,8 +13,8 @@ namespace DataAccessLayer.Implements
 {
     public class ClienteDAL : IClienteDALService
     {
-        private readonly KindleDB _kindleDB;
-        public ClienteDAL(KindleDB kindleDB)
+        private readonly EsporteDB _kindleDB;
+        public ClienteDAL(EsporteDB kindleDB)
         {
             _kindleDB = kindleDB;
         }

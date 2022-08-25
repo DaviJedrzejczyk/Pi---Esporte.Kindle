@@ -10,7 +10,8 @@ namespace BusinessLogicalLayer.Validator.Estados
     {
         public UpdateValidator()
         {
-
+            ValidateNomeAbreviado();
+            ValidateNomeCompleto();
         }
     }
 }

@@ -32,7 +32,7 @@ namespace WEBPresentationLayer.Controllers
                 ViewBag.Errors = dataResponse.Message;
                 return View();
             }
-            List<ClienteSelectViewModel> clientes = _mapper.Map<ClienteSelectViewModel>(dataResponse.Itens);
+            List<ClienteSelectViewModel> clientes = _mapper.Map<List<ClienteSelectViewModel>>(dataResponse.Itens);
             return View(clientes);
         }
         //[HttpGet]
@@ -43,7 +43,7 @@ namespace WEBPresentationLayer.Controllers
         //[HttPost]
         public IActionResult Create(ClienteInsertViewModel viewModel)
         {
-            Cliente cliente = _mapper.Map<ClienteInsertViewModel>(viewModel);
+            Cliente cliente = _mapper.Map<Cliente>(viewModel);
             Response response = _clienteService.Insert(cliente);
             if (!response.HasSuccess)
             {
@@ -68,7 +68,7 @@ namespace WEBPresentationLayer.Controllers
         //[HttpPost]
         public IActionResult Edit(ClienteUpdateViewModel viewModel)
         {
-            Cliente cliente = _mapper.Map<ClienteUpdateViewModel>(viewModel);
+            Cliente cliente = _mapper.Map<Cliente>(viewModel);
             Response response = _clienteService.Update(cliente);
             if (!response.HasSuccess)
             {

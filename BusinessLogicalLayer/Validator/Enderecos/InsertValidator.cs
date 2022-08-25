@@ -10,7 +10,14 @@ namespace BusinessLogicalLayer.Validator.Enderecos
     {
         public InsertValidator()
         {
-
+            ValidateId();
+            ValidateComplemento();
+            ValidateRua();
+            ValidateBairro();
+            ValidateCep();
+            ValidateCidade();
+            ValidateNumero();
+            ValidatePontoReferencia();
         }
     }
 }

@@ -10,5 +10,6 @@ namespace Entities
     {
         public int Id { get; set; }
         public string Unidade_Federal { get; set; }
+        public string NomeCompleto { get; set; }
     }
 }

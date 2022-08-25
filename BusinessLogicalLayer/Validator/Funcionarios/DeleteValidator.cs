@@ -10,7 +10,7 @@ namespace BusinessLogicalLayer.Validator.Funcionarios
     {
         public DeleteValidator()
         {
-
+            ValidateID();
         }
     }
 }

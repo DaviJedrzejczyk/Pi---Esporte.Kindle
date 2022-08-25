@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "6gA+r9wqFitfm/5+Qh96iOoqs0pQBiTS8IL5MjBgheFK62cJWB9njIvAC0RbhtKRiA3zHkvkhWOGdEj0uNW3pw==",
+  "dgSpecHash": "ZcK1l3QV25Yv7kExIBkACfcvK4cXI9Hg2D9trRWSHj2yOd7ovT3SZK88yjT4Ka71S4kQV+fMDupeZ18/f4baGA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Aluno\\Downloads\\Pi---Esporte.Kindle-master (2)\\Pi---Esporte.Kindle-master\\Pi---Esporte.Kindle-master\\WEBPresentationLayer\\WEBPresentationLayer.csproj",
+  "projectFilePath": "C:\\Users\\Aluno\\Downloads\\Pi---Esporte.Kindle-master\\Pi---Esporte.Kindle-master\\WEBPresentationLayer\\WEBPresentationLayer.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Aluno\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
     "C:\\Users\\Aluno\\.nuget\\packages\\fluentvalidation\\11.2.0\\fluentvalidation.11.2.0.nupkg.sha512",

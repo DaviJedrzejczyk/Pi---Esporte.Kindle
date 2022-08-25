@@ -10,7 +10,7 @@ namespace BusinessLogicalLayer.Validator.Estados
     {
         public DeleteValidator()
         {
-
+            ValidateId();
         }
     }
 }

@@ -19,8 +19,8 @@ namespace DataAccessLayer.Mapping
             builder.Property(f => f.Email).HasMaxLength(100).IsRequired().IsUnicode(false);
             builder.Property(f => f.RG).HasMaxLength(11).IsRequired().IsUnicode(false);
             builder.Property(f => f.Telefone).HasMaxLength(11).IsRequired().IsUnicode(false);
-            builder.Property(c => c.Nome).HasMaxLenght(50).IsRequired(); IsUnicode(false);
-            builder.Property(c => c.Sobrenome).HasMaxLenght(50).IsRequired(); IsUnicode(false);
+            builder.Property(c => c.Nome).HasMaxLength(50).IsRequired().IsUnicode(false);
+            builder.Property(c => c.Sobrenome).HasMaxLength(50).IsRequired().IsUnicode(false);
         }
     }
 }

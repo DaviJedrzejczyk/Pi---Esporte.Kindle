@@ -14,8 +14,8 @@ namespace DataAccessLayer.Implements
 {
     public class FuncionarioDAL : IFuncionarioDALService
     {
-        private readonly KindleDB _kindleDB;
-        public FuncionarioDAL(KindleDB kindleDB)
+        private readonly EsporteDB _kindleDB;
+        public FuncionarioDAL(EsporteDB kindleDB)
         {
             _kindleDB = kindleDB;
         }

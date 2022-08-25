@@ -10,7 +10,9 @@ namespace BusinessLogicalLayer.Validator.Fornecedoras
     {
         public UpdateValidator()
         {
-
+            ValidateEmail();
+            ValidateNome();
+            ValidateTelefone();
         }
     }
 }

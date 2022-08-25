@@ -13,7 +13,7 @@ namespace BusinessLogicalLayer.Validator.Clientes
     {
         public void ValidateID()
         {
-            RuleFor(c => c.ID).NotNull();
+            RuleFor(c => c.ID).NotNull().WithMessage(GenericConstants.MENSAGEM_ERRO_ID_VAZIO);
         }
         public void ValidateNome()
         {

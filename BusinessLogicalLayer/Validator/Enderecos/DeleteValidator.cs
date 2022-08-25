@@ -10,7 +10,7 @@ namespace BusinessLogicalLayer.Validator.Enderecos
     {
         public DeleteValidator()
         {
-
+            ValidateId();
         }
     }
 }

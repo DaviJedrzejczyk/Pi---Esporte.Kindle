@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "RPX0yod5KLNDQd1SPI4WCigEkIwPUaRB7dQI6Xy7SgrMghNKBmaTq5ZBklYvdUROK1zJRKxZJys0B+HptUihhw==",
+  "dgSpecHash": "Br57x4QgOry+PxSHxb4KZ6gprv3TpOEqAkdH3C5AjIfi1pa+0yxTFDoxatvjCdw5yFu9zdKh/9rEqKmMUQHCXA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Aluno\\Downloads\\Pi---Esporte.Kindle-master (2)\\Pi---Esporte.Kindle-master\\Pi---Esporte.Kindle-master\\DataAccessLayer\\DataAccessLayer.csproj",
+  "projectFilePath": "C:\\Users\\Aluno\\Downloads\\Pi---Esporte.Kindle-master\\Pi---Esporte.Kindle-master\\DataAccessLayer\\DataAccessLayer.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Aluno\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Aluno\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

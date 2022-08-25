@@ -10,6 +10,10 @@ namespace BusinessLogicalLayer.Validator.Funcionarios
     {
         public UpdateValidator()
         {
+            ValidateNome();
+            ValidateEmail();
+            ValidateSenha();
+            ValidateTelefone();
 
         }
     }

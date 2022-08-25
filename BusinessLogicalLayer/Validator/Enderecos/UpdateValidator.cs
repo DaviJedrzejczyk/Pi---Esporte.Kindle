@@ -10,7 +10,13 @@ namespace BusinessLogicalLayer.Validator.Enderecos
     {
         public UpdateValidator()
         {
-
+            ValidateComplemento();
+            ValidateRua();
+            ValidateBairro();
+            ValidateCep();
+            ValidateCidade();
+            ValidateNumero();
+            ValidatePontoReferencia();
         }
     }
 }

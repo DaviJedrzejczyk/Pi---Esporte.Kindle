@@ -9,13 +9,15 @@ using Microsoft.EntityFrameworkCore;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddDbContext<KindleDB>(
+builder.Services.AddDbContext<EsporteDB>(
     options => options.UseSqlServer("name=ConnectionStrings:ConnectionEntra"));
 
 builder.Services.AddTransient<IClienteDALService, ClienteDAL>();
 builder.Services.AddTransient<IFuncionarioDALService, FuncionarioDAL>();
 builder.Services.AddTransient<IClienteService, ClienteBLL>();
 builder.Services.AddTransient<IFuncionarioService, FuncionarioBLL>();
+builder.Services.AddTransient<ILoginService, LoginBLL>();
+builder.Services.AddTransient<ILoginDALService, LoginDAL>();
 
 
 

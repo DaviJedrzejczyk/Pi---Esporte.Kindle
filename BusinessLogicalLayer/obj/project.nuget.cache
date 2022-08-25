@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "+rm++Xxm1a/1zf51uenlyzCSsiz/fq+6V81M3cICQ91+t1VvfnUxy09J2ihybmklA3KD25BmgUgHZBDKnEPM7g==",
+  "dgSpecHash": "nWWPTMPzSqfvjngIINH5XJ4NwxicWYe2vpAlnnXSvznCb5Tc2osk0Ngjhxe1nQdcFxiu2yY90n9OjXrb6h34Pw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Aluno\\Downloads\\Pi---Esporte.Kindle-master (2)\\Pi---Esporte.Kindle-master\\Pi---Esporte.Kindle-master\\BusinessLogicalLayer\\BusinessLogicalLayer.csproj",
+  "projectFilePath": "C:\\Users\\Aluno\\Downloads\\Pi---Esporte.Kindle-master\\Pi---Esporte.Kindle-master\\BusinessLogicalLayer\\BusinessLogicalLayer.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Aluno\\.nuget\\packages\\fluentvalidation\\11.2.0\\fluentvalidation.11.2.0.nupkg.sha512",
     "C:\\Users\\Aluno\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

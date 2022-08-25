@@ -5986,11 +5986,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Aluno\\Downloads\\Pi---Esporte.Kindle-master (2)\\Pi---Esporte.Kindle-master\\Pi---Esporte.Kindle-master\\WEBPresentationLayer\\WEBPresentationLayer.csproj",
+      "projectUniqueName": "C:\\Users\\Aluno\\Downloads\\Pi---Esporte.Kindle-master\\Pi---Esporte.Kindle-master\\WEBPresentationLayer\\WEBPresentationLayer.csproj",
       "projectName": "WEBPresentationLayer",
-      "projectPath": "C:\\Users\\Aluno\\Downloads\\Pi---Esporte.Kindle-master (2)\\Pi---Esporte.Kindle-master\\Pi---Esporte.Kindle-master\\WEBPresentationLayer\\WEBPresentationLayer.csproj",
+      "projectPath": "C:\\Users\\Aluno\\Downloads\\Pi---Esporte.Kindle-master\\Pi---Esporte.Kindle-master\\WEBPresentationLayer\\WEBPresentationLayer.csproj",
       "packagesPath": "C:\\Users\\Aluno\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Aluno\\Downloads\\Pi---Esporte.Kindle-master (2)\\Pi---Esporte.Kindle-master\\Pi---Esporte.Kindle-master\\WEBPresentationLayer\\obj\\",
+      "outputPath": "C:\\Users\\Aluno\\Downloads\\Pi---Esporte.Kindle-master\\Pi---Esporte.Kindle-master\\WEBPresentationLayer\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -6012,11 +6012,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\Aluno\\Downloads\\Pi---Esporte.Kindle-master (2)\\Pi---Esporte.Kindle-master\\Pi---Esporte.Kindle-master\\BusinessLogicalLayer\\BusinessLogicalLayer.csproj": {
-              "projectPath": "C:\\Users\\Aluno\\Downloads\\Pi---Esporte.Kindle-master (2)\\Pi---Esporte.Kindle-master\\Pi---Esporte.Kindle-master\\BusinessLogicalLayer\\BusinessLogicalLayer.csproj"
+            "C:\\Users\\Aluno\\Downloads\\Pi---Esporte.Kindle-master\\Pi---Esporte.Kindle-master\\BusinessLogicalLayer\\BusinessLogicalLayer.csproj": {
+              "projectPath": "C:\\Users\\Aluno\\Downloads\\Pi---Esporte.Kindle-master\\Pi---Esporte.Kindle-master\\BusinessLogicalLayer\\BusinessLogicalLayer.csproj"
             },
-            "C:\\Users\\Aluno\\Downloads\\Pi---Esporte.Kindle-master (2)\\Pi---Esporte.Kindle-master\\Pi---Esporte.Kindle-master\\DataAccessLayer\\DataAccessLayer.csproj": {
-              "projectPath": "C:\\Users\\Aluno\\Downloads\\Pi---Esporte.Kindle-master (2)\\Pi---Esporte.Kindle-master\\Pi---Esporte.Kindle-master\\DataAccessLayer\\DataAccessLayer.csproj"
+            "C:\\Users\\Aluno\\Downloads\\Pi---Esporte.Kindle-master\\Pi---Esporte.Kindle-master\\DataAccessLayer\\DataAccessLayer.csproj": {
+              "projectPath": "C:\\Users\\Aluno\\Downloads\\Pi---Esporte.Kindle-master\\Pi---Esporte.Kindle-master\\DataAccessLayer\\DataAccessLayer.csproj"
             }
           }
         }

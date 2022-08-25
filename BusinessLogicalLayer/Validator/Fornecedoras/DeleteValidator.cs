@@ -10,7 +10,7 @@ namespace BusinessLogicalLayer.Validator.Fornecedoras
     {
         public DeleteValidator()
         {
-
+            ValidateID();
         }
     }
 }
