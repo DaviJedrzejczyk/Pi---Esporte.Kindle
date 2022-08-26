@@ -14,7 +14,8 @@ namespace DataAccessLayer.Mapping
         public void Configure(EntityTypeBuilder<Estado> builder)
         {
             builder.ToTable("ESTADOS");
-            builder.Property(e => e.Unidade_Federal).HasMaxLength(20).IsRequired().IsUnicode(false);
+            builder.Property(e => e.Unidade_Federal).HasMaxLength(2).IsRequired().IsUnicode(false);
+            builder.Property(e => e.NomeCompleto).HasMaxLength(20).IsRequired().IsUnicode(false);
         }
     }
 }

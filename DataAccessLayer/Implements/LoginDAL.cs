@@ -22,8 +22,8 @@ namespace DataAccessLayer.Implements
         {
             try
             {
-                SingleResponse<int> singleResponse = await _esporte.Logins.Where(c => c.Email == login.Email && c.Senha == login.Senha).CountAsync();
-                return SingleResponseFactory<int>.CreateSuccessSingleResponse(singleResponse.Item);
+                int singleResponse = await _esporte.Logins.Where(c => c.Email == login.Email && c.Senha == login.Senha).CountAsync();
+                return SingleResponseFactory<int>.CreateSuccessSingleResponse(singleResponse);
             }
             catch (Exception ex)
             {

@@ -26,7 +26,10 @@ namespace BusinessLogicalLayer.Validator.Fornecedoras
         {
 
         }
+        public void ValidateTelefone()
+        {
 
+        }
         
     }
 }

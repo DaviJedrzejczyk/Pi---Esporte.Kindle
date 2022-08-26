@@ -22,6 +22,7 @@ namespace WEBPresentationLayer.Controllers
         {
             return View();
         }
+     
         public async Task<IActionResult> Logar(LoginViewModel loginView)
         {
             Login login = _mapper.Map<Login>(loginView);
