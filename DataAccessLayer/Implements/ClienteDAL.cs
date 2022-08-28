@@ -35,13 +35,12 @@ namespace DataAccessLayer.Implements
 
         public Response Update(Cliente cliente)
         {
-            Cliente cliente1 = _kindleDB.Clientes.Find(cliente.ID);
-            cliente1.Nome = cliente.Nome;
-            cliente1.Sobrenome = cliente.Sobrenome;
-            cliente1.Telefone = cliente.Telefone;
-            cliente1.Email = cliente.Email;
-            cliente1.Genero = cliente.Genero;
-            
+             Cliente cliente1 = _kindleDB.Clientes.Find(cliente.ID);
+             cliente1.Nome = cliente.Nome;
+             cliente1.Sobrenome = cliente.Sobrenome;
+             cliente1.Telefone = cliente.Telefone;
+             cliente1.Email = cliente.Email;
+             cliente1.Genero = cliente.Genero;
             try
             {
                 _kindleDB.SaveChanges();

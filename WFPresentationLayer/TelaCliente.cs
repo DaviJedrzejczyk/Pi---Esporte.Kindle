@@ -27,14 +27,14 @@ namespace WFPresentationLayer
             this.dtCliente.DoubleClick += dtCliente_DoubleClick;
         }
 
-       
+
 
         private void TelaCliente_Load(object sender, EventArgs e)
         {
             SincronizarGrid();
             cbGenero.DataSource = Enum.GetNames(typeof(Genero));
         }
-     
+
         private Cliente CreateObjectWithForm()
         {
             int temp;
@@ -114,8 +114,9 @@ namespace WFPresentationLayer
             Response response = _cliente.Insert(cliente);
             if (response.HasSuccess)
             {
-                SincronizarGrid();
                 MessageBox.Show("Sucesso");
+                SincronizarGrid();
+                LimparCampos();
             }
             else
             {
@@ -130,6 +131,7 @@ namespace WFPresentationLayer
             {
                 MessageBox.Show("sucesso");
                 SincronizarGrid();
+                LimparCampos();
             }
             else
             {
@@ -143,14 +145,27 @@ namespace WFPresentationLayer
             Response response = _cliente.Delete(cliente);
             if (response.HasSuccess)
             {
-                SincronizarGrid();
                 MessageBox.Show("Sucesso");
+                SincronizarGrid();
+                LimparCampos();
             }
             else
             {
                 MessageBox.Show("Falha");
             }
 
+        }
+        private void LimparCampos()
+        {
+            txtCpf.Clear();
+            txtDataNasc.Clear();
+            txtTelefone.Clear();
+            txtIdade.Clear();
+            txtNome.Clear();
+            txtRG.Clear();
+            txtSobrenome.Clear();
+            txtID.Clear();
+            txtEmail.Clear();
         }
     }
 }

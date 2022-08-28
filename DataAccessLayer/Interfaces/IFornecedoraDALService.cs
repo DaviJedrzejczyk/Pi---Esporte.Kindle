@@ -10,10 +10,10 @@ namespace DataAccessLayer.Interfaces
 {
     public interface IFornecedoraDALService
     {
-        Response Insert(Fornecedor fornecedor);
-        Response Update(Fornecedor fornecedor);
-        Response Delete(Fornecedor fornecedor);
-        DataResponse<Fornecedor> GetAll();
-        SingleResponse<Fornecedor> GetById(int id);
+        Task<Response> Insert(Fornecedor fornecedor);
+        Task<Response> Update(Fornecedor fornecedor);
+        Task<Response> Delete(Fornecedor fornecedor);
+        Task<DataResponse<Fornecedor>> GetAll();
+        Task<SingleResponse<Fornecedor>> GetById(Fornecedor fornecedor);
     }
 }

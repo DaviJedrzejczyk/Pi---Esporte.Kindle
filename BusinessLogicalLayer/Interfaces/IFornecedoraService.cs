@@ -10,10 +10,11 @@ namespace BusinessLogicalLayer.Interfaces
 {
     public interface IFornecedoraService
     {
-        Response Insert(Fornecedor fornecedor);
-        Response Update(Fornecedor fornecedor);
-        Response Delete(Fornecedor fornecedor);
-        DataResponse<Fornecedor> GetAll();
-        SingleResponse<Fornecedor> GetById(int id);
+
+        Task<Response> Insert(Fornecedor item);
+        Task<Response> Update(Fornecedor item);
+        Task<Response> Delete(Fornecedor item);
+        Task<DataResponse<Fornecedor>> GetAll();
+        Task<SingleResponse<Fornecedor>> GetById(Fornecedor fornecedor);
     }
 }

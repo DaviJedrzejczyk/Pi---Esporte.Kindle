@@ -1,5 +1,10 @@
-﻿using BusinessLogicalLayer.Interfaces;
+﻿using BusinessLogicalLayer.Extensions;
+using BusinessLogicalLayer.Interfaces;
+using BusinessLogicalLayer.Validators.Fornecedoras;
+using DataAccessLayer.Interfaces;
 using Entities;
+using Microsoft.EntityFrameworkCore.ChangeTracking.Internal;
+using Microsoft.VisualBasic;
 using Shared;
 using System;
 using System.Collections.Generic;
@@ -11,28 +16,57 @@ namespace BusinessLogicalLayer.BLL
 {
     public class FornecedoraBLL : IFornecedoraService
     {
-        public Response Insert(Fornecedor fornecedor)
+        private readonly IFornecedoraDALService fornecedoraDAL;
+        public FornecedoraBLL(IFornecedoraDALService fornecedoraDALService)
         {
-            throw new NotImplementedException();
+            fornecedoraDAL = fornecedoraDALService;
+        }
+        public async Task<Response> Insert(Fornecedor item)
+        {
+            FornecedoraInsertValidator validationRules = new();
+            Response response = validationRules.Validate(item).ToResponse();
+            if (!response.HasSuccess)
+            {
+                return response;
+            }
+            return await fornecedoraDAL.Insert(item);
         }
 
-        public Response Update(Fornecedor fornecedor)
+        public async Task<Response> Update(Fornecedor item)
         {
-            throw new NotImplementedException();
+            FornecedoraUpdateValidator validationRules = new();
+            Response response = validationRules.Validate(item).ToResponse();
+            if (!response.HasSuccess)
+            {
+                return response;
+            }
+            return await fornecedoraDAL.Update(item);
         }
-        public Response Delete(Fornecedor fornecedor)
+        public async Task<Response> Delete(Fornecedor item)
         {
-            throw new NotImplementedException();
+            FornecedoraDeleteValidator validations = new();
+            Response response = validations.Validate(item).ToResponse();
+            if (!response.HasSuccess)
+            {
+                return response;
+            }
+            return await fornecedoraDAL.Delete(item);
         }
 
-        public DataResponse<Fornecedor> GetAll()
+        public async Task<DataResponse<Fornecedor>> GetAll()
         {
-            throw new NotImplementedException();
+            return await fornecedoraDAL.GetAll();
         }
 
-        public SingleResponse<Fornecedor> GetById(int id)
+        public async Task<SingleResponse<Fornecedor>> GetById(Fornecedor fornecedor)
         {
-            throw new NotImplementedException();
+            FornecedoraGetByIdValidator validationRules = new();
+            SingleResponse<Fornecedor> singleResponse = validationRules.Validate(fornecedor).ToSingleResponse<Fornecedor>(fornecedor);
+            if (!singleResponse.HasSuccess)
+            {
+                return singleResponse;
+            }
+            return await fornecedoraDAL.GetById(fornecedor);
         }
 
     
