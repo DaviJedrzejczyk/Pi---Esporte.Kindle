@@ -3,6 +3,7 @@ using BusinessLogicalLayer.Interfaces;
 using BusinessLogicalLayer.Validators.Clientes;
 using DataAccessLayer.Interfaces;
 using Entities;
+using Entities.Enums;
 using Shared;
 using System;
 using System.Collections.Generic;
@@ -43,12 +44,6 @@ namespace BusinessLogicalLayer.BLL
         }
         public Response Delete(Cliente cliente)
         {
-            ClienteDeleteValidator deleteValidator = new();
-            Response response = deleteValidator.Validate(cliente).ToResponse();
-            if (!response.HasSuccess)
-            {
-                return response;
-            }
             return clienteDAL.Delete(cliente);
         }
 
@@ -61,7 +56,6 @@ namespace BusinessLogicalLayer.BLL
         {
             return clienteDAL.GetById(id);
         }
-
 
     }
 }

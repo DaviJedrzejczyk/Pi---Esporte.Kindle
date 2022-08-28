@@ -1,4 +1,5 @@
 ﻿using Entities;
+using Entities.Enums;
 using Shared;
 using System;
 using System.Collections.Generic;

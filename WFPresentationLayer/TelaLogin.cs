@@ -9,7 +9,6 @@ namespace WFPresentationLayer
     public partial class TelaLogin : Form
     {
         private readonly IFuncionarioService funcionario;
-        [Inject()]
         public TelaLogin(IFuncionarioService fu)
         {
             InitializeComponent();
@@ -23,9 +22,6 @@ namespace WFPresentationLayer
             if (singleResponse.HasSuccess)
             {
                 MessageBox.Show(singleResponse.Item.Nome + " logado com sucesso!");
-                this.Dispose();
-                TelaInicial tela = new();
-                tela.ShowDialog();
             }
             else
             {

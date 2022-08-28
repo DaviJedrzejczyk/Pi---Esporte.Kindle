@@ -7,6 +7,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Entities.Enums;
+using Microsoft.EntityFrameworkCore;
 
 namespace DataAccessLayer.Implements
 {
@@ -33,7 +35,13 @@ namespace DataAccessLayer.Implements
 
         public Response Update(Cliente cliente)
         {
-            _kindleDB.Clientes.Update(cliente);
+            Cliente cliente1 = _kindleDB.Clientes.Find(cliente.ID);
+            cliente1.Nome = cliente.Nome;
+            cliente1.Sobrenome = cliente.Sobrenome;
+            cliente1.Telefone = cliente.Telefone;
+            cliente1.Email = cliente.Email;
+            cliente1.Genero = cliente.Genero;
+            
             try
             {
                 _kindleDB.SaveChanges();
@@ -46,7 +54,8 @@ namespace DataAccessLayer.Implements
         }
         public Response Delete(Cliente cliente)
         {
-            _kindleDB.Clientes.Remove(cliente);
+            Cliente cliente1 = _kindleDB.Clientes.Find(cliente.ID);
+            _kindleDB.Clientes.Remove(cliente1);
             try
             {
                 _kindleDB.SaveChanges();
@@ -62,7 +71,8 @@ namespace DataAccessLayer.Implements
         {
             try
             {
-                return DataResponseFactory<Cliente>.CreateSuccessResponse(_kindleDB.Clientes.ToList());
+                List<Cliente> clientes = _kindleDB.Clientes.ToList();
+                return DataResponseFactory<Cliente>.CreateSuccessResponse(clientes);
             }
             catch (Exception ex)
             {
