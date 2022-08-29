@@ -18,28 +18,80 @@ namespace DataAccessLayer.Implements
         {
             pIKindleDB = pI;
         }
-        public Response Insert(Funcionario funcionario)
+        public async Task<Response> Insert(Funcionario funcionario)
         {
-            throw new NotImplementedException();
+            pIKindleDB.Add(funcionario);
+            try
+            {
+                await pIKindleDB.SaveChangesAsync();
+                return ResponseFactory.CreateSuccessResponse(); 
+            }
+            catch (Exception ex)
+            {
+                return ResponseFactory.CreateFailureResponse(ex);
+            }
         }
 
-        public Response Update(Funcionario funcionario)
+        public async Task<Response> Update(Funcionario funcionario)
         {
-            throw new NotImplementedException();
-        }
-        public Response Delete(Funcionario funcionario)
-        {
-            throw new NotImplementedException();
+            Funcionario funcionario1 = pIKindleDB.Funcionarios.Find(funcionario.ID);
+            funcionario1.Nome = funcionario.Nome;
+            funcionario1.Sobrenome = funcionario.Sobrenome;
+            funcionario1.Telefone = funcionario.Telefone;
+            funcionario1.Senha = funcionario.Senha;
+            funcionario1.Email = funcionario.Email;
+            funcionario1.Genero = funcionario.Genero;
+            funcionario1.Nivel_Acesso = funcionario.Nivel_Acesso;
+            try
+            {
+                await pIKindleDB.SaveChangesAsync();
+                return ResponseFactory.CreateSuccessResponse();
+            }
+            catch (Exception ex)
+            {
+                return ResponseFactory.CreateFailureResponse(ex);
+            }
         }
 
-        public DataResponse<Funcionario> GetAll()
+        public async Task<Response> Delete(Funcionario funcionario)
         {
-            throw new NotImplementedException();
+            Funcionario funcionario1 = pIKindleDB.Funcionarios.Find(funcionario.ID);
+            pIKindleDB.Remove(funcionario1);
+            try
+            {
+                await pIKindleDB.SaveChangesAsync();
+                return ResponseFactory.CreateSuccessResponse();
+            }
+            catch (Exception ex)
+            {
+                return ResponseFactory.CreateFailureResponse(ex);
+            }
         }
 
-        public SingleResponse<Funcionario> GetById(int id)
+        public async Task<DataResponse<Funcionario>> GetAll()
         {
-            throw new NotImplementedException();
+            try
+            {
+                List<Funcionario> funcionarios = await pIKindleDB.Funcionarios.ToListAsync();
+                return DataResponseFactory<Funcionario>.CreateSuccessResponse(funcionarios);
+            }
+            catch (Exception ex)
+            {
+                return DataResponseFactory<Funcionario>.CreateFailureResponse(ex);
+            }
+        }
+
+        public async Task<SingleResponse<Funcionario>> GetById(Funcionario funcionario)
+        {
+            try
+            {
+                Funcionario funcionario1 = await pIKindleDB.Funcionarios.FindAsync(funcionario.ID);
+                return SingleResponseFactory<Funcionario>.CreateSuccessSingleResponse(funcionario);
+            }
+            catch (Exception ex)
+            {
+                return SingleResponseFactory<Funcionario>.CreateFailureSingleResponse(ex);
+            }
         }
 
         public async Task<SingleResponse<Funcionario>> GetLogin(Funcionario funcionario)
@@ -58,5 +110,7 @@ namespace DataAccessLayer.Implements
                 return SingleResponseFactory<Funcionario>.CreateFailureSingleResponse(ex);
             }
         }
+
+       
     }
 }

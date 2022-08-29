@@ -21,7 +21,7 @@ namespace BusinessLogicalLayer.BLL
         {
             funcionarioDAL = _funcionarioDAL;
         }
-        public Response Insert(Funcionario funcionario)
+        public async Task<Response> Insert(Funcionario funcionario)
         {
             FuncionarioInsertValidator insertValidator = new();
             Response response = insertValidator.Validate(funcionario).ToResponse();
@@ -29,10 +29,10 @@ namespace BusinessLogicalLayer.BLL
             {
                 return response;
             }
-            return funcionarioDAL.Insert(funcionario);
+            return await funcionarioDAL.Insert(funcionario);
         }
 
-        public Response Update(Funcionario funcionario)
+        public async Task<Response> Update(Funcionario funcionario)
         {
             FuncionarioUpdateValidator updateValidator = new();
             Response response = updateValidator.Validate(funcionario).ToResponse();
@@ -40,9 +40,9 @@ namespace BusinessLogicalLayer.BLL
             {
                 return response;
             }
-            return funcionarioDAL.Update(funcionario);
+            return await funcionarioDAL.Update(funcionario);
         }
-        public Response Delete(Funcionario funcionario)
+        public async Task<Response> Delete(Funcionario funcionario)
         {
             FuncionarioDeleteValidator deleteValidator = new();
             Response response = deleteValidator.Validate(funcionario).ToResponse();
@@ -50,18 +50,18 @@ namespace BusinessLogicalLayer.BLL
             {
                 return response;
             }
-            return funcionarioDAL.Delete(funcionario);
+            return await funcionarioDAL.Delete(funcionario);
         }
 
-        public DataResponse<Funcionario> GetAll()
+        public async Task<DataResponse<Funcionario>> GetAll()
         {
-            return funcionarioDAL.GetAll();
+            return await funcionarioDAL.GetAll();
         }
 
-        public SingleResponse<Funcionario> GetById(int id)
+        public async Task<SingleResponse<Funcionario>> GetById(Funcionario funcionario)
         {
 
-            return funcionarioDAL.GetById(id);
+            return await funcionarioDAL.GetById(funcionario);
         }
 
         public async Task<SingleResponse<Funcionario>> GetLogin(Funcionario funcionario)
