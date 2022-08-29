@@ -10,6 +10,7 @@ namespace DataAccessLayer
         public DbSet<Endereco> Enderecos { get; set; }
         public DbSet<Fornecedor> Fornecedores { get; set; }
         public DbSet<Estado> Estados { get; set; }
+        public DbSet<Produto> Produtos { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
        {
            optionsBuilder.UseSqlServer(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Aluno\Documents\PIKindleDB.mdf;Integrated Security=True;Connect Timeout=30");
