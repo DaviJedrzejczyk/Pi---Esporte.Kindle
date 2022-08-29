@@ -13,8 +13,12 @@ namespace DataAccessLayer.Mapping
     {
         public void Configure(EntityTypeBuilder<Produto> builder)
         {
-            builder.Property(p => p.Nome).HasMaxLength(30).IsRequired().IsUnicode(false);
-            builder.Property(p => p.Descricao).HasMaxLength(100).IsRequired().IsUnicode(false);
+            builder.ToTable("PRODUTOS");
+            builder.Property(p => p.QtdEstoque).HasColumnName("QTD_ESTOQUE");
+            builder.Property(p => p.Valor_Unitario).HasColumnName("VALOR_UNITARIO");
+            builder.Property(p => p.Nome).HasMaxLength(30).HasColumnName("NOME").IsRequired().IsUnicode(false);
+            builder.Property(p => p.Descricao).HasMaxLength(100).HasColumnName("DESCRICAO").IsRequired().IsUnicode(false);
+            builder.Property(p => p.FornecedorId).HasColumnName("FORNECEDORES_ID");
 
         }
     }
