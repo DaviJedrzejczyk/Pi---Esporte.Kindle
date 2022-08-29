@@ -10,10 +10,9 @@ namespace DataAccessLayer
         public DbSet<Endereco> Enderecos { get; set; }
         public DbSet<Fornecedor> Fornecedores { get; set; }
         public DbSet<Estado> Estados { get; set; }
-        public DbSet<TipoFuncionario> TipoFuncionarios { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
        {
-           optionsBuilder.UseSqlServer(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\djedr\source\repos\Pi---Esporte.Kindle\PIKindleDB.mdf;Integrated Security=True;Connect Timeout=30");
+           optionsBuilder.UseSqlServer(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Aluno\Documents\PIKindleDB.mdf;Integrated Security=True;Connect Timeout=30");
        }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

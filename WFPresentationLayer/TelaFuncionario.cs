@@ -18,13 +18,11 @@ namespace WFPresentationLayer
     public partial class TelaFuncionario : Form
     {
         private readonly IFuncionarioService funcionarioService;
-        private readonly ITipoFuncionarioService tipoFuncionarioService;
-        public TelaFuncionario(IFuncionarioService service, ITipoFuncionarioService tipoFuncionarioService)
+        public TelaFuncionario(IFuncionarioService service)
         {
             InitializeComponent();
             funcionarioService = service;
             this.dtFuncionario.DoubleClick += dtFuncionario_DoubleClick;
-            this.tipoFuncionarioService = tipoFuncionarioService;
         }
 
 
@@ -33,9 +31,7 @@ namespace WFPresentationLayer
         {
             SincronizarGrid();
             cbGenero.DataSource = Enum.GetNames(typeof(Genero));
-            cbNivelAcesso.DataSource = tipoFuncionarioService.GetAllTipo().Result.Itens;
-            cbNivelAcesso.DisplayMember = "Nome";
-            cbNivelAcesso.ValueMember = "ID";
+            cbNivelAcesso.DataSource = Enum.GetNames(typeof(TipoFuncionario));
         }
 
         private Funcionario CreateObjectWithForm()
@@ -43,8 +39,10 @@ namespace WFPresentationLayer
             int temp;
             DateTime dt;
             Genero genero;
+            TipoFuncionario tipo;
             DateTime.TryParse(txtData.Text, out dt);
             Genero.TryParse(cbGenero.Text, out genero);
+            TipoFuncionario.TryParse(cbNivelAcesso.Text, out tipo);
             int.TryParse(txtID.Text, out temp);
             Funcionario funcionario = new()
             {
@@ -57,9 +55,9 @@ namespace WFPresentationLayer
                 Genero = genero,
                 DataNascimento = dt,
                 Senha = txtSenha.Text,
-                Nivel_Acesso = (TipoFuncionario)cbNivelAcesso.SelectedValue,
+                Nivel_Acesso = tipo,
                 Telefone = txtTelefone.Text,
-                EnderecoId = Convert.ToInt32(txtEndereco.Text),
+               // EnderecoId = Convert.ToInt32(txtEndereco.Text),
             };
             return funcionario;
         }
@@ -81,8 +79,8 @@ namespace WFPresentationLayer
                 dtFuncionario.Rows[i].Cells["FuncionarioEmail"].Value = dataResponse.Itens[i].Email;
                 dtFuncionario.Rows[i].Cells["FuncionarioTelefone"].Value = dataResponse.Itens[i].Telefone;
                 dtFuncionario.Rows[i].Cells["FuncionarioGenero"].Value = dataResponse.Itens[i].Genero;
-                dtFuncionario.Rows[i].Cells["FuncionarioEndereco"].Value = dataResponse.Itens[i].Endereco.ID;
-                dtFuncionario.Rows[i].Cells["FuncionarioNivelAcesso"].Value = dataResponse.Itens[i].Nivel_Acesso.NivelAcesso;
+             //   dtFuncionario.Rows[i].Cells["FuncionarioEndereco"].Value = dataResponse.Itens[i].Endereco;
+                dtFuncionario.Rows[i].Cells["FuncionarioNivelAcesso"].Value = dataResponse.Itens[i].Nivel_Acesso;
             }
         }
 
@@ -98,8 +96,8 @@ namespace WFPresentationLayer
             this.txtTelefone.Text = funcionario.Telefone;
             this.txtData.Text = funcionario.DataNascimento.ToString();
             this.cbGenero.Text = funcionario.Genero.ToString();
-            this.cbNivelAcesso.Text = funcionario.Nivel_Acesso.NivelAcesso;
-            this.txtEndereco.Text = funcionario.Endereco.ID.ToString();
+            this.cbNivelAcesso.Text = funcionario.Nivel_Acesso.ToString();
+            //this.txtEndereco.Text = funcionario.Endereco.ID.ToString();
 
         }
         private void dtFuncionario_DoubleClick(object sender, EventArgs e)
@@ -117,7 +115,7 @@ namespace WFPresentationLayer
             funcionarioSelecionado.Telefone = Convert.ToString(this.dtFuncionario.Rows[rowindex].Cells[8].Value);
             funcionarioSelecionado.Genero = (Genero)this.dtFuncionario.Rows[rowindex].Cells[9].Value;
             funcionarioSelecionado.Nivel_Acesso = (TipoFuncionario)this.dtFuncionario.Rows[rowindex].Cells[10].Value;
-            funcionarioSelecionado.Endereco.ID = Convert.ToInt32(this.dtFuncionario.Rows[rowindex].Cells[11].Value);
+           // funcionarioSelecionado.Endereco.ID = Convert.ToInt32(this.dtFuncionario.Rows[rowindex].Cells[11].Value);
             DrawFormWithObject(funcionarioSelecionado);
         }
 

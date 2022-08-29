@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Entities
+namespace Entities.Enums
 {
-    public class TipoFuncionario
+    public enum TipoFuncionario
     {
-        public int Id { get; set; }
-        public string NivelAcesso { get; set; }
+        Admin,
+        Funcionario
     }
 }

@@ -35,6 +35,18 @@
             this.txtID = new System.Windows.Forms.TextBox();
             this.cbGenero = new System.Windows.Forms.ComboBox();
             this.dtFuncionario = new System.Windows.Forms.DataGridView();
+            this.FuncionarioID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FuncionarioNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FuncionarioSobrenome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FuncionarioCPF = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FuncionarioRG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FuncionarioData = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FuncionarioIdade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FuncionarioEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FuncionarioTelefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FuncionarioGenero = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FuncionarioNivelAcesso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FuncionarioEndereco = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.lblNome = new System.Windows.Forms.Label();
             this.lblSobrenome = new System.Windows.Forms.Label();
@@ -60,18 +72,6 @@
             this.txtTelefone = new System.Windows.Forms.TextBox();
             this.txtIdade = new System.Windows.Forms.TextBox();
             this.lblIdade = new System.Windows.Forms.Label();
-            this.FuncionarioID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FuncionarioNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FuncionarioSobrenome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FuncionarioCPF = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FuncionarioRG = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FuncionarioData = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FuncionarioIdade = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FuncionarioEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FuncionarioTelefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FuncionarioGenero = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FuncionarioNivelAcesso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FuncionarioEndereco = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dtFuncionario)).BeginInit();
             this.SuspendLayout();
             // 
@@ -154,9 +154,94 @@
             this.dtFuncionario.Name = "dtFuncionario";
             this.dtFuncionario.ReadOnly = true;
             this.dtFuncionario.RowTemplate.Height = 25;
+            this.dtFuncionario.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtFuncionario.Size = new System.Drawing.Size(540, 485);
             this.dtFuncionario.TabIndex = 7;
             this.dtFuncionario.DoubleClick += new System.EventHandler(this.dtFuncionario_DoubleClick);
+            // 
+            // FuncionarioID
+            // 
+            this.FuncionarioID.HeaderText = "ID";
+            this.FuncionarioID.Name = "FuncionarioID";
+            this.FuncionarioID.ReadOnly = true;
+            this.FuncionarioID.Width = 43;
+            // 
+            // FuncionarioNome
+            // 
+            this.FuncionarioNome.HeaderText = "Nome";
+            this.FuncionarioNome.Name = "FuncionarioNome";
+            this.FuncionarioNome.ReadOnly = true;
+            this.FuncionarioNome.Width = 65;
+            // 
+            // FuncionarioSobrenome
+            // 
+            this.FuncionarioSobrenome.HeaderText = "Sobrenome";
+            this.FuncionarioSobrenome.Name = "FuncionarioSobrenome";
+            this.FuncionarioSobrenome.ReadOnly = true;
+            this.FuncionarioSobrenome.Width = 93;
+            // 
+            // FuncionarioCPF
+            // 
+            this.FuncionarioCPF.HeaderText = "CPF";
+            this.FuncionarioCPF.Name = "FuncionarioCPF";
+            this.FuncionarioCPF.ReadOnly = true;
+            this.FuncionarioCPF.Width = 53;
+            // 
+            // FuncionarioRG
+            // 
+            this.FuncionarioRG.HeaderText = "RG";
+            this.FuncionarioRG.Name = "FuncionarioRG";
+            this.FuncionarioRG.ReadOnly = true;
+            this.FuncionarioRG.Width = 47;
+            // 
+            // FuncionarioData
+            // 
+            this.FuncionarioData.HeaderText = "Data de Nascimento";
+            this.FuncionarioData.Name = "FuncionarioData";
+            this.FuncionarioData.ReadOnly = true;
+            this.FuncionarioData.Width = 127;
+            // 
+            // FuncionarioIdade
+            // 
+            this.FuncionarioIdade.HeaderText = "Idade";
+            this.FuncionarioIdade.Name = "FuncionarioIdade";
+            this.FuncionarioIdade.ReadOnly = true;
+            this.FuncionarioIdade.Width = 61;
+            // 
+            // FuncionarioEmail
+            // 
+            this.FuncionarioEmail.HeaderText = "Email";
+            this.FuncionarioEmail.Name = "FuncionarioEmail";
+            this.FuncionarioEmail.ReadOnly = true;
+            this.FuncionarioEmail.Width = 61;
+            // 
+            // FuncionarioTelefone
+            // 
+            this.FuncionarioTelefone.HeaderText = "Telefone";
+            this.FuncionarioTelefone.Name = "FuncionarioTelefone";
+            this.FuncionarioTelefone.ReadOnly = true;
+            this.FuncionarioTelefone.Width = 77;
+            // 
+            // FuncionarioGenero
+            // 
+            this.FuncionarioGenero.HeaderText = "Genero";
+            this.FuncionarioGenero.Name = "FuncionarioGenero";
+            this.FuncionarioGenero.ReadOnly = true;
+            this.FuncionarioGenero.Width = 70;
+            // 
+            // FuncionarioNivelAcesso
+            // 
+            this.FuncionarioNivelAcesso.HeaderText = "Nível de Acesso";
+            this.FuncionarioNivelAcesso.Name = "FuncionarioNivelAcesso";
+            this.FuncionarioNivelAcesso.ReadOnly = true;
+            this.FuncionarioNivelAcesso.Width = 106;
+            // 
+            // FuncionarioEndereco
+            // 
+            this.FuncionarioEndereco.HeaderText = "EnderecoID";
+            this.FuncionarioEndereco.Name = "FuncionarioEndereco";
+            this.FuncionarioEndereco.ReadOnly = true;
+            this.FuncionarioEndereco.Width = 92;
             // 
             // txtNome
             // 
@@ -334,7 +419,7 @@
             this.lblTelefone.AutoSize = true;
             this.lblTelefone.Location = new System.Drawing.Point(225, 116);
             this.lblTelefone.Name = "lblTelefone";
-            this.lblTelefone.Size = new System.Drawing.Size(54, 15);
+            this.lblTelefone.Size = new System.Drawing.Size(55, 15);
             this.lblTelefone.TabIndex = 30;
             this.lblTelefone.Text = "Telefone:";
             // 
@@ -361,90 +446,6 @@
             this.lblIdade.Size = new System.Drawing.Size(39, 15);
             this.lblIdade.TabIndex = 31;
             this.lblIdade.Text = "Idade:";
-            // 
-            // FuncionarioID
-            // 
-            this.FuncionarioID.HeaderText = "ID";
-            this.FuncionarioID.Name = "FuncionarioID";
-            this.FuncionarioID.ReadOnly = true;
-            this.FuncionarioID.Width = 43;
-            // 
-            // FuncionarioNome
-            // 
-            this.FuncionarioNome.HeaderText = "Nome";
-            this.FuncionarioNome.Name = "FuncionarioNome";
-            this.FuncionarioNome.ReadOnly = true;
-            this.FuncionarioNome.Width = 65;
-            // 
-            // FuncionarioSobrenome
-            // 
-            this.FuncionarioSobrenome.HeaderText = "Sobrenome";
-            this.FuncionarioSobrenome.Name = "FuncionarioSobrenome";
-            this.FuncionarioSobrenome.ReadOnly = true;
-            this.FuncionarioSobrenome.Width = 93;
-            // 
-            // FuncionarioCPF
-            // 
-            this.FuncionarioCPF.HeaderText = "CPF";
-            this.FuncionarioCPF.Name = "FuncionarioCPF";
-            this.FuncionarioCPF.ReadOnly = true;
-            this.FuncionarioCPF.Width = 53;
-            // 
-            // FuncionarioRG
-            // 
-            this.FuncionarioRG.HeaderText = "RG";
-            this.FuncionarioRG.Name = "FuncionarioRG";
-            this.FuncionarioRG.ReadOnly = true;
-            this.FuncionarioRG.Width = 47;
-            // 
-            // FuncionarioData
-            // 
-            this.FuncionarioData.HeaderText = "Data de Nascimento";
-            this.FuncionarioData.Name = "FuncionarioData";
-            this.FuncionarioData.ReadOnly = true;
-            this.FuncionarioData.Width = 127;
-            // 
-            // FuncionarioIdade
-            // 
-            this.FuncionarioIdade.HeaderText = "Idade";
-            this.FuncionarioIdade.Name = "FuncionarioIdade";
-            this.FuncionarioIdade.ReadOnly = true;
-            this.FuncionarioIdade.Width = 61;
-            // 
-            // FuncionarioEmail
-            // 
-            this.FuncionarioEmail.HeaderText = "Email";
-            this.FuncionarioEmail.Name = "FuncionarioEmail";
-            this.FuncionarioEmail.ReadOnly = true;
-            this.FuncionarioEmail.Width = 61;
-            // 
-            // FuncionarioTelefone
-            // 
-            this.FuncionarioTelefone.HeaderText = "Telefone";
-            this.FuncionarioTelefone.Name = "FuncionarioTelefone";
-            this.FuncionarioTelefone.ReadOnly = true;
-            this.FuncionarioTelefone.Width = 76;
-            // 
-            // FuncionarioGenero
-            // 
-            this.FuncionarioGenero.HeaderText = "Genero";
-            this.FuncionarioGenero.Name = "FuncionarioGenero";
-            this.FuncionarioGenero.ReadOnly = true;
-            this.FuncionarioGenero.Width = 70;
-            // 
-            // FuncionarioNivelAcesso
-            // 
-            this.FuncionarioNivelAcesso.HeaderText = "Nível de Acesso";
-            this.FuncionarioNivelAcesso.Name = "FuncionarioNivelAcesso";
-            this.FuncionarioNivelAcesso.ReadOnly = true;
-            this.FuncionarioNivelAcesso.Width = 106;
-            // 
-            // FuncionarioEndereco
-            // 
-            this.FuncionarioEndereco.HeaderText = "EnderecoID";
-            this.FuncionarioEndereco.Name = "FuncionarioEndereco";
-            this.FuncionarioEndereco.ReadOnly = true;
-            this.FuncionarioEndereco.Width = 92;
             // 
             // TelaFuncionario
             // 
