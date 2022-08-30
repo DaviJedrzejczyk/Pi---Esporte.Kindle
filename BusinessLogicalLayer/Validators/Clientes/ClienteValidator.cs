@@ -1,4 +1,5 @@
 ﻿using BusinessLogicalLayer.Constants;
+using BusinessLogicalLayer.Validators.GenericValidators;
 using Entities;
 using FluentValidation;
 using System;

@@ -1,5 +1,6 @@
 ﻿using BusinessLogicalLayer.Extensions;
 using BusinessLogicalLayer.Interfaces;
+using BusinessLogicalLayer.Validators.Enderecos;
 using BusinessLogicalLayer.Validators.Funcionarios;
 using DataAccessLayer.Interfaces;
 using Entities;
@@ -11,25 +12,40 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Transactions;
 
 namespace BusinessLogicalLayer.BLL
 {
     public class FuncionarioBLL : IFuncionarioService
     {
+        
         private readonly IFuncionarioDALService funcionarioDAL;
-        public FuncionarioBLL(IFuncionarioDALService _funcionarioDAL)
+        private readonly IEnderecoDALService enderecoDALService;
+        public FuncionarioBLL(IFuncionarioDALService _funcionarioDAL, IEnderecoDALService enderecoDALService)
         {
             funcionarioDAL = _funcionarioDAL;
+            this.enderecoDALService = enderecoDALService;
         }
         public async Task<Response> Insert(Funcionario funcionario)
         {
             FuncionarioInsertValidator insertValidator = new();
+            EnderecoInsertValidator validations = new();
             Response response = insertValidator.Validate(funcionario).ToResponse();
-            if (!response.HasSuccess)
+            response = validations.Validate(funcionario.Endereco).ToResponse();
+            if (response.HasSuccess)
             {
-                return response;
+                using (TransactionScope transaction = new())
+                {
+                    response = await enderecoDALService.Insert(funcionario.Endereco);
+                    response = await funcionarioDAL.Insert(funcionario);
+                    if (!response.HasSuccess)
+                    {
+                        return response;
+                    }
+                    transaction.Complete();
+                }
             }
-            return await funcionarioDAL.Insert(funcionario);
+                return response;
         }
 
         public async Task<Response> Update(Funcionario funcionario)

@@ -44,7 +44,8 @@ namespace BusinessLogicalLayer.Validators.Funcionarios
         {
             RuleFor(c => c.CPF).NotNull().WithMessage(GenericConstants.MENSAGEM_ERRO_CPF_VAZIO)
                              .MaximumLength(14).WithMessage(GenericConstants.MENSAGEM_ERRO_CPF_MAIOR)
-                             .MinimumLength(11).WithMessage(GenericConstants.MENSAGEM_ERRO_CPF_MENOR);
+                             .MinimumLength(11).WithMessage(GenericConstants.MENSAGEM_ERRO_CPF_MENOR)
+                             ;
         }
 
         public void ValidateTelefone()

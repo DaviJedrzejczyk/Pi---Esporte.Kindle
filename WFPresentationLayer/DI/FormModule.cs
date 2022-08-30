@@ -29,6 +29,8 @@ namespace WFPresentationLayer.DI
             Bind<IFornecedoraDALService>().To<FornecedoraDAL>();
             Bind<IProdutoDALService>().To<ProdutoDAL>();
             Bind<IProdutoService>().To<ProdutoBLL>();
+            Bind<IEnderecoDALService>().To<EnderecoDAL>();
+            Bind<IEnderecoService>().To<EnderecoBLL>();
         }
         public static FormModule Craete()
         {
