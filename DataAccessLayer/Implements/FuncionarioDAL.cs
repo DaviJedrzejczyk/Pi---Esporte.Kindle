@@ -34,7 +34,7 @@ namespace DataAccessLayer.Implements
 
         public async Task<Response> Update(Funcionario funcionario)
         {
-            Funcionario funcionario1 = pIKindleDB.Funcionarios.Find(funcionario.ID);
+            Funcionario? funcionario1 = pIKindleDB.Funcionarios.Find(funcionario.ID);
             funcionario1.Nome = funcionario.Nome;
             funcionario1.Sobrenome = funcionario.Sobrenome;
             funcionario1.Telefone = funcionario.Telefone;
@@ -55,7 +55,7 @@ namespace DataAccessLayer.Implements
 
         public async Task<Response> Delete(Funcionario funcionario)
         {
-            Funcionario funcionario1 = pIKindleDB.Funcionarios.Find(funcionario.ID);
+            Funcionario? funcionario1 = pIKindleDB.Funcionarios.Find(funcionario.ID);
             pIKindleDB.Remove(funcionario1);
             try
             {
@@ -85,7 +85,7 @@ namespace DataAccessLayer.Implements
         {
             try
             {
-                Funcionario funcionario1 = await pIKindleDB.Funcionarios.FindAsync(funcionario.ID);
+                Funcionario? funcionario1 = await pIKindleDB.Funcionarios.FindAsync(funcionario.ID);
                 return SingleResponseFactory<Funcionario>.CreateSuccessSingleResponse(funcionario);
             }
             catch (Exception ex)
@@ -94,20 +94,20 @@ namespace DataAccessLayer.Implements
             }
         }
 
-        public async Task<SingleResponse<int>> GetLogin(Funcionario funcionario)
+        public async Task<SingleResponse<Funcionario>> GetLogin(Funcionario funcionario)
         {
             try
             {
-                int login = await pIKindleDB.Funcionarios.Where(f => f.Email == funcionario.Email && f.Senha == funcionario.Senha).CountAsync();
-                if(login < 1)
+                Funcionario? login = await pIKindleDB.Funcionarios.FirstOrDefaultAsync(f => f.Email == funcionario.Email && f.Senha == funcionario.Senha);
+                if(login == null)
                 {
-                    return SingleResponseFactory<int>.CreateFailureSingleResponse();
+                    return SingleResponseFactory<Funcionario>.CreateFailureSingleResponse();
                 }
-                return SingleResponseFactory<int>.CreateSuccessSingleResponse(login);
+                return SingleResponseFactory<Funcionario>.CreateSuccessSingleResponse(login);
             }
             catch (Exception ex)
             {
-                return SingleResponseFactory<int>.CreateFailureSingleResponse(ex);
+                return SingleResponseFactory<Funcionario>.CreateFailureSingleResponse(ex);
             }
         }
 
