@@ -15,6 +15,6 @@ namespace BusinessLogicalLayer.Interfaces
         Task<Response> Delete(Funcionario funcionario);
         Task<DataResponse<Funcionario>> GetAll();
         Task<SingleResponse<Funcionario>> GetById(Funcionario funcionario);
-        Task<SingleResponse<Funcionario>> GetLogin(Funcionario funcionario);
+        Task<SingleResponse<int>> GetLogin(Funcionario funcionario);
     }
 }

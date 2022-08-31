@@ -18,10 +18,10 @@ namespace WFPresentationLayer
         private async void button1_Click(object sender, EventArgs e)
         {
             Funcionario login = new(txtEmail.Text, txtSenha.Text);
-            SingleResponse<Funcionario> singleResponse = await funcionario.GetLogin(login);
+            SingleResponse<int> singleResponse = await funcionario.GetLogin(login);
             if (singleResponse.HasSuccess)
             {
-                MessageBox.Show(singleResponse.Item.Nome + " logado com sucesso!");
+                MessageBox.Show("Logado com sucesso!");
             }
             else
             {

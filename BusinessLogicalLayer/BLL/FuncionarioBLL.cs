@@ -80,10 +80,10 @@ namespace BusinessLogicalLayer.BLL
             return await funcionarioDAL.GetById(funcionario);
         }
 
-        public async Task<SingleResponse<Funcionario>> GetLogin(Funcionario funcionario)
+        public async Task<SingleResponse<int>> GetLogin(Funcionario funcionario)
         {
             FuncionarioLoginValidator validations = new();
-            SingleResponse<Funcionario> singleResponse = validations.Validate(funcionario).ToSingleResponse<Funcionario>(funcionario);
+            SingleResponse<int> singleResponse = validations.Validate(funcionario).ToSingleResponse<int>(funcionario.ID);
             if (!singleResponse.HasSuccess)
             {
                 return singleResponse;

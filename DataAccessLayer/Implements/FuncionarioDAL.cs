@@ -94,20 +94,20 @@ namespace DataAccessLayer.Implements
             }
         }
 
-        public async Task<SingleResponse<Funcionario>> GetLogin(Funcionario funcionario)
+        public async Task<SingleResponse<int>> GetLogin(Funcionario funcionario)
         {
             try
             {
-                Funcionario login = await pIKindleDB.Funcionarios.Where(f => f.Email == f.Email).FirstOrDefaultAsync();
-                if(login == null)
+                int login = await pIKindleDB.Funcionarios.Where(f => f.Email == funcionario.Email && f.Senha == funcionario.Senha).CountAsync();
+                if(login < 1)
                 {
-                    return SingleResponseFactory<Funcionario>.CreateFailureSingleResponse();
+                    return SingleResponseFactory<int>.CreateFailureSingleResponse();
                 }
-                return SingleResponseFactory<Funcionario>.CreateSuccessSingleResponse(login);
+                return SingleResponseFactory<int>.CreateSuccessSingleResponse(login);
             }
             catch (Exception ex)
             {
-                return SingleResponseFactory<Funcionario>.CreateFailureSingleResponse(ex);
+                return SingleResponseFactory<int>.CreateFailureSingleResponse(ex);
             }
         }
 
