@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DataAccessLayer.Migrations
 {
     [DbContext(typeof(PIKindleDB))]
-    [Migration("20220828173559_NewDataBase")]
-    partial class NewDataBase
+    [Migration("20220831103902_NewMigration")]
+    partial class NewMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -237,7 +237,10 @@ namespace DataAccessLayer.Migrations
                     b.Property<int>("Genero")
                         .HasColumnType("int");
 
-                    b.Property<int>("Nivel_AcessoId")
+                    b.Property<int>("Idade")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Nivel_Acesso")
                         .HasColumnType("int");
 
                     b.Property<string>("Nome")
@@ -274,28 +277,48 @@ namespace DataAccessLayer.Migrations
 
                     b.HasIndex("EnderecoId");
 
-                    b.HasIndex("Nivel_AcessoId");
-
                     b.ToTable("FUNCIONARIOS", (string)null);
                 });
 
-            modelBuilder.Entity("Entities.TipoFuncionario", b =>
+            modelBuilder.Entity("Entities.Produto", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
 
-                    b.Property<string>("NivelAcesso")
+                    b.Property<string>("Descricao")
                         .IsRequired()
-                        .HasMaxLength(20)
+                        .HasMaxLength(100)
                         .IsUnicode(false)
-                        .HasColumnType("varchar(20)");
+                        .HasColumnType("varchar(100)")
+                        .HasColumnName("DESCRICAO");
 
-                    b.HasKey("Id");
+                    b.Property<int>("FornecedorId")
+                        .HasColumnType("int")
+                        .HasColumnName("FORNECEDORES_ID");
 
-                    b.ToTable("TIPO_FUNCIONARIOS", (string)null);
+                    b.Property<string>("Nome")
+                        .IsRequired()
+                        .HasMaxLength(30)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(30)")
+                        .HasColumnName("NOME");
+
+                    b.Property<int>("QtdEstoque")
+                        .HasColumnType("int")
+                        .HasColumnName("QTD_ESTOQUE");
+
+                    b.Property<double>("Valor_Unitario")
+                        .HasColumnType("float")
+                        .HasColumnName("VALOR_UNITARIO");
+
+                    b.HasKey("ID");
+
+                    b.HasIndex("FornecedorId");
+
+                    b.ToTable("PRODUTOS", (string)null);
                 });
 
             modelBuilder.Entity("Entities.Endereco", b =>
@@ -317,15 +340,18 @@ namespace DataAccessLayer.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Entities.TipoFuncionario", "Nivel_Acesso")
+                    b.Navigation("Endereco");
+                });
+
+            modelBuilder.Entity("Entities.Produto", b =>
+                {
+                    b.HasOne("Entities.Fornecedor", "Fornecedor")
                         .WithMany()
-                        .HasForeignKey("Nivel_AcessoId")
+                        .HasForeignKey("FornecedorId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Endereco");
-
-                    b.Navigation("Nivel_Acesso");
+                    b.Navigation("Fornecedor");
                 });
 #pragma warning restore 612, 618
         }

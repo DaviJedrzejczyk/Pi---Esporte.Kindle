@@ -31,7 +31,7 @@ namespace BusinessLogicalLayer.BLL
             return await enderecoDAL.Insert(endereco);
         }
 
-        public Task<Response> Update(Endereco endereco)
+        public async Task<Response> Update(Endereco endereco)
         {
             EnderecoUpdateValidator validationRules = new();
             Response response = validationRules.Validate(endereco).ToResponse();
@@ -39,7 +39,7 @@ namespace BusinessLogicalLayer.BLL
             {
                 return response;
             }
-            return enderecoDAL.Update(endereco);
+            return await enderecoDAL.Update(endereco);
         }
         public async Task<Response> Delete(Endereco endereco)
         {

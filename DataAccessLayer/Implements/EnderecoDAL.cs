@@ -86,7 +86,7 @@ namespace DataAccessLayer.Implements
         {
             try
             {
-                Endereco endereco1 = await _kindleDB.Enderecos.Find(endereco.ID);
+                Endereco endereco1 = await _kindleDB.Enderecos.FindAsync(endereco.ID);
                 return SingleResponseFactory<Endereco>.CreateSuccessSingleResponse(endereco1);
             }
             catch (Exception ex)

@@ -1,4 +1,5 @@
-﻿using BusinessLogicalLayer.Interfaces;
+﻿using BusinessLogicalLayer.BLL;
+using BusinessLogicalLayer.Interfaces;
 using Entities;
 using Entities.Enums;
 using Ninject;
@@ -18,10 +19,12 @@ namespace WFPresentationLayer
     public partial class TelaFuncionario : Form
     {
         private readonly IFuncionarioService funcionarioService;
-        public TelaFuncionario(IFuncionarioService service)
+        private readonly IEstadoService estadoService;
+        public TelaFuncionario(IEstadoService estado, IFuncionarioService funcionario)
         {
             InitializeComponent();
-            funcionarioService = service;
+            estadoService = estado;
+            funcionarioService = funcionario;
             this.dtFuncionario.DoubleClick += dtFuncionario_DoubleClick;
         }
 
@@ -29,9 +32,13 @@ namespace WFPresentationLayer
 
         private void TelaFuncionario_Load(object sender, EventArgs e)
         {
-            SincronizarGrid();
+            
             cbGenero.DataSource = Enum.GetNames(typeof(Genero));
             cbNivelAcesso.DataSource = Enum.GetNames(typeof(TipoFuncionario));
+            cbEstado.DataSource = estadoService.GetAll().Itens;
+            cbEstado.DisplayMember = "Unidade_Federal";
+            cbEstado.ValueMember = "Id";
+            SincronizarGrid();
         }
 
         private Funcionario CreateObjectWithForm()
@@ -57,7 +64,6 @@ namespace WFPresentationLayer
                 Senha = txtSenha.Text,
                 Nivel_Acesso = tipo,
                 Telefone = txtTelefone.Text,
-               // EnderecoId = Convert.ToInt32(txtEndereco.Text),
             };
             return funcionario;
         }
@@ -130,9 +136,15 @@ namespace WFPresentationLayer
             txtSobrenome.Clear();
             txtID.Clear();
             txtEmail.Clear();
-            txtEndereco.Clear();
+            txtRua.Clear();
             txtConfSenha.Clear();
             txtSenha.Clear();
+            txtRua.Clear();
+            txtPonto.Clear();
+            txtBairro.Clear();
+            txtCEP.Clear();
+            txtCidade.Clear();
+            txtComplemento.Clear();
         }
 
 

@@ -66,12 +66,24 @@
             this.lblGenero = new System.Windows.Forms.Label();
             this.lblNivelAcesso = new System.Windows.Forms.Label();
             this.cbNivelAcesso = new System.Windows.Forms.ComboBox();
-            this.lblEndereco = new System.Windows.Forms.Label();
-            this.txtEndereco = new System.Windows.Forms.TextBox();
+            this.lblRua = new System.Windows.Forms.Label();
+            this.txtRua = new System.Windows.Forms.TextBox();
             this.lblTelefone = new System.Windows.Forms.Label();
             this.txtTelefone = new System.Windows.Forms.TextBox();
             this.txtIdade = new System.Windows.Forms.TextBox();
             this.lblIdade = new System.Windows.Forms.Label();
+            this.lblBairro = new System.Windows.Forms.Label();
+            this.txtBairro = new System.Windows.Forms.TextBox();
+            this.lblCidade = new System.Windows.Forms.Label();
+            this.txtCidade = new System.Windows.Forms.TextBox();
+            this.lblEstado = new System.Windows.Forms.Label();
+            this.cbEstado = new System.Windows.Forms.ComboBox();
+            this.lblCep = new System.Windows.Forms.Label();
+            this.txtCEP = new System.Windows.Forms.TextBox();
+            this.lblPonto = new System.Windows.Forms.Label();
+            this.txtPonto = new System.Windows.Forms.TextBox();
+            this.lblComplemento = new System.Windows.Forms.Label();
+            this.txtComplemento = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtFuncionario)).BeginInit();
             this.SuspendLayout();
             // 
@@ -150,12 +162,12 @@
             this.FuncionarioGenero,
             this.FuncionarioNivelAcesso,
             this.FuncionarioEndereco});
-            this.dtFuncionario.Location = new System.Drawing.Point(358, 12);
+            this.dtFuncionario.Location = new System.Drawing.Point(616, 12);
             this.dtFuncionario.Name = "dtFuncionario";
             this.dtFuncionario.ReadOnly = true;
             this.dtFuncionario.RowTemplate.Height = 25;
             this.dtFuncionario.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtFuncionario.Size = new System.Drawing.Size(540, 485);
+            this.dtFuncionario.Size = new System.Drawing.Size(282, 485);
             this.dtFuncionario.TabIndex = 7;
             this.dtFuncionario.DoubleClick += new System.EventHandler(this.dtFuncionario_DoubleClick);
             // 
@@ -398,21 +410,21 @@
             this.cbNivelAcesso.Size = new System.Drawing.Size(100, 23);
             this.cbNivelAcesso.TabIndex = 25;
             // 
-            // lblEndereco
+            // lblRua
             // 
-            this.lblEndereco.AutoSize = true;
-            this.lblEndereco.Location = new System.Drawing.Point(12, 351);
-            this.lblEndereco.Name = "lblEndereco";
-            this.lblEndereco.Size = new System.Drawing.Size(59, 15);
-            this.lblEndereco.TabIndex = 28;
-            this.lblEndereco.Text = "Endereço:";
+            this.lblRua.AutoSize = true;
+            this.lblRua.Location = new System.Drawing.Point(362, 46);
+            this.lblRua.Name = "lblRua";
+            this.lblRua.Size = new System.Drawing.Size(30, 15);
+            this.lblRua.TabIndex = 28;
+            this.lblRua.Text = "Rua:";
             // 
-            // txtEndereco
+            // txtRua
             // 
-            this.txtEndereco.Location = new System.Drawing.Point(89, 345);
-            this.txtEndereco.Name = "txtEndereco";
-            this.txtEndereco.Size = new System.Drawing.Size(100, 23);
-            this.txtEndereco.TabIndex = 27;
+            this.txtRua.Location = new System.Drawing.Point(415, 40);
+            this.txtRua.Name = "txtRua";
+            this.txtRua.Size = new System.Drawing.Size(100, 23);
+            this.txtRua.TabIndex = 27;
             // 
             // lblTelefone
             // 
@@ -447,17 +459,127 @@
             this.lblIdade.TabIndex = 31;
             this.lblIdade.Text = "Idade:";
             // 
+            // lblBairro
+            // 
+            this.lblBairro.AutoSize = true;
+            this.lblBairro.Location = new System.Drawing.Point(362, 79);
+            this.lblBairro.Name = "lblBairro";
+            this.lblBairro.Size = new System.Drawing.Size(41, 15);
+            this.lblBairro.TabIndex = 34;
+            this.lblBairro.Text = "Bairro:";
+            // 
+            // txtBairro
+            // 
+            this.txtBairro.Location = new System.Drawing.Point(415, 69);
+            this.txtBairro.Name = "txtBairro";
+            this.txtBairro.Size = new System.Drawing.Size(100, 23);
+            this.txtBairro.TabIndex = 33;
+            // 
+            // lblCidade
+            // 
+            this.lblCidade.AutoSize = true;
+            this.lblCidade.Location = new System.Drawing.Point(362, 106);
+            this.lblCidade.Name = "lblCidade";
+            this.lblCidade.Size = new System.Drawing.Size(47, 15);
+            this.lblCidade.TabIndex = 36;
+            this.lblCidade.Text = "Cidade:";
+            // 
+            // txtCidade
+            // 
+            this.txtCidade.Location = new System.Drawing.Point(415, 98);
+            this.txtCidade.Name = "txtCidade";
+            this.txtCidade.Size = new System.Drawing.Size(100, 23);
+            this.txtCidade.TabIndex = 35;
+            // 
+            // lblEstado
+            // 
+            this.lblEstado.AutoSize = true;
+            this.lblEstado.Location = new System.Drawing.Point(362, 135);
+            this.lblEstado.Name = "lblEstado";
+            this.lblEstado.Size = new System.Drawing.Size(45, 15);
+            this.lblEstado.TabIndex = 38;
+            this.lblEstado.Text = "Estado:";
+            // 
+            // cbEstado
+            // 
+            this.cbEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbEstado.FormattingEnabled = true;
+            this.cbEstado.Location = new System.Drawing.Point(413, 132);
+            this.cbEstado.Name = "cbEstado";
+            this.cbEstado.Size = new System.Drawing.Size(102, 23);
+            this.cbEstado.TabIndex = 39;
+            // 
+            // lblCep
+            // 
+            this.lblCep.AutoSize = true;
+            this.lblCep.Location = new System.Drawing.Point(362, 168);
+            this.lblCep.Name = "lblCep";
+            this.lblCep.Size = new System.Drawing.Size(31, 15);
+            this.lblCep.TabIndex = 41;
+            this.lblCep.Text = "CEP:";
+            // 
+            // txtCEP
+            // 
+            this.txtCEP.Location = new System.Drawing.Point(415, 163);
+            this.txtCEP.Name = "txtCEP";
+            this.txtCEP.Size = new System.Drawing.Size(100, 23);
+            this.txtCEP.TabIndex = 40;
+            // 
+            // lblPonto
+            // 
+            this.lblPonto.AutoSize = true;
+            this.lblPonto.Location = new System.Drawing.Point(362, 200);
+            this.lblPonto.Name = "lblPonto";
+            this.lblPonto.Size = new System.Drawing.Size(116, 15);
+            this.lblPonto.TabIndex = 43;
+            this.lblPonto.Text = "Ponto de Referência:";
+            // 
+            // txtPonto
+            // 
+            this.txtPonto.Location = new System.Drawing.Point(362, 218);
+            this.txtPonto.Name = "txtPonto";
+            this.txtPonto.Size = new System.Drawing.Size(116, 23);
+            this.txtPonto.TabIndex = 42;
+            // 
+            // lblComplemento
+            // 
+            this.lblComplemento.AutoSize = true;
+            this.lblComplemento.Location = new System.Drawing.Point(362, 252);
+            this.lblComplemento.Name = "lblComplemento";
+            this.lblComplemento.Size = new System.Drawing.Size(87, 15);
+            this.lblComplemento.TabIndex = 45;
+            this.lblComplemento.Text = "Complemento:";
+            // 
+            // txtComplemento
+            // 
+            this.txtComplemento.Location = new System.Drawing.Point(362, 273);
+            this.txtComplemento.Name = "txtComplemento";
+            this.txtComplemento.Size = new System.Drawing.Size(116, 23);
+            this.txtComplemento.TabIndex = 44;
+            // 
             // TelaFuncionario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(900, 519);
+            this.Controls.Add(this.lblComplemento);
+            this.Controls.Add(this.txtComplemento);
+            this.Controls.Add(this.lblPonto);
+            this.Controls.Add(this.txtPonto);
+            this.Controls.Add(this.lblCep);
+            this.Controls.Add(this.txtCEP);
+            this.Controls.Add(this.cbEstado);
+            this.Controls.Add(this.lblEstado);
+            this.Controls.Add(this.lblCidade);
+            this.Controls.Add(this.txtCidade);
+            this.Controls.Add(this.lblBairro);
+            this.Controls.Add(this.txtBairro);
             this.Controls.Add(this.txtIdade);
             this.Controls.Add(this.lblIdade);
             this.Controls.Add(this.lblTelefone);
             this.Controls.Add(this.txtTelefone);
-            this.Controls.Add(this.lblEndereco);
-            this.Controls.Add(this.txtEndereco);
+            this.Controls.Add(this.lblRua);
+            this.Controls.Add(this.txtRua);
             this.Controls.Add(this.lblNivelAcesso);
             this.Controls.Add(this.cbNivelAcesso);
             this.Controls.Add(this.lblGenero);
@@ -520,8 +642,8 @@
         private Label lblGenero;
         private Label lblNivelAcesso;
         private ComboBox cbNivelAcesso;
-        private Label lblEndereco;
-        private TextBox txtEndereco;
+        private Label lblRua;
+        private TextBox txtRua;
         private Label lblTelefone;
         private TextBox txtTelefone;
         private TextBox txtIdade;
@@ -538,5 +660,17 @@
         private DataGridViewTextBoxColumn FuncionarioGenero;
         private DataGridViewTextBoxColumn FuncionarioNivelAcesso;
         private DataGridViewTextBoxColumn FuncionarioEndereco;
+        private Label lblBairro;
+        private TextBox txtBairro;
+        private Label lblCidade;
+        private TextBox txtCidade;
+        private Label lblEstado;
+        private ComboBox cbEstado;
+        private Label lblCep;
+        private TextBox txtCEP;
+        private Label lblPonto;
+        private TextBox txtPonto;
+        private Label lblComplemento;
+        private TextBox txtComplemento;
     }
 }

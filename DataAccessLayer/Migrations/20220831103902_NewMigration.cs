@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace DataAccessLayer.Migrations
 {
-    public partial class InitialMigration : Migration
+    public partial class NewMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -19,9 +19,9 @@ namespace DataAccessLayer.Migrations
                     Sobrenome = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
                     CPF = table.Column<string>(type: "varchar(14)", unicode: false, maxLength: 14, nullable: false),
                     DataNascimento = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Idade = table.Column<int>(type: "int", nullable: false),
                     Telefone = table.Column<string>(type: "varchar(20)", unicode: false, maxLength: 20, nullable: false),
                     Email = table.Column<string>(type: "varchar(100)", unicode: false, maxLength: 100, nullable: false),
-                    Idade = table.Column<int>(type: "int", nullable: false),
                     RG = table.Column<string>(type: "varchar(11)", unicode: false, maxLength: 11, nullable: false),
                     Genero = table.Column<int>(type: "int", nullable: false)
                 },
@@ -31,17 +31,17 @@ namespace DataAccessLayer.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Estado",
+                name: "ESTADOS",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Unidade_Federal = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    NomeCompleto = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Unidade_Federal = table.Column<string>(type: "varchar(2)", unicode: false, maxLength: 2, nullable: false),
+                    NomeCompleto = table.Column<string>(type: "varchar(20)", unicode: false, maxLength: 20, nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Estado", x => x.Id);
+                    table.PrimaryKey("PK_ESTADOS", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -59,33 +59,6 @@ namespace DataAccessLayer.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_FORNECEDORES", x => x.ID);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "LOGINS",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Email = table.Column<string>(type: "varchar(100)", unicode: false, maxLength: 100, nullable: false),
-                    Senha = table.Column<string>(type: "varchar(20)", unicode: false, maxLength: 20, nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_LOGINS", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "TipoFuncionario",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    NivelAcesso = table.Column<string>(type: "nvarchar(max)", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_TipoFuncionario", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -107,10 +80,33 @@ namespace DataAccessLayer.Migrations
                 {
                     table.PrimaryKey("PK_ENDERECO", x => x.ID);
                     table.ForeignKey(
-                        name: "FK_ENDERECO_Estado_EstadoId",
+                        name: "FK_ENDERECO_ESTADOS_EstadoId",
                         column: x => x.EstadoId,
-                        principalTable: "Estado",
+                        principalTable: "ESTADOS",
                         principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "PRODUTOS",
+                columns: table => new
+                {
+                    ID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    NOME = table.Column<string>(type: "varchar(30)", unicode: false, maxLength: 30, nullable: false),
+                    DESCRICAO = table.Column<string>(type: "varchar(100)", unicode: false, maxLength: 100, nullable: false),
+                    FORNECEDORES_ID = table.Column<int>(type: "int", nullable: false),
+                    QTD_ESTOQUE = table.Column<int>(type: "int", nullable: false),
+                    VALOR_UNITARIO = table.Column<double>(type: "float", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_PRODUTOS", x => x.ID);
+                    table.ForeignKey(
+                        name: "FK_PRODUTOS_FORNECEDORES_FORNECEDORES_ID",
+                        column: x => x.FORNECEDORES_ID,
+                        principalTable: "FORNECEDORES",
+                        principalColumn: "ID",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -124,12 +120,13 @@ namespace DataAccessLayer.Migrations
                     Sobrenome = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
                     CPF = table.Column<string>(type: "varchar(14)", unicode: false, maxLength: 14, nullable: false),
                     DataNascimento = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Idade = table.Column<int>(type: "int", nullable: false),
                     Telefone = table.Column<string>(type: "varchar(11)", unicode: false, maxLength: 11, nullable: false),
                     Email = table.Column<string>(type: "varchar(100)", unicode: false, maxLength: 100, nullable: false),
                     RG = table.Column<string>(type: "varchar(11)", unicode: false, maxLength: 11, nullable: false),
                     Genero = table.Column<int>(type: "int", nullable: false),
                     Senha = table.Column<string>(type: "varchar(20)", unicode: false, maxLength: 20, nullable: false),
-                    Nivel_AcessoId = table.Column<int>(type: "int", nullable: false),
+                    Nivel_Acesso = table.Column<int>(type: "int", nullable: false),
                     EnderecoId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -140,12 +137,6 @@ namespace DataAccessLayer.Migrations
                         column: x => x.EnderecoId,
                         principalTable: "ENDERECO",
                         principalColumn: "ID",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_FUNCIONARIOS_TipoFuncionario_Nivel_AcessoId",
-                        column: x => x.Nivel_AcessoId,
-                        principalTable: "TipoFuncionario",
-                        principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -160,9 +151,9 @@ namespace DataAccessLayer.Migrations
                 column: "EnderecoId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_FUNCIONARIOS_Nivel_AcessoId",
-                table: "FUNCIONARIOS",
-                column: "Nivel_AcessoId");
+                name: "IX_PRODUTOS_FORNECEDORES_ID",
+                table: "PRODUTOS",
+                column: "FORNECEDORES_ID");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -171,22 +162,19 @@ namespace DataAccessLayer.Migrations
                 name: "CLIENTES");
 
             migrationBuilder.DropTable(
-                name: "FORNECEDORES");
-
-            migrationBuilder.DropTable(
                 name: "FUNCIONARIOS");
 
             migrationBuilder.DropTable(
-                name: "LOGINS");
+                name: "PRODUTOS");
 
             migrationBuilder.DropTable(
                 name: "ENDERECO");
 
             migrationBuilder.DropTable(
-                name: "TipoFuncionario");
+                name: "FORNECEDORES");
 
             migrationBuilder.DropTable(
-                name: "Estado");
+                name: "ESTADOS");
         }
     }
 }

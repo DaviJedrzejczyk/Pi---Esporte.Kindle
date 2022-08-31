@@ -1,9 +1,4 @@
-﻿using BusinessLogicalLayer.BLL;
-using BusinessLogicalLayer.Interfaces;
-using DataAccessLayer;
-using DataAccessLayer.Implements;
-using DataAccessLayer.Interfaces;
-using Microsoft.EntityFrameworkCore;
+﻿using DataAccessLayer;
 using Ninject.Activation;
 using Ninject;
 using Ninject.Modules;
@@ -13,6 +8,10 @@ using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DataAccessLayer.Interfaces;
+using DataAccessLayer.Implements;
+using BusinessLogicalLayer.Interfaces;
+using BusinessLogicalLayer.BLL;
 
 namespace WFPresentationLayer.DI
 {
@@ -31,6 +30,8 @@ namespace WFPresentationLayer.DI
             Bind<IProdutoService>().To<ProdutoBLL>();
             Bind<IEnderecoDALService>().To<EnderecoDAL>();
             Bind<IEnderecoService>().To<EnderecoBLL>();
+            Bind<IEstadoService>().To<EstadoBLL>();
+            Bind<IEstadoDALService>().To<EstadoDAL>();
         }
         public static FormModule Craete()
         {
