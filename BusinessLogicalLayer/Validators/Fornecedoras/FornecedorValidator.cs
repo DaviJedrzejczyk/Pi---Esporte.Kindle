@@ -20,7 +20,7 @@ namespace BusinessLogicalLayer.Validators.Fornecedoras
         }
         public void ValidateCnpj()
         {
-
+           
         }
         public void ValidateEmail()
         {

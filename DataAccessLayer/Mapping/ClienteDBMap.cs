@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Mapping
 {
-    internal class ClienteDBMap : IEntityTypeConfiguration<Cliente>
+    internal class ClienteDBMap : Microsoft.EntityFrameworkCore.IEntityTypeConfiguration<Cliente>
     {
         public void Configure(EntityTypeBuilder<Cliente> builder)
         {

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Mapping
 {
-    internal class FornecedoraDbMap : IEntityTypeConfiguration<Fornecedor>
+    internal class FornecedoraDbMap : Microsoft.EntityFrameworkCore.IEntityTypeConfiguration<Fornecedor>
     {
         public void Configure(EntityTypeBuilder<Fornecedor> builder)
         {

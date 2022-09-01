@@ -11,11 +11,11 @@ namespace DataAccessLayer.Mapping
 {
     internal class EnderecoDBMap
     {
-        internal class EnderecoDbMap : IEntityTypeConfiguration<Endereco>
+        internal class EnderecoDbMap : Microsoft.EntityFrameworkCore.IEntityTypeConfiguration<Endereco>
         {
             public void Configure(EntityTypeBuilder<Endereco> builder)
             {
-                builder.ToTable("ENDERECO");
+                builder.ToTable("ENDERECOS");
                 builder.Property(e => e.Numero).HasMaxLength(30).IsRequired().IsUnicode(false);
                 builder.Property(e => e.Bairro).HasMaxLength(50).IsRequired().IsUnicode(false);
                 builder.Property(e => e.Rua).HasMaxLength(50).IsRequired().IsUnicode(false);

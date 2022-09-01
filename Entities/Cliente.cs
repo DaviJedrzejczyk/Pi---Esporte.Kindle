@@ -7,12 +7,11 @@ using System.Threading.Tasks;
 
 namespace Entities
 {
-    public class Cliente
+    public class Cliente : PessoaFisica
     {
         public int ID { get; set; }
         public string Nome { get; set; }
         public string Sobrenome { get; set; }
-        public string CPF { get; set; }
         public DateTime DataNascimento { get; set; }
         public int Idade
         {
@@ -41,26 +40,22 @@ namespace Entities
 
         }
 
-        public Cliente(string nome, string sobrenome, string cPF, DateTime dataNascimento, string telefone, string email, string rG, Genero genero)
+        public Cliente(string nome, string sobrenome, string cpf, DateTime dataNascimento, string telefone, string email, string rG, Genero genero) : base(cpf, rG)
         {
             Nome = nome;
             Sobrenome = sobrenome;
-            CPF = cPF;
             DataNascimento = dataNascimento;
             Telefone = telefone;
             Email = email;
-            RG = rG;
             Genero = genero;
         }
-        public Cliente(string nome, string sobrenome, string cPF, DateTime dataNascimento, string telefone, string email, string rG)
+        public Cliente(string nome, string sobrenome, string cPF, DateTime dataNascimento, string telefone, string email, string rG) : base(cPF, rG)
         {
             Nome = nome;
             Sobrenome = sobrenome;
-            CPF = cPF;
             DataNascimento = dataNascimento;
             Telefone = telefone;
             Email = email;
-            RG = rG;
         }
     }
 }

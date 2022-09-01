@@ -21,7 +21,10 @@ namespace WFPresentationLayer
             SingleResponse<Funcionario> singleResponse = await funcionario.GetLogin(login);
             if (singleResponse.HasSuccess)
             {
-                MessageBox.Show(singleResponse.Item.Nome + " logado com sucesso!");
+                this.Hide();
+                TelaInicial tela = new();
+                tela.ShowDialog();
+                this.Close();
             }
             else
             {

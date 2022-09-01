@@ -25,5 +25,14 @@ namespace Shared.Factory
                 Exception = ex,
             };
         }
+        public static Response CreateFailureResponse()
+        {
+            return new Response()
+            {
+                HasSuccess = false,
+                Message = ResponsesConstants.MENSAGEM_FALHA,
+
+            };
+        }
     }
 }

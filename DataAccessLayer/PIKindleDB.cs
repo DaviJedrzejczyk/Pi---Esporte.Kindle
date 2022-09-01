@@ -11,9 +11,12 @@ namespace DataAccessLayer
         public DbSet<Fornecedor> Fornecedores { get; set; }
         public DbSet<Estado> Estados { get; set; }
         public DbSet<Produto> Produtos { get; set; }
+        public DbSet<Categoria> Categorias { get; set; }
+        public DbSet<Venda> Vendas { get; set; }
+        public DbSet<ItensVendas> ItensVendas { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
        {
-           optionsBuilder.UseSqlServer(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Aluno\Documents\PIKindleDB.mdf;Integrated Security=True;Connect Timeout=30");
+           optionsBuilder.UseSqlServer(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Aluno\Documents\KindleDB.mdf;Integrated Security=True;Connect Timeout=30");
        }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

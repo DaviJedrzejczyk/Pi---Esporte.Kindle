@@ -14,6 +14,8 @@ namespace Entities
         public Fornecedor Fornecedor { get; set; }
         public int FornecedorId { get; set; }
         public int QtdEstoque { get; set; }
+        public Categoria Categoria { get; set; }
+        public int CategoriaId { get; set; }
         public double Valor_Unitario { get; set; }
     }
 }

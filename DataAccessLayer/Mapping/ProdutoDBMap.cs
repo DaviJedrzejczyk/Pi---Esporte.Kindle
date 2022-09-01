@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Mapping
 {
-    internal class ProdutoDBMap : IEntityTypeConfiguration<Produto>
+    internal class ProdutoDBMap : Microsoft.EntityFrameworkCore.IEntityTypeConfiguration<Produto>
     {
         public void Configure(EntityTypeBuilder<Produto> builder)
         {

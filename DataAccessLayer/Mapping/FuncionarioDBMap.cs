@@ -11,7 +11,7 @@ namespace DataAccessLayer.Mapping
 {
     internal class FuncionarioDBMap
     {
-        internal class FuncionarioDbMap : IEntityTypeConfiguration<Funcionario>
+        internal class FuncionarioDbMap : Microsoft.EntityFrameworkCore.IEntityTypeConfiguration<Funcionario>
         {
             public void Configure(EntityTypeBuilder<Funcionario> builder)
             {

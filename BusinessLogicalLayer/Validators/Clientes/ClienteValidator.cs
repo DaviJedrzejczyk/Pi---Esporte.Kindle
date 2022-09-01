@@ -38,7 +38,8 @@ namespace BusinessLogicalLayer.Validators.Clientes
         {
             RuleFor(c => c.CPF).NotNull().WithMessage(GenericConstants.MENSAGEM_ERRO_CPF_VAZIO)
                                .MaximumLength(14).WithMessage(GenericConstants.MENSAGEM_ERRO_CPF_MAIOR)
-                               .MinimumLength(11).WithMessage(GenericConstants.MENSAGEM_ERRO_CPF_MENOR);
+                               .MinimumLength(11).WithMessage(GenericConstants.MENSAGEM_ERRO_CPF_MENOR)
+                               .IsCpfValid().WithMessage(GenericConstants.MENSAGEM_ERRO_CPF_FORMATO_INVALIDO);
         }
         public void ValidateTelefone()
         {
@@ -50,7 +51,8 @@ namespace BusinessLogicalLayer.Validators.Clientes
         {
             RuleFor(c => c.RG).NotNull().WithMessage(GenericConstants.MENSAGEM_ERRO_RG_VAZIO)
                               .MaximumLength(9).WithMessage(GenericConstants.MENSAGEM_ERRO_RG_MAIOR)
-                              .MinimumLength(9).WithMessage(GenericConstants.MENSAGEM_ERRO_RG_MENOR);
+                              .MinimumLength(9).WithMessage(GenericConstants.MENSAGEM_ERRO_RG_MENOR)
+                              .IsRgValid().WithMessage(GenericConstants.MENSAGEM_ERRO_RG_FORMATO_INVALIDO);
         }
     }
 }

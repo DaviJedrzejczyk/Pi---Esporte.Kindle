@@ -19,13 +19,18 @@ namespace BusinessLogicalLayer.Constants
         public const string MENSAGEM_ERRO_CPF_VAZIO = "CPF deve ser informado";
         public const string MENSAGEM_ERRO_CPF_MAIOR = "CPF deve conter no máximo 11 caracteres";
         public const string MENSAGEM_ERRO_CPF_MENOR = "CPF deve conter no mínimo 11 caracteres";
+        public const string MENSAGEM_ERRO_CPF_FORMATO_INVALIDO = "Formato do CPF inválido";
         public const string MENSAGEM_ERRO_RG_VAZIO = "RG deve ser informado";
         public const string MENSAGEM_ERRO_RG_MAIOR = "RG deve conter no máximo 10 digitos";
         public const string MENSAGEM_ERRO_RG_MENOR = "RG deve conter no mínimo 7 digitos";
+        public const string MENSAGEM_ERRO_RG_FORMATO_INVALIDO = "Formato do RG inválido";
         public const string MENSAGEM_ERRO_NOME_VAZIO = "Nome deve ser informado";
         public const string MENSAGEM_ERRO_NOME_MAIOR = "Nome deve ter no máximo 50 caracteres";
         public const string MENSAGEM_ERRO_NOME_MENOR = "Nome deve ter no mínimo 5 caracteres";
         public const string MENSGEM_ERRO_SOBRENOME_VAZIO = "Sobrenome deve ser informado";
         public const string MENSAGEM_ERRO_DATA_VAZIO = "Data de Nascimento deve ser informada";
+        public const string MENSAGEM_ERRO_DESCRICAO_VAZIA = "Descrição deve ser informada";
+        public const string MENSAGEM_ERRO_DESCRICAO_MAIOR = "Descrição deve conter no máximo 50 caracteres";
+        public const string MENSAGEM_ERRO_DESCRICAO_MENOR = "Descrição deve conter no mínimo 10 caracteres";
     }
 }

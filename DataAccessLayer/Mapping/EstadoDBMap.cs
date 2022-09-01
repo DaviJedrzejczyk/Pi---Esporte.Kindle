@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Mapping
 {
-    internal class EstadoDBMap : IEntityTypeConfiguration<Estado>
+    internal class EstadoDBMap : Microsoft.EntityFrameworkCore.IEntityTypeConfiguration<Estado>
     {
         public void Configure(EntityTypeBuilder<Estado> builder)
         {

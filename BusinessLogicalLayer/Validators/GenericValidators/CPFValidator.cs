@@ -11,7 +11,7 @@ namespace BusinessLogicalLayer.Validators.GenericValidators
     internal static class CPFValidator
     {
 
-        public static IRuleBuilderOptions<object,string> IsCpfValid(this IRuleBuilder<object, string> param)
+        public static IRuleBuilderOptions<PessoaFisica,string> IsCpfValid<PessoaFisica>(this IRuleBuilder<PessoaFisica, string> param)
         {
             return param.Must(c => ValidateCpf(c));
         }
