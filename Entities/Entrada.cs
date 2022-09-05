@@ -15,6 +15,6 @@ namespace Entities
         public int FuncionarioId { get; set; }
         public  Fornecedor Fornecedor { get; set; }
         public int FornecedorID { get; set; }
-        public List<ProdutosEntrada> produtosEntradas { get; set; }
+        public List<ProdutoEntrada> produtosEntradas { get; set; }
     }
 }

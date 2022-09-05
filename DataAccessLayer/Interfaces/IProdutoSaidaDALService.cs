@@ -8,10 +8,9 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Interfaces
 {
-    public interface IVendaDALService
+    public interface IProdutoSaidaDALService
     {
-
-        Task<Response> Insert(Venda venda);
-        Task<DataResponse<Venda>> GetAll();
+        Task<Response> Insert(ProdutoSaida produto);
+        Task<DataResponse<ProdutoSaidaView>> GetAllBySaidaID(ProdutoSaida produto);
     }
 }

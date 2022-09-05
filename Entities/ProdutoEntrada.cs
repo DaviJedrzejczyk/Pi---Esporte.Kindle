@@ -1,6 +1,6 @@
 ﻿namespace Entities
 {
-    public class ProdutosEntrada
+    public class ProdutoEntrada
     {
         public int ID { get; set; }
         public Entrada Entrada { get; set; }

@@ -7,6 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Validators\Vendas\**" />
+    <EmbeddedResource Remove="Validators\Vendas\**" />
+    <None Remove="Validators\Vendas\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="FluentValidation" Version="11.2.0" />
   </ItemGroup>
 
@@ -14,10 +20,6 @@
     <ProjectReference Include="..\DataAccessLayer\DataAccessLayer.csproj" />
     <ProjectReference Include="..\Entities\Entities.csproj" />
     <ProjectReference Include="..\Shared\Shared.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Validators\Vendas\" />
   </ItemGroup>
 
 </Project>

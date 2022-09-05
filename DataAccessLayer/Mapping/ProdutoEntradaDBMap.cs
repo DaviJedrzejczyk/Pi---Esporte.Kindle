@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Mapping
 {
-    internal class ProdutoEntradaDBMap : IEntityTypeConfiguration<ProdutosEntrada>
+    internal class ProdutoEntradaDBMap : IEntityTypeConfiguration<ProdutoEntrada>
     {
-        public void Configure(EntityTypeBuilder<ProdutosEntrada> builder)
+        public void Configure(EntityTypeBuilder<ProdutoEntrada> builder)
         {
             builder.ToTable("PRODUTOS_ENTRADAS");
         }

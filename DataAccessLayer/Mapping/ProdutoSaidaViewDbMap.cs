@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Mapping
 {
-    internal class ProdutoSaidaViewDbMap : IEntityTypeConfiguration<ProdutosSaidaView>
+    internal class ProdutoSaidaViewDbMap : IEntityTypeConfiguration<ProdutoSaidaView>
     {
-        public void Configure(EntityTypeBuilder<ProdutosSaidaView> builder)
+        public void Configure(EntityTypeBuilder<ProdutoSaidaView> builder)
         {
             builder.ToTable("PRODUTO_SAIDA_VIEWS");
         }

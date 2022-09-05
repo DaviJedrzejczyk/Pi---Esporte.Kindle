@@ -18,6 +18,6 @@ namespace Entities
         public int ClienteID { get; set; }
         public FormaPagamento FormaPagamento{ get; set; }
         public double ValorTotal { get; set; }
-        public List<ProdutosSaidaView> produtosSaidas { get; set; }
+        public List<ProdutoSaidaView> produtosSaidas { get; set; }
     }
 }
