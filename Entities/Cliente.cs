@@ -33,7 +33,6 @@ namespace Entities
         }
         public string Telefone { get; set; }
         public string Email { get; set; }
-        public string RG { get; set; }
         public Genero Genero { get; set; }
         public Cliente()
         {

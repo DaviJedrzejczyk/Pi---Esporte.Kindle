@@ -12,7 +12,6 @@ namespace DataAccessLayer
         public DbSet<Estado> Estados { get; set; }
         public DbSet<Produto> Produtos { get; set; }
         public DbSet<Categoria> Categorias { get; set; }
-        public DbSet<Venda> Vendas { get; set; }
         public DbSet<Saida> Saidas { get; set; }
         public DbSet<SaidaView> SaidaViews { get; set; }
         public DbSet<Entrada> Entradas { get; set; }
@@ -24,7 +23,7 @@ namespace DataAccessLayer
         public DbSet<ProdutoView> ProdutoViews { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Aluno\Documents\KindleDB.mdf;Integrated Security=True;Connect Timeout=30");
+            optionsBuilder.UseSqlServer(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Aluno\Documents\PIKindleDB.mdf;Integrated Security=True;Connect Timeout=30");
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

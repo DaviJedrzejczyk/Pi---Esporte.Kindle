@@ -16,5 +16,8 @@ namespace BusinessLogicalLayer.Interfaces
         Task<Response> Delete(Produto produto);
         Task<DataResponse<Produto>> GetAll();
         Task<SingleResponse<Produto>> GetById(Produto produto);
+        double CalculateNewValueWihtProducts(Produto OldProduct, Produto NewProduct);
+        DataResponse<Produto> CalculateNewValue(List<Produto> produtos);
+        Task<Response> UpdateValueAndInventory(Produto produto);
     }
 }

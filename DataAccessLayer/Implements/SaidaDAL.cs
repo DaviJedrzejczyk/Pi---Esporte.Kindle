@@ -63,7 +63,7 @@ namespace DataAccessLayer.Implements
             }
         }
 
-        public async Task<SingleResponse<SaidaView>> GetSaidaViewById(SaidaView saida)
+        public async Task<SingleResponse<SaidaView>> GetSaidaViewById(Saida saida)
         {
             try
             {

@@ -17,5 +17,6 @@ namespace Entities
         public DateTime DataSaida { get; set; }
         public FormaPagamento FormaPagamento { get; set; }
         public double Valor_Total { get; set; }
+        public List<ProdutoSaida> produtoSaidas { get; set; }
     }
 }

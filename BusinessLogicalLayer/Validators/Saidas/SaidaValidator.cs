@@ -1,4 +1,5 @@
-﻿using Entities;
+﻿using BusinessLogicalLayer.Constants;
+using Entities;
 using FluentValidation;
 using System;
 using System.Collections.Generic;
@@ -12,7 +13,7 @@ namespace BusinessLogicalLayer.Validators.Saidas
     {
         public void ValidateID()
         {
-
+            RuleFor(s => s.ID).NotNull().WithMessage(GenericConstants.MENSAGEM_ERRO_ID_VAZIO);
         }
         public void ValidateDataSaida()
         {

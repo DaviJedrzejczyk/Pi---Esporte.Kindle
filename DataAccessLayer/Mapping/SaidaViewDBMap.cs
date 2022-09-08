@@ -13,7 +13,7 @@ namespace DataAccessLayer.Mapping
     {
         public void Configure(EntityTypeBuilder<SaidaView> builder)
         {
-            builder.ToTable("SAIDA_VEIW");
+            builder.ToTable("SAIDA_VIEW");
         }
     }
 }

@@ -35,7 +35,9 @@ namespace DataAccessLayer.Implements
 
         public async Task<Response> Update(Produto produto)
         {
-            Produto produto1 = _kindleDB.Produtos.Find(produto.ID);
+            Produto? produto1 = _kindleDB.Produtos.Find(produto.ID);
+            if (produto1 == null)
+                return ResponseFactory.CreateFailureResponse();
             produto1.Nome = produto.Nome;
             produto1.Descricao = produto.Descricao;
             produto1.Valor_Unitario = produto.Valor_Unitario;
@@ -53,7 +55,9 @@ namespace DataAccessLayer.Implements
         }
         public async Task<Response> Delete(Produto produto)
         {
-            Produto produto1 = _kindleDB.Produtos.Find(produto.ID);
+            Produto? produto1 = _kindleDB.Produtos.Find(produto.ID);
+            if(produto1 == null)
+                return ResponseFactory.CreateFailureResponse();
             _kindleDB.Produtos.Remove(produto1);
             try
             {
@@ -83,7 +87,9 @@ namespace DataAccessLayer.Implements
         {
             try
             {
-                Produto produto1 = await _kindleDB.Produtos.FindAsync(produto.ID);
+                Produto? produto1 = await _kindleDB.Produtos.FindAsync(produto.ID);
+                if (produto1 == null)
+                    return SingleResponseFactory<Produto>.CreateFailureSingleResponse();
                 return SingleResponseFactory<Produto>.CreateSuccessSingleResponse(produto1);
             }
             catch (Exception ex)
@@ -92,6 +98,24 @@ namespace DataAccessLayer.Implements
             }
         }
 
-      
+        public async Task<Response> UpdateValueAndInventory(Produto produto)
+        {
+            Produto? produto1 = _kindleDB.Produtos.Find(produto.ID);
+            if (produto1 == null)
+            {
+                return ResponseFactory.CreateFailureResponse();
+            }
+            produto1.Valor_Unitario = produto.Valor_Unitario;
+            produto1.QtdEstoque = produto.QtdEstoque;
+            try
+            {
+                await _kindleDB.SaveChangesAsync();
+                return ResponseFactory.CreateSuccessResponse();
+            }
+            catch (Exception ex)
+            {
+                return ResponseFactory.CreateFailureResponse(ex);
+            }
+        }
     }
 }

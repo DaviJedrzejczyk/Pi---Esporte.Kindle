@@ -1,4 +1,6 @@
-﻿using BusinessLogicalLayer.Interfaces;
+﻿using BusinessLogicalLayer.Extensions;
+using BusinessLogicalLayer.Interfaces;
+using BusinessLogicalLayer.Validators.Saidas;
 using DataAccessLayer.Interfaces;
 using Entities;
 using Entities.Filters;
@@ -8,31 +10,54 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Transactions;
 
 namespace BusinessLogicalLayer.BLL
 {
     public class SaidaBLL : ISaidaService
     {
         private readonly ISaidaDALService saidaDAL;
-        public SaidaBLL(ISaidaDALService saidaDAL)
+        private readonly IProdutoSaidaDALService produtoSaidaDAL;
+        public SaidaBLL(ISaidaDALService saidaDAL, IProdutoSaidaDALService produtoSaidaDAL)
         {
             this.saidaDAL = saidaDAL;
+            this.produtoSaidaDAL = produtoSaidaDAL;
         }
         public async Task<Response> Insert(Saida saida)
         {
-            return await saidaDAL.Insert(saida);
+            SaidaInsertValidator saidaInsertValidator = new();
+            Response response = saidaInsertValidator.Validate(saida).ToResponse();
+            using (TransactionScope transactionScope = new())
+            {
+                response = await saidaDAL.Insert(saida);
+                for (int i = 0; i < saida.produtoSaidas.Count; i++)
+                {
+                    saida.produtoSaidas[i].SaidaId = saida.ID;
+                    response = await produtoSaidaDAL.Insert(saida.produtoSaidas[i]);
+                }
+                if (!response.HasSuccess)
+                {
+                    return response;
+                }
+                transactionScope.Complete();
+            }
+            return response;
+            
         }
         public async Task<DataResponse<SaidaView>> GetAll()
         {
             return await saidaDAL.GetAll();
         }
-
+        public async Task<DataResponse<ProdutoSaidaView>> GetAllBySaidaId(ProdutoSaida saida)
+        {
+            return await produtoSaidaDAL.GetAllBySaidaID(saida);
+        }
         public async Task<SingleResponse<Saida>> GetById(Saida saida)
         {
             return await saidaDAL.GetById(saida);
         }
 
-        public async Task<SingleResponse<SaidaView>> GetSaidaViewById(SaidaView saida)
+        public async Task<SingleResponse<SaidaView>> GetSaidaViewById(Saida saida)
         {
             return await saidaDAL.GetSaidaViewById(saida);
         }

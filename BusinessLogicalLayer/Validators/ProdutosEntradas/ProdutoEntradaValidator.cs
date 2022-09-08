@@ -1,4 +1,5 @@
-﻿using Entities;
+﻿using BusinessLogicalLayer.Constants;
+using Entities;
 using FluentValidation;
 using System;
 using System.Collections.Generic;
@@ -12,7 +13,7 @@ namespace BusinessLogicalLayer.Validators.ProdutosEntradas
     {
         public void ValidateID()
         {
-
+            RuleFor(p => p.ID).NotNull().WithMessage(GenericConstants.MENSAGEM_ERRO_ID_VAZIO);
         }
         public void ValidateQuantidade()
         {
