@@ -1,4 +1,5 @@
-﻿using BusinessLogicalLayer.Extensions;
+﻿
+using BusinessLogicalLayer.Extensions;
 using BusinessLogicalLayer.Interfaces;
 using BusinessLogicalLayer.Validators.Categorias;
 using DataAccessLayer.Interfaces;

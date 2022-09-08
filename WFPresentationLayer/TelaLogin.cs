@@ -3,6 +3,7 @@ using BusinessLogicalLayer.Interfaces;
 using Entities;
 using Ninject;
 using Shared;
+using System.Drawing.Drawing2D;
 
 namespace WFPresentationLayer
 {
@@ -30,6 +31,61 @@ namespace WFPresentationLayer
             {
                 MessageBox.Show("Erro");
             }
+        }
+
+        private void TelaLogin_Load(object sender, EventArgs e)
+        {
+          
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+
+       
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblEmail_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtEmail_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CheckSenha_CheckedChanged(object sender, EventArgs e)
+        {
+            if (CheckSenha.Checked)
+            {
+                txtSenha.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                txtSenha.UseSystemPasswordChar = true;
+            }
+        }
+
+        private void pictureBox1_Click_1(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

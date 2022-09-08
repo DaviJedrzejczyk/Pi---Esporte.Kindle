@@ -12,7 +12,6 @@ namespace DataAccessLayer
         public DbSet<Estado> Estados { get; set; }
         public DbSet<Produto> Produtos { get; set; }
         public DbSet<Categoria> Categorias { get; set; }
-        public DbSet<Venda> Vendas { get; set; }
         public DbSet<Saida> Saidas { get; set; }
         public DbSet<SaidaView> SaidaViews { get; set; }
         public DbSet<Entrada> Entradas { get; set; }
