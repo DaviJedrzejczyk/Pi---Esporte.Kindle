@@ -152,7 +152,7 @@ namespace WFPresentationLayer
                         produtosWithValueAndInventory.Add(produtoService.GetById(produtos[i]).Result.Item);
                         produtosWithValueAndInventory[i].QtdEstoque = produtos[i].QtdEstoque;
                     }
-                    DataResponse<Produto> dataResponse = produtoService.CalculateNewValue(produtos);
+                    DataResponse<Produto> dataResponse = await produtoService.CalculateNewValue(produtos);
                     Response response = await entradaService.Insert(entrada);
                     if (response.HasSuccess)
                     {

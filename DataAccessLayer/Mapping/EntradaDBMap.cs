@@ -14,6 +14,7 @@ namespace DataAccessLayer.Mapping
         public void Configure(EntityTypeBuilder<Entrada> builder)
         {
             builder.ToTable("ENTRADAS");
+            builder.HasOne(x => x.Fornecedor).WithMany().HasForeignKey(t => t.FornecedorID);
         }
     }
 }

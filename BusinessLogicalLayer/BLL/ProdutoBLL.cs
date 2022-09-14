@@ -48,7 +48,7 @@ namespace BusinessLogicalLayer.BLL
             return Math.Round(valor, 2);
         }
 
-        public async DataResponse<Produto> CalculateNewValue(List<Produto> produtos)
+        public async Task<DataResponse<Produto>> CalculateNewValue(List<Produto> produtos)
         {
             SingleResponse<Produto> singleResponse = new();
             for (int i = 0; i < produtos.Count; i++)
@@ -71,5 +71,7 @@ namespace BusinessLogicalLayer.BLL
         {
             return await produtoDAL.UpdateValueAndInventory(produto);
         }
+
+      
     }
 }
