@@ -54,5 +54,6 @@ namespace BusinessLogicalLayer.Validators.Clientes
                               .MinimumLength(9).WithMessage(GenericConstants.MENSAGEM_ERRO_RG_MENOR)
                               .IsRgValid().WithMessage(GenericConstants.MENSAGEM_ERRO_RG_FORMATO_INVALIDO);
         }
+
     }
 }

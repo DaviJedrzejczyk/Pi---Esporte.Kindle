@@ -28,10 +28,6 @@ namespace WFPresentationLayer.DI
             Bind<IFornecedoraDALService>().To<FornecedoraDAL>();
             Bind<IProdutoDALService>().To<ProdutoDAL>();
             Bind<IProdutoService>().To<ProdutoBLL>();
-            Bind<IEnderecoDALService>().To<EnderecoDAL>();
-            Bind<IEnderecoService>().To<EnderecoBLL>();
-            Bind<IEstadoService>().To<EstadoBLL>();
-            Bind<IEstadoDALService>().To<EstadoDAL>();
             Bind<ICategoriaDALService>().To<CategoriaDAL>();
             Bind<ICategoriaService>().To<CategoriaBLL>();
             Bind<IProdutoEntradaService>().To<ProdutoEntradaBLL>();

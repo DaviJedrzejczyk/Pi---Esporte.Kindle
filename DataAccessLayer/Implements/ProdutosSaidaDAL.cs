@@ -24,11 +24,11 @@ namespace DataAccessLayer.Implements
             try
             {
                 List<ProdutoSaidaView> produtoSaidaViews = await pIKindleDB.ProdutosSaidaViews.Where(p => p.Saida.ID == produto.Saida.ID).ToListAsync();
-                return DataResponseFactory<ProdutoSaidaView>.CreateSuccessResponse(produtoSaidaViews);
+                return DataResponseFactory<ProdutoSaidaView>.CreateInstance().CreateSuccessResponse(produtoSaidaViews);
             }
             catch (Exception ex)
             {
-                return DataResponseFactory<ProdutoSaidaView>.CreateFailureResponse(ex);
+                return DataResponseFactory<ProdutoSaidaView>.CreateInstance().CreateFailureResponse(ex);
             }
         }
 
@@ -38,11 +38,11 @@ namespace DataAccessLayer.Implements
             try
             {
                 await pIKindleDB.SaveChangesAsync();
-                return ResponseFactory.CreateSuccessResponse();
+                return ResponseFactory.CreateInstance().CreateSuccessResponse();
             }
             catch (Exception ex)
             {
-                return ResponseFactory.CreateFailureResponse(ex);
+                return ResponseFactory.CreateInstance().CreateFailureResponse(ex);
             }
         }
     }

@@ -25,11 +25,11 @@ namespace DataAccessLayer.Implements
             try
             {
                 await _kindleDB.SaveChangesAsync();
-                return ResponseFactory.CreateSuccessResponse();
+                return ResponseFactory.CreateInstance().CreateSuccessResponse();
             }
             catch (Exception ex)
             {
-                return ResponseFactory.CreateFailureResponse(ex);
+                return ResponseFactory.CreateInstance().CreateFailureResponse(ex);
             }
         }
 
@@ -37,7 +37,7 @@ namespace DataAccessLayer.Implements
         {
             Produto? produto1 = _kindleDB.Produtos.Find(produto.ID);
             if (produto1 == null)
-                return ResponseFactory.CreateFailureResponse();
+                return ResponseFactory.CreateInstance().CreateFailureResponse();
             produto1.Nome = produto.Nome;
             produto1.Descricao = produto.Descricao;
             produto1.Valor_Unitario = produto.Valor_Unitario;
@@ -46,27 +46,27 @@ namespace DataAccessLayer.Implements
             try
             {
                 await _kindleDB.SaveChangesAsync();
-                return ResponseFactory.CreateSuccessResponse();
+                return ResponseFactory.CreateInstance().CreateSuccessResponse();
             }
             catch (Exception ex)
             {
-                return ResponseFactory.CreateFailureResponse(ex);
+                return ResponseFactory.CreateInstance().CreateFailureResponse(ex);
             }
         }
         public async Task<Response> Delete(Produto produto)
         {
             Produto? produto1 = _kindleDB.Produtos.Find(produto.ID);
             if(produto1 == null)
-                return ResponseFactory.CreateFailureResponse();
+                return ResponseFactory.CreateInstance().CreateFailureResponse();
             _kindleDB.Produtos.Remove(produto1);
             try
             {
                 await _kindleDB.SaveChangesAsync();
-                return ResponseFactory.CreateSuccessResponse();
+                return ResponseFactory.CreateInstance().CreateSuccessResponse();
             }
             catch (Exception ex)
             {
-                return ResponseFactory.CreateFailureResponse(ex);
+                return ResponseFactory.CreateInstance().CreateFailureResponse(ex);
             }
         }
 
@@ -75,11 +75,11 @@ namespace DataAccessLayer.Implements
             try
             {
                 List<Produto> produtos = await _kindleDB.Produtos.ToListAsync();
-                return DataResponseFactory<Produto>.CreateSuccessResponse(produtos);
+                return DataResponseFactory<Produto>.CreateInstance().CreateSuccessResponse(produtos);
             }
             catch (Exception ex)
             {
-                return DataResponseFactory<Produto>.CreateFailureResponse(ex);
+                return DataResponseFactory<Produto>.CreateInstance().CreateFailureResponse(ex);
             }
         }
 
@@ -89,12 +89,12 @@ namespace DataAccessLayer.Implements
             {
                 Produto? produto1 = await _kindleDB.Produtos.FindAsync(produto.ID);
                 if (produto1 == null)
-                    return SingleResponseFactory<Produto>.CreateFailureSingleResponse();
-                return SingleResponseFactory<Produto>.CreateSuccessSingleResponse(produto1);
+                    return SingleResponseFactory<Produto>.CreateInstance().CreateFailureSingleResponse();
+                return SingleResponseFactory<Produto>.CreateInstance().CreateSuccessSingleResponse(produto1);
             }
             catch (Exception ex)
             {
-                return SingleResponseFactory<Produto>.CreateFailureSingleResponse(ex);
+                return SingleResponseFactory<Produto>.CreateInstance().CreateFailureSingleResponse(ex);
             }
         }
 
@@ -103,18 +103,18 @@ namespace DataAccessLayer.Implements
             Produto? produto1 = _kindleDB.Produtos.Find(produto.ID);
             if (produto1 == null)
             {
-                return ResponseFactory.CreateFailureResponse();
+                return ResponseFactory.CreateInstance().CreateFailureResponse();
             }
             produto1.Valor_Unitario = produto.Valor_Unitario;
             produto1.QtdEstoque = produto.QtdEstoque;
             try
             {
                 await _kindleDB.SaveChangesAsync();
-                return ResponseFactory.CreateSuccessResponse();
+                return ResponseFactory.CreateInstance().CreateSuccessResponse();
             }
             catch (Exception ex)
             {
-                return ResponseFactory.CreateFailureResponse(ex);
+                return ResponseFactory.CreateInstance().CreateFailureResponse(ex);
             }
         }
     }

@@ -26,11 +26,11 @@ namespace DataAccessLayer.Implements
             try
             {
                 await pIKindleDB.SaveChangesAsync();
-                return ResponseFactory.CreateSuccessResponse();
+                return ResponseFactory.CreateInstance().CreateSuccessResponse();
             }
             catch (Exception ex)
             {
-                return ResponseFactory.CreateFailureResponse(ex);
+                return ResponseFactory.CreateInstance().CreateFailureResponse(ex);
             }
         }
         public async Task<DataResponse<EntradaView>> GetAll()
@@ -38,11 +38,11 @@ namespace DataAccessLayer.Implements
             try
             {
                 List<EntradaView> entradaViews = await pIKindleDB.EntradaViews.ToListAsync();
-                return DataResponseFactory<EntradaView>.CreateSuccessResponse(entradaViews);
+                return DataResponseFactory<EntradaView>.CreateInstance().CreateSuccessResponse(entradaViews);
             }
             catch (Exception ex)
             {
-                return DataResponseFactory<EntradaView>.CreateFailureResponse(ex);
+                return DataResponseFactory<EntradaView>.CreateInstance().CreateFailureResponse(ex);
             }
         }
         public async Task<SingleResponse<EntradaView>> GetById(Entrada entrada)
@@ -52,13 +52,13 @@ namespace DataAccessLayer.Implements
                 EntradaView? entrada1 = await pIKindleDB.EntradaViews.FindAsync(entrada.ID);
 
                 if (entrada1 == null)
-                    return SingleResponseFactory<EntradaView>.CreateFailureSingleResponse();
+                    return SingleResponseFactory<EntradaView>.CreateInstance().CreateFailureSingleResponse();
 
-                return SingleResponseFactory<EntradaView>.CreateSuccessSingleResponse(entrada1);
+                return SingleResponseFactory<EntradaView>.CreateInstance().CreateSuccessSingleResponse(entrada1);
             }
             catch (Exception ex)
             {
-                return SingleResponseFactory<EntradaView>.CreateFailureSingleResponse(ex);
+                return SingleResponseFactory<EntradaView>.CreateInstance().CreateFailureSingleResponse(ex);
             }
         }
         public async Task<SingleResponse<List<EntradaView>>> GetByDate(FilterEntrada filterEntrada)
@@ -67,11 +67,11 @@ namespace DataAccessLayer.Implements
             {
                 List<EntradaView> entradaViews = await pIKindleDB.EntradaViews.Where(e => e.DataEntrada <= filterEntrada.Inicio &&
                                                                                           e.DataEntrada <= filterEntrada.Fim).ToListAsync();
-                return SingleResponseFactory<List<EntradaView>>.CreateSuccessSingleResponse(entradaViews);
+                return SingleResponseFactory<List<EntradaView>>.CreateInstance().CreateSuccessSingleResponse(entradaViews);
             }
             catch (Exception ex)
             {
-                return SingleResponseFactory<List<EntradaView>>.CreateFailureSingleResponse(ex);
+                return SingleResponseFactory<List<EntradaView>>.CreateInstance().CreateFailureSingleResponse(ex);
             }
         }
     }

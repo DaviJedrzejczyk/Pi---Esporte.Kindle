@@ -8,7 +8,16 @@ namespace Shared.Factory
 {
     public class ResponseFactory
     {
-        public static Response CreateSuccessResponse()
+        private static ResponseFactory _factory;
+        public static ResponseFactory CreateInstance()
+        {
+            if (_factory == null)
+            {
+                _factory = new ResponseFactory();
+            }
+            return _factory;
+        }
+        public Response CreateSuccessResponse()
         {
             return new Response()
             {
@@ -16,7 +25,7 @@ namespace Shared.Factory
                 Message = ResponsesConstants.MENSAGEM_SUCESSO,
             };
         }
-        public static Response CreateFailureResponse(Exception ex)
+        public Response CreateFailureResponse(Exception ex)
         {
             return new Response()
             {
@@ -25,7 +34,7 @@ namespace Shared.Factory
                 Exception = ex,
             };
         }
-        public static Response CreateFailureResponse()
+        public Response CreateFailureResponse()
         {
             return new Response()
             {

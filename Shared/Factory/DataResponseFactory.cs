@@ -8,7 +8,16 @@ namespace Shared.Factory
 {
     public class DataResponseFactory<T>
     {
-        public static DataResponse<T> CreateSuccessResponse(List<T> Itens)
+        private static DataResponseFactory<T> _factory;
+        public static DataResponseFactory<T> CreateInstance()
+        {
+            if (_factory == null)
+            {
+                _factory = new DataResponseFactory<T>();
+            }
+            return _factory;
+        }
+        public DataResponse<T> CreateSuccessResponse(List<T> Itens)
         {
             return new DataResponse<T>()
             {
@@ -17,7 +26,7 @@ namespace Shared.Factory
                 Itens = Itens,
             };
         }
-        public static DataResponse<T> CreateFailureResponse(Exception ex)
+        public DataResponse<T> CreateFailureResponse(Exception ex)
         {
             return new DataResponse<T>()
             {
@@ -26,7 +35,7 @@ namespace Shared.Factory
                 Exception = ex,
             };
         }
-        public static DataResponse<T> CreateFailureResponse()
+        public DataResponse<T> CreateFailureResponse()
         {
             return new DataResponse<T>()
             {

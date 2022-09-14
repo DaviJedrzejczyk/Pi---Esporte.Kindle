@@ -26,11 +26,11 @@ namespace DataAccessLayer.Implements
             try
             {
                 await _kindle.SaveChangesAsync();
-                return ResponseFactory.CreateSuccessResponse();
+                return ResponseFactory.CreateInstance().CreateSuccessResponse();
             }
             catch (Exception ex)
             {
-                return ResponseFactory.CreateFailureResponse(ex);
+                return ResponseFactory.CreateInstance().CreateFailureResponse(ex);
             }
         }
         public async Task<DataResponse<SaidaView>> GetAll()
@@ -38,11 +38,11 @@ namespace DataAccessLayer.Implements
             try
             {
                 List<SaidaView> saidaViews = await _kindle.SaidaViews.ToListAsync();
-                return DataResponseFactory<SaidaView>.CreateSuccessResponse(saidaViews);
+                return DataResponseFactory<SaidaView>.CreateInstance().CreateSuccessResponse(saidaViews);
             }
             catch (Exception ex)
             {
-                return DataResponseFactory<SaidaView>.CreateFailureResponse(ex);
+                return DataResponseFactory<SaidaView>.CreateInstance().CreateFailureResponse(ex);
             }
         }
 
@@ -53,13 +53,13 @@ namespace DataAccessLayer.Implements
                 Saida? saida1 = await _kindle.Saidas.FindAsync(saida.ID);
 
                 if (saida1 == null)
-                    return SingleResponseFactory<Saida>.CreateFailureSingleResponse();
+                    return SingleResponseFactory<Saida>.CreateInstance().CreateFailureSingleResponse();
 
-                return SingleResponseFactory<Saida>.CreateSuccessSingleResponse(saida1);
+                return SingleResponseFactory<Saida>.CreateInstance().CreateSuccessSingleResponse(saida1);
             }
             catch (Exception ex)
             {
-                return SingleResponseFactory<Saida>.CreateFailureSingleResponse(ex);
+                return SingleResponseFactory<Saida>.CreateInstance().CreateFailureSingleResponse(ex);
             }
         }
 
@@ -70,13 +70,13 @@ namespace DataAccessLayer.Implements
                 SaidaView? saida1 = await _kindle.SaidaViews.FindAsync(saida.ID);
                 
                 if (saida1 == null)
-                    return SingleResponseFactory<SaidaView>.CreateFailureSingleResponse();
+                    return SingleResponseFactory<SaidaView>.CreateInstance().CreateFailureSingleResponse();
 
-                return SingleResponseFactory<SaidaView>.CreateSuccessSingleResponse(saida1);
+                return SingleResponseFactory<SaidaView>.CreateInstance().CreateSuccessSingleResponse(saida1);
             }
             catch (Exception ex)
             {
-                return SingleResponseFactory<SaidaView>.CreateFailureSingleResponse(ex);
+                return SingleResponseFactory<SaidaView>.CreateInstance().CreateFailureSingleResponse(ex);
             }
         }
 
@@ -86,11 +86,11 @@ namespace DataAccessLayer.Implements
             {
                 List<SaidaView> saidaViews = await _kindle.SaidaViews.Where(s => s.DataSaida <= saida.Inicio &&
                                                                                  s.DataSaida <= saida.Fim).ToListAsync();
-                return SingleResponseFactory<List<SaidaView>>.CreateSuccessSingleResponse(saidaViews);
+                return SingleResponseFactory<List<SaidaView>>.CreateInstance().CreateSuccessSingleResponse(saidaViews);
             }
             catch (Exception ex)
             {
-                return SingleResponseFactory<List<SaidaView>>.CreateFailureSingleResponse(ex);
+                return SingleResponseFactory<List<SaidaView>>.CreateInstance().CreateFailureSingleResponse(ex);
             }
         }
     }

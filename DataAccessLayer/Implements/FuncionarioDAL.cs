@@ -20,15 +20,17 @@ namespace DataAccessLayer.Implements
         }
         public async Task<Response> Insert(Funcionario funcionario)
         {
+            pIKindleDB.Estados.Add(funcionario.Endereco.Estado);
+            pIKindleDB.Enderecos.Add(funcionario.Endereco);
             pIKindleDB.Add(funcionario);
             try
             {
                 await pIKindleDB.SaveChangesAsync();
-                return ResponseFactory.CreateSuccessResponse(); 
+                return ResponseFactory.CreateInstance().CreateSuccessResponse(); 
             }
             catch (Exception ex)
             {
-                return ResponseFactory.CreateFailureResponse(ex);
+                return ResponseFactory.CreateInstance().CreateFailureResponse(ex);
             }
         }
 
@@ -45,11 +47,11 @@ namespace DataAccessLayer.Implements
             try
             {
                 await pIKindleDB.SaveChangesAsync();
-                return ResponseFactory.CreateSuccessResponse();
+                return ResponseFactory.CreateInstance().CreateSuccessResponse();
             }
             catch (Exception ex)
             {
-                return ResponseFactory.CreateFailureResponse(ex);
+                return ResponseFactory.CreateInstance().CreateFailureResponse(ex);
             }
         }
 
@@ -60,11 +62,11 @@ namespace DataAccessLayer.Implements
             try
             {
                 await pIKindleDB.SaveChangesAsync();
-                return ResponseFactory.CreateSuccessResponse();
+                return ResponseFactory.CreateInstance().CreateSuccessResponse();
             }
             catch (Exception ex)
             {
-                return ResponseFactory.CreateFailureResponse(ex);
+                return ResponseFactory.CreateInstance().CreateFailureResponse(ex);
             }
         }
 
@@ -73,11 +75,11 @@ namespace DataAccessLayer.Implements
             try
             {
                 List<Funcionario> funcionarios = await pIKindleDB.Funcionarios.ToListAsync();
-                return DataResponseFactory<Funcionario>.CreateSuccessResponse(funcionarios);
+                return DataResponseFactory<Funcionario>.CreateInstance().CreateSuccessResponse(funcionarios);
             }
             catch (Exception ex)
             {
-                return DataResponseFactory<Funcionario>.CreateFailureResponse(ex);
+                return DataResponseFactory<Funcionario>.CreateInstance().CreateFailureResponse(ex);
             }
         }
 
@@ -86,11 +88,11 @@ namespace DataAccessLayer.Implements
             try
             {
                 Funcionario? funcionario1 = await pIKindleDB.Funcionarios.FindAsync(funcionario.ID);
-                return SingleResponseFactory<Funcionario>.CreateSuccessSingleResponse(funcionario);
+                return SingleResponseFactory<Funcionario>.CreateInstance().CreateSuccessSingleResponse(funcionario);
             }
             catch (Exception ex)
             {
-                return SingleResponseFactory<Funcionario>.CreateFailureSingleResponse(ex);
+                return SingleResponseFactory<Funcionario>.CreateInstance().CreateFailureSingleResponse(ex);
             }
         }
 
@@ -101,13 +103,13 @@ namespace DataAccessLayer.Implements
                 Funcionario? login = await pIKindleDB.Funcionarios.FirstOrDefaultAsync(f => f.Email == funcionario.Email && f.Senha == funcionario.Senha);
                 if(login == null)
                 {
-                    return SingleResponseFactory<Funcionario>.CreateFailureSingleResponse();
+                    return SingleResponseFactory<Funcionario>.CreateInstance().CreateFailureSingleResponse();
                 }
-                return SingleResponseFactory<Funcionario>.CreateSuccessSingleResponse(login);
+                return SingleResponseFactory<Funcionario>.CreateInstance().CreateSuccessSingleResponse(login);
             }
             catch (Exception ex)
             {
-                return SingleResponseFactory<Funcionario>.CreateFailureSingleResponse(ex);
+                return SingleResponseFactory<Funcionario>.CreateInstance().CreateFailureSingleResponse(ex);
             }
         }
 

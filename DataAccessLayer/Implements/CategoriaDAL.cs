@@ -25,11 +25,11 @@ namespace DataAccessLayer.Implements
             try
             {
                 await _kindleDB.SaveChangesAsync();
-                return ResponseFactory.CreateSuccessResponse();
+                return ResponseFactory.CreateInstance().CreateSuccessResponse();
             }
             catch (Exception ex)
             {
-                return ResponseFactory.CreateFailureResponse(ex);
+                return ResponseFactory.CreateInstance().CreateFailureResponse(ex);
             }
         }
 
@@ -38,18 +38,18 @@ namespace DataAccessLayer.Implements
             Categoria? categoria1 = _kindleDB.Categorias.Find(categoria.Id);
             if(categoria1 == null)
             {
-                return ResponseFactory.CreateFailureResponse();
+                return ResponseFactory.CreateInstance().CreateFailureResponse();
             }
             categoria1.Nome = categoria.Nome;
             categoria1.Descricao = categoria.Descricao;
             try
             {
                 await _kindleDB.SaveChangesAsync();
-                return ResponseFactory.CreateSuccessResponse();
+                return ResponseFactory.CreateInstance().CreateSuccessResponse();
             }
             catch (Exception ex)
             {
-                return ResponseFactory.CreateFailureResponse(ex);
+                return ResponseFactory.CreateInstance().CreateFailureResponse(ex);
             }
         }
         public async Task<Response> Delete(Categoria categoria)
@@ -57,17 +57,17 @@ namespace DataAccessLayer.Implements
             Categoria? categoria1 = _kindleDB.Categorias.Find(categoria.Id);
             if (categoria1 == null)
             {
-                return ResponseFactory.CreateFailureResponse();
+                return ResponseFactory.CreateInstance().CreateFailureResponse();
             }
             _kindleDB.RemoveRange(categoria1);
             try
             {
                 await _kindleDB.SaveChangesAsync();
-                return ResponseFactory.CreateSuccessResponse();
+                return ResponseFactory.CreateInstance().CreateSuccessResponse();
             }
             catch (Exception ex)
             {
-                return ResponseFactory.CreateFailureResponse(ex);
+                return ResponseFactory.CreateInstance().CreateFailureResponse(ex);
             }
         }
 
@@ -76,11 +76,11 @@ namespace DataAccessLayer.Implements
             try
             {
                 List<Categoria> categorias = await _kindleDB.Categorias.ToListAsync();
-                return DataResponseFactory<Categoria>.CreateSuccessResponse(categorias);
+                return DataResponseFactory<Categoria>.CreateInstance().CreateSuccessResponse(categorias);
             }
             catch (Exception ex)
             {
-                return DataResponseFactory<Categoria>.CreateFailureResponse(ex);
+                return DataResponseFactory<Categoria>.CreateInstance().CreateFailureResponse(ex);
             }
         }
 
@@ -92,13 +92,13 @@ namespace DataAccessLayer.Implements
                 Categoria? categoria1 = await _kindleDB.Categorias.FindAsync(categoria.Id);
                 if (categoria1 == null)
                 {
-                    return SingleResponseFactory<Categoria>.CreateFailureSingleResponse();
+                    return SingleResponseFactory<Categoria>.CreateInstance().CreateFailureSingleResponse();
                 }
-                return SingleResponseFactory<Categoria>.CreateSuccessSingleResponse(categoria1);
+                return SingleResponseFactory<Categoria>.CreateInstance().CreateSuccessSingleResponse(categoria1);
             }
             catch (Exception ex)
             {
-                return SingleResponseFactory<Categoria>.CreateFailureSingleResponse(ex);
+                return SingleResponseFactory<Categoria>.CreateInstance().CreateFailureSingleResponse(ex);
             }
         }
 

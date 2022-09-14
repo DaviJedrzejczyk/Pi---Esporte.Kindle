@@ -25,11 +25,11 @@ namespace DataAccessLayer.Implements
             try
             {
                 _kindleDB.SaveChanges();
-                return ResponseFactory.CreateSuccessResponse();
+                return ResponseFactory.CreateInstance().CreateSuccessResponse();
             }
             catch (Exception ex)
             {
-                return ResponseFactory.CreateFailureResponse(ex);
+                return ResponseFactory.CreateInstance().CreateFailureResponse(ex);
             }
         }
 
@@ -44,11 +44,11 @@ namespace DataAccessLayer.Implements
             try
             {
                 _kindleDB.SaveChanges();
-                return ResponseFactory.CreateSuccessResponse();
+                return ResponseFactory.CreateInstance().CreateSuccessResponse();
             }
             catch (Exception ex)
             {
-                return ResponseFactory.CreateFailureResponse(ex);
+                return ResponseFactory.CreateInstance().CreateFailureResponse(ex);
             }
         }
         public Response Delete(Cliente cliente)
@@ -58,11 +58,11 @@ namespace DataAccessLayer.Implements
             try
             {
                 _kindleDB.SaveChanges();
-                return ResponseFactory.CreateSuccessResponse();
+                return ResponseFactory.CreateInstance().CreateSuccessResponse();
             }
             catch (Exception ex)
             {
-                return ResponseFactory.CreateFailureResponse(ex);
+                return ResponseFactory.CreateInstance().CreateFailureResponse(ex);
             }
         }
 
@@ -71,11 +71,11 @@ namespace DataAccessLayer.Implements
             try
             {
                 List<Cliente> clientes = _kindleDB.Clientes.ToList();
-                return DataResponseFactory<Cliente>.CreateSuccessResponse(clientes);
+                return DataResponseFactory<Cliente>.CreateInstance().CreateSuccessResponse(clientes);
             }
             catch (Exception ex)
             {
-                return DataResponseFactory<Cliente>.CreateFailureResponse(ex);
+                return DataResponseFactory<Cliente>.CreateInstance().CreateFailureResponse(ex);
             }
         }
 
@@ -84,11 +84,11 @@ namespace DataAccessLayer.Implements
             try
             {
                 Cliente single = _kindleDB.Clientes.Find(id);
-                return SingleResponseFactory<Cliente>.CreateSuccessSingleResponse(single);
+                return SingleResponseFactory<Cliente>.CreateInstance().CreateSuccessSingleResponse(single);
             }
             catch (Exception ex)
             {
-                return SingleResponseFactory<Cliente>.CreateFailureSingleResponse(ex);
+                return SingleResponseFactory<Cliente>.CreateInstance().CreateFailureSingleResponse(ex);
             }
         }
     }

@@ -26,13 +26,13 @@ namespace DataAccessLayer.Implements
 
                 if(pr == null)
                 {
-                    return DataResponseFactory<ProdutoEntradaView>.CreateFailureResponse();
+                    return DataResponseFactory<ProdutoEntradaView>.CreateInstance().CreateFailureResponse();
                 }
-                return DataResponseFactory<ProdutoEntradaView>.CreateSuccessResponse(pr);
+                return DataResponseFactory<ProdutoEntradaView>.CreateInstance().CreateSuccessResponse(pr);
             }
             catch (Exception ex)
             {
-                return DataResponseFactory<ProdutoEntradaView>.CreateFailureResponse(ex);
+                return DataResponseFactory<ProdutoEntradaView>.CreateInstance().CreateFailureResponse(ex);
             }
         }
 
@@ -42,11 +42,11 @@ namespace DataAccessLayer.Implements
             try
             {
                 await _kindle.SaveChangesAsync();
-                return ResponseFactory.CreateSuccessResponse();
+                return ResponseFactory.CreateInstance().CreateSuccessResponse();
             }
             catch (Exception ex)
             {
-                return ResponseFactory.CreateFailureResponse(ex);
+                return ResponseFactory.CreateInstance().CreateFailureResponse(ex);
             }
         }
     }

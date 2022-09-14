@@ -25,11 +25,11 @@ namespace DataAccessLayer.Implements
             try
             {
                 await _kindleDB.SaveChangesAsync();
-                return ResponseFactory.CreateSuccessResponse();
+                return ResponseFactory.CreateInstance().CreateSuccessResponse();
             }
             catch (Exception ex)
             {
-                return ResponseFactory.CreateFailureResponse(ex);
+                return ResponseFactory.CreateInstance().CreateFailureResponse(ex);
             }
         }
 
@@ -43,11 +43,11 @@ namespace DataAccessLayer.Implements
             try
             {
                 await _kindleDB.SaveChangesAsync();
-                return ResponseFactory.CreateSuccessResponse();
+                return ResponseFactory.CreateInstance().CreateSuccessResponse();
             }
             catch (Exception ex)
             {
-                return ResponseFactory.CreateFailureResponse(ex);
+                return ResponseFactory.CreateInstance().CreateFailureResponse(ex);
             }
         }
         public async Task<Response> Delete(Fornecedor fornecedor)
@@ -57,11 +57,11 @@ namespace DataAccessLayer.Implements
             try
             {
                 await _kindleDB.SaveChangesAsync();
-                return ResponseFactory.CreateSuccessResponse();
+                return ResponseFactory.CreateInstance().CreateSuccessResponse();
             }
             catch (Exception ex)
             {
-                return ResponseFactory.CreateFailureResponse(ex);
+                return ResponseFactory.CreateInstance().CreateFailureResponse(ex);
             }
         }
 
@@ -70,11 +70,11 @@ namespace DataAccessLayer.Implements
             try
             {
                 List<Fornecedor> fornecedors = await _kindleDB.Fornecedores.ToListAsync();
-                return DataResponseFactory<Fornecedor>.CreateSuccessResponse(fornecedors);
+                return DataResponseFactory<Fornecedor>.CreateInstance().CreateSuccessResponse(fornecedors);
             }
             catch (Exception ex)
             {
-                return DataResponseFactory<Fornecedor>.CreateFailureResponse(ex);
+                return DataResponseFactory<Fornecedor>.CreateInstance().CreateFailureResponse(ex);
             }
         }
 
@@ -83,11 +83,11 @@ namespace DataAccessLayer.Implements
             try
             {
                 Fornecedor? fornecedors = await _kindleDB.Fornecedores.FindAsync(fornecedor.ID);
-                return SingleResponseFactory<Fornecedor>.CreateSuccessSingleResponse(fornecedors);
+                return SingleResponseFactory<Fornecedor>.CreateInstance().CreateSuccessSingleResponse(fornecedors);
             }
             catch (Exception ex)
             {
-                return SingleResponseFactory<Fornecedor>.CreateFailureSingleResponse(ex);
+                return SingleResponseFactory<Fornecedor>.CreateInstance().CreateFailureSingleResponse(ex);
             }
         }
 

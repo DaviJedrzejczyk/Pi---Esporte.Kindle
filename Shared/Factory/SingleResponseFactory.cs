@@ -8,7 +8,16 @@ namespace Shared.Factory
 {
     public class SingleResponseFactory<T>
     {
-        public static SingleResponse<T> CreateSuccessSingleResponse(T item)
+        private static SingleResponseFactory<T> _factory;
+        public static SingleResponseFactory<T> CreateInstance()
+        {
+            if (_factory == null)
+            {
+                _factory = new SingleResponseFactory<T>();
+            }
+            return _factory;
+        }
+        public SingleResponse<T> CreateSuccessSingleResponse(T item)
         {
             return new SingleResponse<T>()
             {
@@ -17,7 +26,7 @@ namespace Shared.Factory
                 Item = item
             };
         }
-        public static SingleResponse<T> CreateFailureSingleResponse(Exception ex)
+        public SingleResponse<T> CreateFailureSingleResponse(Exception ex)
         {
             return new SingleResponse<T>()
             {
@@ -26,7 +35,7 @@ namespace Shared.Factory
                 Exception = ex,
             };
         }
-        public static SingleResponse<T> CreateFailureSingleResponse()
+        public SingleResponse<T> CreateFailureSingleResponse()
         {
             return new SingleResponse<T>()
             {

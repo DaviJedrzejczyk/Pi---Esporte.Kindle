@@ -1,29 +1,17 @@
-﻿using BusinessLogicalLayer.BLL;
-using BusinessLogicalLayer.Interfaces;
+﻿using BusinessLogicalLayer.Interfaces;
 using Entities;
 using Entities.Enums;
-using Ninject;
 using Shared;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+using System.Runtime.CompilerServices;
 
 namespace WFPresentationLayer
 {
     public partial class TelaFuncionario : Form
     {
         private readonly IFuncionarioService funcionarioService;
-        private readonly IEstadoService estadoService;
-        public TelaFuncionario(IEstadoService estado, IFuncionarioService funcionario)
+        public TelaFuncionario(IFuncionarioService funcionario)
         {
             InitializeComponent();
-            estadoService = estado;
             funcionarioService = funcionario;
             this.dtFuncionario.DoubleClick += dtFuncionario_DoubleClick;
         }
@@ -35,9 +23,6 @@ namespace WFPresentationLayer
             
             cbGenero.DataSource = Enum.GetNames(typeof(Genero));
             cbNivelAcesso.DataSource = Enum.GetNames(typeof(TipoFuncionario));
-            cbEstado.DataSource = estadoService.GetAll().Itens;
-            cbEstado.DisplayMember = "Unidade_Federal";
-            cbEstado.ValueMember = "Id";
             SincronizarGrid();
         }
 
@@ -196,7 +181,6 @@ namespace WFPresentationLayer
                 MessageBox.Show(response.Message);
             }
         }
-
         
     }
 }
