@@ -1,7 +1,9 @@
 using BusinessLogicalLayer.Interfaces;
 using Entities;
+using MaterialSkin;
 using Ninject;
 using Shared;
+using MaterialSkin;
 
 namespace WFPresentationLayer
 {
@@ -12,9 +14,17 @@ namespace WFPresentationLayer
         {
             InitializeComponent();
             funcionario = fu;
+            MaterialSkinManager materialSkinManager = MaterialSkinManager.Instance;
+            TelaLogin telaLogin = this;
+            materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
         }
 
         private async void button1_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private async void btnlogin_Click(object sender, EventArgs e)
         {
             Funcionario login = new(txtEmail.Text, txtSenha.Text);
             SingleResponse<Funcionario> singleResponse = await funcionario.GetLogin(login);

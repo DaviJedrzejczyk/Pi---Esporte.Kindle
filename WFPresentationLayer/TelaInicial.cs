@@ -16,5 +16,10 @@ namespace WFPresentationLayer
         {
             InitializeComponent();
         }
+
+        private void TelaInicial_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
