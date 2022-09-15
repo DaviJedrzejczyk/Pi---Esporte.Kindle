@@ -13,7 +13,7 @@ namespace DataAccessLayer.Interfaces
     {
         Response Insert(Cliente cliente);
         Response Update(Cliente cliente);
-        Response Delete(Cliente cliente);
+        Response Delete(int cliente);
         DataResponse<Cliente> GetAll();
         SingleResponse<Cliente> GetById(int id);
     }

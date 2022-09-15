@@ -8,7 +8,7 @@ namespace Entities
 {
     public class Estado
     {
-        public int Id { get; set; }
+        public int ID { get; set; }
         public string Unidade_Federal { get; set; }
         public string NomeCompleto { get; set; }
     }

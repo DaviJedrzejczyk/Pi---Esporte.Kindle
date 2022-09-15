@@ -37,7 +37,6 @@
             this.lblDataNasc = new System.Windows.Forms.Label();
             this.txtRG = new System.Windows.Forms.TextBox();
             this.lblRg = new System.Windows.Forms.Label();
-            this.txtCpf = new System.Windows.Forms.TextBox();
             this.lblCpf = new System.Windows.Forms.Label();
             this.txtSobrenome = new System.Windows.Forms.TextBox();
             this.lblSobrenome = new System.Windows.Forms.Label();
@@ -61,6 +60,7 @@
             this.lblID = new System.Windows.Forms.Label();
             this.txtIdade = new System.Windows.Forms.TextBox();
             this.lblIdade = new System.Windows.Forms.Label();
+            this.mskdCPF = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtCliente)).BeginInit();
             this.SuspendLayout();
             // 
@@ -85,7 +85,7 @@
             this.lblTelefone.AutoSize = true;
             this.lblTelefone.Location = new System.Drawing.Point(38, 261);
             this.lblTelefone.Name = "lblTelefone";
-            this.lblTelefone.Size = new System.Drawing.Size(51, 15);
+            this.lblTelefone.Size = new System.Drawing.Size(52, 15);
             this.lblTelefone.TabIndex = 33;
             this.lblTelefone.Text = "Telefone";
             // 
@@ -137,13 +137,6 @@
             this.lblRg.Size = new System.Drawing.Size(25, 15);
             this.lblRg.TabIndex = 27;
             this.lblRg.Text = "RG:";
-            // 
-            // txtCpf
-            // 
-            this.txtCpf.Location = new System.Drawing.Point(115, 138);
-            this.txtCpf.Name = "txtCpf";
-            this.txtCpf.Size = new System.Drawing.Size(100, 23);
-            this.txtCpf.TabIndex = 26;
             // 
             // lblCpf
             // 
@@ -336,11 +329,20 @@
             this.lblIdade.TabIndex = 39;
             this.lblIdade.Text = "Idade:";
             // 
+            // mskdCPF
+            // 
+            this.mskdCPF.Location = new System.Drawing.Point(115, 140);
+            this.mskdCPF.Mask = "000,000,000-00";
+            this.mskdCPF.Name = "mskdCPF";
+            this.mskdCPF.Size = new System.Drawing.Size(100, 23);
+            this.mskdCPF.TabIndex = 41;
+            // 
             // TelaCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1045, 486);
+            this.Controls.Add(this.mskdCPF);
             this.Controls.Add(this.txtIdade);
             this.Controls.Add(this.lblIdade);
             this.Controls.Add(this.txtID);
@@ -355,7 +357,6 @@
             this.Controls.Add(this.lblDataNasc);
             this.Controls.Add(this.txtRG);
             this.Controls.Add(this.lblRg);
-            this.Controls.Add(this.txtCpf);
             this.Controls.Add(this.lblCpf);
             this.Controls.Add(this.txtSobrenome);
             this.Controls.Add(this.lblSobrenome);
@@ -384,7 +385,6 @@
         private Label lblDataNasc;
         private TextBox txtRG;
         private Label lblRg;
-        private TextBox txtCpf;
         private Label lblCpf;
         private TextBox txtSobrenome;
         private Label lblSobrenome;
@@ -408,5 +408,6 @@
         private DataGridViewTextBoxColumn ClienteGenero;
         private TextBox txtIdade;
         private Label lblIdade;
+        private MaskedTextBox mskdCPF;
     }
 }

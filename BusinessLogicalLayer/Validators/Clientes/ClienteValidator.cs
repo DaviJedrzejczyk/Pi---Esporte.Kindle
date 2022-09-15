@@ -52,7 +52,7 @@ namespace BusinessLogicalLayer.Validators.Clientes
             RuleFor(c => c.RG).NotNull().WithMessage(GenericConstants.MENSAGEM_ERRO_RG_VAZIO)
                               .MaximumLength(9).WithMessage(GenericConstants.MENSAGEM_ERRO_RG_MAIOR)
                               .MinimumLength(9).WithMessage(GenericConstants.MENSAGEM_ERRO_RG_MENOR)
-                              .IsRgValid().WithMessage(GenericConstants.MENSAGEM_ERRO_RG_FORMATO_INVALIDO);
+                              /*.IsRgValid().WithMessage(GenericConstants.MENSAGEM_ERRO_RG_FORMATO_INVALIDO)*/;
         }
 
     }

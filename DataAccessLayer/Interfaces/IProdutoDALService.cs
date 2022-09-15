@@ -13,9 +13,9 @@ namespace DataAccessLayer.Interfaces
 
         Task<Response> Insert(Produto produto);
         Task<Response> Update(Produto produto);
-        Task<Response> Delete(Produto produto);
+        Task<Response> Delete(int id);
         Task<DataResponse<Produto>> GetAll();
-        Task<SingleResponse<Produto>> GetById(Produto produto);
+        Task<SingleResponse<Produto>> GetById(int id);
         Task<Response> UpdateValueAndInventory(Produto produto);
     }
 }

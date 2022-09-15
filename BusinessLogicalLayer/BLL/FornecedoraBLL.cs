@@ -3,7 +3,6 @@ using BusinessLogicalLayer.Interfaces;
 using BusinessLogicalLayer.Validators.Fornecedoras;
 using DataAccessLayer.Interfaces;
 using Entities;
-using Microsoft.EntityFrameworkCore.ChangeTracking.Internal;
 using Microsoft.VisualBasic;
 using Shared;
 using System;
@@ -42,15 +41,13 @@ namespace BusinessLogicalLayer.BLL
             }
             return await fornecedoraDAL.Update(item);
         }
-        public async Task<Response> Delete(Fornecedor item)
+        public async Task<Response> Delete(int id)
         {
-            FornecedoraDeleteValidator validations = new();
-            Response response = validations.Validate(item).ToResponse();
-            if (!response.HasSuccess)
+            if(id < 1)
             {
-                return response;
+                return new Response(false, "Id não pode ser Null");
             }
-            return await fornecedoraDAL.Delete(item);
+            return await fornecedoraDAL.Delete(id);
         }
 
         public async Task<DataResponse<Fornecedor>> GetAll()
@@ -58,13 +55,11 @@ namespace BusinessLogicalLayer.BLL
             return await fornecedoraDAL.GetAll();
         }
 
-        public async Task<SingleResponse<Fornecedor>> GetById(Fornecedor fornecedor)
+        public async Task<SingleResponse<Fornecedor>> GetById(int fornecedor)
         {
-            FornecedoraGetByIdValidator validationRules = new();
-            SingleResponse<Fornecedor> singleResponse = validationRules.Validate(fornecedor).ToSingleResponse<Fornecedor>(fornecedor);
-            if (!singleResponse.HasSuccess)
+            if(fornecedor < 1)
             {
-                return singleResponse;
+                return new SingleResponse<Fornecedor>(false, "Id não pode ser null", null);
             }
             return await fornecedoraDAL.GetById(fornecedor);
         }

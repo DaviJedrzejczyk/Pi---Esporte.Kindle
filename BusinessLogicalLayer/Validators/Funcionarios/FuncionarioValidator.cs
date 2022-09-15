@@ -109,7 +109,7 @@ namespace BusinessLogicalLayer.Validators.Funcionarios
         }
         public void ValidateIdEstado()
         {
-            RuleFor(e => e.Endereco.Estado.Id).NotNull().WithMessage(GenericConstants.MENSAGEM_ERRO_ID_VAZIO);
+            RuleFor(e => e.Endereco.Estado.ID).NotNull().WithMessage(GenericConstants.MENSAGEM_ERRO_ID_VAZIO);
         }
         public void ValidateNomeAbreviado()
         {

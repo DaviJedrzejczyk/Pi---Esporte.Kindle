@@ -12,8 +12,8 @@ namespace DataAccessLayer.Interfaces
     {
         Task<Response> Insert(Fornecedor fornecedor);
         Task<Response> Update(Fornecedor fornecedor);
-        Task<Response> Delete(Fornecedor fornecedor);
+        Task<Response> Delete(int id);
         Task<DataResponse<Fornecedor>> GetAll();
-        Task<SingleResponse<Fornecedor>> GetById(Fornecedor fornecedor);
+        Task<SingleResponse<Fornecedor>> GetById(int id);
     }
 }

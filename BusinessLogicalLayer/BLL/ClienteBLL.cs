@@ -42,9 +42,9 @@ namespace BusinessLogicalLayer.BLL
             }
             return clienteDAL.Update(cliente);
         }
-        public Response Delete(Cliente cliente)
+        public Response Delete(int id)
         {
-            return clienteDAL.Delete(cliente);
+            return clienteDAL.Delete(id);
         }
 
         public DataResponse<Cliente> GetAll()

@@ -48,7 +48,7 @@ namespace WFPresentationLayer
                 ID = temp,
                 Nome = txtNome.Text,
                 Sobrenome = txtSobrenome.Text,
-                CPF = txtCpf.Text,
+                CPF = mskdCPF.Text,
                 Telefone = txtTelefone.Text,
                 Email = txtEmail.Text,
                 RG = txtRG.Text,
@@ -82,7 +82,7 @@ namespace WFPresentationLayer
             this.txtID.Text = cliente.ID.ToString();
             this.txtNome.Text = cliente.Nome;
             this.txtSobrenome.Text = cliente.Sobrenome;
-            this.txtCpf.Text = cliente.CPF;
+            this.mskdCPF.Text = cliente.CPF;
             this.txtRG.Text = cliente.RG;
             this.txtEmail.Text = cliente.Email;
             this.txtIdade.Text = cliente.Idade.ToString();
@@ -142,7 +142,7 @@ namespace WFPresentationLayer
         private void btnRemove_Click(object sender, EventArgs e)
         {
             Cliente cliente = CreateObjectWithForm();
-            Response response = _cliente.Delete(cliente);
+            Response response = _cliente.Delete(cliente.ID);
             if (response.HasSuccess)
             {
                 MessageBox.Show("Sucesso");
@@ -157,7 +157,7 @@ namespace WFPresentationLayer
         }
         private void LimparCampos()
         {
-            txtCpf.Clear();
+            mskdCPF.Clear();
             txtDataNasc.Clear();
             txtTelefone.Clear();
             txtIdade.Clear();

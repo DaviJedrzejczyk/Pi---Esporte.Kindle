@@ -2,10 +2,10 @@
 {
     public class ProdutoSaidaView
     {
-        public int ID { get; set; }
         public Saida Saida { get; set; }
         public int SaidaID { get; set; }
-        public ProdutoView Produto { get; set; }
+        public ProdutoView ProdutoView { get; set; }
+        public int ProdutoViewID { get; set; }
         public double Quantidade { get; set; }
         public double ValorUnitario { get; set; }
     }

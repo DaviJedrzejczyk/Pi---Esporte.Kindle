@@ -13,7 +13,7 @@ namespace BusinessLogicalLayer.Validators.Estados
     {
         public void ValidateId()
         {
-            RuleFor(e => e.Id).NotNull().WithMessage(GenericConstants.MENSAGEM_ERRO_ID_VAZIO);
+            RuleFor(e => e.ID).NotNull().WithMessage(GenericConstants.MENSAGEM_ERRO_ID_VAZIO);
         }
         public void ValidateNomeAbreviado()
         {

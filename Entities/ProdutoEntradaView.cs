@@ -8,10 +8,10 @@ namespace Entities
 {
     public class ProdutoEntradaView
     {
-        public int ID { get; set; }
         public Entrada Entrada { get; set; }
         public int EntradaID { get; set; }
         public ProdutoView Produto { get; set; }
+        public int ProdutoViewId { get; set; }
         public double Quantidade { get; set; }
         public double ValorUnitario { get; set; }
     }

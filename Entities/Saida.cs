@@ -10,13 +10,12 @@ namespace Entities
     public class Saida
     {
         public int ID { get; set; }
-        public Cliente Cliente { get; set; }
         public int ClienteID { get; set; }
-        public Funcionario Funcionario { get; set; }
         public int FuncionarioID { get; set; }
         public DateTime DataSaida { get; set; }
         public FormaPagamento FormaPagamento { get; set; }
         public double Valor_Total { get; set; }
+        public double Valor { get; set; }
         public List<ProdutoSaida> produtoSaidas { get; set; }
     }
 }
