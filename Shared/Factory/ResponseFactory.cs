@@ -43,5 +43,14 @@ namespace Shared.Factory
 
             };
         }
+        public Response CreateFailureResponse(string message)
+        {
+            return new Response()
+            {
+                HasSuccess = false,
+                Message = message,
+
+            };
+        }
     }
 }

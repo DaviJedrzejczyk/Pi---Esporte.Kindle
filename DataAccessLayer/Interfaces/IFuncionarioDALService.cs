@@ -12,9 +12,9 @@ namespace DataAccessLayer.Interfaces
     {
         Task<Response> Insert(Funcionario funcionario);
         Task<Response> Update(Funcionario funcionario);
-        Task<Response> Delete(Funcionario funcionario);
+        Task<Response> Delete(int id);
         Task<DataResponse<Funcionario>> GetAll();
-        Task<SingleResponse<Funcionario>> GetById(Funcionario funcionario);
+        Task<SingleResponse<Funcionario>> GetById(int id);
         Task<SingleResponse<Funcionario>> GetLogin(Funcionario funcionario);
     }
 }

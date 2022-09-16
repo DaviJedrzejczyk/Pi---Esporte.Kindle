@@ -18,8 +18,8 @@ namespace DataAccessLayer.Implements
         public async Task<Response> Insert(Fornecedor fornecedor)
         {
             string sql = $"INSERT INTO FORNECEDORES (RAZAO_SOCIAL,CNPJ,NOME_CONTATO,TELEFONE,EMAIL) VALUES (@RAZAO_SOCIAL,@CNPJ,@NOME_CONTATO,@TELEFONE,@EMAIL)";
-            SqlConnection connection = new SqlConnection(_connection);
-            SqlCommand command = new SqlCommand(sql, connection);
+            SqlConnection connection = new(_connection);
+            SqlCommand command = new(sql, connection);
             command.Parameters.AddWithValue("@RAZAO_SOCIAL", fornecedor.Razao_Social);
             command.Parameters.AddWithValue("@CNPJ", fornecedor.Cnpj);
             command.Parameters.AddWithValue("@NOME_CONTATO", fornecedor.Nome_Contato);
@@ -28,7 +28,7 @@ namespace DataAccessLayer.Implements
             try
             {
                 connection.Open();
-                command.ExecuteNonQuery();
+               await command.ExecuteNonQueryAsync();
                 return ResponseFactory.CreateInstance().CreateSuccessResponse();
             }
             catch (Exception ex)
@@ -52,8 +52,8 @@ namespace DataAccessLayer.Implements
         public async Task<Response> Update(Fornecedor fornecedor)
         {
             string sql = $"UPDATE FORNECEDORES SET RAZAO_SOCIAL = @RAZAO_SOCIAL, EMAIL = @EMAIL, TELEFONE = @TELEFONE, NOME_CONTATO = @NOME_CONTATO WHERE ID = @ID";
-            SqlConnection connection = new SqlConnection(_connection);
-            SqlCommand command = new SqlCommand(sql, connection);
+            SqlConnection connection = new(_connection);
+            SqlCommand command = new(sql, connection);
             command.Parameters.AddWithValue("@RAZAO_SOCIAL", fornecedor.Razao_Social);
             command.Parameters.AddWithValue("@EMAIL", fornecedor.Email);
             command.Parameters.AddWithValue("@TELEFONE", fornecedor.Telefone);
@@ -62,7 +62,7 @@ namespace DataAccessLayer.Implements
             try
             {
                 connection.Open();
-                int qtdRegistrosAlterados = command.ExecuteNonQuery();
+                int qtdRegistrosAlterados = await command.ExecuteNonQueryAsync();
                 if (qtdRegistrosAlterados != 1)
                 {
                     return ResponseFactory.CreateInstance().CreateFailureResponse();
@@ -89,13 +89,13 @@ namespace DataAccessLayer.Implements
         public async Task<Response> Delete(int id)
         {
             string sql = "DELETE FROM FORNECEDORES WHERE ID = @ID";
-            SqlConnection connection = new SqlConnection(_connection);
-            SqlCommand command = new SqlCommand(sql, connection);
+            SqlConnection connection = new(_connection);
+            SqlCommand command = new(sql, connection);
             command.Parameters.AddWithValue("@ID", id);
             try
             {
                 connection.Open();
-                int qtdLinhasExcluidas = command.ExecuteNonQuery();
+                int qtdLinhasExcluidas = await command.ExecuteNonQueryAsync();
                 if (qtdLinhasExcluidas == 1)
                 {
                     return ResponseFactory.CreateInstance().CreateSuccessResponse();
@@ -119,13 +119,13 @@ namespace DataAccessLayer.Implements
         public async Task<DataResponse<Fornecedor>> GetAll()
         {
             string sql = $"SELECT ID,RAZAO_SOCIAL,CNPJ,NOME_CONTATO,TELEFONE,EMAIL FROM FORNECEDORES";
-            SqlConnection connection = new SqlConnection(_connection);
-            SqlCommand command = new SqlCommand(sql, connection);
+            SqlConnection connection = new(_connection);
+            SqlCommand command = new(sql, connection);
             try
             {
                 connection.Open();
-                SqlDataReader reader = command.ExecuteReader();
-                List<Fornecedor> fornecedores = new List<Fornecedor>();
+                SqlDataReader reader = await command.ExecuteReaderAsync();
+                List<Fornecedor> fornecedores = new();
                 while (reader.Read())
                 {
                     Fornecedor fornecedor = new Fornecedor();
@@ -152,13 +152,13 @@ namespace DataAccessLayer.Implements
         public async Task<SingleResponse<Fornecedor>> GetById(int id)
         {
             string sql = $"SELECT ID,RAZAO_SOCIAL,CNPJ,NOME_CONTATO,TELEFONE,EMAIL FROM FORNECEDORES WHERE ID = @ID";
-            SqlConnection connection = new SqlConnection(_connection);
-            SqlCommand command = new SqlCommand(sql, connection);
+            SqlConnection connection = new(_connection);
+            SqlCommand command = new(sql, connection);
             command.Parameters.AddWithValue("@ID", id);
             try
             {
                 connection.Open();
-                SqlDataReader reader = command.ExecuteReader();
+                SqlDataReader reader = await command.ExecuteReaderAsync();
                 if (reader.Read())
                 {
                     Fornecedor fornecedor = new Fornecedor();
