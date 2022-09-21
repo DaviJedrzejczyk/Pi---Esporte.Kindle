@@ -20,19 +20,33 @@ namespace BusinessLogicalLayer.BLL
     {
 
         private readonly IFuncionarioDALService funcionarioDAL;
-        public FuncionarioBLL(IFuncionarioDALService _funcionarioDAL)
+        private readonly IEnderecoDALService endereco;
+        public FuncionarioBLL(IFuncionarioDALService _funcionarioDAL, IEnderecoDALService enderecoDALService)
         {
             funcionarioDAL = _funcionarioDAL;
+            endereco = enderecoDALService;
         }
         public async Task<Response> Insert(Funcionario funcionario)
         {
             FuncionarioInsertValidator insertValidator = new();
             Response response = insertValidator.Validate(funcionario).ToResponse();
-            if (!response.HasSuccess)
+            if (response.HasSuccess)
             {
+                EnderecoInsertValidator validationRules = new();
+                response = validationRules.Validate(funcionario.Endereco).ToResponse();
+                if (response.HasSuccess)
+                {
+                    using TransactionScope scope = new();
+                    response = await endereco.Insert(funcionario.Endereco);
+                    response = await funcionarioDAL.Insert(funcionario);
+                    if (!response.HasSuccess)
+                        return response;
+
+                    scope.Complete();
+                }
                 return response;
             }
-            return await funcionarioDAL.Insert(funcionario);
+            return response;
         }
 
         public async Task<Response> Update(Funcionario funcionario)

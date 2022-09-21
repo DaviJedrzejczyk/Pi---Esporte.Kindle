@@ -16,7 +16,7 @@ namespace DataAccessLayer.Implements
         readonly string connectionString = ConnectionString._connectionString;
         public async Task<Response> Insert(Endereco endereco)
         {
-            string sql = $"INSERT INTO ENDERECOS (CEP,NUMERO_CASA,BAIRRO_ID,RUA,COMPLEMENTO) VALUES (@CEP,@NUMERO_CASA,@BAIRRO_ID,@RUA,@COMPLEMENTO); SELECT SCOPE_IDENTITY()";
+            string sql = $"INSERT INTO ENDERECOS (CEP,NUMERO_CASA,BAIRRO,RUA,CIDADE,COMPLEMENTO,PONTO_REFERENCIA,ESTADO_ID) VALUES (@CEP,@NUMERO_CASA,@BAIRRO,@RUA,@CIDADE,@COMPLEMENTO,PONTO_REFERENCIA,ESTADO_ID); SELECT SCOPE_IDENTITY()";
             SqlConnection connection = new(connectionString);
             SqlCommand command = new(sql, connection);
             command.Parameters.AddWithValue("@CEP", endereco.CEP);
@@ -25,7 +25,7 @@ namespace DataAccessLayer.Implements
             command.Parameters.AddWithValue("@RUA", endereco.Rua);
             command.Parameters.AddWithValue("@CIDADE", endereco.Cidade);
             command.Parameters.AddWithValue("@PONTO_REFERENCIA", endereco.PontoReferencia);
-            command.Parameters.AddWithValue("@ESTADO_ID", endereco.Estado);
+            command.Parameters.AddWithValue("@ESTADO_ID", endereco.Estado.ID);
             command.Parameters.AddWithValue("@COMPLEMENTO", endereco.Complemento);
             try
             {
@@ -49,13 +49,13 @@ namespace DataAccessLayer.Implements
 
         public async Task<Response> Update(Endereco endereco)
         {
-            string sql = $"UPDATE ENDERECOS SET CEP = @CEP, NUMERO_CASA = @NUMERO_CASA, BAIRRO_ID = @BAIRRO_ID, RUA = @RUA, COMPLEMENTO = @COMPLEMENTO WHERE ID = @ID";
+            string sql = $"UPDATE ENDERECOS SET CEP = @CEP, NUMERO_CASA = @NUMERO_CASA, BAIRRO = @BAIRRO, RUA = @RUA, COMPLEMENTO = @COMPLEMENTO, CIDADE = @CIDADE, PONTO_REFERENCIA = @PONTO_REFERENCIA, ESTADO_ID = ESTADO_ID WHERE ID = @ID";
             SqlConnection connection = new(connectionString);
             SqlCommand command = new(sql, connection);
             command.Parameters.AddWithValue("@CEP", endereco.CEP);
             command.Parameters.AddWithValue("@NUMERO_CASA", endereco.Numero);
             command.Parameters.AddWithValue("@BAIRRO_ID", endereco.Bairro);
-            command.Parameters.AddWithValue("@ESTADO_ID", endereco.Estado);
+            command.Parameters.AddWithValue("@ESTADO_ID", endereco.Estado.ID);
             command.Parameters.AddWithValue("@CIDADE", endereco.Cidade);
             command.Parameters.AddWithValue("@PONTO_REFERENCIA", endereco.PontoReferencia);
             command.Parameters.AddWithValue("@RUA", endereco.Rua);
@@ -109,7 +109,7 @@ namespace DataAccessLayer.Implements
 
         public async Task<DataResponse<Endereco>> GetAll()
         {
-            string sql = $"SELECT ID,CEP,NUMERO_CASA,BAIRRO_ID,RUA,COMPLEMENTO FROM ENDERECOS";
+            string sql = $"SELECT ID,CEP,NUMERO_CASA,BAIRRO,RUA,CIDADE,COMPLEMENTO,PONTO_REFERENCIA,ESTADO_ID FROM ENDERECOS";
             SqlConnection connection = new(connectionString);
             SqlCommand command = new(sql, connection);
             try
@@ -147,7 +147,7 @@ namespace DataAccessLayer.Implements
 
         public async Task<SingleResponse<Endereco>> GetById(int id)
         {
-            string sql = $"SELECT ID,CEP,NUMERO_CASA,BAIRRO_ID,RUA,COMPLEMENTO FROM ENDERECOS WHERE ID = @ID";
+            string sql = $"SELECT ID,CEP,NUMERO_CASA,BAIRRO,RUA,CIDADE,COMPLEMENTO,PONTO_REFERENCIA,ESTADO_ID FROM ENDERECOS WHERE ID = @ID";
             SqlConnection connection = new(connectionString);
             SqlCommand command = new(sql, connection);
             command.Parameters.AddWithValue("@ID", id);
