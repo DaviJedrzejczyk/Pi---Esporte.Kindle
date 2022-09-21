@@ -11,10 +11,8 @@ namespace Entities
         public int ID { get; set; }
         public DateTime DataEntrada { get; set; }
         public double Valor { get; set; }
-        public Funcionario Funcionario { get; set; }
-        public int FuncionarioId { get; set; }
-        public Fornecedor Fornecedor { get; set; }
-        public int FornecedorID { get; set; }
+        public string Funcionario { get; set; }
+        public string Fornecedor { get; set; }
         public List<ProdutoEntradaView> produtosEntradas { get; set; }
     }
 }
