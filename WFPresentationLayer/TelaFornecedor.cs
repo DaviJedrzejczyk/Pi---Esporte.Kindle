@@ -24,6 +24,10 @@ namespace WFPresentationLayer
             this.dtFornecedor.DoubleClick += dtFornecedor_DoubleClick;
 
         }
+        public TelaFornecedor()
+        {
+            InitializeComponent();
+        }
         private void TelaFornecedor_Load(object sender, EventArgs e)
         {
             SincronizarGrid();

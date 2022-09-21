@@ -28,7 +28,10 @@ namespace WFPresentationLayer
             this.dtProduto.DoubleClick += dataGridView1_DoubleClick;
 
         }
-
+        public TelaProduto()
+        {
+            InitializeComponent();
+        }
         private void TelaProduto_Load(object sender, EventArgs e)
         {
             SincronizarGrid();

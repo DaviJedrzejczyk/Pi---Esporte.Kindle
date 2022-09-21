@@ -27,7 +27,10 @@ namespace WFPresentationLayer
             funcionarioService = funcionario;
             this.dtFuncionario.DoubleClick += dtFuncionario_DoubleClick;
         }
-
+        public TelaFuncionario()
+        {
+            InitializeComponent();
+        }
 
 
         private void TelaFuncionario_Load(object sender, EventArgs e)

@@ -26,7 +26,10 @@ namespace WFPresentationLayer
             _cliente = service;
             this.dtCliente.DoubleClick += dtCliente_DoubleClick;
         }
-
+        public TelaCliente()
+        {
+            InitializeComponent();
+        }
 
 
         private void TelaCliente_Load(object sender, EventArgs e)

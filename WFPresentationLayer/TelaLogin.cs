@@ -15,6 +15,10 @@ namespace WFPresentationLayer
             InitializeComponent();
             funcionario = fu;
         }
+        public TelaLogin()
+        {
+            InitializeComponent();
+        }
 
         private async void button1_Click(object sender, EventArgs e)
         {
