@@ -53,13 +53,13 @@
             // 
             // btnLogin
             // 
-            this.btnLogin.BackColor = System.Drawing.Color.CadetBlue;
+            this.btnLogin.BackColor = System.Drawing.Color.Black;
             this.btnLogin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLogin.FlatAppearance.BorderColor = System.Drawing.Color.PowderBlue;
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnLogin.ForeColor = System.Drawing.Color.Black;
-            this.btnLogin.Location = new System.Drawing.Point(83, 208);
+            this.btnLogin.ForeColor = System.Drawing.Color.White;
+            this.btnLogin.Location = new System.Drawing.Point(83, 245);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(119, 39);
             this.btnLogin.TabIndex = 0;
@@ -87,7 +87,6 @@
             // 
             // panel1
             // 
-            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
             this.panel1.Controls.Add(this.panel9);
             this.panel1.Controls.Add(this.panel8);
             this.panel1.Controls.Add(this.panel7);
@@ -168,9 +167,9 @@
             this.panel2.Controls.Add(this.btnLogin);
             this.panel2.Controls.Add(this.txtEmail);
             this.panel2.Controls.Add(this.txtSenha);
-            this.panel2.Location = new System.Drawing.Point(131, 158);
+            this.panel2.Location = new System.Drawing.Point(118, 120);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(285, 299);
+            this.panel2.Size = new System.Drawing.Size(285, 333);
             this.panel2.TabIndex = 6;
             // 
             // label2
