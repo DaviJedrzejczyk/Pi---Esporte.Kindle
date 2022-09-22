@@ -86,6 +86,8 @@
             this.txtComplemento = new System.Windows.Forms.TextBox();
             this.lblEndereco = new System.Windows.Forms.Label();
             this.txtEnderecoID = new System.Windows.Forms.TextBox();
+            this.lblNumero = new System.Windows.Forms.Label();
+            this.txtNumero = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtFuncionario)).BeginInit();
             this.SuspendLayout();
             // 
@@ -576,11 +578,29 @@
             this.txtEnderecoID.Size = new System.Drawing.Size(100, 23);
             this.txtEnderecoID.TabIndex = 48;
             // 
+            // lblNumero
+            // 
+            this.lblNumero.AutoSize = true;
+            this.lblNumero.Location = new System.Drawing.Point(238, 252);
+            this.lblNumero.Name = "lblNumero";
+            this.lblNumero.Size = new System.Drawing.Size(54, 15);
+            this.lblNumero.TabIndex = 50;
+            this.lblNumero.Text = "Número:";
+            // 
+            // txtNumero
+            // 
+            this.txtNumero.Location = new System.Drawing.Point(238, 273);
+            this.txtNumero.Name = "txtNumero";
+            this.txtNumero.Size = new System.Drawing.Size(116, 23);
+            this.txtNumero.TabIndex = 49;
+            // 
             // TelaFuncionario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(900, 519);
+            this.Controls.Add(this.lblNumero);
+            this.Controls.Add(this.txtNumero);
             this.Controls.Add(this.txtEnderecoID);
             this.Controls.Add(this.lblEndereco);
             this.Controls.Add(this.lblComplemento);
@@ -695,5 +715,7 @@
         private TextBox txtComplemento;
         private Label lblEndereco;
         private TextBox txtEnderecoID;
+        private Label lblNumero;
+        private TextBox txtNumero;
     }
 }

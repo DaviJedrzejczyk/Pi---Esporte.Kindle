@@ -16,12 +16,12 @@ namespace DataAccessLayer.Implements
         readonly string connectionString = ConnectionString._connectionString;
         public async Task<Response> Insert(Endereco endereco)
         {
-            string sql = $"INSERT INTO ENDERECOS (CEP,NUMERO_CASA,RUA,BAIRRO,CIDADE,COMPLEMENTO,PONTO_REFERENCIA,ESTADO_ID) VALUES (@CEP,@NUMERO_CASA,@RUA,@BAIRRO,@CIDADE,@COMPLEMENTO,PONTO_REFERENCIA,ESTADO_ID); SELECT SCOPE_IDENTITY()";
+            string sql = $"INSERT INTO ENDERECOS (CEP,NUMERO_CASA,BAIRRO,CIDADE,COMPLEMENTO,PONTO_REFERENCIA,ESTADO_ID,RUA) VALUES (@CEP,@NUMERO_CASA,@BAIRRO,@CIDADE,@COMPLEMENTO,@PONTO_REFERENCIA,@ESTADO_ID,@RUA); SELECT SCOPE_IDENTITY()";
             SqlConnection connection = new(connectionString);
             SqlCommand command = new(sql, connection);
             command.Parameters.AddWithValue("@CEP", endereco.CEP);
             command.Parameters.AddWithValue("@NUMERO_CASA", endereco.Numero);
-            command.Parameters.AddWithValue("@BAIRRO_ID", endereco.Bairro);
+            command.Parameters.AddWithValue("@BAIRRO", endereco.Bairro);
             command.Parameters.AddWithValue("@RUA", endereco.Rua);
             command.Parameters.AddWithValue("@CIDADE", endereco.Cidade);
             command.Parameters.AddWithValue("@PONTO_REFERENCIA", endereco.PontoReferencia);

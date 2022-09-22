@@ -35,7 +35,7 @@ namespace DataAccessLayer.Implements
             command.Parameters.AddWithValue("@GENERO", funcionario.Genero);
             command.Parameters.AddWithValue("@SENHA", funcionario.Senha);
             command.Parameters.AddWithValue("@NIVEL_ACESSO", funcionario.Nivel_Acesso);
-            command.Parameters.AddWithValue("@ENDERECO_ID", funcionario.EnderecoId);
+            command.Parameters.AddWithValue("@ENDERECO_ID", funcionario.Endereco.ID);
             try
             {
                 connection.Open();
