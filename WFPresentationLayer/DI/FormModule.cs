@@ -33,6 +33,12 @@ namespace WFPresentationLayer.DI
             Bind<IProdutoSaidaDALService>().To<ProdutosSaidaDAL>();
             Bind<IEntradaService>().To<EntradaBLL>();
             Bind<IEntradaDALService>().To<EntradaDAL>();
+            Bind<IEnderecoDALService>().To<EnderecoDAL>();
+            Bind<IEnderecoService>().To<EnderecoBLL>();
+            Bind<IEstadoDALService>().To<EstadoDAL>();
+            Bind<IEstadoService>().To<EstadoBLL>();
+            Bind<ICategoriaDALService>().To<CategoriaDAL>();
+            Bind<ICategoriaService>().To<CategoriaBLL>();
         }
         public static FormModule Craete()
         {

@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Entities.Enums
+namespace DataAccessLayer.Interfaces
 {
-    public enum Categoria
+    public interface ICategoriaDALService
     {
-
     }
 }

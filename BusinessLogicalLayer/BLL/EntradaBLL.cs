@@ -52,7 +52,7 @@ namespace BusinessLogicalLayer.BLL
         }
         public async Task<DataResponse<ProdutoEntradaView>> GetAllEntradaById(ProdutoEntrada produtoEntrada)
         {
-            return await produtoEntradaDAL.GetAllByEntradaID(produtoEntrada);
+            return await produtoEntradaDAL.GetAllByEntradaID(produtoEntrada.ID);
         }
         public async Task<DataResponse<EntradaView>> GetAll()
         {
@@ -61,7 +61,7 @@ namespace BusinessLogicalLayer.BLL
 
         public async Task<SingleResponse<EntradaView>> GetById(Entrada entrada)
         {
-            return await entradaDAL.GetById(entrada);
+            return await entradaDAL.GetById(entrada.ID);
         }
 
         public async Task<SingleResponse<List<EntradaView>>> GetByDate(FilterEntrada entrada)

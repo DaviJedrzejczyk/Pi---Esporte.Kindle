@@ -20,14 +20,14 @@ namespace WFPresentationLayer
     public partial class TelaCliente : Form
     {
         private readonly IClienteService _cliente;
+        [Inject()]
         public TelaCliente(IClienteService service)
         {
             InitializeComponent();
-            _cliente = service;
             this.dtCliente.DoubleClick += dtCliente_DoubleClick;
+            _cliente = service;
         }
-
-
+       
 
         private void TelaCliente_Load(object sender, EventArgs e)
         {

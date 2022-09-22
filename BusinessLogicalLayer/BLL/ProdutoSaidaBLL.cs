@@ -23,7 +23,7 @@ namespace BusinessLogicalLayer.BLL
         }
         public async Task<DataResponse<ProdutoSaidaView>> GetAllBySaidaID(ProdutoSaida produto)
         {
-            return await produtoSaidaDAL.GetAllBySaidaID(produto);
+            return await produtoSaidaDAL.GetAllBySaidaID(produto.ID);
         }
 
        

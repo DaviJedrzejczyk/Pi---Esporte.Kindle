@@ -8,6 +8,6 @@ namespace DataAccessLayer
 {
     internal static class ConnectionString
     {
-        public const string _connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Aluno\Documents\KindleDB.mdf;Integrated Security=True;Connect Timeout=3";
+        public const string _connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\djedr\Downloads\Banco\KindleDB.mdf;Integrated Security=True;Connect Timeout=30";
     }
 }

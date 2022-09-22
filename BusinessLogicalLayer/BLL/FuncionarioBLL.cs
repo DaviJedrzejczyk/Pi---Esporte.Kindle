@@ -67,7 +67,7 @@ namespace BusinessLogicalLayer.BLL
             {
                 return response;
             }
-            return await funcionarioDAL.Delete(funcionario);
+            return await funcionarioDAL.Delete(funcionario.ID);
         }
 
         public async Task<DataResponse<Funcionario>> GetAll()
@@ -78,7 +78,7 @@ namespace BusinessLogicalLayer.BLL
         public async Task<SingleResponse<Funcionario>> GetById(Funcionario funcionario)
         {
 
-            return await funcionarioDAL.GetById(funcionario);
+            return await funcionarioDAL.GetById(funcionario.ID);
         }
 
         public async Task<SingleResponse<Funcionario>> GetLogin(Funcionario funcionario)

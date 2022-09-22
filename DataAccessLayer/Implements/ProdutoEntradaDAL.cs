@@ -42,7 +42,7 @@ namespace DataAccessLayer.Implements
             }
             catch (Exception ex)
             {
-                return DataResponseFactory<ProdutoEntradaView>.CreateInstance().CreateFailureResponse(ex)
+                return DataResponseFactory<ProdutoEntradaView>.CreateInstance().CreateFailureResponse(ex);
             }
             finally
             {

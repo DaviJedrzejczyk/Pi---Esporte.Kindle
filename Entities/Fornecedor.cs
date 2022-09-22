@@ -14,5 +14,6 @@ namespace Entities
         public string Nome_Contato { get; set; }
         public string Telefone { get; set; }
         public string Email { get; set; }
+        public bool IsAtivo { get; set; }
     }
 }

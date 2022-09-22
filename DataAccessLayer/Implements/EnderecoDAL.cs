@@ -16,7 +16,7 @@ namespace DataAccessLayer.Implements
         readonly string connectionString = ConnectionString._connectionString;
         public async Task<Response> Insert(Endereco endereco)
         {
-            string sql = $"INSERT INTO ENDERECOS (CEP,NUMERO_CASA,BAIRRO,RUA,CIDADE,COMPLEMENTO,PONTO_REFERENCIA,ESTADO_ID) VALUES (@CEP,@NUMERO_CASA,@BAIRRO,@RUA,@CIDADE,@COMPLEMENTO,PONTO_REFERENCIA,ESTADO_ID); SELECT SCOPE_IDENTITY()";
+            string sql = $"INSERT INTO ENDERECOS (CEP,NUMERO_CASA,RUA,BAIRRO,CIDADE,COMPLEMENTO,PONTO_REFERENCIA,ESTADO_ID) VALUES (@CEP,@NUMERO_CASA,@RUA,@BAIRRO,@CIDADE,@COMPLEMENTO,PONTO_REFERENCIA,ESTADO_ID); SELECT SCOPE_IDENTITY()";
             SqlConnection connection = new(connectionString);
             SqlCommand command = new(sql, connection);
             command.Parameters.AddWithValue("@CEP", endereco.CEP);
@@ -84,8 +84,8 @@ namespace DataAccessLayer.Implements
         {
 
             string sql = "DELETE FROM ENDERECOS WHERE ID = @ID";
-            SqlConnection connection = new SqlConnection(connectionString);
-            SqlCommand command = new SqlCommand(sql, connection);
+            SqlConnection connection = new(connectionString);
+            SqlCommand command = new(sql, connection);
             command.Parameters.AddWithValue("@ID", id);
             try
             {

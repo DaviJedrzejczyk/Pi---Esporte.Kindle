@@ -11,18 +11,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Shared;
+using Ninject;
 
 namespace WFPresentationLayer
 {
     public partial class TelaFornecedor : Form
     {
         private readonly IFornecedoraService fornecedoraBLL;
+        [Inject()]
         public TelaFornecedor(IFornecedoraService service)
         {
             InitializeComponent();
             fornecedoraBLL = service;
             this.dtFornecedor.DoubleClick += dtFornecedor_DoubleClick;
-
         }
         private void TelaFornecedor_Load(object sender, EventArgs e)
         {
@@ -49,7 +50,7 @@ namespace WFPresentationLayer
                 Nome_Contato = txtNome.Text,
                 Telefone = txtTelefone.Text,
                 Email = txtEmail.Text,
-                IsAtivo = ckIsAtivo.Checked,
+                IsAtivo = ckIsAtivo.Checked
             };
             return f;
         }
@@ -119,7 +120,7 @@ namespace WFPresentationLayer
         private async void btnDelete_Click(object sender, EventArgs e)
         {
             Fornecedor fornecedor = CreateObjectWithForm();
-            Response response = await fornecedoraBLL.Delete(fornecedor);
+            Response response = await fornecedoraBLL.Delete(fornecedor.ID);
             if (response.HasSuccess)
             {
                 MessageBox.Show("Sucesso");

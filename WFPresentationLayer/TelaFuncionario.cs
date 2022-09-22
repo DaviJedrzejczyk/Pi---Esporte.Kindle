@@ -9,13 +9,16 @@ namespace WFPresentationLayer
     public partial class TelaFuncionario : Form
     {
         private readonly IFuncionarioService funcionarioService;
+        public TelaFuncionario()
+        {
+            InitializeComponent();
+        }
         public TelaFuncionario(IFuncionarioService funcionario)
         {
             InitializeComponent();
             funcionarioService = funcionario;
             this.dtFuncionario.DoubleClick += dtFuncionario_DoubleClick;
         }
-
 
 
         private void TelaFuncionario_Load(object sender, EventArgs e)

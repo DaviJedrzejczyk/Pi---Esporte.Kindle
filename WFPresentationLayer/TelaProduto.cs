@@ -26,9 +26,7 @@ namespace WFPresentationLayer
             produtoBLL = produto;
             this.fornecedoraService = fornecedoraService;
             this.dtProduto.DoubleClick += dataGridView1_DoubleClick;
-
         }
-
         private void TelaProduto_Load(object sender, EventArgs e)
         {
             SincronizarGrid();

@@ -21,7 +21,7 @@ namespace DataAccessLayer.Implements
         private string _connection = ConnectionString._connectionString;
         public async Task<Response> Insert(Funcionario funcionario)
         {
-            string sql = $"INSERT INTO FUNCIONARIOS (NOME,SOBRENOME,CPF,RG,EMAIL,SENHA,TELEFONE,GENERO,DATA_NASCIMENTO,IDADE, NIVEL_ACESSO,ENDERECO_ID) VALUES (@NOME,@SOBRENOME,@CPF,@RG,@EMAIL,@SENHA,@TELEFONE,@GENERO,@DATA_NASCIMENTO,@IDADE,@NIVEL_ACESSO,@ENDERECO_ID)";
+            string sql = $"INSERT INTO FUNCIONARIOS (NOME,SOBRENOME,CPF,RG,TELEFONE,EMAIL,SENHA,GENERO,DATA_NASCIMENTO,IDADE, NIVEL_ACESSO,ENDERECO_ID) VALUES (@NOME,@SOBRENOME,@CPF,@RG,@TELEFONE,@EMAIL,@SENHA,@GENERO,@DATA_NASCIMENTO,@IDADE,@NIVEL_ACESSO,@ENDERECO_ID)";
             SqlConnection connection = new(_connection);
             SqlCommand command = new(sql, connection);
             command.Parameters.AddWithValue("@NOME", funcionario.Nome);
@@ -221,7 +221,7 @@ namespace DataAccessLayer.Implements
 
         public async Task<SingleResponse<Funcionario>> GetLogin(Funcionario funcionario)
         {
-            string sql = "SELECT EMAIL, SENHA, NVIEL_FUNCIONARIO FROM FUNCIONARIOS WHERE EMAIL = @EMAIL";
+            string sql = "SELECT EMAIL, SENHA, NIVEL_ACESSO FROM FUNCIONARIOS WHERE EMAIL = @EMAIL";
             SqlConnection connection = new(_connection);
             SqlCommand command = new(sql, connection);
             command.Parameters.AddWithValue("@EMAIL", funcionario.Email);

@@ -20,7 +20,7 @@ namespace BusinessLogicalLayer.BLL
 
         public async Task<DataResponse<ProdutoEntradaView>> GetAllByEntradaID(ProdutoEntrada produtosEntrada)
         {
-            return await produtoEntradaDAL.GetAllByEntradaID(produtosEntrada);
+            return await produtoEntradaDAL.GetAllByEntradaID(produtosEntrada.ID);
         }
 
         public async Task<Response> Insert(ProdutoEntrada produtosEntrada)

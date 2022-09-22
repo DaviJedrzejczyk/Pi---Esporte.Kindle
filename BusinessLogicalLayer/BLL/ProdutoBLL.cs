@@ -29,7 +29,7 @@ namespace BusinessLogicalLayer.BLL
         }
         public async Task<Response> Delete(Produto produto)
         {
-            return await produtoDAL.Delete(produto);
+            return await produtoDAL.Delete(produto.ID);
         }
 
         public async Task<DataResponse<Produto>> GetAll()
@@ -39,7 +39,7 @@ namespace BusinessLogicalLayer.BLL
 
         public async Task<SingleResponse<Produto>> GetById(Produto produto)
         {
-            return await produtoDAL.GetById(produto);
+            return await produtoDAL.GetById(produto.ID);
         }
 
         public double CalculateNewValueWihtProducts(Produto OldProduct, Produto NewProduct)
@@ -53,7 +53,7 @@ namespace BusinessLogicalLayer.BLL
             SingleResponse<Produto> singleResponse = new();
             for (int i = 0; i < produtos.Count; i++)
             {
-                singleResponse = await produtoDAL.GetById(produtos[i]);
+                singleResponse = await produtoDAL.GetById(produtos[i].ID);
                 if (singleResponse.HasSuccess)
                 {
                     produtos[i].Valor_Unitario = ((singleResponse.Item.Valor_Unitario * singleResponse.Item.QtdEstoque) + (produtos[i].Valor_Unitario * produtos[i].QtdEstoque) / (produtos[i].QtdEstoque + singleResponse.Item.QtdEstoque));
