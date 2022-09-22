@@ -18,9 +18,9 @@ namespace BusinessLogicalLayer.BLL
             this.estadoDALService = estadoDALService;
         }
 
-        public async Task<DataResponse<Estado>> GetAll()
+        public DataResponse<Estado> GetAll()
         {
-            return await estadoDALService.GetAll();
+            return estadoDALService.GetAll();
         }
 
         public async Task<SingleResponse<Estado>> GetById(int id)

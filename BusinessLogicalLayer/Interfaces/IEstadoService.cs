@@ -10,7 +10,7 @@ namespace BusinessLogicalLayer.Interfaces
 {
     public interface IEstadoService
     {
-        Task<DataResponse<Estado>> GetAll();
+        DataResponse<Estado> GetAll();
         Task<SingleResponse<Estado>> GetById(int id);
     }
 }

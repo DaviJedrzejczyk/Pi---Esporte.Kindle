@@ -50,9 +50,9 @@ namespace BusinessLogicalLayer.BLL
             return await fornecedoraDAL.Delete(id);
         }
 
-        public async Task<DataResponse<Fornecedor>> GetAll()
+        public  DataResponse<Fornecedor> GetAll()
         {
-            return await fornecedoraDAL.GetAll();
+            return fornecedoraDAL.GetAll();
         }
 
         public async Task<SingleResponse<Fornecedor>> GetById(int fornecedor)

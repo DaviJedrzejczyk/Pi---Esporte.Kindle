@@ -20,29 +20,27 @@ namespace WFPresentationLayer
         private readonly IProdutoService produtoBLL;
         private readonly IFornecedoraService fornecedoraService;
         [Inject()]
-        public TelaProduto(IProdutoService produto, IFornecedoraService fornecedoraService)
+        public TelaProduto(IProdutoService produto, IFornecedoraService fornecedoraService2)
         {
             InitializeComponent();
             produtoBLL = produto;
-            this.fornecedoraService = fornecedoraService;
+            fornecedoraService = fornecedoraService2;
             this.dtProduto.DoubleClick += dataGridView1_DoubleClick;
         }
         private void TelaProduto_Load(object sender, EventArgs e)
         {
-            SincronizarGrid();
-            cbFornecedora.DataSource = fornecedoraService.GetAll().Result.Itens;
+            cbFornecedora.DataSource = fornecedoraService.GetAll().Itens;
             cbFornecedora.DisplayMember = "Nome_Contato";
             cbFornecedora.ValueMember = "ID";
+            SincronizarGrid();
+          
         }
 
         private Produto CreateObjectWithForm()
         {
-            int temp;
-            double valor;
-            int qtd;
-            int.TryParse(txtID.Text, out temp);
-            int.TryParse(txtQtdEstoque.Text, out qtd);
-            double.TryParse(txtValor.Text, out valor);
+            int.TryParse(txtID.Text, out int temp);
+            int.TryParse(txtQtdEstoque.Text, out int qtd);
+            double.TryParse(txtValor.Text, out double valor);
             Produto c = new()
             {
                 ID = temp,
@@ -50,7 +48,7 @@ namespace WFPresentationLayer
                 Descricao = txtDescricao.Text,
                 QtdEstoque = qtd,
                 Valor_Unitario = valor,
-                
+                Fornecedor = (Fornecedor)cbFornecedora.SelectedItem,
             };
             return c;
         }
@@ -67,7 +65,7 @@ namespace WFPresentationLayer
                 dtProduto.Rows[i].Cells["ProdutoDescricao"].Value = dataResponse.Itens[i].Descricao;
                 dtProduto.Rows[i].Cells["ProdutoQtdEstoque"].Value = dataResponse.Itens[i].QtdEstoque;
                 dtProduto.Rows[i].Cells["ProdutoValor"].Value = dataResponse.Itens[i].Valor_Unitario;
-                dtProduto.Rows[i].Cells["ProdutoFornecedora"].Value = dataResponse.Itens[i].Fornecedor;
+                dtProduto.Rows[i].Cells["ProdutoFornecedora"].Value = dataResponse.Itens[i].FornecedorId;
             }
         }
         private void DrawFormWithObject(Produto produto)
@@ -77,19 +75,21 @@ namespace WFPresentationLayer
             this.txtDescricao.Text = produto.Descricao;
             this.txtQtdEstoque.Text = produto.QtdEstoque.ToString();
             this.txtValor.Text = produto.Valor_Unitario.ToString();
-            this.cbFornecedora.Text = produto.Fornecedor.ToString();
+            this.cbFornecedora.Text = produto.Fornecedor.ID.ToString();
 
         }
         private void dataGridView1_DoubleClick(object sender, EventArgs e)
         {
             int rowindex = dtProduto.CurrentCell.RowIndex;
-            Produto produtoSelecionado = new();
-            produtoSelecionado.ID = Convert.ToInt32(this.dtProduto.Rows[rowindex].Cells[0].Value);
-            produtoSelecionado.Nome = Convert.ToString(this.dtProduto.Rows[rowindex].Cells[1].Value);
-            produtoSelecionado.Descricao = Convert.ToString(this.dtProduto.Rows[rowindex].Cells[2].Value);
-            produtoSelecionado.Fornecedor = (Fornecedor)this.dtProduto.Rows[rowindex].Cells[3].Value;
-            produtoSelecionado.QtdEstoque = Convert.ToInt32(this.dtProduto.Rows[rowindex].Cells[4].Value);
-            produtoSelecionado.Valor_Unitario = Convert.ToDouble(dtProduto.Rows[rowindex].Cells[5].Value);
+            Produto produtoSelecionado = new()
+            {
+                ID = Convert.ToInt32(this.dtProduto.Rows[rowindex].Cells[0].Value),
+                Nome = Convert.ToString(this.dtProduto.Rows[rowindex].Cells[1].Value),
+                Descricao = Convert.ToString(this.dtProduto.Rows[rowindex].Cells[2].Value),
+                Fornecedor = (Fornecedor)this.dtProduto.Rows[rowindex].Cells[3].Value,
+                QtdEstoque = Convert.ToInt32(this.dtProduto.Rows[rowindex].Cells[4].Value),
+                Valor_Unitario = Convert.ToDouble(dtProduto.Rows[rowindex].Cells[5].Value)
+            };
             DrawFormWithObject(produtoSelecionado);
         }
 

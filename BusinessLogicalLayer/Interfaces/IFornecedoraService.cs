@@ -14,7 +14,7 @@ namespace BusinessLogicalLayer.Interfaces
         Task<Response> Insert(Fornecedor item);
         Task<Response> Update(Fornecedor item);
         Task<Response> Delete(int item);
-        Task<DataResponse<Fornecedor>> GetAll();
+        DataResponse<Fornecedor> GetAll();
         Task<SingleResponse<Fornecedor>> GetById(int fornecedor);
     }
 }

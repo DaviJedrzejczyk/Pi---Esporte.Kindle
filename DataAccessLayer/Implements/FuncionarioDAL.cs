@@ -139,9 +139,9 @@ namespace DataAccessLayer.Implements
 
         public async Task<DataResponse<Funcionario>> GetAll()
         {
-            string sql = $"SELECT ID,NOME,SOBRENOME,CPF,RG,TELEFONE,EMAIL FROM FUNCIONARIOS";
-            SqlConnection connection = new SqlConnection(_connection);
-            SqlCommand command = new SqlCommand(sql, connection);
+            string sql = $"SELECT ID,NOME,SOBRENOME,CPF,RG,TELEFONE,EMAIL,DATA_NASCIMENTO,IDADE,NIVEL_ACESSO,ENDERECO_ID,SENHA,GENERO FROM FUNCIONARIOS";
+            SqlConnection connection = new(_connection);
+            SqlCommand command = new(sql, connection);
             try
             {
                 connection.Open();
@@ -160,9 +160,10 @@ namespace DataAccessLayer.Implements
                         Genero = (Genero)reader["GENERO"],
                         Nivel_Acesso = (TipoFuncionario)reader["NIVEL_ACESSO"],
                         CPF = Convert.ToString(reader["CPF"]),
-                        Rg = Convert.ToString(reader["RG"]),
+                        RG = Convert.ToString(reader["RG"]),
                         Telefone = Convert.ToString(reader["TELEFONE"]),
-                        Email = Convert.ToString(reader["EMAIL"])
+                        Email = Convert.ToString(reader["EMAIL"]),
+                        Senha = Convert.ToString(reader["SENHA"])
                     };
                     funcionarios.Add(funcionario);
                 }

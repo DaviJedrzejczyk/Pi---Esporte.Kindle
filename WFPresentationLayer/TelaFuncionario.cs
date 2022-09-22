@@ -3,21 +3,20 @@ using Entities;
 using Entities.Enums;
 using Shared;
 using System.Runtime.CompilerServices;
+using System.Transactions;
 
 namespace WFPresentationLayer
 {
     public partial class TelaFuncionario : Form
     {
         private readonly IFuncionarioService funcionarioService;
-        public TelaFuncionario()
-        {
-            InitializeComponent();
-        }
-        public TelaFuncionario(IFuncionarioService funcionario)
+        private readonly IEstadoService estadoService;
+        public TelaFuncionario(IFuncionarioService funcionario, IEstadoService estadoService)
         {
             InitializeComponent();
             funcionarioService = funcionario;
             this.dtFuncionario.DoubleClick += dtFuncionario_DoubleClick;
+            this.estadoService = estadoService;
         }
 
 
@@ -26,6 +25,9 @@ namespace WFPresentationLayer
             
             cbGenero.DataSource = Enum.GetNames(typeof(Genero));
             cbNivelAcesso.DataSource = Enum.GetNames(typeof(TipoFuncionario));
+            cbEstado.DataSource = estadoService.GetAll().Itens;
+            cbEstado.DisplayMember = "Unidade_Federal";
+            cbEstado.ValueMember = "ID";
             SincronizarGrid();
         }
 
@@ -52,7 +54,18 @@ namespace WFPresentationLayer
                 Senha = txtSenha.Text,
                 Nivel_Acesso = tipo,
                 Telefone = txtTelefone.Text,
+
             };
+            Endereco endereco = new()
+            {
+                Rua = txtRua.Text,
+                Bairro = txtBairro.Text,
+                Cidade = txtCidade.Text,
+                PontoReferencia = txtPonto.Text,
+                Complemento = txtComplemento.Text,
+                Estado = (Estado)cbEstado.SelectedItem,
+            };
+            funcionario.Endereco = endereco;
             return funcionario;
         }
         private async void SincronizarGrid()
@@ -73,7 +86,7 @@ namespace WFPresentationLayer
                 dtFuncionario.Rows[i].Cells["FuncionarioEmail"].Value = dataResponse.Itens[i].Email;
                 dtFuncionario.Rows[i].Cells["FuncionarioTelefone"].Value = dataResponse.Itens[i].Telefone;
                 dtFuncionario.Rows[i].Cells["FuncionarioGenero"].Value = dataResponse.Itens[i].Genero;
-             //   dtFuncionario.Rows[i].Cells["FuncionarioEndereco"].Value = dataResponse.Itens[i].Endereco;
+                dtFuncionario.Rows[i].Cells["FuncionarioEndereco"].Value = dataResponse.Itens[i].EnderecoId;
                 dtFuncionario.Rows[i].Cells["FuncionarioNivelAcesso"].Value = dataResponse.Itens[i].Nivel_Acesso;
             }
         }
@@ -91,7 +104,7 @@ namespace WFPresentationLayer
             this.txtData.Text = funcionario.DataNascimento.ToString();
             this.cbGenero.Text = funcionario.Genero.ToString();
             this.cbNivelAcesso.Text = funcionario.Nivel_Acesso.ToString();
-            //this.txtEndereco.Text = funcionario.Endereco.ID.ToString();
+            this.txtEnderecoID.Text = funcionario.Endereco.ID.ToString();
 
         }
         private void dtFuncionario_DoubleClick(object sender, EventArgs e)
@@ -109,7 +122,7 @@ namespace WFPresentationLayer
             funcionarioSelecionado.Telefone = Convert.ToString(this.dtFuncionario.Rows[rowindex].Cells[8].Value);
             funcionarioSelecionado.Genero = (Genero)this.dtFuncionario.Rows[rowindex].Cells[9].Value;
             funcionarioSelecionado.Nivel_Acesso = (TipoFuncionario)this.dtFuncionario.Rows[rowindex].Cells[10].Value;
-           // funcionarioSelecionado.Endereco.ID = Convert.ToInt32(this.dtFuncionario.Rows[rowindex].Cells[11].Value);
+            funcionarioSelecionado.Endereco.ID = Convert.ToInt32(this.dtFuncionario.Rows[rowindex].Cells[11].Value);
             DrawFormWithObject(funcionarioSelecionado);
         }
 
@@ -133,6 +146,7 @@ namespace WFPresentationLayer
             txtCEP.Clear();
             txtCidade.Clear();
             txtComplemento.Clear();
+            txtEnderecoID.Clear();
         }
 
 

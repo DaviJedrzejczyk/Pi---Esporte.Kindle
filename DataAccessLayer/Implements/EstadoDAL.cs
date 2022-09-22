@@ -102,7 +102,7 @@ namespace DataAccessLayer.Implements
             }
         }
 
-        public async Task<DataResponse<Estado>> GetAll()
+        public DataResponse<Estado> GetAll()
         {
             string sql = $"SELECT ID,NOME_ESTADO,SIGLA FROM ESTADOS";
             SqlConnection connection = new(connectionString);
@@ -110,7 +110,7 @@ namespace DataAccessLayer.Implements
             try
             {
                 connection.Open();
-                SqlDataReader reader = await command.ExecuteReaderAsync();
+                SqlDataReader reader = command.ExecuteReader();
                 List<Estado> estados = new();
                 while (reader.Read())
                 {

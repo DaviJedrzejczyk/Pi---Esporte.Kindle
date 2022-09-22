@@ -84,6 +84,8 @@
             this.txtPonto = new System.Windows.Forms.TextBox();
             this.lblComplemento = new System.Windows.Forms.Label();
             this.txtComplemento = new System.Windows.Forms.TextBox();
+            this.lblEndereco = new System.Windows.Forms.Label();
+            this.txtEnderecoID = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtFuncionario)).BeginInit();
             this.SuspendLayout();
             // 
@@ -162,12 +164,12 @@
             this.FuncionarioGenero,
             this.FuncionarioNivelAcesso,
             this.FuncionarioEndereco});
-            this.dtFuncionario.Location = new System.Drawing.Point(616, 12);
+            this.dtFuncionario.Location = new System.Drawing.Point(521, 12);
             this.dtFuncionario.Name = "dtFuncionario";
             this.dtFuncionario.ReadOnly = true;
             this.dtFuncionario.RowTemplate.Height = 25;
             this.dtFuncionario.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtFuncionario.Size = new System.Drawing.Size(282, 485);
+            this.dtFuncionario.Size = new System.Drawing.Size(377, 485);
             this.dtFuncionario.TabIndex = 7;
             this.dtFuncionario.DoubleClick += new System.EventHandler(this.dtFuncionario_DoubleClick);
             // 
@@ -557,11 +559,30 @@
             this.txtComplemento.Size = new System.Drawing.Size(116, 23);
             this.txtComplemento.TabIndex = 44;
             // 
+            // lblEndereco
+            // 
+            this.lblEndereco.AutoSize = true;
+            this.lblEndereco.Location = new System.Drawing.Point(362, 299);
+            this.lblEndereco.Name = "lblEndereco";
+            this.lblEndereco.Size = new System.Drawing.Size(73, 15);
+            this.lblEndereco.TabIndex = 47;
+            this.lblEndereco.Text = "Endereco ID:";
+            // 
+            // txtEnderecoID
+            // 
+            this.txtEnderecoID.Location = new System.Drawing.Point(362, 319);
+            this.txtEnderecoID.Name = "txtEnderecoID";
+            this.txtEnderecoID.ReadOnly = true;
+            this.txtEnderecoID.Size = new System.Drawing.Size(100, 23);
+            this.txtEnderecoID.TabIndex = 48;
+            // 
             // TelaFuncionario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(900, 519);
+            this.Controls.Add(this.txtEnderecoID);
+            this.Controls.Add(this.lblEndereco);
             this.Controls.Add(this.lblComplemento);
             this.Controls.Add(this.txtComplemento);
             this.Controls.Add(this.lblPonto);
@@ -672,5 +693,7 @@
         private TextBox txtPonto;
         private Label lblComplemento;
         private TextBox txtComplemento;
+        private Label lblEndereco;
+        private TextBox txtEnderecoID;
     }
 }

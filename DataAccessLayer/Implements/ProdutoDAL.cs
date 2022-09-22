@@ -17,13 +17,14 @@ namespace DataAccessLayer.Implements
 
         public async Task<Response> Insert(Produto produto)
         {
-            string sql = $"INSERT INTO PRODUTOS (NOME,DESCRICAO,QTD_ESTOQUE,VALOR) VALUES (@NOME,@DESCRICAO,@QTD_ESTOQUE,@VALOR)";
-            SqlConnection connection = new SqlConnection(connectionString);
-            SqlCommand command = new SqlCommand(sql, connection);
+            string sql = $"INSERT INTO PRODUTOS (NOME,DESCRICAO,QTD_ESTOQUE,VALOR,FORNECEDOR_ID) VALUES (@NOME,@DESCRICAO,@QTD_ESTOQUE,@VALOR,@FORNECEDOR_ID)";
+            SqlConnection connection = new(connectionString);
+            SqlCommand command = new(sql, connection);
             command.Parameters.AddWithValue("@NOME", produto.Nome);
             command.Parameters.AddWithValue("@DESCRICAO", produto.Descricao);
             command.Parameters.AddWithValue("@QTD_ESTOQUE", produto.QtdEstoque);
             command.Parameters.AddWithValue("@VALOR", produto.Valor_Unitario);
+            command.Parameters.AddWithValue("@FORNECEDOR_ID", produto.Fornecedor.ID);
             try
             {
                 connection.Open();
@@ -42,13 +43,14 @@ namespace DataAccessLayer.Implements
 
         public async Task<Response> Update(Produto produto)
         {
-            string sql = $"UPDATE PRODUTOS SET NOME = @NOME, DESCRICAO = @DESCRICAO, QTD_ESTOQUE = @QTD_ESTOQUE, VALOR = @VALOR WHERE ID = @ID";
-            SqlConnection connection = new SqlConnection(connectionString);
-            SqlCommand command = new SqlCommand(sql, connection);
+            string sql = $"UPDATE PRODUTOS SET NOME = @NOME, DESCRICAO = @DESCRICAO, QTD_ESTOQUE = @QTD_ESTOQUE, VALOR = @VALOR, FORNECEDOR_ID = @FORNECEDOR_ID WHERE ID = @ID";
+            SqlConnection connection = new(connectionString);
+            SqlCommand command = new(sql, connection);
             command.Parameters.AddWithValue("@NOME", produto.Nome);
             command.Parameters.AddWithValue("@DESCRICAO", produto.Descricao);
             command.Parameters.AddWithValue("@QTD_ESTOQUE", produto.QtdEstoque);
             command.Parameters.AddWithValue("@VALOR", produto.Valor_Unitario);
+            command.Parameters.AddWithValue("FORNECEDOR_ID", produto.Fornecedor.ID);
             command.Parameters.AddWithValue("@ID", produto.ID);
             try
             {
@@ -72,8 +74,8 @@ namespace DataAccessLayer.Implements
         public async Task<Response> Delete(int id)
         {
             string sql = "DELETE FROM PRODUTOS WHERE ID = @ID";
-            SqlConnection connection = new SqlConnection(connectionString);
-            SqlCommand command = new SqlCommand(sql, connection);
+            SqlConnection connection = new(connectionString);
+            SqlCommand command = new(sql, connection);
             command.Parameters.AddWithValue("@ID", id);
             try
             {
@@ -105,22 +107,23 @@ namespace DataAccessLayer.Implements
 
         public async Task<DataResponse<Produto>> GetAll()
         {
-            string sql = $"SELECT ID,NOME,DESCRICAO,QTD_ESTOQUE,VALOR FROM PRODUTOS";
-            SqlConnection connection = new SqlConnection(connectionString);
-            SqlCommand command = new SqlCommand(sql, connection);
+            string sql = $"SELECT ID,NOME,DESCRICAO,QTD_ESTOQUE,VALOR,FORNECEDOR_ID FROM PRODUTOS";
+            SqlConnection connection = new(connectionString);
+            SqlCommand command = new(sql, connection);
             try
             {
                 connection.Open();
                 SqlDataReader reader = command.ExecuteReader();
-                List<Produto> produtos = new List<Produto>();
+                List<Produto> produtos = new();
                 while (reader.Read())
                 {
-                    Produto produto = new Produto();
+                    Produto produto = new();
                     produto.ID = Convert.ToInt32(reader["ID"]);
                     produto.Nome = Convert.ToString(reader["NOME"]);
                     produto.Descricao = Convert.ToString(reader["DESCRICAO"]);
                     produto.QtdEstoque = Convert.ToInt32(reader["QTD_ESTOQUE"]);
                     produto.Valor_Unitario = Convert.ToDouble(reader["VALOR"]);
+                    produto.FornecedorId = Convert.ToInt32(reader["FORNECEDOR_ID"]);
 
                     produtos.Add(produto);
                 }
@@ -138,9 +141,9 @@ namespace DataAccessLayer.Implements
 
         public async Task<SingleResponse<Produto>> GetById(int id)
         {
-            string sql = $"SELECT ID,NOME,DESCRICAO,LABORATORIO_ID,QTD_ESTOQUE,TIPO_UNIDADE_ID,VALOR FROM PRODUTOS WHERE ID = @ID";
-            SqlConnection connection = new SqlConnection(connectionString);
-            SqlCommand command = new SqlCommand(sql, connection);
+            string sql = $"SELECT ID,NOME,DESCRICAO,QTD_ESTOQUE,VALOR,FORNECEDOR_ID FROM PRODUTOS WHERE ID = @ID";
+            SqlConnection connection = new(connectionString);
+            SqlCommand command = new(sql, connection);
             command.Parameters.AddWithValue("@ID", id);
             try
             {
@@ -148,12 +151,15 @@ namespace DataAccessLayer.Implements
                 SqlDataReader reader = command.ExecuteReader();
                 if (reader.Read())
                 {
-                    Produto produto = new Produto();
-                    produto.ID = Convert.ToInt32(reader["ID"]);
-                    produto.Nome = Convert.ToString(reader["NOME"]);
-                    produto.Descricao = Convert.ToString(reader["DESCRICAO"]);
-                    produto.QtdEstoque = Convert.ToInt32(reader["QTD_ESTOQUE"]);
-                    produto.Valor_Unitario = Convert.ToDouble(reader["VALOR"]);
+                    Produto produto = new()
+                    {
+                        ID = Convert.ToInt32(reader["ID"]),
+                        Nome = Convert.ToString(reader["NOME"]),
+                        Descricao = Convert.ToString(reader["DESCRICAO"]),
+                        QtdEstoque = Convert.ToInt32(reader["QTD_ESTOQUE"]),
+                        Valor_Unitario = Convert.ToDouble(reader["VALOR"]),
+                        Fornecedor = (Fornecedor)reader["FORNECEDOR_ID"]
+                    };
 
                     return SingleResponseFactory<Produto>.CreateInstance().CreateSuccessSingleResponse(produto);
                 }
@@ -172,8 +178,8 @@ namespace DataAccessLayer.Implements
         public async Task<Response> UpdateValueAndInventory(Produto produto)
         {
             string sql = $"UPDATE PRODUTOS SET VALOR = @VALOR, QTD_ESTOQUE = @QTD_ESTOQUE WHERE ID = @ID";
-            SqlConnection connection = new SqlConnection(connectionString);
-            SqlCommand command = new SqlCommand(sql, connection);
+            SqlConnection connection = new(connectionString);
+            SqlCommand command = new(sql, connection);
             command.Parameters.AddWithValue("@VALOR", produto.Valor_Unitario);
             command.Parameters.AddWithValue("@QTD_ESTOQUE", produto.QtdEstoque);
             command.Parameters.AddWithValue("@ID", produto.ID);

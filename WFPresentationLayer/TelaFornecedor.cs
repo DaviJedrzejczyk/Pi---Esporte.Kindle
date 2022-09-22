@@ -32,6 +32,7 @@ namespace WFPresentationLayer
         private void DrawFormWithObject(Fornecedor fornecedor)
         {
             this.txtID.Text = fornecedor.ID.ToString();
+            this.txtRazao.Text = fornecedor.Razao_Social;
             this.txtNome.Text = fornecedor.Nome_Contato;
             this.txtCNPJ.Text = fornecedor.Cnpj;
             this.txtEmail.Text = fornecedor.Email;
@@ -41,12 +42,12 @@ namespace WFPresentationLayer
         }
         private Fornecedor CreateObjectWithForm()
         {
-            int temp;
-            int.TryParse(txtID.Text, out temp);
+            int.TryParse(txtID.Text, out int temp);
             Fornecedor f = new()
             {
                 ID = temp,
                 Cnpj = txtCNPJ.Text,
+                Razao_Social = txtRazao.Text,
                 Nome_Contato = txtNome.Text,
                 Telefone = txtTelefone.Text,
                 Email = txtEmail.Text,
@@ -58,12 +59,13 @@ namespace WFPresentationLayer
         private async void SincronizarGrid()
         {
             dtFornecedor.DataSource = null;
-            DataResponse<Fornecedor> dataResponse = await fornecedoraBLL.GetAll();
+            DataResponse<Fornecedor> dataResponse = fornecedoraBLL.GetAll();
             dtFornecedor.Rows.Clear();
             for (int i = 0; i < dataResponse.Itens.Count; i++)
             {
                 dtFornecedor.Rows.Add();
                 dtFornecedor.Rows[i].Cells["ForneID"].Value = dataResponse.Itens[i].ID;
+                dtFornecedor.Rows[i].Cells["ForneRazao"].Value = dataResponse.Itens[i].Razao_Social;
                 dtFornecedor.Rows[i].Cells["ForneNome"].Value = dataResponse.Itens[i].Nome_Contato;
                 dtFornecedor.Rows[i].Cells["ForneCNPJ"].Value = dataResponse.Itens[i].Cnpj;
                 dtFornecedor.Rows[i].Cells["ForneIsAtivo"].Value = dataResponse.Itens[i].IsAtivo;
@@ -75,13 +77,16 @@ namespace WFPresentationLayer
         private void dtFornecedor_DoubleClick(object sender, EventArgs e)
         {
             int rowindex = dtFornecedor.CurrentCell.RowIndex;
-            Fornecedor fornecedorSelecionado = new();
-            fornecedorSelecionado.ID = Convert.ToInt32(this.dtFornecedor.Rows[rowindex].Cells[0].Value);
-            fornecedorSelecionado.Nome_Contato = Convert.ToString(this.dtFornecedor.Rows[rowindex].Cells[1].Value);
-            fornecedorSelecionado.Cnpj = Convert.ToString(this.dtFornecedor.Rows[rowindex].Cells[2].Value);
-            fornecedorSelecionado.Email = Convert.ToString(dtFornecedor.Rows[rowindex].Cells[3].Value);
-            fornecedorSelecionado.Telefone = Convert.ToString(this.dtFornecedor.Rows[rowindex].Cells[4].Value);
-            fornecedorSelecionado.IsAtivo = (bool)this.dtFornecedor.Rows[rowindex].Cells[5].Value;
+            Fornecedor fornecedorSelecionado = new()
+            {
+                ID = Convert.ToInt32(this.dtFornecedor.Rows[rowindex].Cells[0].Value),
+                Razao_Social = Convert.ToString(this.dtFornecedor.Rows[rowindex].Cells[1].Value),
+                Nome_Contato = Convert.ToString(this.dtFornecedor.Rows[rowindex].Cells[2].Value),
+                Cnpj = Convert.ToString(this.dtFornecedor.Rows[rowindex].Cells[3].Value),
+                Email = Convert.ToString(dtFornecedor.Rows[rowindex].Cells[4].Value),
+                Telefone = Convert.ToString(this.dtFornecedor.Rows[rowindex].Cells[5].Value),
+                IsAtivo = (bool)this.dtFornecedor.Rows[rowindex].Cells[6].Value
+            };
             DrawFormWithObject(fornecedorSelecionado);
         }
 

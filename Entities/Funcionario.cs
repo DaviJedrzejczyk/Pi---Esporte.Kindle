@@ -14,7 +14,6 @@ namespace Entities
         public string Nome { get; set; }
         public string Sobrenome { get; set; }
         public string CPF { get; set; }
-        public string Rg { get; set; }
         public DateTime DataNascimento { get; set; }
         public int Idade
         {
@@ -41,7 +40,7 @@ namespace Entities
         public TipoFuncionario Nivel_Acesso { get; set; }
         public Endereco Endereco { get; set; }
         public int EnderecoId { get; set; }
-        public Funcionario(int iD, string nome, string sobrenome, DateTime dataNascimento, int idade, string telefone, string email, Genero genero, string senha, TipoFuncionario nivel_Acesso, Endereco endereco, int enderecoId, string cpf, string rg) : base(cpf, rg)
+        public Funcionario(int iD, string nome, string sobrenome, DateTime dataNascimento, int idade, string telefone, string email, Genero genero, string senha, TipoFuncionario nivel_Acesso, Endereco endereco, string cpf, string rg) : base(cpf, rg)
         {
             ID = iD;
             Nome = nome;
@@ -54,7 +53,6 @@ namespace Entities
             Senha = senha;
             Nivel_Acesso = nivel_Acesso;
             Endereco = endereco;
-            EnderecoId = enderecoId;
         }
 
         public Funcionario()

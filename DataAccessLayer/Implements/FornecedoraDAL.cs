@@ -116,7 +116,7 @@ namespace DataAccessLayer.Implements
             }
         }
 
-        public async Task<DataResponse<Fornecedor>> GetAll()
+        public DataResponse<Fornecedor> GetAll()
         {
             string sql = $"SELECT ID,RAZAO_SOCIAL,CNPJ,NOME_CONTATO,TELEFONE,EMAIL FROM FORNECEDORES";
             SqlConnection connection = new(_connection);
@@ -124,17 +124,19 @@ namespace DataAccessLayer.Implements
             try
             {
                 connection.Open();
-                SqlDataReader reader = await command.ExecuteReaderAsync();
+                SqlDataReader reader = command.ExecuteReader();
                 List<Fornecedor> fornecedores = new();
                 while (reader.Read())
                 {
-                    Fornecedor fornecedor = new Fornecedor();
-                    fornecedor.ID = Convert.ToInt32(reader["ID"]);
-                    fornecedor.Razao_Social = Convert.ToString(reader["RAZAO_SOCIAL"]);
-                    fornecedor.Cnpj = Convert.ToString(reader["CNPJ"]);
-                    fornecedor.Nome_Contato = Convert.ToString(reader["NOME_CONTATO"]);
-                    fornecedor.Telefone = Convert.ToString(reader["TELEFONE"]);
-                    fornecedor.Email = Convert.ToString(reader["EMAIL"]);
+                    Fornecedor fornecedor = new()
+                    {
+                        ID = Convert.ToInt32(reader["ID"]),
+                        Razao_Social = Convert.ToString(reader["RAZAO_SOCIAL"]),
+                        Cnpj = Convert.ToString(reader["CNPJ"]),
+                        Nome_Contato = Convert.ToString(reader["NOME_CONTATO"]),
+                        Telefone = Convert.ToString(reader["TELEFONE"]),
+                        Email = Convert.ToString(reader["EMAIL"])
+                    };
                     fornecedores.Add(fornecedor);
                 }
                 return DataResponseFactory<Fornecedor>.CreateInstance().CreateSuccessResponse(fornecedores);
@@ -161,13 +163,15 @@ namespace DataAccessLayer.Implements
                 SqlDataReader reader = await command.ExecuteReaderAsync();
                 if (reader.Read())
                 {
-                    Fornecedor fornecedor = new Fornecedor();
-                    fornecedor.ID = Convert.ToInt32(reader["ID"]);
-                    fornecedor.Razao_Social = Convert.ToString(reader["RAZAO_SOCIAL"]);
-                    fornecedor.Cnpj = Convert.ToString(reader["CNPJ"]);
-                    fornecedor.Nome_Contato = Convert.ToString(reader["NOME_CONTATO"]);
-                    fornecedor.Telefone = Convert.ToString(reader["TELEFONE"]);
-                    fornecedor.Email = Convert.ToString(reader["EMAIL"]);
+                    Fornecedor fornecedor = new()
+                    {
+                        ID = Convert.ToInt32(reader["ID"]),
+                        Razao_Social = Convert.ToString(reader["RAZAO_SOCIAL"]),
+                        Cnpj = Convert.ToString(reader["CNPJ"]),
+                        Nome_Contato = Convert.ToString(reader["NOME_CONTATO"]),
+                        Telefone = Convert.ToString(reader["TELEFONE"]),
+                        Email = Convert.ToString(reader["EMAIL"])
+                    };
                     return SingleResponseFactory<Fornecedor>.CreateInstance().CreateSuccessSingleResponse(fornecedor);
                 }
                 return SingleResponseFactory<Fornecedor>.CreateInstance().CreateFailureSingleResponse();

@@ -18,17 +18,15 @@ namespace WFPresentationLayer
         private readonly IFuncionarioService funcionarioService;
         private readonly IProdutoService produtoService;
         private readonly IFornecedoraService fornecedoraService;
-        public TelaInicial()
-        {
-            InitializeComponent();
-        }
-        public TelaInicial(IClienteService clienteService, IFuncionarioService funcionarioService, IProdutoService produtoService, IFornecedoraService fornecedoraService)
+        private readonly IEstadoService estadoService;
+        public TelaInicial(IClienteService clienteService, IFuncionarioService funcionarioService, IProdutoService produtoService, IFornecedoraService fornecedoraService, IEstadoService estadoService)
         {
             InitializeComponent();
             cliente = clienteService;
             this.funcionarioService = funcionarioService;
             this.produtoService = produtoService;
             this.fornecedoraService = fornecedoraService;
+            this.estadoService = estadoService;
         }
         private void OpenChildForm(Form childForm)
         {
@@ -52,7 +50,7 @@ namespace WFPresentationLayer
 
         private void btnFuncionarios_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new TelaFuncionario(funcionarioService));
+            OpenChildForm(new TelaFuncionario(funcionarioService, estadoService));
         }
 
         private void btnFornecedores_Click(object sender, EventArgs e)
@@ -62,13 +60,13 @@ namespace WFPresentationLayer
 
         private void btnProdutos_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new TelaProduto(produtoService,fornecedoraService));
+            OpenChildForm(new TelaProduto(produtoService, fornecedoraService));
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
             this.Hide();
-            TelaLogin telaLogin = new(funcionarioService, cliente, produtoService, fornecedoraService);
+            TelaLogin telaLogin = new(funcionarioService, cliente, produtoService, fornecedoraService,estadoService);
             telaLogin.ShowDialog();
             this.Close();
         }

@@ -32,7 +32,7 @@ namespace WFPresentationLayer
 
         private void TelaEntrada_Load(object sender, EventArgs e)
         {
-            cbFornecedor.DataSource = fornecedoraService.GetAll().Result.Itens;
+            cbFornecedor.DataSource = fornecedoraService.GetAll().Itens;
             cbFornecedor.DisplayMember = "Nome_Contato";
             cbFornecedor.ValueMember = "ID";
             cbProduto.DataSource = produtoService.GetAll().Result.Itens;
@@ -44,7 +44,7 @@ namespace WFPresentationLayer
         {
             TelaFornecedor telaFornecedor = new(fornecedoraService);
             telaFornecedor.ShowDialog();
-            cbFornecedor.DataSource = fornecedoraService.GetAll().Result.Itens;
+            cbFornecedor.DataSource = fornecedoraService.GetAll().Itens;
             cbFornecedor.DisplayMember = "Nome_Contato";
             cbFornecedor.ValueMember = "ID";
 

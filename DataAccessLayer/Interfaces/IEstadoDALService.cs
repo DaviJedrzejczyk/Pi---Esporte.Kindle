@@ -13,7 +13,7 @@ namespace DataAccessLayer.Interfaces
         Task<Response> Insert(Estado estado);
         Task<Response> Update(Estado estado);
         Task<Response> Delete(int id);
-        Task<DataResponse<Estado>> GetAll();
+        DataResponse<Estado> GetAll();
         Task<SingleResponse<Estado>> GetById(int id);
     }
 }

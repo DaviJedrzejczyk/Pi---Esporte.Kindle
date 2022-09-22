@@ -51,6 +51,7 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(84, 23);
             this.txtEmail.TabIndex = 1;
+            this.txtEmail.Text = "adm@adm.com";
             // 
             // lblEmail
             // 
@@ -76,6 +77,8 @@
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.Size = new System.Drawing.Size(84, 23);
             this.txtSenha.TabIndex = 3;
+            this.txtSenha.Text = "123456";
+            this.txtSenha.UseSystemPasswordChar = true;
             // 
             // TelaLogin
             // 
@@ -88,6 +91,7 @@
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.btnLogin);
             this.Name = "TelaLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.ResumeLayout(false);
             this.PerformLayout();

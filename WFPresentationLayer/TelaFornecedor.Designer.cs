@@ -43,7 +43,10 @@
             this.txtID = new System.Windows.Forms.TextBox();
             this.lblID = new System.Windows.Forms.Label();
             this.ckIsAtivo = new System.Windows.Forms.CheckBox();
+            this.txtRazao = new System.Windows.Forms.TextBox();
+            this.lblRazaoSocial = new System.Windows.Forms.Label();
             this.ForneID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ForneRazao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ForneNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ForneCNPJ = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ForneEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -85,7 +88,7 @@
             // lblCnpj
             // 
             this.lblCnpj.AutoSize = true;
-            this.lblCnpj.Location = new System.Drawing.Point(53, 56);
+            this.lblCnpj.Location = new System.Drawing.Point(53, 96);
             this.lblCnpj.Name = "lblCnpj";
             this.lblCnpj.Size = new System.Drawing.Size(37, 15);
             this.lblCnpj.TabIndex = 3;
@@ -93,7 +96,7 @@
             // 
             // txtCNPJ
             // 
-            this.txtCNPJ.Location = new System.Drawing.Point(97, 53);
+            this.txtCNPJ.Location = new System.Drawing.Point(97, 93);
             this.txtCNPJ.Name = "txtCNPJ";
             this.txtCNPJ.Size = new System.Drawing.Size(100, 23);
             this.txtCNPJ.TabIndex = 4;
@@ -107,6 +110,7 @@
             this.dtFornecedor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtFornecedor.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ForneID,
+            this.ForneRazao,
             this.ForneNome,
             this.ForneCNPJ,
             this.ForneEmail,
@@ -123,7 +127,7 @@
             // 
             // txtNome
             // 
-            this.txtNome.Location = new System.Drawing.Point(97, 82);
+            this.txtNome.Location = new System.Drawing.Point(97, 122);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(100, 23);
             this.txtNome.TabIndex = 7;
@@ -131,7 +135,7 @@
             // lblNome
             // 
             this.lblNome.AutoSize = true;
-            this.lblNome.Location = new System.Drawing.Point(53, 85);
+            this.lblNome.Location = new System.Drawing.Point(53, 125);
             this.lblNome.Name = "lblNome";
             this.lblNome.Size = new System.Drawing.Size(43, 15);
             this.lblNome.TabIndex = 6;
@@ -139,7 +143,7 @@
             // 
             // txtTelefone
             // 
-            this.txtTelefone.Location = new System.Drawing.Point(97, 111);
+            this.txtTelefone.Location = new System.Drawing.Point(97, 151);
             this.txtTelefone.Name = "txtTelefone";
             this.txtTelefone.Size = new System.Drawing.Size(100, 23);
             this.txtTelefone.TabIndex = 9;
@@ -147,15 +151,15 @@
             // lblTelefone
             // 
             this.lblTelefone.AutoSize = true;
-            this.lblTelefone.Location = new System.Drawing.Point(36, 114);
+            this.lblTelefone.Location = new System.Drawing.Point(36, 154);
             this.lblTelefone.Name = "lblTelefone";
-            this.lblTelefone.Size = new System.Drawing.Size(54, 15);
+            this.lblTelefone.Size = new System.Drawing.Size(55, 15);
             this.lblTelefone.TabIndex = 8;
             this.lblTelefone.Text = "Telefone:";
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(97, 140);
+            this.txtEmail.Location = new System.Drawing.Point(97, 180);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(100, 23);
             this.txtEmail.TabIndex = 11;
@@ -163,7 +167,7 @@
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(53, 143);
+            this.lblEmail.Location = new System.Drawing.Point(53, 183);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(39, 15);
             this.lblEmail.TabIndex = 10;
@@ -191,18 +195,40 @@
             this.ckIsAtivo.AutoSize = true;
             this.ckIsAtivo.Checked = true;
             this.ckIsAtivo.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.ckIsAtivo.Location = new System.Drawing.Point(102, 176);
+            this.ckIsAtivo.Location = new System.Drawing.Point(97, 215);
             this.ckIsAtivo.Name = "ckIsAtivo";
             this.ckIsAtivo.Size = new System.Drawing.Size(78, 19);
             this.ckIsAtivo.TabIndex = 16;
             this.ckIsAtivo.Text = "Está Ativo";
             this.ckIsAtivo.UseVisualStyleBackColor = true;
             // 
+            // txtRazao
+            // 
+            this.txtRazao.Location = new System.Drawing.Point(97, 64);
+            this.txtRazao.Name = "txtRazao";
+            this.txtRazao.Size = new System.Drawing.Size(100, 23);
+            this.txtRazao.TabIndex = 18;
+            // 
+            // lblRazaoSocial
+            // 
+            this.lblRazaoSocial.AutoSize = true;
+            this.lblRazaoSocial.Location = new System.Drawing.Point(21, 67);
+            this.lblRazaoSocial.Name = "lblRazaoSocial";
+            this.lblRazaoSocial.Size = new System.Drawing.Size(75, 15);
+            this.lblRazaoSocial.TabIndex = 17;
+            this.lblRazaoSocial.Text = "Razão Social:";
+            // 
             // ForneID
             // 
             this.ForneID.HeaderText = "ID";
             this.ForneID.Name = "ForneID";
             this.ForneID.ReadOnly = true;
+            // 
+            // ForneRazao
+            // 
+            this.ForneRazao.HeaderText = "Razão Social";
+            this.ForneRazao.Name = "ForneRazao";
+            this.ForneRazao.ReadOnly = true;
             // 
             // ForneNome
             // 
@@ -239,6 +265,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(932, 497);
+            this.Controls.Add(this.txtRazao);
+            this.Controls.Add(this.lblRazaoSocial);
             this.Controls.Add(this.ckIsAtivo);
             this.Controls.Add(this.txtID);
             this.Controls.Add(this.lblID);
@@ -280,7 +308,10 @@
         private TextBox txtID;
         private Label lblID;
         private CheckBox ckIsAtivo;
+        private TextBox txtRazao;
+        private Label lblRazaoSocial;
         private DataGridViewTextBoxColumn ForneID;
+        private DataGridViewTextBoxColumn ForneRazao;
         private DataGridViewTextBoxColumn ForneNome;
         private DataGridViewTextBoxColumn ForneCNPJ;
         private DataGridViewTextBoxColumn ForneEmail;
