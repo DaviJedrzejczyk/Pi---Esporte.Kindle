@@ -20,26 +20,26 @@ namespace BusinessLogicalLayer.BLL
 
         public Task<Response> Insert(Categoria item)
         {
-            throw new NotImplementedException();
+           return categoriaDALService.Insert(item);
         }
 
         public Task<Response> Update(Categoria item)
         {
-            throw new NotImplementedException();
+            return categoriaDALService.Update(item);
         }
         public Task<Response> Delete(Categoria item)
         {
-            throw new NotImplementedException();
+            return categoriaDALService.Delete(item);
         }
 
         public Task<DataResponse<Categoria>> GetAll()
         {
-            throw new NotImplementedException();
+            return categoriaDALService.GetAll();
         }
 
         public Task<SingleResponse<Categoria>> GetById(int id)
         {
-            throw new NotImplementedException();
+            return categoriaDALService.GetById(id);
         }
 
        
