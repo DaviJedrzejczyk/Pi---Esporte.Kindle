@@ -19,7 +19,8 @@ namespace WFPresentationLayer
         private readonly IProdutoService produtoService;
         private readonly IFornecedoraService fornecedoraService;
         private readonly IEstadoService estadoService;
-        public TelaInicial(IClienteService clienteService, IFuncionarioService funcionarioService, IProdutoService produtoService, IFornecedoraService fornecedoraService, IEstadoService estadoService)
+        private readonly ICategoriaService categoriaService;
+        public TelaInicial(IClienteService clienteService, IFuncionarioService funcionarioService, IProdutoService produtoService, IFornecedoraService fornecedoraService, IEstadoService estadoService, ICategoriaService categoriaService)
         {
             InitializeComponent();
             cliente = clienteService;
@@ -27,6 +28,7 @@ namespace WFPresentationLayer
             this.produtoService = produtoService;
             this.fornecedoraService = fornecedoraService;
             this.estadoService = estadoService;
+            this.categoriaService = categoriaService;
         }
         private void OpenChildForm(Form childForm)
         {
@@ -60,13 +62,13 @@ namespace WFPresentationLayer
 
         private void btnProdutos_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new TelaProduto(produtoService, fornecedoraService));
+            OpenChildForm(new TelaProduto(produtoService, fornecedoraService,categoriaService));
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
             this.Hide();
-            TelaLogin telaLogin = new(funcionarioService, cliente, produtoService, fornecedoraService,estadoService);
+            TelaLogin telaLogin = new(funcionarioService, cliente, produtoService, fornecedoraService,estadoService,categoriaService);
             telaLogin.ShowDialog();
             this.Close();
         }

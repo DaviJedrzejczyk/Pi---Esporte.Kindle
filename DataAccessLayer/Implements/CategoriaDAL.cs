@@ -16,7 +16,7 @@ namespace DataAccessLayer.Implements
     public class CategoriaDAL : ICategoriaDALService
     {
         private readonly string _connectionString = ConnectionString._connectionString;
-        public async Task<Response> Insert(Categoria item)
+        public Response Insert(Categoria item)
         {
             string sql = $"INSERT INTO CATEGORIAS(NOME,DESCRICAO) VALUES(@NOME,@DESCRICAO)";
             SqlConnection connection = new(_connectionString);
@@ -26,7 +26,7 @@ namespace DataAccessLayer.Implements
             try
             {
                 connection.Open();
-                await command.ExecuteNonQueryAsync();
+                command.ExecuteNonQuery();
                 return ResponseFactory.CreateInstance().CreateSuccessResponse();
             }
             catch (Exception ex)
@@ -43,18 +43,18 @@ namespace DataAccessLayer.Implements
             }
         }
 
-        public async Task<Response> Update(Categoria item)
+        public Response Update(Categoria item)
         {
             string sql = $"UPDATE CATEGORIAS SET NOME = @NOME, DESCRICAO = @DESCRICAO WHERE ID = @ID";
             SqlConnection connection = new(_connectionString);
             SqlCommand command = new(sql, connection);
             command.Parameters.AddWithValue("@NOME", item.Nome);
             command.Parameters.AddWithValue("@DESCRICAO", item.Descricao);
-            command.Parameters.AddWithValue("@ID",item.Id);
+            command.Parameters.AddWithValue("@ID",item.ID);
             try
             {
                 connection.Open();
-                int qtdAlterado = await command.ExecuteNonQueryAsync();
+                int qtdAlterado = command.ExecuteNonQuery();
                 if (qtdAlterado != 1)
                 {
                     return ResponseFactory.CreateInstance().CreateFailureResponse();
@@ -70,16 +70,16 @@ namespace DataAccessLayer.Implements
                 return ResponseFactory.CreateInstance().CreateFailureResponse(ex);
             }
         }
-        public async Task<Response> Delete(Categoria item)
+        public Response Delete(Categoria item)
         {
             string sql = $"DELETE FROM CATEGORIAS WHERE ID = @ID";
             SqlConnection connection = new(_connectionString);
             SqlCommand command = new(sql, connection);
-            command.Parameters.AddWithValue("@ID", item.Id);
+            command.Parameters.AddWithValue("@ID", item.ID);
             try
             {
                 connection.Open();
-                int qtdAlterado = await command.ExecuteNonQueryAsync();
+                int qtdAlterado = command.ExecuteNonQuery();
                 if (qtdAlterado == 1)
                 {
                     return ResponseFactory.CreateInstance().CreateSuccessResponse();
@@ -92,7 +92,7 @@ namespace DataAccessLayer.Implements
             }
         }
 
-        public async Task<DataResponse<Categoria>> GetAll()
+        public DataResponse<Categoria> GetAll()
         {
             string sql = $"SELECT ID, NOME, DESCRICAO FROM CATEGORIAS";
             SqlConnection connection = new(_connectionString);
@@ -100,13 +100,13 @@ namespace DataAccessLayer.Implements
             try
             {
                 connection.Open();
-                SqlDataReader reader = await command.ExecuteReaderAsync();
+                SqlDataReader reader = command.ExecuteReader();
                 List<Categoria> categorias = new();
                 while (reader.Read())
                 {
                     Categoria categoria = new()
                     {
-                        Id = Convert.ToInt32(reader["ID"]),
+                        ID = Convert.ToInt32(reader["ID"]),
                         Nome = Convert.ToString(reader["NOME"]),
                         Descricao = Convert.ToString(reader["DESCRICAO"])
                     };
@@ -120,7 +120,7 @@ namespace DataAccessLayer.Implements
             }
         }
 
-        public async Task<SingleResponse<Categoria>> GetById(int id)
+        public SingleResponse<Categoria> GetById(int id)
         {
             string sql = $"SELECT ID = @ID, NOME = @NOME, DESCRICAO = @DESCRICAO FROM CATEGORIAS WHERE ID = @ID";
             SqlConnection connection = new(_connectionString);
@@ -129,12 +129,12 @@ namespace DataAccessLayer.Implements
             try
             {
                 connection.Open();
-                SqlDataReader reader = await command.ExecuteReaderAsync();
+                SqlDataReader reader = command.ExecuteReader();
                 if (reader.Read())
                 {
                     Categoria categoria = new()
                     {
-                        Id = Convert.ToInt32(reader["ID"]),
+                        ID = Convert.ToInt32(reader["ID"]),
                         Nome = Convert.ToString(reader["NOME"]),
                         Descricao = Convert.ToString(reader["DESCRICAO"])
                     };

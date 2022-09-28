@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace Entities
 {
-    public class Fornecedor
+    public class Fornecedor : Entity
     {
-        public int ID { get; set; }
         public string Razao_Social { get; set; }
         public string Cnpj { get; set; }
         public string Nome_Contato { get; set; }

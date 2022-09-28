@@ -19,13 +19,15 @@ namespace WFPresentationLayer
         private readonly IFornecedoraService fornecedoraService;
         private readonly IProdutoService produtoService;
         private readonly IEntradaService entradaService;
+        private readonly ICategoriaService categoriaService;
         List<Produto> produtos = new();
-        public TelaEntrada(IFornecedoraService fornecedoraService, IProdutoService produtoService, IEntradaService entrada)
+        public TelaEntrada(IFornecedoraService fornecedoraService, IProdutoService produtoService, IEntradaService entrada, ICategoriaService categoriaService)
         {
             InitializeComponent();
             this.fornecedoraService = fornecedoraService;
             this.produtoService = produtoService;
             this.entradaService = entrada;
+            this.categoriaService = categoriaService;
         }
 
 
@@ -52,7 +54,7 @@ namespace WFPresentationLayer
 
         private void btnProduto_Click(object sender, EventArgs e)
         {
-            TelaProduto telaProduto = new(produtoService, fornecedoraService);
+            TelaProduto telaProduto = new(produtoService, fornecedoraService, categoriaService);
             telaProduto.ShowDialog();
             cbProduto.DataSource = produtoService.GetAll().Result.Itens;
             cbProduto.DisplayMember = "Nome";

@@ -7,9 +7,8 @@ using System.Threading.Tasks;
 
 namespace Entities
 {
-    public class SaidaView
+    public class SaidaView : Entity
     {
-        public int ID { get; set; }
         public DateTime DataSaida { get; set; }
         public double Valor { get; set; }
         public string Funcionario { get; set; }

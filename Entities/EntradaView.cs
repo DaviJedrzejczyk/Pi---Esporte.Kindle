@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace Entities
 {
-    public class EntradaView
+    public class EntradaView : Entity
     {
-        public int ID { get; set; }
         public DateTime DataEntrada { get; set; }
         public double Valor { get; set; }
         public string Funcionario { get; set; }

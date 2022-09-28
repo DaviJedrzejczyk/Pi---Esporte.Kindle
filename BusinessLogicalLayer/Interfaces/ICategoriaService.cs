@@ -11,10 +11,10 @@ namespace BusinessLogicalLayer.Interfaces
     public interface ICategoriaService
     {
 
-        Task<Response> Insert(Categoria item);
-        Task<Response> Update(Categoria item);
-        Task<Response> Delete(Categoria item);
-        Task<DataResponse<Categoria>> GetAll();
-        Task<SingleResponse<Categoria>> GetById(int id);
+        Response Insert(Categoria categoria);
+        Response Update(Categoria categoria);
+        Response Delete(Categoria categoria);
+        DataResponse<Categoria> GetAll();
+        SingleResponse<Categoria> GetById(int id);
     }
 }

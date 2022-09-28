@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace Entities
 {
-    public class Estado
+    public class Estado : Entity
     {
-        public int ID { get; set; }
         public string Unidade_Federal { get; set; }
         public string NomeCompleto { get; set; }
     }

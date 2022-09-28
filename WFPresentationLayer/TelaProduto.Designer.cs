@@ -30,6 +30,12 @@
         {
             this.lblID = new System.Windows.Forms.Label();
             this.dtProduto = new System.Windows.Forms.DataGridView();
+            this.ProdutoID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProdutoNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProdutoDescricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProdutoFornecedora = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProdutoQtdEstoque = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProdutoValor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cbFornecedora = new System.Windows.Forms.ComboBox();
             this.txtID = new System.Windows.Forms.TextBox();
             this.txtNome = new System.Windows.Forms.TextBox();
@@ -41,15 +47,11 @@
             this.txtValor = new System.Windows.Forms.TextBox();
             this.lblValorUnitario = new System.Windows.Forms.Label();
             this.lblForne = new System.Windows.Forms.Label();
-            this.ProdutoID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ProdutoNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ProdutoDescricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ProdutoFornecedora = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ProdutoQtdEstoque = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ProdutoValor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
+            this.lblCategoria = new System.Windows.Forms.Label();
+            this.cbCategoria = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtProduto)).BeginInit();
             this.SuspendLayout();
             // 
@@ -83,6 +85,42 @@
             this.dtProduto.Size = new System.Drawing.Size(550, 426);
             this.dtProduto.TabIndex = 1;
             this.dtProduto.DoubleClick += new System.EventHandler(this.dataGridView1_DoubleClick);
+            // 
+            // ProdutoID
+            // 
+            this.ProdutoID.HeaderText = "ID";
+            this.ProdutoID.Name = "ProdutoID";
+            this.ProdutoID.ReadOnly = true;
+            // 
+            // ProdutoNome
+            // 
+            this.ProdutoNome.HeaderText = "Nome";
+            this.ProdutoNome.Name = "ProdutoNome";
+            this.ProdutoNome.ReadOnly = true;
+            // 
+            // ProdutoDescricao
+            // 
+            this.ProdutoDescricao.HeaderText = "Descrição";
+            this.ProdutoDescricao.Name = "ProdutoDescricao";
+            this.ProdutoDescricao.ReadOnly = true;
+            // 
+            // ProdutoFornecedora
+            // 
+            this.ProdutoFornecedora.HeaderText = "Fornecedora";
+            this.ProdutoFornecedora.Name = "ProdutoFornecedora";
+            this.ProdutoFornecedora.ReadOnly = true;
+            // 
+            // ProdutoQtdEstoque
+            // 
+            this.ProdutoQtdEstoque.HeaderText = "Quantidade em Estoque";
+            this.ProdutoQtdEstoque.Name = "ProdutoQtdEstoque";
+            this.ProdutoQtdEstoque.ReadOnly = true;
+            // 
+            // ProdutoValor
+            // 
+            this.ProdutoValor.HeaderText = "Valor do Produto";
+            this.ProdutoValor.Name = "ProdutoValor";
+            this.ProdutoValor.ReadOnly = true;
             // 
             // cbFornecedora
             // 
@@ -135,7 +173,7 @@
             // 
             // txtQtdEstoque
             // 
-            this.txtQtdEstoque.Location = new System.Drawing.Point(3, 185);
+            this.txtQtdEstoque.Location = new System.Drawing.Point(3, 233);
             this.txtQtdEstoque.Name = "txtQtdEstoque";
             this.txtQtdEstoque.Size = new System.Drawing.Size(137, 23);
             this.txtQtdEstoque.TabIndex = 9;
@@ -143,7 +181,7 @@
             // lblQtdEstoque
             // 
             this.lblQtdEstoque.AutoSize = true;
-            this.lblQtdEstoque.Location = new System.Drawing.Point(3, 167);
+            this.lblQtdEstoque.Location = new System.Drawing.Point(3, 215);
             this.lblQtdEstoque.Name = "lblQtdEstoque";
             this.lblQtdEstoque.Size = new System.Drawing.Size(137, 15);
             this.lblQtdEstoque.TabIndex = 8;
@@ -151,7 +189,7 @@
             // 
             // txtValor
             // 
-            this.txtValor.Location = new System.Drawing.Point(3, 229);
+            this.txtValor.Location = new System.Drawing.Point(3, 277);
             this.txtValor.Name = "txtValor";
             this.txtValor.Size = new System.Drawing.Size(100, 23);
             this.txtValor.TabIndex = 11;
@@ -159,7 +197,7 @@
             // lblValorUnitario
             // 
             this.lblValorUnitario.AutoSize = true;
-            this.lblValorUnitario.Location = new System.Drawing.Point(3, 211);
+            this.lblValorUnitario.Location = new System.Drawing.Point(3, 259);
             this.lblValorUnitario.Name = "lblValorUnitario";
             this.lblValorUnitario.Size = new System.Drawing.Size(99, 15);
             this.lblValorUnitario.TabIndex = 10;
@@ -173,42 +211,6 @@
             this.lblForne.Size = new System.Drawing.Size(73, 15);
             this.lblForne.TabIndex = 12;
             this.lblForne.Text = "Fornecedora";
-            // 
-            // ProdutoID
-            // 
-            this.ProdutoID.HeaderText = "ID";
-            this.ProdutoID.Name = "ProdutoID";
-            this.ProdutoID.ReadOnly = true;
-            // 
-            // ProdutoNome
-            // 
-            this.ProdutoNome.HeaderText = "Nome";
-            this.ProdutoNome.Name = "ProdutoNome";
-            this.ProdutoNome.ReadOnly = true;
-            // 
-            // ProdutoDescricao
-            // 
-            this.ProdutoDescricao.HeaderText = "Descrição";
-            this.ProdutoDescricao.Name = "ProdutoDescricao";
-            this.ProdutoDescricao.ReadOnly = true;
-            // 
-            // ProdutoFornecedora
-            // 
-            this.ProdutoFornecedora.HeaderText = "Fornecedora";
-            this.ProdutoFornecedora.Name = "ProdutoFornecedora";
-            this.ProdutoFornecedora.ReadOnly = true;
-            // 
-            // ProdutoQtdEstoque
-            // 
-            this.ProdutoQtdEstoque.HeaderText = "Quantidade em Estoque";
-            this.ProdutoQtdEstoque.Name = "ProdutoQtdEstoque";
-            this.ProdutoQtdEstoque.ReadOnly = true;
-            // 
-            // ProdutoValor
-            // 
-            this.ProdutoValor.HeaderText = "Valor do Produto";
-            this.ProdutoValor.Name = "ProdutoValor";
-            this.ProdutoValor.ReadOnly = true;
             // 
             // btnCadastrar
             // 
@@ -240,11 +242,31 @@
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
+            // lblCategoria
+            // 
+            this.lblCategoria.AutoSize = true;
+            this.lblCategoria.Location = new System.Drawing.Point(3, 173);
+            this.lblCategoria.Name = "lblCategoria";
+            this.lblCategoria.Size = new System.Drawing.Size(58, 15);
+            this.lblCategoria.TabIndex = 18;
+            this.lblCategoria.Text = "Categoria";
+            // 
+            // cbCategoria
+            // 
+            this.cbCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbCategoria.FormattingEnabled = true;
+            this.cbCategoria.Location = new System.Drawing.Point(82, 170);
+            this.cbCategoria.Name = "cbCategoria";
+            this.cbCategoria.Size = new System.Drawing.Size(121, 23);
+            this.cbCategoria.TabIndex = 17;
+            // 
             // TelaProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblCategoria);
+            this.Controls.Add(this.cbCategoria);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnCadastrar);
@@ -294,5 +316,7 @@
         private Button btnCadastrar;
         private Button btnUpdate;
         private Button btnDelete;
+        private Label lblCategoria;
+        private ComboBox cbCategoria;
     }
 }

@@ -12,11 +12,8 @@ namespace WFPresentationLayer
         private readonly IProdutoService produtoService;
         private readonly IFornecedoraService fornecedoraService;
         private readonly IEstadoService estadoService;
-        public TelaLogin()
-        {
-            InitializeComponent();
-        }
-        public TelaLogin(IFuncionarioService fu, IClienteService clienteService, IProdutoService produtoService, IFornecedoraService fornecedoraService, IEstadoService estadoService)
+        private readonly ICategoriaService categoriaService;
+        public TelaLogin(IFuncionarioService fu, IClienteService clienteService, IProdutoService produtoService, IFornecedoraService fornecedoraService, IEstadoService estadoService, ICategoriaService categoriaService)
         {
             InitializeComponent();
             funcionarioService = fu;
@@ -24,6 +21,7 @@ namespace WFPresentationLayer
             this.produtoService = produtoService;
             this.fornecedoraService = fornecedoraService;
             this.estadoService = estadoService;
+            this.categoriaService = categoriaService;
         }
 
         private async void button1_Click(object sender, EventArgs e)
@@ -33,7 +31,7 @@ namespace WFPresentationLayer
             if (singleResponse.HasSuccess)
             {
                 this.Hide();
-                TelaInicial tela = new(clienteService,funcionarioService,produtoService,fornecedoraService,estadoService);
+                TelaInicial tela = new(clienteService,funcionarioService,produtoService,fornecedoraService,estadoService,categoriaService);
                 tela.ShowDialog();
                 this.Close();
             }

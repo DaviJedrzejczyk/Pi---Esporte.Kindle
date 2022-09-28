@@ -18,26 +18,26 @@ namespace BusinessLogicalLayer.BLL
             this.categoriaDALService = categoriaDALService;
         }
 
-        public Task<Response> Insert(Categoria item)
+        public Response Insert(Categoria item)
         {
            return categoriaDALService.Insert(item);
         }
 
-        public Task<Response> Update(Categoria item)
+        public Response Update(Categoria item)
         {
             return categoriaDALService.Update(item);
         }
-        public Task<Response> Delete(Categoria item)
+        public Response Delete(Categoria item)
         {
             return categoriaDALService.Delete(item);
         }
 
-        public Task<DataResponse<Categoria>> GetAll()
+        public DataResponse<Categoria> GetAll()
         {
             return categoriaDALService.GetAll();
         }
 
-        public Task<SingleResponse<Categoria>> GetById(int id)
+        public SingleResponse<Categoria> GetById(int id)
         {
             return categoriaDALService.GetById(id);
         }

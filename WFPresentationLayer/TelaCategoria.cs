@@ -36,7 +36,7 @@ namespace WFPresentationLayer
             int.TryParse(txtID.Text, out temp);
             Categoria c = new()
             {
-                Id = temp,
+                ID = temp,
                 Nome = txtNome.Text,
                 Descricao = txtDesc.Text,
 
@@ -47,7 +47,7 @@ namespace WFPresentationLayer
         {
             int rowindex = dtCategoria.CurrentCell.RowIndex;
             Categoria categoriaSelecionada = new();
-            categoriaSelecionada.Id = Convert.ToInt32(this.dtCategoria.Rows[rowindex].Cells[0].Value);
+            categoriaSelecionada.ID = Convert.ToInt32(this.dtCategoria.Rows[rowindex].Cells[0].Value);
             categoriaSelecionada.Nome = Convert.ToString(this.dtCategoria.Rows[rowindex].Cells[1].Value);
             categoriaSelecionada.Descricao = Convert.ToString(this.dtCategoria.Rows[rowindex].Cells[2].Value);
             DrawFormWithObject(categoriaSelecionada);
@@ -57,12 +57,12 @@ namespace WFPresentationLayer
         private async void SincronizarGrid()
         {
             dtCategoria.DataSource = null;
-            DataResponse<Categoria> dataResponse = await _categoriaService.GetAll();
+            DataResponse<Categoria> dataResponse = _categoriaService.GetAll();
             dtCategoria.Rows.Clear();
             for (int i = 0; i < dataResponse.Itens.Count; i++)
             {
                 dtCategoria.Rows.Add();
-                dtCategoria.Rows[i].Cells["CategoriaID"].Value = dataResponse.Itens[i].Id;
+                dtCategoria.Rows[i].Cells["CategoriaID"].Value = dataResponse.Itens[i].ID;
                 dtCategoria.Rows[i].Cells["CategoriaNome"].Value = dataResponse.Itens[i].Nome;
                 dtCategoria.Rows[i].Cells["CategoriaDescricao"].Value = dataResponse.Itens[i].Descricao;
             }
@@ -70,7 +70,7 @@ namespace WFPresentationLayer
 
         private void DrawFormWithObject(Categoria categoria)
         {
-            this.txtID.Text = categoria.Id.ToString();
+            this.txtID.Text = categoria.ID.ToString();
             this.txtNome.Text = categoria.Nome;
             this.txtDesc.Text = categoria.Descricao;
 
@@ -81,7 +81,7 @@ namespace WFPresentationLayer
         private async void btnCadastrar_Click(object sender, EventArgs e)
         {
             Categoria categoria = CreateObjectWithForm();
-            Response response = await _categoriaService.Insert(categoria);
+            Response response = _categoriaService.Insert(categoria);
             if (response.HasSuccess)
             {
                 MessageBox.Show("Sucesso");
@@ -97,7 +97,7 @@ namespace WFPresentationLayer
         private async void btnUpdate_Click(object sender, EventArgs e)
         {
             Categoria categoria = CreateObjectWithForm();
-            Response response = await _categoriaService.Update(categoria);
+            Response response = _categoriaService.Update(categoria);
             if (response.HasSuccess)
             {
                 MessageBox.Show("Sucesso");
@@ -113,7 +113,7 @@ namespace WFPresentationLayer
         private async void btnDelete_Click(object sender, EventArgs e)
         {
             Categoria categoria = CreateObjectWithForm();
-            Response response = await _categoriaService.Delete(categoria);
+            Response response = _categoriaService.Delete(categoria);
             if (response.HasSuccess)
             {
                 MessageBox.Show("Sucesso");

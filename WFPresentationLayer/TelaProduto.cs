@@ -19,19 +19,25 @@ namespace WFPresentationLayer
     {
         private readonly IProdutoService produtoBLL;
         private readonly IFornecedoraService fornecedoraService;
+        private readonly ICategoriaService categoriaService;
         [Inject()]
-        public TelaProduto(IProdutoService produto, IFornecedoraService fornecedoraService2)
+        public TelaProduto(IProdutoService produto, IFornecedoraService fornecedoraService2, ICategoriaService categoriaService)
         {
             InitializeComponent();
             produtoBLL = produto;
             fornecedoraService = fornecedoraService2;
+            this.categoriaService = categoriaService;
             this.dtProduto.DoubleClick += dataGridView1_DoubleClick;
+          
         }
-        private void TelaProduto_Load(object sender, EventArgs e)
+        private async void TelaProduto_Load(object sender, EventArgs e)
         {
             cbFornecedora.DataSource = fornecedoraService.GetAll().Itens;
             cbFornecedora.DisplayMember = "Nome_Contato";
             cbFornecedora.ValueMember = "ID";
+            cbCategoria.DataSource = categoriaService.GetAll().Itens;
+            cbCategoria.DisplayMember = "Nome";
+            cbCategoria.ValueMember = "Id";
             SincronizarGrid();
           
         }

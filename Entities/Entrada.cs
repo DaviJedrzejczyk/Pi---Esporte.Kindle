@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace Entities
 {
-    public class Entrada
+    public class Entrada : Entity
     {
-        public int ID { get; set; }
         public DateTime DataEntrada { get; set; }
         public double Valor { get; set; }
         public Funcionario Funcionario { get; set; }

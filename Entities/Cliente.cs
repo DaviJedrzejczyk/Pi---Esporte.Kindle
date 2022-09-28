@@ -9,7 +9,6 @@ namespace Entities
 {
     public class Cliente : PessoaFisica
     {
-        public int ID { get; set; }
         public string Nome { get; set; }
         public string Sobrenome { get; set; }
         public DateTime DataNascimento { get; set; }
