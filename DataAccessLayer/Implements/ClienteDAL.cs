@@ -14,7 +14,7 @@ namespace DataAccessLayer.Implements
 {
     public class ClienteDAL : IClienteDALService
     {
-        private string _connectionString = ConnectionString._connectionString;
+        private readonly string _connectionString = ConnectionString._connectionString;
         public Response Insert(Cliente cliente)
         {
             string sql = $"INSERT INTO CLIENTES (NOME,SOBRENOME,RG,CPF,TELEFONE,EMAIL,GENERO,DATA_NASCIMENTO,IDADE) VALUES (@NOME,@SOBRENOME,@RG,@CPF,@TELEFONE,@EMAIL,@GENERO,@DATA_NASCIMENTO,@IDADE)";
