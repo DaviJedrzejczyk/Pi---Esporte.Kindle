@@ -34,6 +34,13 @@
             this.lblCnpj = new System.Windows.Forms.Label();
             this.txtCNPJ = new System.Windows.Forms.TextBox();
             this.dtFornecedor = new System.Windows.Forms.DataGridView();
+            this.ForneID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ForneRazao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ForneNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ForneCNPJ = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ForneEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ForneTelefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ForneIsAtivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.lblNome = new System.Windows.Forms.Label();
             this.txtTelefone = new System.Windows.Forms.TextBox();
@@ -45,13 +52,6 @@
             this.ckIsAtivo = new System.Windows.Forms.CheckBox();
             this.txtRazao = new System.Windows.Forms.TextBox();
             this.lblRazaoSocial = new System.Windows.Forms.Label();
-            this.ForneID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ForneRazao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ForneNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ForneCNPJ = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ForneEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ForneTelefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ForneIsAtivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dtFornecedor)).BeginInit();
             this.SuspendLayout();
             // 
@@ -88,6 +88,7 @@
             // lblCnpj
             // 
             this.lblCnpj.AutoSize = true;
+            this.lblCnpj.ForeColor = System.Drawing.Color.White;
             this.lblCnpj.Location = new System.Drawing.Point(53, 96);
             this.lblCnpj.Name = "lblCnpj";
             this.lblCnpj.Size = new System.Drawing.Size(37, 15);
@@ -124,99 +125,6 @@
             this.dtFornecedor.Size = new System.Drawing.Size(553, 473);
             this.dtFornecedor.TabIndex = 5;
             this.dtFornecedor.DoubleClick += new System.EventHandler(this.dtFornecedor_DoubleClick);
-            // 
-            // txtNome
-            // 
-            this.txtNome.Location = new System.Drawing.Point(97, 122);
-            this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(100, 23);
-            this.txtNome.TabIndex = 7;
-            // 
-            // lblNome
-            // 
-            this.lblNome.AutoSize = true;
-            this.lblNome.Location = new System.Drawing.Point(53, 125);
-            this.lblNome.Name = "lblNome";
-            this.lblNome.Size = new System.Drawing.Size(43, 15);
-            this.lblNome.TabIndex = 6;
-            this.lblNome.Text = "Nome:";
-            // 
-            // txtTelefone
-            // 
-            this.txtTelefone.Location = new System.Drawing.Point(97, 151);
-            this.txtTelefone.Name = "txtTelefone";
-            this.txtTelefone.Size = new System.Drawing.Size(100, 23);
-            this.txtTelefone.TabIndex = 9;
-            // 
-            // lblTelefone
-            // 
-            this.lblTelefone.AutoSize = true;
-            this.lblTelefone.Location = new System.Drawing.Point(36, 154);
-            this.lblTelefone.Name = "lblTelefone";
-            this.lblTelefone.Size = new System.Drawing.Size(55, 15);
-            this.lblTelefone.TabIndex = 8;
-            this.lblTelefone.Text = "Telefone:";
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.Location = new System.Drawing.Point(97, 180);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(100, 23);
-            this.txtEmail.TabIndex = 11;
-            // 
-            // lblEmail
-            // 
-            this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(53, 183);
-            this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(39, 15);
-            this.lblEmail.TabIndex = 10;
-            this.lblEmail.Text = "Email:";
-            // 
-            // txtID
-            // 
-            this.txtID.Location = new System.Drawing.Point(97, 24);
-            this.txtID.Name = "txtID";
-            this.txtID.ReadOnly = true;
-            this.txtID.Size = new System.Drawing.Size(100, 23);
-            this.txtID.TabIndex = 15;
-            // 
-            // lblID
-            // 
-            this.lblID.AutoSize = true;
-            this.lblID.Location = new System.Drawing.Point(53, 27);
-            this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(21, 15);
-            this.lblID.TabIndex = 14;
-            this.lblID.Text = "ID:";
-            // 
-            // ckIsAtivo
-            // 
-            this.ckIsAtivo.AutoSize = true;
-            this.ckIsAtivo.Checked = true;
-            this.ckIsAtivo.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.ckIsAtivo.Location = new System.Drawing.Point(97, 215);
-            this.ckIsAtivo.Name = "ckIsAtivo";
-            this.ckIsAtivo.Size = new System.Drawing.Size(78, 19);
-            this.ckIsAtivo.TabIndex = 16;
-            this.ckIsAtivo.Text = "Está Ativo";
-            this.ckIsAtivo.UseVisualStyleBackColor = true;
-            // 
-            // txtRazao
-            // 
-            this.txtRazao.Location = new System.Drawing.Point(97, 64);
-            this.txtRazao.Name = "txtRazao";
-            this.txtRazao.Size = new System.Drawing.Size(100, 23);
-            this.txtRazao.TabIndex = 18;
-            // 
-            // lblRazaoSocial
-            // 
-            this.lblRazaoSocial.AutoSize = true;
-            this.lblRazaoSocial.Location = new System.Drawing.Point(21, 67);
-            this.lblRazaoSocial.Name = "lblRazaoSocial";
-            this.lblRazaoSocial.Size = new System.Drawing.Size(75, 15);
-            this.lblRazaoSocial.TabIndex = 17;
-            this.lblRazaoSocial.Text = "Razão Social:";
             // 
             // ForneID
             // 
@@ -260,10 +168,110 @@
             this.ForneIsAtivo.Name = "ForneIsAtivo";
             this.ForneIsAtivo.ReadOnly = true;
             // 
+            // txtNome
+            // 
+            this.txtNome.Location = new System.Drawing.Point(97, 122);
+            this.txtNome.Name = "txtNome";
+            this.txtNome.Size = new System.Drawing.Size(100, 23);
+            this.txtNome.TabIndex = 7;
+            // 
+            // lblNome
+            // 
+            this.lblNome.AutoSize = true;
+            this.lblNome.ForeColor = System.Drawing.Color.White;
+            this.lblNome.Location = new System.Drawing.Point(53, 125);
+            this.lblNome.Name = "lblNome";
+            this.lblNome.Size = new System.Drawing.Size(43, 15);
+            this.lblNome.TabIndex = 6;
+            this.lblNome.Text = "Nome:";
+            // 
+            // txtTelefone
+            // 
+            this.txtTelefone.Location = new System.Drawing.Point(97, 151);
+            this.txtTelefone.Name = "txtTelefone";
+            this.txtTelefone.Size = new System.Drawing.Size(100, 23);
+            this.txtTelefone.TabIndex = 9;
+            // 
+            // lblTelefone
+            // 
+            this.lblTelefone.AutoSize = true;
+            this.lblTelefone.ForeColor = System.Drawing.Color.White;
+            this.lblTelefone.Location = new System.Drawing.Point(36, 154);
+            this.lblTelefone.Name = "lblTelefone";
+            this.lblTelefone.Size = new System.Drawing.Size(55, 15);
+            this.lblTelefone.TabIndex = 8;
+            this.lblTelefone.Text = "Telefone:";
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Location = new System.Drawing.Point(97, 180);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(100, 23);
+            this.txtEmail.TabIndex = 11;
+            // 
+            // lblEmail
+            // 
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.ForeColor = System.Drawing.Color.White;
+            this.lblEmail.Location = new System.Drawing.Point(53, 183);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(39, 15);
+            this.lblEmail.TabIndex = 10;
+            this.lblEmail.Text = "Email:";
+            // 
+            // txtID
+            // 
+            this.txtID.Location = new System.Drawing.Point(97, 24);
+            this.txtID.Name = "txtID";
+            this.txtID.ReadOnly = true;
+            this.txtID.Size = new System.Drawing.Size(100, 23);
+            this.txtID.TabIndex = 15;
+            // 
+            // lblID
+            // 
+            this.lblID.AutoSize = true;
+            this.lblID.ForeColor = System.Drawing.Color.White;
+            this.lblID.Location = new System.Drawing.Point(53, 27);
+            this.lblID.Name = "lblID";
+            this.lblID.Size = new System.Drawing.Size(21, 15);
+            this.lblID.TabIndex = 14;
+            this.lblID.Text = "ID:";
+            // 
+            // ckIsAtivo
+            // 
+            this.ckIsAtivo.AutoSize = true;
+            this.ckIsAtivo.Checked = true;
+            this.ckIsAtivo.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.ckIsAtivo.ForeColor = System.Drawing.Color.White;
+            this.ckIsAtivo.Location = new System.Drawing.Point(97, 215);
+            this.ckIsAtivo.Name = "ckIsAtivo";
+            this.ckIsAtivo.Size = new System.Drawing.Size(78, 19);
+            this.ckIsAtivo.TabIndex = 16;
+            this.ckIsAtivo.Text = "Está Ativo";
+            this.ckIsAtivo.UseVisualStyleBackColor = true;
+            // 
+            // txtRazao
+            // 
+            this.txtRazao.Location = new System.Drawing.Point(97, 64);
+            this.txtRazao.Name = "txtRazao";
+            this.txtRazao.Size = new System.Drawing.Size(100, 23);
+            this.txtRazao.TabIndex = 18;
+            // 
+            // lblRazaoSocial
+            // 
+            this.lblRazaoSocial.AutoSize = true;
+            this.lblRazaoSocial.ForeColor = System.Drawing.Color.White;
+            this.lblRazaoSocial.Location = new System.Drawing.Point(21, 67);
+            this.lblRazaoSocial.Name = "lblRazaoSocial";
+            this.lblRazaoSocial.Size = new System.Drawing.Size(75, 15);
+            this.lblRazaoSocial.TabIndex = 17;
+            this.lblRazaoSocial.Text = "Razão Social:";
+            // 
             // TelaFornecedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(3)))), ((int)(((byte)(52)))));
             this.ClientSize = new System.Drawing.Size(932, 497);
             this.Controls.Add(this.txtRazao);
             this.Controls.Add(this.lblRazaoSocial);

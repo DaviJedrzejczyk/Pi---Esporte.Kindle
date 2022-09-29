@@ -83,6 +83,7 @@
             // lblTelefone
             // 
             this.lblTelefone.AutoSize = true;
+            this.lblTelefone.ForeColor = System.Drawing.Color.White;
             this.lblTelefone.Location = new System.Drawing.Point(38, 261);
             this.lblTelefone.Name = "lblTelefone";
             this.lblTelefone.Size = new System.Drawing.Size(52, 15);
@@ -99,6 +100,7 @@
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
+            this.lblEmail.ForeColor = System.Drawing.Color.White;
             this.lblEmail.Location = new System.Drawing.Point(38, 232);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(39, 15);
@@ -115,6 +117,7 @@
             // lblDataNasc
             // 
             this.lblDataNasc.AutoSize = true;
+            this.lblDataNasc.ForeColor = System.Drawing.Color.White;
             this.lblDataNasc.Location = new System.Drawing.Point(38, 201);
             this.lblDataNasc.Name = "lblDataNasc";
             this.lblDataNasc.Size = new System.Drawing.Size(117, 15);
@@ -132,6 +135,7 @@
             // lblRg
             // 
             this.lblRg.AutoSize = true;
+            this.lblRg.ForeColor = System.Drawing.Color.White;
             this.lblRg.Location = new System.Drawing.Point(38, 172);
             this.lblRg.Name = "lblRg";
             this.lblRg.Size = new System.Drawing.Size(25, 15);
@@ -141,6 +145,7 @@
             // lblCpf
             // 
             this.lblCpf.AutoSize = true;
+            this.lblCpf.ForeColor = System.Drawing.Color.White;
             this.lblCpf.Location = new System.Drawing.Point(38, 143);
             this.lblCpf.Name = "lblCpf";
             this.lblCpf.Size = new System.Drawing.Size(31, 15);
@@ -157,6 +162,7 @@
             // lblSobrenome
             // 
             this.lblSobrenome.AutoSize = true;
+            this.lblSobrenome.ForeColor = System.Drawing.Color.White;
             this.lblSobrenome.Location = new System.Drawing.Point(38, 114);
             this.lblSobrenome.Name = "lblSobrenome";
             this.lblSobrenome.Size = new System.Drawing.Size(71, 15);
@@ -173,6 +179,7 @@
             // lblNome
             // 
             this.lblNome.AutoSize = true;
+            this.lblNome.ForeColor = System.Drawing.Color.White;
             this.lblNome.Location = new System.Drawing.Point(38, 85);
             this.lblNome.Name = "lblNome";
             this.lblNome.Size = new System.Drawing.Size(43, 15);
@@ -226,6 +233,7 @@
             this.ClienteData,
             this.ClienteTelefone,
             this.ClienteGenero});
+            this.dtCliente.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dtCliente.Location = new System.Drawing.Point(369, 12);
             this.dtCliente.Name = "dtCliente";
             this.dtCliente.ReadOnly = true;
@@ -233,6 +241,7 @@
             this.dtCliente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtCliente.Size = new System.Drawing.Size(664, 462);
             this.dtCliente.TabIndex = 36;
+            this.dtCliente.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtCliente_CellContentClick);
             this.dtCliente.DoubleClick += new System.EventHandler(this.dtCliente_DoubleClick);
             // 
             // ClienteID
@@ -306,6 +315,7 @@
             // lblID
             // 
             this.lblID.AutoSize = true;
+            this.lblID.ForeColor = System.Drawing.Color.White;
             this.lblID.Location = new System.Drawing.Point(38, 56);
             this.lblID.Name = "lblID";
             this.lblID.Size = new System.Drawing.Size(21, 15);
@@ -323,6 +333,7 @@
             // lblIdade
             // 
             this.lblIdade.AutoSize = true;
+            this.lblIdade.ForeColor = System.Drawing.Color.White;
             this.lblIdade.Location = new System.Drawing.Point(267, 180);
             this.lblIdade.Name = "lblIdade";
             this.lblIdade.Size = new System.Drawing.Size(39, 15);
@@ -341,6 +352,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(3)))), ((int)(((byte)(52)))));
             this.ClientSize = new System.Drawing.Size(1045, 486);
             this.Controls.Add(this.mskdCPF);
             this.Controls.Add(this.txtIdade);
@@ -365,6 +377,7 @@
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnRemove);
             this.Controls.Add(this.btnCadastrar);
+            this.ForeColor = System.Drawing.Color.White;
             this.Name = "TelaCliente";
             this.Text = "TelaCliente";
             this.Load += new System.EventHandler(this.TelaCliente_Load);

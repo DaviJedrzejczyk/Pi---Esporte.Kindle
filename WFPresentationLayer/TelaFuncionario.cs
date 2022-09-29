@@ -17,6 +17,7 @@ namespace WFPresentationLayer
             funcionarioService = funcionario;
             this.dtFuncionario.DoubleClick += dtFuncionario_DoubleClick;
             this.estadoService = estadoService;
+            this.dtFuncionario.DefaultCellStyle.ForeColor = Color.Black;
         }
 
 

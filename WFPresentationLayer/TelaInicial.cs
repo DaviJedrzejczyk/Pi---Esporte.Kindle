@@ -72,5 +72,10 @@ namespace WFPresentationLayer
             telaLogin.ShowDialog();
             this.Close();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new TelaHome());
+        }
     }
 }
