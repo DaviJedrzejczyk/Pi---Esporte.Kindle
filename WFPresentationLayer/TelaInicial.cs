@@ -24,10 +24,10 @@ namespace WFPresentationLayer
         {
             InitializeComponent();
             cliente = clienteService;
-            this.funcionarioService = funcionarioService;
             this.produtoService = produtoService;
             this.fornecedoraService = fornecedoraService;
             this.estadoService = estadoService;
+            this.funcionarioService = funcionarioService;
             this.categoriaService = categoriaService;
 
         }
