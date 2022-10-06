@@ -153,6 +153,7 @@
             this.dtFuncionario.AllowUserToAddRows = false;
             this.dtFuncionario.AllowUserToDeleteRows = false;
             this.dtFuncionario.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            this.dtFuncionario.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dtFuncionario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtFuncionario.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.FuncionarioID,
