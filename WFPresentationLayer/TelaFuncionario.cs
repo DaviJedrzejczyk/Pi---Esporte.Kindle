@@ -30,6 +30,7 @@ namespace WFPresentationLayer
             cbEstado.DisplayMember = "Unidade_Federal";
             cbEstado.ValueMember = "ID";
             SincronizarGrid();
+            StyleDatagridview();
         }
 
         private Funcionario CreateObjectWithForm()
@@ -197,6 +198,24 @@ namespace WFPresentationLayer
                 MessageBox.Show(response.Message);
             }
         }
+
+        void StyleDatagridview()
+        {
+            dtFuncionario.BorderStyle = BorderStyle.None;
+            dtFuncionario.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238, 239, 249);
+            dtFuncionario.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dtFuncionario.DefaultCellStyle.SelectionBackColor = Color.Blue;
+            dtFuncionario.DefaultCellStyle.SelectionForeColor = Color.WhiteSmoke;
+            dtFuncionario.BackgroundColor = Color.FromArgb(30, 30, 30);
+            dtFuncionario.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dtFuncionario.EnableHeadersVisualStyles = false;
+            dtFuncionario.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dtFuncionario.ColumnHeadersDefaultCellStyle.Font = new Font("MS Reference Sans Serif", 10);
+            dtFuncionario.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.FromArgb(37,37,38);
+            dtFuncionario.ColumnHeadersDefaultCellStyle.SelectionForeColor = Color.White;
+            dtFuncionario.AutoSize = true;
+        }
+
         
     }
 }
