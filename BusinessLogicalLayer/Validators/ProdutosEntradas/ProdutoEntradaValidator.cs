@@ -17,11 +17,14 @@ namespace BusinessLogicalLayer.Validators.ProdutosEntradas
         }
         public void ValidateQuantidade()
         {
-
+            RuleFor(c => c.Quantidade).NotNull().WithMessage(ProdutoEntradaConstants.MENSAGEM_ERRO_PRODUTO_ENTRADA_QUANTIDADE_VAZIA)
+                                     .LessThan(0).WithMessage(ProdutoEntradaConstants.MENSAGEM_ERRO_PRODUTO_ENTRADA_QUANTIDADE_MENOR)
+                                     .GreaterThan(9999).WithMessage(ProdutoEntradaConstants.MENSAGEM_ERRO_PRODUTO_ENTRADA_QUANTIDADE_MAIOR);
         }
         public void ValidateValorUnitario()
         {
-
+            RuleFor(c => c.ValorUnitario).NotNull().WithMessage(ProdutoEntradaConstants.MENSAGEM_ERRO_PRODUTO_ENTRADA_VALOR_VAZIO)
+                                        .LessThan(0).WithMessage(ProdutoEntradaConstants.MENSAGEM_ERRO_PRODUTO_ENTRADA_VALOR_MENOR);
         }
     }
 }
