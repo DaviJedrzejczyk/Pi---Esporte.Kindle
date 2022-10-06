@@ -124,6 +124,7 @@
             // lblID
             // 
             this.lblID.AutoSize = true;
+            this.lblID.ForeColor = System.Drawing.Color.White;
             this.lblID.Location = new System.Drawing.Point(12, 46);
             this.lblID.Name = "lblID";
             this.lblID.Size = new System.Drawing.Size(21, 15);
@@ -269,6 +270,7 @@
             // lblNome
             // 
             this.lblNome.AutoSize = true;
+            this.lblNome.ForeColor = System.Drawing.Color.White;
             this.lblNome.Location = new System.Drawing.Point(12, 87);
             this.lblNome.Name = "lblNome";
             this.lblNome.Size = new System.Drawing.Size(43, 15);
@@ -278,6 +280,7 @@
             // lblSobrenome
             // 
             this.lblSobrenome.AutoSize = true;
+            this.lblSobrenome.ForeColor = System.Drawing.Color.White;
             this.lblSobrenome.Location = new System.Drawing.Point(12, 116);
             this.lblSobrenome.Name = "lblSobrenome";
             this.lblSobrenome.Size = new System.Drawing.Size(71, 15);
@@ -294,6 +297,7 @@
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
+            this.lblEmail.ForeColor = System.Drawing.Color.White;
             this.lblEmail.Location = new System.Drawing.Point(12, 148);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(39, 15);
@@ -310,6 +314,7 @@
             // lblSenha
             // 
             this.lblSenha.AutoSize = true;
+            this.lblSenha.ForeColor = System.Drawing.Color.White;
             this.lblSenha.Location = new System.Drawing.Point(12, 177);
             this.lblSenha.Name = "lblSenha";
             this.lblSenha.Size = new System.Drawing.Size(42, 15);
@@ -326,6 +331,7 @@
             // lblConfSenha
             // 
             this.lblConfSenha.AutoSize = true;
+            this.lblConfSenha.ForeColor = System.Drawing.Color.White;
             this.lblConfSenha.Location = new System.Drawing.Point(89, 200);
             this.lblConfSenha.Name = "lblConfSenha";
             this.lblConfSenha.Size = new System.Drawing.Size(99, 15);
@@ -342,6 +348,7 @@
             // lblRG
             // 
             this.lblRG.AutoSize = true;
+            this.lblRG.ForeColor = System.Drawing.Color.White;
             this.lblRG.Location = new System.Drawing.Point(12, 255);
             this.lblRG.Name = "lblRG";
             this.lblRG.Size = new System.Drawing.Size(25, 15);
@@ -358,6 +365,7 @@
             // lblCPF
             // 
             this.lblCPF.AutoSize = true;
+            this.lblCPF.ForeColor = System.Drawing.Color.White;
             this.lblCPF.Location = new System.Drawing.Point(12, 285);
             this.lblCPF.Name = "lblCPF";
             this.lblCPF.Size = new System.Drawing.Size(31, 15);
@@ -374,6 +382,7 @@
             // lblData
             // 
             this.lblData.AutoSize = true;
+            this.lblData.ForeColor = System.Drawing.Color.White;
             this.lblData.Location = new System.Drawing.Point(12, 322);
             this.lblData.Name = "lblData";
             this.lblData.Size = new System.Drawing.Size(34, 15);
@@ -390,6 +399,7 @@
             // lblGenero
             // 
             this.lblGenero.AutoSize = true;
+            this.lblGenero.ForeColor = System.Drawing.Color.White;
             this.lblGenero.Location = new System.Drawing.Point(225, 25);
             this.lblGenero.Name = "lblGenero";
             this.lblGenero.Size = new System.Drawing.Size(48, 15);
@@ -399,6 +409,7 @@
             // lblNivelAcesso
             // 
             this.lblNivelAcesso.AutoSize = true;
+            this.lblNivelAcesso.ForeColor = System.Drawing.Color.White;
             this.lblNivelAcesso.Location = new System.Drawing.Point(225, 69);
             this.lblNivelAcesso.Name = "lblNivelAcesso";
             this.lblNivelAcesso.Size = new System.Drawing.Size(93, 15);
@@ -417,6 +428,7 @@
             // lblRua
             // 
             this.lblRua.AutoSize = true;
+            this.lblRua.ForeColor = System.Drawing.Color.White;
             this.lblRua.Location = new System.Drawing.Point(362, 46);
             this.lblRua.Name = "lblRua";
             this.lblRua.Size = new System.Drawing.Size(30, 15);
@@ -433,6 +445,7 @@
             // lblTelefone
             // 
             this.lblTelefone.AutoSize = true;
+            this.lblTelefone.ForeColor = System.Drawing.Color.White;
             this.lblTelefone.Location = new System.Drawing.Point(225, 116);
             this.lblTelefone.Name = "lblTelefone";
             this.lblTelefone.Size = new System.Drawing.Size(55, 15);
@@ -457,6 +470,7 @@
             // lblIdade
             // 
             this.lblIdade.AutoSize = true;
+            this.lblIdade.ForeColor = System.Drawing.Color.White;
             this.lblIdade.Location = new System.Drawing.Point(225, 166);
             this.lblIdade.Name = "lblIdade";
             this.lblIdade.Size = new System.Drawing.Size(39, 15);
@@ -466,6 +480,7 @@
             // lblBairro
             // 
             this.lblBairro.AutoSize = true;
+            this.lblBairro.ForeColor = System.Drawing.Color.White;
             this.lblBairro.Location = new System.Drawing.Point(362, 79);
             this.lblBairro.Name = "lblBairro";
             this.lblBairro.Size = new System.Drawing.Size(41, 15);
@@ -482,6 +497,7 @@
             // lblCidade
             // 
             this.lblCidade.AutoSize = true;
+            this.lblCidade.ForeColor = System.Drawing.Color.White;
             this.lblCidade.Location = new System.Drawing.Point(362, 106);
             this.lblCidade.Name = "lblCidade";
             this.lblCidade.Size = new System.Drawing.Size(47, 15);
@@ -498,6 +514,7 @@
             // lblEstado
             // 
             this.lblEstado.AutoSize = true;
+            this.lblEstado.ForeColor = System.Drawing.Color.White;
             this.lblEstado.Location = new System.Drawing.Point(362, 135);
             this.lblEstado.Name = "lblEstado";
             this.lblEstado.Size = new System.Drawing.Size(45, 15);
@@ -516,6 +533,7 @@
             // lblCep
             // 
             this.lblCep.AutoSize = true;
+            this.lblCep.ForeColor = System.Drawing.Color.White;
             this.lblCep.Location = new System.Drawing.Point(362, 168);
             this.lblCep.Name = "lblCep";
             this.lblCep.Size = new System.Drawing.Size(31, 15);
@@ -532,6 +550,7 @@
             // lblPonto
             // 
             this.lblPonto.AutoSize = true;
+            this.lblPonto.ForeColor = System.Drawing.Color.White;
             this.lblPonto.Location = new System.Drawing.Point(362, 200);
             this.lblPonto.Name = "lblPonto";
             this.lblPonto.Size = new System.Drawing.Size(116, 15);
@@ -548,6 +567,7 @@
             // lblComplemento
             // 
             this.lblComplemento.AutoSize = true;
+            this.lblComplemento.ForeColor = System.Drawing.Color.White;
             this.lblComplemento.Location = new System.Drawing.Point(362, 252);
             this.lblComplemento.Name = "lblComplemento";
             this.lblComplemento.Size = new System.Drawing.Size(87, 15);
@@ -564,6 +584,7 @@
             // lblEndereco
             // 
             this.lblEndereco.AutoSize = true;
+            this.lblEndereco.ForeColor = System.Drawing.Color.White;
             this.lblEndereco.Location = new System.Drawing.Point(362, 299);
             this.lblEndereco.Name = "lblEndereco";
             this.lblEndereco.Size = new System.Drawing.Size(73, 15);
@@ -581,6 +602,7 @@
             // lblNumero
             // 
             this.lblNumero.AutoSize = true;
+            this.lblNumero.ForeColor = System.Drawing.Color.White;
             this.lblNumero.Location = new System.Drawing.Point(238, 252);
             this.lblNumero.Name = "lblNumero";
             this.lblNumero.Size = new System.Drawing.Size(54, 15);
@@ -598,6 +620,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(3)))), ((int)(((byte)(52)))));
             this.ClientSize = new System.Drawing.Size(900, 519);
             this.Controls.Add(this.lblNumero);
             this.Controls.Add(this.txtNumero);

@@ -28,6 +28,7 @@ namespace WFPresentationLayer
             fornecedoraService = fornecedoraService2;
             this.categoriaService = categoriaService;
             this.dtProduto.DoubleClick += dataGridView1_DoubleClick;
+            this.dtProduto.DefaultCellStyle.ForeColor = Color.Black;
           
         }
         private async void TelaProduto_Load(object sender, EventArgs e)

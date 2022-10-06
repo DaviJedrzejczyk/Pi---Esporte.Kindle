@@ -24,11 +24,12 @@ namespace WFPresentationLayer
         {
             InitializeComponent();
             cliente = clienteService;
-            this.funcionarioService = funcionarioService;
             this.produtoService = produtoService;
             this.fornecedoraService = fornecedoraService;
             this.estadoService = estadoService;
+            this.funcionarioService = funcionarioService;
             this.categoriaService = categoriaService;
+
         }
         private void OpenChildForm(Form childForm)
         {
@@ -71,6 +72,11 @@ namespace WFPresentationLayer
             TelaLogin telaLogin = new(funcionarioService, cliente, produtoService, fornecedoraService,estadoService,categoriaService);
             telaLogin.ShowDialog();
             this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new TelaHome());
         }
     }
 }

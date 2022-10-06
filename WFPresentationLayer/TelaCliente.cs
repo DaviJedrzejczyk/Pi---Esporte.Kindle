@@ -25,6 +25,7 @@ namespace WFPresentationLayer
         {
             InitializeComponent();
             this.dtCliente.DoubleClick += dtCliente_DoubleClick;
+            this.dtCliente.DefaultCellStyle.ForeColor = Color.Black;
             _cliente = service;
         }
        
@@ -32,6 +33,7 @@ namespace WFPresentationLayer
         private void TelaCliente_Load(object sender, EventArgs e)
         {
             SincronizarGrid();
+            
             cbGenero.DataSource = Enum.GetNames(typeof(Genero));
         }
 
@@ -166,6 +168,11 @@ namespace WFPresentationLayer
             txtSobrenome.Clear();
             txtID.Clear();
             txtEmail.Clear();
+        }
+
+        private void dtCliente_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

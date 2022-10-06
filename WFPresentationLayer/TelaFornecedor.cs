@@ -24,6 +24,7 @@ namespace WFPresentationLayer
             InitializeComponent();
             fornecedoraBLL = service;
             this.dtFornecedor.DoubleClick += dtFornecedor_DoubleClick;
+            this.dtFornecedor.DefaultCellStyle.ForeColor = Color.Black;
         }
         private void TelaFornecedor_Load(object sender, EventArgs e)
         {

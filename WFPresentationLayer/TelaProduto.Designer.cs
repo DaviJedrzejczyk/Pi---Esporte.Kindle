@@ -58,6 +58,7 @@
             // lblID
             // 
             this.lblID.AutoSize = true;
+            this.lblID.ForeColor = System.Drawing.Color.White;
             this.lblID.Location = new System.Drawing.Point(38, 47);
             this.lblID.Name = "lblID";
             this.lblID.Size = new System.Drawing.Size(21, 15);
@@ -149,6 +150,7 @@
             // lblNome
             // 
             this.lblNome.AutoSize = true;
+            this.lblNome.ForeColor = System.Drawing.Color.White;
             this.lblNome.Location = new System.Drawing.Point(21, 82);
             this.lblNome.Name = "lblNome";
             this.lblNome.Size = new System.Drawing.Size(43, 15);
@@ -165,6 +167,7 @@
             // lblDescricao
             // 
             this.lblDescricao.AutoSize = true;
+            this.lblDescricao.ForeColor = System.Drawing.Color.White;
             this.lblDescricao.Location = new System.Drawing.Point(3, 111);
             this.lblDescricao.Name = "lblDescricao";
             this.lblDescricao.Size = new System.Drawing.Size(61, 15);
@@ -181,6 +184,7 @@
             // lblQtdEstoque
             // 
             this.lblQtdEstoque.AutoSize = true;
+            this.lblQtdEstoque.ForeColor = System.Drawing.Color.White;
             this.lblQtdEstoque.Location = new System.Drawing.Point(3, 215);
             this.lblQtdEstoque.Name = "lblQtdEstoque";
             this.lblQtdEstoque.Size = new System.Drawing.Size(137, 15);
@@ -197,6 +201,7 @@
             // lblValorUnitario
             // 
             this.lblValorUnitario.AutoSize = true;
+            this.lblValorUnitario.ForeColor = System.Drawing.Color.White;
             this.lblValorUnitario.Location = new System.Drawing.Point(3, 259);
             this.lblValorUnitario.Name = "lblValorUnitario";
             this.lblValorUnitario.Size = new System.Drawing.Size(99, 15);
@@ -206,6 +211,7 @@
             // lblForne
             // 
             this.lblForne.AutoSize = true;
+            this.lblForne.ForeColor = System.Drawing.Color.White;
             this.lblForne.Location = new System.Drawing.Point(3, 144);
             this.lblForne.Name = "lblForne";
             this.lblForne.Size = new System.Drawing.Size(73, 15);
@@ -245,6 +251,7 @@
             // lblCategoria
             // 
             this.lblCategoria.AutoSize = true;
+            this.lblCategoria.ForeColor = System.Drawing.Color.White;
             this.lblCategoria.Location = new System.Drawing.Point(3, 173);
             this.lblCategoria.Name = "lblCategoria";
             this.lblCategoria.Size = new System.Drawing.Size(58, 15);
@@ -264,6 +271,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(3)))), ((int)(((byte)(52)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.lblCategoria);
             this.Controls.Add(this.cbCategoria);
