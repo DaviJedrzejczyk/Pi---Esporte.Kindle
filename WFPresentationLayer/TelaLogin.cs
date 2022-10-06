@@ -40,5 +40,10 @@ namespace WFPresentationLayer
                 MessageBox.Show("Erro");
             }
         }
+
+        private void materialSingleLineTextField1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
