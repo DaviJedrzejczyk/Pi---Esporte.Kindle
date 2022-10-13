@@ -56,10 +56,10 @@
             this.label9 = new System.Windows.Forms.Label();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbProduto = new System.Windows.Forms.ComboBox();
             this.materialRaisedButton2 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialRaisedButton3 = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cbFormaPag = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.materialRaisedButton4 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialRaisedButton5 = new MaterialSkin.Controls.MaterialRaisedButton();
@@ -101,7 +101,6 @@
             this.label1.Size = new System.Drawing.Size(71, 25);
             this.label1.TabIndex = 7;
             this.label1.Text = "Cliente";
-            this.label1.Click += new System.EventHandler(this.label1_Click_1);
             // 
             // textBox1
             // 
@@ -334,14 +333,14 @@
             this.label10.TabIndex = 27;
             this.label10.Text = "Produto";
             // 
-            // comboBox1
+            // cbProduto
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(447, 194);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(165, 29);
-            this.comboBox1.TabIndex = 28;
+            this.cbProduto.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cbProduto.FormattingEnabled = true;
+            this.cbProduto.Location = new System.Drawing.Point(447, 194);
+            this.cbProduto.Name = "cbProduto";
+            this.cbProduto.Size = new System.Drawing.Size(165, 29);
+            this.cbProduto.TabIndex = 28;
             // 
             // materialRaisedButton2
             // 
@@ -367,14 +366,14 @@
             this.materialRaisedButton3.Text = "Adicionar Produto";
             this.materialRaisedButton3.UseVisualStyleBackColor = true;
             // 
-            // comboBox2
+            // cbFormaPag
             // 
-            this.comboBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(27, 491);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(196, 29);
-            this.comboBox2.TabIndex = 32;
+            this.cbFormaPag.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cbFormaPag.FormattingEnabled = true;
+            this.cbFormaPag.Location = new System.Drawing.Point(27, 491);
+            this.cbFormaPag.Name = "cbFormaPag";
+            this.cbFormaPag.Size = new System.Drawing.Size(196, 29);
+            this.cbFormaPag.TabIndex = 32;
             // 
             // label11
             // 
@@ -418,11 +417,11 @@
             this.ClientSize = new System.Drawing.Size(1042, 553);
             this.Controls.Add(this.materialRaisedButton5);
             this.Controls.Add(this.materialRaisedButton4);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.cbFormaPag);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.materialRaisedButton3);
             this.Controls.Add(this.materialRaisedButton2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cbProduto);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.textBox7);
             this.Controls.Add(this.label9);
@@ -487,10 +486,10 @@
         private Label label9;
         private TextBox textBox7;
         private Label label10;
-        private ComboBox comboBox1;
+        private ComboBox cbProduto;
         private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton2;
         private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton3;
-        private ComboBox comboBox2;
+        private ComboBox cbFormaPag;
         private Label label11;
         private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton4;
         private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton5;

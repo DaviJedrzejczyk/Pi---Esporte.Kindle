@@ -1,4 +1,7 @@
-﻿using System;
+﻿using BusinessLogicalLayer.Interfaces;
+using Entities;
+using Entities.Enums;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,39 +15,32 @@ namespace WFPresentationLayer
 {
     public partial class TelaVenda : Form
     {
-        public TelaVenda()
+        IClienteService clienteService;
+        IFuncionarioService funcionarioService;
+        IProdutoService produtoService;
+        IFornecedoraService fornecedoraService;
+        List<Produto> produtos = new();
+
+        public TelaVenda(IClienteService clienteService, IFuncionarioService funcionarioService, IFornecedoraService fornecedoraService, IProdutoService produtoService)
         {
+            this.clienteService = clienteService;
+            this.funcionarioService = funcionarioService;
+            this.fornecedoraService = fornecedoraService;
+            this.produtoService = produtoService;
             InitializeComponent();
         }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void TelaVenda_Load(object sender, EventArgs e)
         {
-
+            cbProduto.DataSource = produtoService.GetAll().Result.Itens;
+            cbProduto.DisplayMember = "Nome";
+            cbProduto.ValueMember = "ID";
+            cbFormaPag.DataSource = Enum.GetNames(typeof(FormaPagamento));
         }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
 
-        private void TelaVenda_Load(object sender, EventArgs e)
-        {
-
-        }
+      
     }
 }
