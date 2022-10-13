@@ -30,7 +30,6 @@ namespace WFPresentationLayer
             cbEstado.DisplayMember = "Unidade_Federal";
             cbEstado.ValueMember = "ID";
             SincronizarGrid();
-            StyleDatagridview();
         }
 
         private Funcionario CreateObjectWithForm()
@@ -214,6 +213,7 @@ namespace WFPresentationLayer
             dtFuncionario.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.FromArgb(37,37,38);
             dtFuncionario.ColumnHeadersDefaultCellStyle.SelectionForeColor = Color.White;
             dtFuncionario.AutoSize = true;
+    
         }
 
         
