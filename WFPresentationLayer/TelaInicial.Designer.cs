@@ -46,61 +46,93 @@
             // 
             this.btnClientes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnClientes.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnClientes.FlatAppearance.BorderSize = 0;
+            this.btnClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClientes.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnClientes.ForeColor = System.Drawing.Color.LightGray;
+            this.btnClientes.Image = ((System.Drawing.Image)(resources.GetObject("btnClientes.Image")));
+            this.btnClientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnClientes.Location = new System.Drawing.Point(0, 0);
             this.btnClientes.Name = "btnClientes";
             this.btnClientes.Size = new System.Drawing.Size(160, 65);
             this.btnClientes.TabIndex = 0;
             this.btnClientes.Text = "Clientes";
+            this.btnClientes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnClientes.UseVisualStyleBackColor = true;
             this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
             // 
             // btnFuncionarios
             // 
             this.btnFuncionarios.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnFuncionarios.FlatAppearance.BorderSize = 0;
+            this.btnFuncionarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFuncionarios.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnFuncionarios.ForeColor = System.Drawing.Color.LightGray;
+            this.btnFuncionarios.Image = ((System.Drawing.Image)(resources.GetObject("btnFuncionarios.Image")));
+            this.btnFuncionarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnFuncionarios.Location = new System.Drawing.Point(0, 65);
             this.btnFuncionarios.Name = "btnFuncionarios";
             this.btnFuncionarios.Size = new System.Drawing.Size(160, 69);
             this.btnFuncionarios.TabIndex = 1;
             this.btnFuncionarios.Text = "Funcionarios";
+            this.btnFuncionarios.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnFuncionarios.UseVisualStyleBackColor = true;
             this.btnFuncionarios.Click += new System.EventHandler(this.btnFuncionarios_Click);
             // 
             // btnFornecedores
             // 
             this.btnFornecedores.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnFornecedores.FlatAppearance.BorderSize = 0;
+            this.btnFornecedores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFornecedores.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnFornecedores.ForeColor = System.Drawing.Color.LightGray;
+            this.btnFornecedores.Image = ((System.Drawing.Image)(resources.GetObject("btnFornecedores.Image")));
+            this.btnFornecedores.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnFornecedores.Location = new System.Drawing.Point(0, 134);
             this.btnFornecedores.Name = "btnFornecedores";
             this.btnFornecedores.Size = new System.Drawing.Size(160, 72);
             this.btnFornecedores.TabIndex = 2;
             this.btnFornecedores.Text = "Fornecedores";
+            this.btnFornecedores.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnFornecedores.UseVisualStyleBackColor = true;
             this.btnFornecedores.Click += new System.EventHandler(this.btnFornecedores_Click);
             // 
             // btnProdutos
             // 
             this.btnProdutos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnProdutos.FlatAppearance.BorderSize = 0;
+            this.btnProdutos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProdutos.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnProdutos.ForeColor = System.Drawing.Color.LightGray;
+            this.btnProdutos.Image = ((System.Drawing.Image)(resources.GetObject("btnProdutos.Image")));
+            this.btnProdutos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnProdutos.Location = new System.Drawing.Point(0, 206);
             this.btnProdutos.Name = "btnProdutos";
             this.btnProdutos.Size = new System.Drawing.Size(160, 74);
             this.btnProdutos.TabIndex = 3;
             this.btnProdutos.Text = "Produtos";
+            this.btnProdutos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnProdutos.UseVisualStyleBackColor = true;
             this.btnProdutos.Click += new System.EventHandler(this.btnProdutos_Click);
             // 
             // btnLogout
             // 
-            this.btnLogout.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnLogout.Location = new System.Drawing.Point(0, 511);
+            this.btnLogout.FlatAppearance.BorderSize = 0;
+            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogout.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnLogout.ForeColor = System.Drawing.Color.LightGray;
+            this.btnLogout.Image = ((System.Drawing.Image)(resources.GetObject("btnLogout.Image")));
+            this.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLogout.Location = new System.Drawing.Point(3, 521);
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(160, 56);
+            this.btnLogout.Size = new System.Drawing.Size(42, 43);
             this.btnLogout.TabIndex = 4;
-            this.btnLogout.Text = "Logout";
             this.btnLogout.UseVisualStyleBackColor = true;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(31)))), ((int)(((byte)(88)))));
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.panel2.Controls.Add(this.btnLogout);
             this.panel2.Controls.Add(this.btnProdutos);
             this.panel2.Controls.Add(this.btnFornecedores);
@@ -114,7 +146,7 @@
             // 
             // panelDesktop
             // 
-            this.panelDesktop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(3)))), ((int)(((byte)(52)))));
+            this.panelDesktop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
             this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDesktop.Location = new System.Drawing.Point(160, 100);
             this.panelDesktop.Name = "panelDesktop";
@@ -123,7 +155,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(31)))), ((int)(((byte)(88)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.panel1.Controls.Add(this.button1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
