@@ -365,6 +365,7 @@
             this.materialRaisedButton3.TabIndex = 30;
             this.materialRaisedButton3.Text = "Adicionar Produto";
             this.materialRaisedButton3.UseVisualStyleBackColor = true;
+            this.materialRaisedButton3.Click += new System.EventHandler(this.materialRaisedButton3_Click);
             // 
             // cbFormaPag
             // 
@@ -397,6 +398,7 @@
             this.materialRaisedButton4.TabIndex = 33;
             this.materialRaisedButton4.Text = "Cadastrar novo Cliente";
             this.materialRaisedButton4.UseVisualStyleBackColor = true;
+            this.materialRaisedButton4.Click += new System.EventHandler(this.materialRaisedButton4_Click);
             // 
             // materialRaisedButton5
             // 

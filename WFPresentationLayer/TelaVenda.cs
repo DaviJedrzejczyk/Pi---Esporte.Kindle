@@ -7,6 +7,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -41,6 +42,28 @@ namespace WFPresentationLayer
 
         }
 
-      
+        private void materialRaisedButton4_Click(object sender, EventArgs e)
+        {
+            TelaCliente telaCliente  = new(clienteService);
+            telaCliente.ShowDialog();
+        }
+
+        private void materialRaisedButton3_Click(object sender, EventArgs e)
+        {
+            Produto produto = produtoService.GetById((Produto)cbProduto.SelectedValue).Result.Item;
+            bool hasFound = false;
+            if (produto != null)
+            {
+                produto.QtdEstoque = (int)numericUpDown1.Value;
+                produto.Valor_Unitario = Convert.ToDouble(textBox7.Text); 
+                for (int i = 0; i < produtos.Count; i++)
+                {
+                    if (produto.ID == produtos[i].ID)
+                    {
+
+                    }
+                }
+            }
+        }
     }
 }
