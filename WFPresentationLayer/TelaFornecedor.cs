@@ -29,6 +29,7 @@ namespace WFPresentationLayer
         private void TelaFornecedor_Load(object sender, EventArgs e)
         {
             SincronizarGrid();
+            StyleDatagridview();
         }
         private void DrawFormWithObject(Fornecedor fornecedor)
         {
@@ -147,7 +148,23 @@ namespace WFPresentationLayer
             txtEmail.Clear();
         }
 
-        
+        void StyleDatagridview()
+        {
+            dtFornecedor.BorderStyle = BorderStyle.None;
+            dtFornecedor.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238, 239, 249);
+            dtFornecedor.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dtFornecedor.DefaultCellStyle.SelectionBackColor = Color.Blue;
+            dtFornecedor.DefaultCellStyle.SelectionForeColor = Color.WhiteSmoke;
+            dtFornecedor.BackgroundColor = Color.FromArgb(30, 30, 30);
+            dtFornecedor.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dtFornecedor.EnableHeadersVisualStyles = false;
+            dtFornecedor.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dtFornecedor.ColumnHeadersDefaultCellStyle.Font = new Font("MS Reference Sans Serif", 10);
+            dtFornecedor.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.FromArgb(37, 37, 38);
+            dtFornecedor.ColumnHeadersDefaultCellStyle.SelectionForeColor = Color.White;
+            dtFornecedor.AutoSize = true;
+        }
+
 
     }
 }
