@@ -31,6 +31,8 @@ namespace WFPresentationLayer
             if (singleResponse.HasSuccess)
             {
                 this.Hide();
+                FuncionarioLogin.id = singleResponse.Item.ID;
+                FuncionarioLogin.nome = singleResponse.Item.Nome;
                 TelaInicial tela = new(clienteService,funcionarioService,produtoService,fornecedoraService,estadoService,categoriaService);
                 tela.ShowDialog();
                 this.Close();

@@ -31,41 +31,38 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtCliente = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.txtCpf = new System.Windows.Forms.TextBox();
+            this.btnAddCliente = new MaterialSkin.Controls.MaterialRaisedButton();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtValor = new System.Windows.Forms.TextBox();
             this.materialDivider1 = new MaterialSkin.Controls.MaterialDivider();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtQtdItens = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Qtde = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Un = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtTotPag = new System.Windows.Forms.TextBox();
+            this.dtTelaVenda = new System.Windows.Forms.DataGridView();
+            this.IDVenda = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NomeVenda = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.QtdeVenda = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ValorVenda = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TotalVenda = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label8 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.label9 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.nudQtd = new System.Windows.Forms.NumericUpDown();
             this.label10 = new System.Windows.Forms.Label();
             this.cbProduto = new System.Windows.Forms.ComboBox();
-            this.materialRaisedButton2 = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.materialRaisedButton3 = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnRetirarProduto = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnAdicionarProduto = new MaterialSkin.Controls.MaterialRaisedButton();
             this.cbFormaPag = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.materialRaisedButton4 = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.materialRaisedButton5 = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnCadastrarCliente = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnRegistrarVenda = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.dateTelaVenda = new System.Windows.Forms.DateTimePicker();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtTelaVenda)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudQtd)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -102,14 +99,14 @@
             this.label1.TabIndex = 7;
             this.label1.Text = "Cliente";
             // 
-            // textBox1
+            // txtCliente
             // 
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox1.Location = new System.Drawing.Point(30, 103);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(224, 29);
-            this.textBox1.TabIndex = 8;
+            this.txtCliente.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtCliente.Location = new System.Drawing.Point(30, 103);
+            this.txtCliente.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtCliente.Name = "txtCliente";
+            this.txtCliente.Size = new System.Drawing.Size(224, 29);
+            this.txtCliente.TabIndex = 8;
             // 
             // label2
             // 
@@ -122,15 +119,6 @@
             this.label2.TabIndex = 9;
             this.label2.Text = "Data Venda";
             // 
-            // textBox2
-            // 
-            this.textBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox2.Location = new System.Drawing.Point(272, 103);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(277, 29);
-            this.textBox2.TabIndex = 10;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -142,25 +130,25 @@
             this.label3.TabIndex = 11;
             this.label3.Text = "CPF";
             // 
-            // textBox3
+            // txtCpf
             // 
-            this.textBox3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox3.Location = new System.Drawing.Point(568, 103);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(195, 29);
-            this.textBox3.TabIndex = 12;
+            this.txtCpf.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtCpf.Location = new System.Drawing.Point(568, 103);
+            this.txtCpf.Name = "txtCpf";
+            this.txtCpf.Size = new System.Drawing.Size(195, 29);
+            this.txtCpf.TabIndex = 12;
             // 
-            // materialRaisedButton1
+            // btnAddCliente
             // 
-            this.materialRaisedButton1.Depth = 0;
-            this.materialRaisedButton1.Location = new System.Drawing.Point(30, 149);
-            this.materialRaisedButton1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialRaisedButton1.Name = "materialRaisedButton1";
-            this.materialRaisedButton1.Primary = true;
-            this.materialRaisedButton1.Size = new System.Drawing.Size(109, 42);
-            this.materialRaisedButton1.TabIndex = 14;
-            this.materialRaisedButton1.Text = "Adicionar Cliente";
-            this.materialRaisedButton1.UseVisualStyleBackColor = true;
+            this.btnAddCliente.Depth = 0;
+            this.btnAddCliente.Location = new System.Drawing.Point(643, 146);
+            this.btnAddCliente.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnAddCliente.Name = "btnAddCliente";
+            this.btnAddCliente.Primary = true;
+            this.btnAddCliente.Size = new System.Drawing.Size(109, 42);
+            this.btnAddCliente.TabIndex = 14;
+            this.btnAddCliente.Text = "Adicionar Cliente";
+            this.btnAddCliente.UseVisualStyleBackColor = true;
             // 
             // label5
             // 
@@ -173,13 +161,13 @@
             this.label5.TabIndex = 15;
             this.label5.Text = "Valor";
             // 
-            // textBox4
+            // txtValor
             // 
-            this.textBox4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox4.Location = new System.Drawing.Point(824, 103);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(195, 29);
-            this.textBox4.TabIndex = 16;
+            this.txtValor.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtValor.Location = new System.Drawing.Point(824, 103);
+            this.txtValor.Name = "txtValor";
+            this.txtValor.Size = new System.Drawing.Size(195, 29);
+            this.txtValor.TabIndex = 16;
             // 
             // materialDivider1
             // 
@@ -203,13 +191,13 @@
             this.label6.TabIndex = 18;
             this.label6.Text = "Quantidade de itens";
             // 
-            // textBox5
+            // txtQtdItens
             // 
-            this.textBox5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox5.Location = new System.Drawing.Point(824, 194);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(195, 29);
-            this.textBox5.TabIndex = 19;
+            this.txtQtdItens.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtQtdItens.Location = new System.Drawing.Point(824, 194);
+            this.txtQtdItens.Name = "txtQtdItens";
+            this.txtQtdItens.Size = new System.Drawing.Size(195, 29);
+            this.txtQtdItens.TabIndex = 19;
             // 
             // label7
             // 
@@ -222,111 +210,88 @@
             this.label7.TabIndex = 20;
             this.label7.Text = "Total Pago";
             // 
-            // textBox6
+            // txtTotPag
             // 
-            this.textBox6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox6.Location = new System.Drawing.Point(824, 278);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(195, 29);
-            this.textBox6.TabIndex = 21;
+            this.txtTotPag.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtTotPag.Location = new System.Drawing.Point(824, 278);
+            this.txtTotPag.Name = "txtTotPag";
+            this.txtTotPag.Size = new System.Drawing.Size(195, 29);
+            this.txtTotPag.TabIndex = 21;
             // 
-            // dataGridView1
+            // dtTelaVenda
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.DimGray;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID,
-            this.Nome,
-            this.Qtde,
-            this.Un,
-            this.dataGridViewTextBoxColumn1,
-            this.Total});
-            this.dataGridView1.Location = new System.Drawing.Point(30, 240);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(733, 203);
-            this.dataGridView1.TabIndex = 22;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dtTelaVenda.AllowUserToAddRows = false;
+            this.dtTelaVenda.AllowUserToDeleteRows = false;
+            this.dtTelaVenda.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtTelaVenda.BackgroundColor = System.Drawing.Color.DimGray;
+            this.dtTelaVenda.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtTelaVenda.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IDVenda,
+            this.NomeVenda,
+            this.QtdeVenda,
+            this.ValorVenda,
+            this.TotalVenda});
+            this.dtTelaVenda.Location = new System.Drawing.Point(30, 240);
+            this.dtTelaVenda.Name = "dtTelaVenda";
+            this.dtTelaVenda.ReadOnly = true;
+            this.dtTelaVenda.RowTemplate.Height = 25;
+            this.dtTelaVenda.Size = new System.Drawing.Size(733, 203);
+            this.dtTelaVenda.TabIndex = 22;
             // 
-            // ID
+            // IDVenda
             // 
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.Width = 115;
+            this.IDVenda.HeaderText = "ID";
+            this.IDVenda.Name = "IDVenda";
+            this.IDVenda.ReadOnly = true;
             // 
-            // Nome
+            // NomeVenda
             // 
-            this.Nome.HeaderText = "Nome";
-            this.Nome.Name = "Nome";
-            this.Nome.Width = 115;
+            this.NomeVenda.HeaderText = "Nome";
+            this.NomeVenda.Name = "NomeVenda";
+            this.NomeVenda.ReadOnly = true;
             // 
-            // Qtde
+            // QtdeVenda
             // 
-            this.Qtde.HeaderText = "Qtde";
-            this.Qtde.Name = "Qtde";
-            this.Qtde.Width = 115;
+            this.QtdeVenda.HeaderText = "Quantidade";
+            this.QtdeVenda.Name = "QtdeVenda";
+            this.QtdeVenda.ReadOnly = true;
             // 
-            // Un
+            // ValorVenda
             // 
-            this.Un.HeaderText = "Un";
-            this.Un.Name = "Un";
-            this.Un.Width = 115;
+            this.ValorVenda.HeaderText = "Valor";
+            this.ValorVenda.Name = "ValorVenda";
+            this.ValorVenda.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn1
+            // TotalVenda
             // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "Valor Un";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Width = 115;
-            // 
-            // Total
-            // 
-            this.Total.HeaderText = "Total";
-            this.Total.Name = "Total";
-            this.Total.Width = 115;
+            this.TotalVenda.HeaderText = "Total";
+            this.TotalVenda.Name = "TotalVenda";
+            this.TotalVenda.ReadOnly = true;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label8.Location = new System.Drawing.Point(170, 166);
+            this.label8.Location = new System.Drawing.Point(30, 166);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(53, 25);
             this.label8.TabIndex = 23;
             this.label8.Text = "Qtde";
             // 
-            // numericUpDown1
+            // nudQtd
             // 
-            this.numericUpDown1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.numericUpDown1.Location = new System.Drawing.Point(170, 194);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(120, 29);
-            this.numericUpDown1.TabIndex = 24;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label9.Location = new System.Drawing.Point(307, 166);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(36, 25);
-            this.label9.TabIndex = 25;
-            this.label9.Text = "Un";
-            // 
-            // textBox7
-            // 
-            this.textBox7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox7.Location = new System.Drawing.Point(307, 194);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(116, 29);
-            this.textBox7.TabIndex = 26;
+            this.nudQtd.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.nudQtd.Location = new System.Drawing.Point(30, 194);
+            this.nudQtd.Name = "nudQtd";
+            this.nudQtd.Size = new System.Drawing.Size(120, 29);
+            this.nudQtd.TabIndex = 24;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label10.Location = new System.Drawing.Point(450, 166);
+            this.label10.Location = new System.Drawing.Point(163, 166);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(80, 25);
@@ -337,35 +302,36 @@
             // 
             this.cbProduto.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cbProduto.FormattingEnabled = true;
-            this.cbProduto.Location = new System.Drawing.Point(447, 194);
+            this.cbProduto.Location = new System.Drawing.Point(160, 194);
             this.cbProduto.Name = "cbProduto";
             this.cbProduto.Size = new System.Drawing.Size(165, 29);
             this.cbProduto.TabIndex = 28;
             // 
-            // materialRaisedButton2
+            // btnRetirarProduto
             // 
-            this.materialRaisedButton2.Depth = 0;
-            this.materialRaisedButton2.Location = new System.Drawing.Point(643, 149);
-            this.materialRaisedButton2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialRaisedButton2.Name = "materialRaisedButton2";
-            this.materialRaisedButton2.Primary = true;
-            this.materialRaisedButton2.Size = new System.Drawing.Size(109, 42);
-            this.materialRaisedButton2.TabIndex = 29;
-            this.materialRaisedButton2.Text = "Retirar Produto";
-            this.materialRaisedButton2.UseVisualStyleBackColor = true;
+            this.btnRetirarProduto.Depth = 0;
+            this.btnRetirarProduto.Location = new System.Drawing.Point(528, 194);
+            this.btnRetirarProduto.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnRetirarProduto.Name = "btnRetirarProduto";
+            this.btnRetirarProduto.Primary = true;
+            this.btnRetirarProduto.Size = new System.Drawing.Size(109, 42);
+            this.btnRetirarProduto.TabIndex = 29;
+            this.btnRetirarProduto.Text = "Retirar Produto";
+            this.btnRetirarProduto.UseVisualStyleBackColor = true;
+            this.btnRetirarProduto.Click += new System.EventHandler(this.btnRetirarProduto_Click);
             // 
-            // materialRaisedButton3
+            // btnAdicionarProduto
             // 
-            this.materialRaisedButton3.Depth = 0;
-            this.materialRaisedButton3.Location = new System.Drawing.Point(643, 194);
-            this.materialRaisedButton3.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialRaisedButton3.Name = "materialRaisedButton3";
-            this.materialRaisedButton3.Primary = true;
-            this.materialRaisedButton3.Size = new System.Drawing.Size(109, 42);
-            this.materialRaisedButton3.TabIndex = 30;
-            this.materialRaisedButton3.Text = "Adicionar Produto";
-            this.materialRaisedButton3.UseVisualStyleBackColor = true;
-            this.materialRaisedButton3.Click += new System.EventHandler(this.materialRaisedButton3_Click);
+            this.btnAdicionarProduto.Depth = 0;
+            this.btnAdicionarProduto.Location = new System.Drawing.Point(643, 194);
+            this.btnAdicionarProduto.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnAdicionarProduto.Name = "btnAdicionarProduto";
+            this.btnAdicionarProduto.Primary = true;
+            this.btnAdicionarProduto.Size = new System.Drawing.Size(109, 42);
+            this.btnAdicionarProduto.TabIndex = 30;
+            this.btnAdicionarProduto.Text = "Adicionar Produto";
+            this.btnAdicionarProduto.UseVisualStyleBackColor = true;
+            this.btnAdicionarProduto.Click += new System.EventHandler(this.btnAdicionarProduto_Click);
             // 
             // cbFormaPag
             // 
@@ -387,62 +353,68 @@
             this.label11.TabIndex = 31;
             this.label11.Text = "Forma de Pagamento";
             // 
-            // materialRaisedButton4
+            // btnCadastrarCliente
             // 
-            this.materialRaisedButton4.Depth = 0;
-            this.materialRaisedButton4.Location = new System.Drawing.Point(824, 344);
-            this.materialRaisedButton4.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialRaisedButton4.Name = "materialRaisedButton4";
-            this.materialRaisedButton4.Primary = true;
-            this.materialRaisedButton4.Size = new System.Drawing.Size(182, 42);
-            this.materialRaisedButton4.TabIndex = 33;
-            this.materialRaisedButton4.Text = "Cadastrar novo Cliente";
-            this.materialRaisedButton4.UseVisualStyleBackColor = true;
-            this.materialRaisedButton4.Click += new System.EventHandler(this.materialRaisedButton4_Click);
+            this.btnCadastrarCliente.Depth = 0;
+            this.btnCadastrarCliente.Location = new System.Drawing.Point(581, 446);
+            this.btnCadastrarCliente.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnCadastrarCliente.Name = "btnCadastrarCliente";
+            this.btnCadastrarCliente.Primary = true;
+            this.btnCadastrarCliente.Size = new System.Drawing.Size(182, 42);
+            this.btnCadastrarCliente.TabIndex = 33;
+            this.btnCadastrarCliente.Text = "Cadastrar novo Cliente";
+            this.btnCadastrarCliente.UseVisualStyleBackColor = true;
+            this.btnCadastrarCliente.Click += new System.EventHandler(this.btnCadastrarCliente_Click);
             // 
-            // materialRaisedButton5
+            // btnRegistrarVenda
             // 
-            this.materialRaisedButton5.Depth = 0;
-            this.materialRaisedButton5.Location = new System.Drawing.Point(592, 457);
-            this.materialRaisedButton5.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialRaisedButton5.Name = "materialRaisedButton5";
-            this.materialRaisedButton5.Primary = true;
-            this.materialRaisedButton5.Size = new System.Drawing.Size(171, 37);
-            this.materialRaisedButton5.TabIndex = 34;
-            this.materialRaisedButton5.Text = "Registrar Venda";
-            this.materialRaisedButton5.UseVisualStyleBackColor = true;
+            this.btnRegistrarVenda.Depth = 0;
+            this.btnRegistrarVenda.Location = new System.Drawing.Point(835, 335);
+            this.btnRegistrarVenda.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnRegistrarVenda.Name = "btnRegistrarVenda";
+            this.btnRegistrarVenda.Primary = true;
+            this.btnRegistrarVenda.Size = new System.Drawing.Size(171, 37);
+            this.btnRegistrarVenda.TabIndex = 34;
+            this.btnRegistrarVenda.Text = "Registrar Venda";
+            this.btnRegistrarVenda.UseVisualStyleBackColor = true;
+            this.btnRegistrarVenda.Click += new System.EventHandler(this.btnRegistrarVenda_Click);
+            // 
+            // dateTelaVenda
+            // 
+            this.dateTelaVenda.Location = new System.Drawing.Point(272, 103);
+            this.dateTelaVenda.Name = "dateTelaVenda";
+            this.dateTelaVenda.Size = new System.Drawing.Size(258, 23);
+            this.dateTelaVenda.TabIndex = 35;
             // 
             // TelaVenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1042, 553);
-            this.Controls.Add(this.materialRaisedButton5);
-            this.Controls.Add(this.materialRaisedButton4);
+            this.Controls.Add(this.dateTelaVenda);
+            this.Controls.Add(this.btnRegistrarVenda);
+            this.Controls.Add(this.btnCadastrarCliente);
             this.Controls.Add(this.cbFormaPag);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.materialRaisedButton3);
-            this.Controls.Add(this.materialRaisedButton2);
+            this.Controls.Add(this.btnAdicionarProduto);
+            this.Controls.Add(this.btnRetirarProduto);
             this.Controls.Add(this.cbProduto);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.nudQtd);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.dtTelaVenda);
+            this.Controls.Add(this.txtTotPag);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.txtQtdItens);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.materialDivider1);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.txtValor);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.materialRaisedButton1);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.btnAddCliente);
+            this.Controls.Add(this.txtCpf);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtCliente);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -451,8 +423,8 @@
             this.Load += new System.EventHandler(this.TelaVenda_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtTelaVenda)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudQtd)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -463,37 +435,34 @@
         private Panel panel1;
         private Label label4;
         private Label label1;
-        private TextBox textBox1;
+        private TextBox txtCliente;
         private Label label2;
-        private TextBox textBox2;
         private Label label3;
-        private TextBox textBox3;
-        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton1;
+        private TextBox txtCpf;
+        private MaterialSkin.Controls.MaterialRaisedButton btnAddCliente;
         private Label label5;
-        private TextBox textBox4;
+        private TextBox txtValor;
         private MaterialSkin.Controls.MaterialDivider materialDivider1;
         private Label label6;
-        private TextBox textBox5;
+        private TextBox txtQtdItens;
         private Label label7;
-        private TextBox textBox6;
-        private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn ID;
-        private DataGridViewTextBoxColumn Nome;
-        private DataGridViewTextBoxColumn Qtde;
-        private DataGridViewTextBoxColumn Un;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private DataGridViewTextBoxColumn Total;
+        private TextBox txtTotPag;
+        private DataGridView dtTelaVenda;
         private Label label8;
-        private NumericUpDown numericUpDown1;
-        private Label label9;
-        private TextBox textBox7;
+        private NumericUpDown nudQtd;
         private Label label10;
         private ComboBox cbProduto;
-        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton2;
-        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton3;
+        private MaterialSkin.Controls.MaterialRaisedButton btnRetirarProduto;
+        private MaterialSkin.Controls.MaterialRaisedButton btnAdicionarProduto;
         private ComboBox cbFormaPag;
         private Label label11;
-        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton4;
-        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton5;
+        private MaterialSkin.Controls.MaterialRaisedButton btnCadastrarCliente;
+        private MaterialSkin.Controls.MaterialRaisedButton btnRegistrarVenda;
+        private DateTimePicker dateTelaVenda;
+        private DataGridViewTextBoxColumn IDVenda;
+        private DataGridViewTextBoxColumn NomeVenda;
+        private DataGridViewTextBoxColumn QtdeVenda;
+        private DataGridViewTextBoxColumn ValorVenda;
+        private DataGridViewTextBoxColumn TotalVenda;
     }
 }

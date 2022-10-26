@@ -1,7 +1,9 @@
-﻿using BusinessLogicalLayer.Interfaces;
+﻿using BusinessLogicalLayer.Extensions;
+using BusinessLogicalLayer.Interfaces;
 using DataAccessLayer.Interfaces;
 using Entities;
 using Shared;
+using Shared.Factory;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -66,7 +68,23 @@ namespace BusinessLogicalLayer.BLL
             }
             return new DataResponse<Produto>(singleResponse.Message, singleResponse.HasSuccess, produtos);
         }
-
+        public DataResponse<Produto> CalculateInventory(List<Produto> produtos)
+        {
+            List<Produto> produtosWithEstoque = new();
+            for (int i = 0; i < produtos.Count; i++)
+            {
+                produtosWithEstoque.Add(produtoDAL.GetById(produtos[i].ID).Result.Item);
+                if (produtosWithEstoque[i].QtdEstoque >= produtos[i].QtdEstoque)
+                {
+                    produtosWithEstoque[i].QtdEstoque -= produtos[i].QtdEstoque;
+                }
+                else
+                {
+                    return DataResponseFactory<Produto>.CreateInstance().CreateFailureResponse($"Não é possivel vender mais do que o estoque! Produto: {produtosWithEstoque[i].Nome}, Estoque: {produtosWithEstoque[i].QtdEstoque}");
+                }
+            }
+            return new DataResponse<Produto>("Calculo efetuado com sucesso", true, produtosWithEstoque);
+        }
         public async Task<Response> UpdateValueAndInventory(Produto produto)
         {
             return await produtoDAL.UpdateValueAndInventory(produto);
