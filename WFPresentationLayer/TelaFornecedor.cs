@@ -156,7 +156,7 @@ namespace WFPresentationLayer
             dtFornecedor.DefaultCellStyle.SelectionBackColor = Color.Blue;
             dtFornecedor.DefaultCellStyle.SelectionForeColor = Color.WhiteSmoke;
             dtFornecedor.BackgroundColor = Color.FromArgb(30, 30, 30);
-            dtFornecedor.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+       
             dtFornecedor.EnableHeadersVisualStyles = false;
             dtFornecedor.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dtFornecedor.ColumnHeadersDefaultCellStyle.Font = new Font("MS Reference Sans Serif", 10);
