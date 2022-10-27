@@ -28,9 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnCadastrar = new System.Windows.Forms.Button();
-            this.btnUpdate = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
             this.lblCnpj = new System.Windows.Forms.Label();
             this.txtCNPJ = new System.Windows.Forms.TextBox();
             this.dtFornecedor = new System.Windows.Forms.DataGridView();
@@ -52,54 +49,30 @@
             this.ckIsAtivo = new System.Windows.Forms.CheckBox();
             this.txtRazao = new System.Windows.Forms.TextBox();
             this.lblRazaoSocial = new System.Windows.Forms.Label();
+            this.btnDelete = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnUpdate = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnCalcular = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.materialDivider1 = new MaterialSkin.Controls.MaterialDivider();
+            this.materialDivider2 = new MaterialSkin.Controls.MaterialDivider();
             ((System.ComponentModel.ISupportInitialize)(this.dtFornecedor)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btnCadastrar
-            // 
-            this.btnCadastrar.Location = new System.Drawing.Point(28, 369);
-            this.btnCadastrar.Name = "btnCadastrar";
-            this.btnCadastrar.Size = new System.Drawing.Size(95, 52);
-            this.btnCadastrar.TabIndex = 0;
-            this.btnCadastrar.Text = "Cadastrar";
-            this.btnCadastrar.UseVisualStyleBackColor = true;
-            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
-            // 
-            // btnUpdate
-            // 
-            this.btnUpdate.Location = new System.Drawing.Point(129, 369);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(95, 52);
-            this.btnUpdate.TabIndex = 1;
-            this.btnUpdate.Text = "Update";
-            this.btnUpdate.UseVisualStyleBackColor = true;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Location = new System.Drawing.Point(230, 369);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(95, 52);
-            this.btnDelete.TabIndex = 2;
-            this.btnDelete.Text = "Deletar";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // lblCnpj
             // 
             this.lblCnpj.AutoSize = true;
+            this.lblCnpj.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblCnpj.ForeColor = System.Drawing.Color.White;
-            this.lblCnpj.Location = new System.Drawing.Point(53, 96);
+            this.lblCnpj.Location = new System.Drawing.Point(59, 154);
             this.lblCnpj.Name = "lblCnpj";
-            this.lblCnpj.Size = new System.Drawing.Size(37, 15);
+            this.lblCnpj.Size = new System.Drawing.Size(49, 21);
             this.lblCnpj.TabIndex = 3;
             this.lblCnpj.Text = "CNPJ:";
             // 
             // txtCNPJ
             // 
-            this.txtCNPJ.Location = new System.Drawing.Point(97, 93);
+            this.txtCNPJ.Location = new System.Drawing.Point(131, 156);
             this.txtCNPJ.Name = "txtCNPJ";
-            this.txtCNPJ.Size = new System.Drawing.Size(100, 23);
+            this.txtCNPJ.Size = new System.Drawing.Size(181, 23);
             this.txtCNPJ.TabIndex = 4;
             // 
             // dtFornecedor
@@ -170,7 +143,7 @@
             // 
             // txtNome
             // 
-            this.txtNome.Location = new System.Drawing.Point(97, 122);
+            this.txtNome.Location = new System.Drawing.Point(69, 57);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(100, 23);
             this.txtNome.TabIndex = 7;
@@ -178,50 +151,53 @@
             // lblNome
             // 
             this.lblNome.AutoSize = true;
+            this.lblNome.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblNome.ForeColor = System.Drawing.Color.White;
-            this.lblNome.Location = new System.Drawing.Point(53, 125);
+            this.lblNome.Location = new System.Drawing.Point(12, 55);
             this.lblNome.Name = "lblNome";
-            this.lblNome.Size = new System.Drawing.Size(43, 15);
+            this.lblNome.Size = new System.Drawing.Size(56, 21);
             this.lblNome.TabIndex = 6;
             this.lblNome.Text = "Nome:";
             // 
             // txtTelefone
             // 
-            this.txtTelefone.Location = new System.Drawing.Point(97, 151);
+            this.txtTelefone.Location = new System.Drawing.Point(131, 246);
             this.txtTelefone.Name = "txtTelefone";
-            this.txtTelefone.Size = new System.Drawing.Size(100, 23);
+            this.txtTelefone.Size = new System.Drawing.Size(181, 23);
             this.txtTelefone.TabIndex = 9;
             // 
             // lblTelefone
             // 
             this.lblTelefone.AutoSize = true;
+            this.lblTelefone.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblTelefone.ForeColor = System.Drawing.Color.White;
-            this.lblTelefone.Location = new System.Drawing.Point(36, 154);
+            this.lblTelefone.Location = new System.Drawing.Point(38, 244);
             this.lblTelefone.Name = "lblTelefone";
-            this.lblTelefone.Size = new System.Drawing.Size(55, 15);
+            this.lblTelefone.Size = new System.Drawing.Size(70, 21);
             this.lblTelefone.TabIndex = 8;
             this.lblTelefone.Text = "Telefone:";
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(97, 180);
+            this.txtEmail.Location = new System.Drawing.Point(131, 204);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(100, 23);
+            this.txtEmail.Size = new System.Drawing.Size(181, 23);
             this.txtEmail.TabIndex = 11;
             // 
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
+            this.lblEmail.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblEmail.ForeColor = System.Drawing.Color.White;
-            this.lblEmail.Location = new System.Drawing.Point(53, 183);
+            this.lblEmail.Location = new System.Drawing.Point(57, 202);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(39, 15);
+            this.lblEmail.Size = new System.Drawing.Size(51, 21);
             this.lblEmail.TabIndex = 10;
             this.lblEmail.Text = "Email:";
             // 
             // txtID
             // 
-            this.txtID.Location = new System.Drawing.Point(97, 24);
+            this.txtID.Location = new System.Drawing.Point(220, 55);
             this.txtID.Name = "txtID";
             this.txtID.ReadOnly = true;
             this.txtID.Size = new System.Drawing.Size(100, 23);
@@ -230,10 +206,11 @@
             // lblID
             // 
             this.lblID.AutoSize = true;
+            this.lblID.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblID.ForeColor = System.Drawing.Color.White;
-            this.lblID.Location = new System.Drawing.Point(53, 27);
+            this.lblID.Location = new System.Drawing.Point(186, 55);
             this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(21, 15);
+            this.lblID.Size = new System.Drawing.Size(28, 21);
             this.lblID.TabIndex = 14;
             this.lblID.Text = "ID:";
             // 
@@ -242,30 +219,92 @@
             this.ckIsAtivo.AutoSize = true;
             this.ckIsAtivo.Checked = true;
             this.ckIsAtivo.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.ckIsAtivo.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.ckIsAtivo.FlatAppearance.BorderSize = 3;
+            this.ckIsAtivo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ckIsAtivo.ForeColor = System.Drawing.Color.White;
-            this.ckIsAtivo.Location = new System.Drawing.Point(97, 215);
+            this.ckIsAtivo.Location = new System.Drawing.Point(131, 288);
             this.ckIsAtivo.Name = "ckIsAtivo";
-            this.ckIsAtivo.Size = new System.Drawing.Size(78, 19);
+            this.ckIsAtivo.Size = new System.Drawing.Size(97, 25);
             this.ckIsAtivo.TabIndex = 16;
             this.ckIsAtivo.Text = "Está Ativo";
             this.ckIsAtivo.UseVisualStyleBackColor = true;
             // 
             // txtRazao
             // 
-            this.txtRazao.Location = new System.Drawing.Point(97, 64);
+            this.txtRazao.Location = new System.Drawing.Point(131, 113);
             this.txtRazao.Name = "txtRazao";
-            this.txtRazao.Size = new System.Drawing.Size(100, 23);
+            this.txtRazao.Size = new System.Drawing.Size(181, 23);
             this.txtRazao.TabIndex = 18;
             // 
             // lblRazaoSocial
             // 
             this.lblRazaoSocial.AutoSize = true;
+            this.lblRazaoSocial.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblRazaoSocial.ForeColor = System.Drawing.Color.White;
-            this.lblRazaoSocial.Location = new System.Drawing.Point(21, 67);
+            this.lblRazaoSocial.Location = new System.Drawing.Point(8, 111);
             this.lblRazaoSocial.Name = "lblRazaoSocial";
-            this.lblRazaoSocial.Size = new System.Drawing.Size(75, 15);
+            this.lblRazaoSocial.Size = new System.Drawing.Size(100, 21);
             this.lblRazaoSocial.TabIndex = 17;
             this.lblRazaoSocial.Text = "Razão Social:";
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Depth = 0;
+            this.btnDelete.Location = new System.Drawing.Point(260, 369);
+            this.btnDelete.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Primary = true;
+            this.btnDelete.Size = new System.Drawing.Size(101, 50);
+            this.btnDelete.TabIndex = 19;
+            this.btnDelete.Text = "Deletar";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Depth = 0;
+            this.btnUpdate.Location = new System.Drawing.Point(137, 369);
+            this.btnUpdate.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Primary = true;
+            this.btnUpdate.Size = new System.Drawing.Size(103, 50);
+            this.btnUpdate.TabIndex = 20;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            // 
+            // btnCalcular
+            // 
+            this.btnCalcular.Depth = 0;
+            this.btnCalcular.Location = new System.Drawing.Point(12, 369);
+            this.btnCalcular.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnCalcular.Name = "btnCalcular";
+            this.btnCalcular.Primary = true;
+            this.btnCalcular.Size = new System.Drawing.Size(103, 50);
+            this.btnCalcular.TabIndex = 21;
+            this.btnCalcular.Text = "Calcular";
+            this.btnCalcular.UseVisualStyleBackColor = true;
+            // 
+            // materialDivider1
+            // 
+            this.materialDivider1.BackColor = System.Drawing.Color.White;
+            this.materialDivider1.Depth = 0;
+            this.materialDivider1.Location = new System.Drawing.Point(12, 341);
+            this.materialDivider1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialDivider1.Name = "materialDivider1";
+            this.materialDivider1.Size = new System.Drawing.Size(349, 1);
+            this.materialDivider1.TabIndex = 22;
+            this.materialDivider1.Text = "materialDivider1";
+            // 
+            // materialDivider2
+            // 
+            this.materialDivider2.BackColor = System.Drawing.Color.White;
+            this.materialDivider2.Depth = 0;
+            this.materialDivider2.Location = new System.Drawing.Point(346, 29);
+            this.materialDivider2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialDivider2.Name = "materialDivider2";
+            this.materialDivider2.Size = new System.Drawing.Size(1, 323);
+            this.materialDivider2.TabIndex = 23;
+            this.materialDivider2.Text = "materialDivider2";
             // 
             // TelaFornecedor
             // 
@@ -273,6 +312,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
             this.ClientSize = new System.Drawing.Size(932, 497);
+            this.Controls.Add(this.materialDivider2);
+            this.Controls.Add(this.materialDivider1);
+            this.Controls.Add(this.btnCalcular);
+            this.Controls.Add(this.btnUpdate);
+            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.txtRazao);
             this.Controls.Add(this.lblRazaoSocial);
             this.Controls.Add(this.ckIsAtivo);
@@ -287,9 +331,6 @@
             this.Controls.Add(this.dtFornecedor);
             this.Controls.Add(this.txtCNPJ);
             this.Controls.Add(this.lblCnpj);
-            this.Controls.Add(this.btnDelete);
-            this.Controls.Add(this.btnUpdate);
-            this.Controls.Add(this.btnCadastrar);
             this.Name = "TelaFornecedor";
             this.Text = "TelaFornecedor";
             this.Load += new System.EventHandler(this.TelaFornecedor_Load);
@@ -300,10 +341,6 @@
         }
 
         #endregion
-
-        private Button btnCadastrar;
-        private Button btnUpdate;
-        private Button btnDelete;
         private Label lblCnpj;
         private TextBox txtCNPJ;
         private DataGridView dtFornecedor;
@@ -325,5 +362,10 @@
         private DataGridViewTextBoxColumn ForneEmail;
         private DataGridViewTextBoxColumn ForneTelefone;
         private DataGridViewTextBoxColumn ForneIsAtivo;
+        private MaterialSkin.Controls.MaterialRaisedButton btnDelete;
+        private MaterialSkin.Controls.MaterialRaisedButton btnUpdate;
+        private MaterialSkin.Controls.MaterialRaisedButton btnCalcular;
+        private MaterialSkin.Controls.MaterialDivider materialDivider1;
+        private MaterialSkin.Controls.MaterialDivider materialDivider2;
     }
 }

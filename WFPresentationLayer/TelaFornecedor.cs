@@ -165,6 +165,9 @@ namespace WFPresentationLayer
             dtFornecedor.AutoSize = true;
         }
 
+        private void materialSingleLineTextField1_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }
