@@ -1,14 +1,4 @@
 ﻿using BusinessLogicalLayer.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
 namespace WFPresentationLayer
 {
     public partial class TelaInicial : Form
@@ -20,7 +10,8 @@ namespace WFPresentationLayer
         private readonly IFornecedoraService fornecedoraService;
         private readonly IEstadoService estadoService;
         private readonly ICategoriaService categoriaService;
-        public TelaInicial(IClienteService clienteService, IFuncionarioService funcionarioService, IProdutoService produtoService, IFornecedoraService fornecedoraService, IEstadoService estadoService, ICategoriaService categoriaService)
+        private readonly ISaidaService saidaService;
+        public TelaInicial(IClienteService clienteService, IFuncionarioService funcionarioService, IProdutoService produtoService, IFornecedoraService fornecedoraService, IEstadoService estadoService, ICategoriaService categoriaService,ISaidaService saida)
         {
             InitializeComponent();
             cliente = clienteService;
@@ -29,7 +20,7 @@ namespace WFPresentationLayer
             this.estadoService = estadoService;
             this.funcionarioService = funcionarioService;
             this.categoriaService = categoriaService;
-
+            this.saidaService = saida;
         }
         private void OpenChildForm(Form childForm)
         {
@@ -69,7 +60,7 @@ namespace WFPresentationLayer
         private void btnLogout_Click(object sender, EventArgs e)
         {
             this.Hide();
-            TelaLogin telaLogin = new(funcionarioService, cliente, produtoService, fornecedoraService,estadoService,categoriaService);
+            TelaLogin telaLogin = new(funcionarioService, cliente, produtoService, fornecedoraService,estadoService,categoriaService,saidaService);
             telaLogin.ShowDialog();
             this.Close();
         }
@@ -77,6 +68,16 @@ namespace WFPresentationLayer
         private void button1_Click(object sender, EventArgs e)
         {
             OpenChildForm(new TelaHome());
+        }
+
+        private void btnCategoria_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new TelaCategoria(categoriaService));
+        }
+
+        private void btnVenda_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new TelaVenda(cliente, funcionarioService, fornecedoraService,produtoService, saidaService));
         }
     }
 }

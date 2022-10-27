@@ -18,7 +18,7 @@ namespace DataAccessLayer.Implements
         private readonly string connectionString = ConnectionString._connectionString;  
         public async Task<Response> Insert(Saida saida)
         {
-            string sql = $"INSERT INTO SAIDAS (VALOR,CLIENTE_ID,FUNCIONARIO_ID,DATA_SAIDA,FORMA_PAGAMENTO,VALOR_TOTAL,DESCONTO) VALUES (@VALOR,@CLIENTE_ID,@FUNCIONARIO_ID,@DATA_SAIDA,@FORMA_PAGAMENTO,@VALOR_TOTAL,@DESCONTO); SELECT SCOPE_IDENTITY()";
+            string sql = $"INSERT INTO SAIDAS (VALOR,CLIENTE_ID,FUNCIONARIOS_ID,DATA_SAIDA,FORMA_PAGAMENTO,VALOR_TOTAL) VALUES (@VALOR,@CLIENTE_ID,@FUNCIONARIO_ID,@DATA_SAIDA,@FORMA_PAGAMENTO,@VALOR_TOTAL); SELECT SCOPE_IDENTITY()";
             SqlConnection connection = new(connectionString);
             SqlCommand command = new(sql, connection);
             command.Parameters.AddWithValue("@VALOR", saida.Valor);

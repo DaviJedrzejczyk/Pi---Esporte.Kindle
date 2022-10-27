@@ -16,5 +16,6 @@ namespace BusinessLogicalLayer.Interfaces
         Response Delete(int id);
         DataResponse<Cliente> GetAll();
         SingleResponse<Cliente> GetById(int id);
+        SingleResponse<Cliente> GetByCpf(string cpf); 
     }
 }

@@ -16,6 +16,7 @@ namespace DataAccessLayer.Interfaces
         Response Delete(int cliente);
         DataResponse<Cliente> GetAll();
         SingleResponse<Cliente> GetById(int id);
+        SingleResponse<Cliente> GetByCpf(string cpf);
     }
 }
 

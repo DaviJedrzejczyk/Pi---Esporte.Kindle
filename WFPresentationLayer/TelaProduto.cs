@@ -56,6 +56,7 @@ namespace WFPresentationLayer
                 QtdEstoque = qtd,
                 Valor_Unitario = valor,
                 Fornecedor = (Fornecedor)cbFornecedora.SelectedItem,
+                Categoria = (Categoria)cbCategoria.SelectedItem
             };
             return c;
         }

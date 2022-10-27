@@ -53,11 +53,11 @@ namespace DataAccessLayer.Implements
 
         public async Task<Response> Insert(ProdutoSaida produto)
         {
-            string sql = $"INSERT INTO PRODUTOS_SAIDA (SAIDA_ID,PRODUTO_ID,QUANTIDADE,VALOR_UNITARIO) VALUES (@SAIDA_ID,@PRODUTO_ID,@QUANTIDADE,@VALOR_UNITARIO) ";
-            SqlConnection connection = new SqlConnection(connectionString);
-            SqlCommand command = new SqlCommand(sql, connection);
+            string sql = $"INSERT INTO PRODUTOS_SAIDA (SAIDA_ID,PRODUTOS_ID,QUANTIDADE,VALOR_UNITARIO) VALUES (@SAIDA_ID,@PRODUTOS_ID,@QUANTIDADE,@VALOR_UNITARIO)";
+            SqlConnection connection = new(connectionString);
+            SqlCommand command = new(sql, connection);
+            command.Parameters.AddWithValue("@PRODUTOS_ID", produto.ProdutoId);
             command.Parameters.AddWithValue("@SAIDA_ID", produto.SaidaId);
-            command.Parameters.AddWithValue("@PRODUTO_ID", produto.ProdutoId);
             command.Parameters.AddWithValue("@QUANTIDADE", produto.Quantidade);
             command.Parameters.AddWithValue("@VALOR_UNITARIO", produto.ValorUnitario);
             try

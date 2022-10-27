@@ -222,7 +222,7 @@ namespace DataAccessLayer.Implements
 
         public async Task<SingleResponse<Funcionario>> GetLogin(Funcionario funcionario)
         {
-            string sql = "SELECT EMAIL, SENHA, NIVEL_ACESSO FROM FUNCIONARIOS WHERE EMAIL = @EMAIL";
+            string sql = "SELECT ID, NOME, EMAIL, SENHA, NIVEL_ACESSO FROM FUNCIONARIOS WHERE EMAIL = @EMAIL";
             SqlConnection connection = new(_connection);
             SqlCommand command = new(sql, connection);
             command.Parameters.AddWithValue("@EMAIL", funcionario.Email);
@@ -234,6 +234,8 @@ namespace DataAccessLayer.Implements
                 {
                     Funcionario funcionario1 = new()
                     {
+                        ID = Convert.ToInt32(reader["ID"]),
+                        Nome = Convert.ToString(reader["NOME"]),
                         Email = Convert.ToString(reader["EMAIL"]),
                         Senha = Convert.ToString(reader["SENHA"]),
                         Nivel_Acesso = (TipoFuncionario)reader["NIVEL_ACESSO"]

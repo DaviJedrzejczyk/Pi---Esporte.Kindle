@@ -39,9 +39,9 @@ namespace BusinessLogicalLayer.BLL
             return await produtoDAL.GetAll();
         }
 
-        public async Task<SingleResponse<Produto>> GetById(Produto produto)
+        public async Task<SingleResponse<Produto>> GetById(int produto)
         {
-            return await produtoDAL.GetById(produto.ID);
+            return await produtoDAL.GetById(produto);
         }
 
         public double CalculateNewValueWihtProducts(Produto OldProduct, Produto NewProduct)

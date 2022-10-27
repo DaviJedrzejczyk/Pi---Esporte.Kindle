@@ -39,6 +39,8 @@ namespace WFPresentationLayer.DI
             Bind<IEstadoService>().To<EstadoBLL>();
             Bind<ICategoriaDALService>().To<CategoriaDAL>();
             Bind<ICategoriaService>().To<CategoriaBLL>();
+            Bind<ISaidaService>().To<SaidaBLL>();
+            Bind<ISaidaDALService>().To<SaidaDAL>();
         }
         public static FormModule Craete()
         {

@@ -30,10 +30,8 @@
         {
             this.txtEmail = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.txtSenha = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.materialCheckBox1 = new MaterialSkin.Controls.MaterialCheckBox();
-            this.login = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnLogin = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialDivider1 = new MaterialSkin.Controls.MaterialDivider();
-            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -54,8 +52,8 @@
             this.txtEmail.SelectionStart = 0;
             this.txtEmail.Size = new System.Drawing.Size(340, 23);
             this.txtEmail.TabIndex = 5;
+            this.txtEmail.Text = "adm@adm.com";
             this.txtEmail.UseSystemPasswordChar = false;
-            this.txtEmail.Click += new System.EventHandler(this.materialSingleLineTextField1_Click);
             // 
             // txtSenha
             // 
@@ -70,36 +68,22 @@
             this.txtSenha.SelectionStart = 0;
             this.txtSenha.Size = new System.Drawing.Size(340, 23);
             this.txtSenha.TabIndex = 6;
-            this.txtSenha.UseSystemPasswordChar = false;
+            this.txtSenha.Text = "123456";
+            this.txtSenha.UseSystemPasswordChar = true;
             // 
-            // materialCheckBox1
+            // btnLogin
             // 
-            this.materialCheckBox1.AutoSize = true;
-            this.materialCheckBox1.Depth = 0;
-            this.materialCheckBox1.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.materialCheckBox1.Location = new System.Drawing.Point(67, 157);
-            this.materialCheckBox1.Margin = new System.Windows.Forms.Padding(0);
-            this.materialCheckBox1.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.materialCheckBox1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialCheckBox1.Name = "materialCheckBox1";
-            this.materialCheckBox1.Ripple = true;
-            this.materialCheckBox1.Size = new System.Drawing.Size(105, 30);
-            this.materialCheckBox1.TabIndex = 7;
-            this.materialCheckBox1.Text = "Lembrar-me";
-            this.materialCheckBox1.UseVisualStyleBackColor = true;
-            // 
-            // login
-            // 
-            this.login.Depth = 0;
-            this.login.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.login.Location = new System.Drawing.Point(271, 173);
-            this.login.MouseState = MaterialSkin.MouseState.HOVER;
-            this.login.Name = "login";
-            this.login.Primary = true;
-            this.login.Size = new System.Drawing.Size(103, 43);
-            this.login.TabIndex = 8;
-            this.login.Text = "LOGIN";
-            this.login.UseVisualStyleBackColor = true;
+            this.btnLogin.Depth = 0;
+            this.btnLogin.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnLogin.Location = new System.Drawing.Point(295, 168);
+            this.btnLogin.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Primary = true;
+            this.btnLogin.Size = new System.Drawing.Size(103, 43);
+            this.btnLogin.TabIndex = 8;
+            this.btnLogin.Text = "LOGIN";
+            this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // materialDivider1
             // 
@@ -111,19 +95,6 @@
             this.materialDivider1.Size = new System.Drawing.Size(445, 2);
             this.materialDivider1.TabIndex = 9;
             this.materialDivider1.Text = "materialDivider1";
-            // 
-            // materialLabel1
-            // 
-            this.materialLabel1.AutoSize = true;
-            this.materialLabel1.Depth = 0;
-            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel1.Location = new System.Drawing.Point(78, 295);
-            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(138, 19);
-            this.materialLabel1.TabIndex = 10;
-            this.materialLabel1.Text = "Esqueceu a senha?";
             // 
             // materialLabel2
             // 
@@ -166,10 +137,8 @@
             this.ClientSize = new System.Drawing.Size(498, 377);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.materialLabel2);
-            this.Controls.Add(this.materialLabel1);
             this.Controls.Add(this.materialDivider1);
-            this.Controls.Add(this.login);
-            this.Controls.Add(this.materialCheckBox1);
+            this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.txtSenha);
             this.Controls.Add(this.txtEmail);
             this.Name = "TelaLogin";
@@ -186,10 +155,8 @@
 
         private MaterialSkin.Controls.MaterialSingleLineTextField txtEmail;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtSenha;
-        private MaterialSkin.Controls.MaterialCheckBox materialCheckBox1;
-        private MaterialSkin.Controls.MaterialRaisedButton login;
+        private MaterialSkin.Controls.MaterialRaisedButton btnLogin;
         private MaterialSkin.Controls.MaterialDivider materialDivider1;
-        private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
         private Panel panel1;
         private Label label1;

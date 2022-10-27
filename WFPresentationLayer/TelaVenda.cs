@@ -1,4 +1,6 @@
-﻿using BusinessLogicalLayer.Interfaces;
+﻿using BusinessLogicalLayer.BLL;
+using BusinessLogicalLayer.Interfaces;
+using DataAccessLayer.Implements;
 using Entities;
 using Entities.Enums;
 using Shared;
@@ -23,8 +25,9 @@ namespace WFPresentationLayer
         IFornecedoraService fornecedoraService;
         ISaidaService saidaService;
         List<Produto> produtos = new();
+        Cliente cliente = new();
 
-        public TelaVenda(IClienteService clienteService, IFuncionarioService funcionarioService, IFornecedoraService fornecedoraService, IProdutoService produtoService,ISaidaService saida)
+        public TelaVenda(IClienteService clienteService, IFuncionarioService funcionarioService, IFornecedoraService fornecedoraService, IProdutoService produtoService, ISaidaService saida)
         {
             this.clienteService = clienteService;
             this.funcionarioService = funcionarioService;
@@ -42,7 +45,7 @@ namespace WFPresentationLayer
         }
         private void btnAdicionarProduto_Click(object sender, EventArgs e)
         {
-            Produto produto = produtoService.GetById((Produto)cbProduto.SelectedValue).Result.Item;
+            Produto produto = produtoService.GetById(Convert.ToInt32(cbProduto.SelectedValue)).Result.Item;
             bool hasFound = false;
             if (produto != null)
             {
@@ -111,7 +114,6 @@ namespace WFPresentationLayer
 
         private async void btnRegistrarVenda_Click(object sender, EventArgs e)
         {
-            Cliente cliente = new();
             if (cliente != null && cliente.ID != 0)
             {
                 if (produtos.Count != 0)
@@ -129,15 +131,16 @@ namespace WFPresentationLayer
                         produtoSaidas.Add(produtoSaida);
                         valor += Math.Round((produtos[i].QtdEstoque * produtos[i].Valor_Unitario), 2);
                     }
+                  
+                    FormaPagamento.TryParse(cbFormaPag.Text, out FormaPagamento pagamento);
                     Saida saida = new();
                     saida.produtoSaidas = produtoSaidas;
                     saida.DataSaida = dateTelaVenda.Value;
                     saida.Valor = valor;
-                    saida.FormaPagamento = (FormaPagamento)cbFormaPag.SelectedValue;
-                    saida.Valor = valor;
+                    saida.FormaPagamento = pagamento;
+                    saida.Valor_Total = valor;
                     saida.ClienteID = cliente.ID;
                     saida.FuncionarioID = FuncionarioLogin.id;
-                    StringBuilder stringBuilder = new();
                     DataResponse<Produto> dataResponse = produtoService.CalculateInventory(produtos);
                     if (dataResponse.HasSuccess)
                     {
@@ -146,7 +149,7 @@ namespace WFPresentationLayer
                         {
                             for (int i = 0; i < produtos.Count; i++)
                             {
-                              await produtoService.UpdateValueAndInventory(dataResponse.Itens[i]);
+                                await produtoService.UpdateValueAndInventory(dataResponse.Itens[i]);
                             }
                             dtTelaVenda.Rows.Clear();
                             produtos.Clear();
@@ -173,6 +176,65 @@ namespace WFPresentationLayer
             {
                 MessageBox.Show("Não é possivel fazer uma venda se não há Cliente");
 
+            }
+        }
+
+        private void btnAddCliente_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtCpf.Text.Replace(".", "").Replace("-", "")))
+            {
+                string message = "Você realmente deseja adicionar o Cliente Padrão?";
+                string title = "Close Window";
+                MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+                DialogResult result = MessageBox.Show(message, title, buttons);
+                if (result == DialogResult.Yes)
+                {
+                    SingleResponse<Cliente> singleResponse = clienteService.GetById(1);
+                    cliente = singleResponse.Item;
+                    txtCliente.Text = cliente.Nome;
+                }
+            }
+            else
+            {
+                SingleResponse<Cliente> singleResponse = clienteService.GetByCpf(txtCpf.Text);
+                if (!singleResponse.HasSuccess)
+                {
+                    string message = $"{singleResponse.Message}, Você deseja adicionar o Cliente Padrão?";
+                    string title = "Close Window";
+                    MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+                    DialogResult result = MessageBox.Show(message, title, buttons);
+                    if (result == DialogResult.Yes)
+                    {
+                        singleResponse = clienteService.GetById(1);
+                        cliente = singleResponse.Item;
+                        txtCliente.Text = cliente.Nome;
+                    }
+                }
+                else
+                {
+                    string message = $"Você realmente deseja adicionar o Cliente {singleResponse.Item.Nome}?";
+                    string title = "Close Window";
+                    MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+                    DialogResult result = MessageBox.Show(message, title, buttons);
+                    if (result == DialogResult.Yes)
+                    {
+                        cliente = singleResponse.Item;
+                        txtCliente.Text = cliente.Nome;
+                        double valor = 0;
+                        for (int i = 0; i < produtos.Count; i++)
+                        {
+                            valor += Math.Round((produtos[i].QtdEstoque * produtos[i].Valor_Unitario), 2);
+                            dtTelaVenda.Rows[i].Cells["IDVenda"].Value = produtos[i].ID;
+                            dtTelaVenda.Rows[i].Cells["NomeVenda"].Value = produtos[i].Nome;
+                            dtTelaVenda.Rows[i].Cells["QtdeVenda"].Value = produtos[i].QtdEstoque;
+                            dtTelaVenda.Rows[i].Cells["ValorVenda"].Value = Math.Round(produtos[i].Valor_Unitario, 2);
+                            dtTelaVenda.Rows[i].Cells["TotalVenda"].Value = Math.Round(produtos[i].QtdEstoque * produtos[i].Valor_Unitario, 2);
+                        }
+                        txtQtdItens.Text = produtos.Count.ToString();
+                        txtTotPag.Text = valor.ToString();
+                        txtValor.Text = valor.ToString();
+                    }
+                }
             }
         }
     }
