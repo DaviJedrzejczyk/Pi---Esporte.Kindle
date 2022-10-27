@@ -31,6 +31,7 @@ namespace DataAccessLayer.Implements
             {
                 connection.Open();
                 saida.ID = Convert.ToInt32(await command.ExecuteScalarAsync());
+                
                 return ResponseFactory.CreateInstance().CreateSuccessResponse();
             }
             catch (Exception ex)
