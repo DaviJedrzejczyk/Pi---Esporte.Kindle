@@ -11,7 +11,8 @@ namespace WFPresentationLayer
         private readonly IEstadoService estadoService;
         private readonly ICategoriaService categoriaService;
         private readonly ISaidaService saidaService;
-        public TelaInicial(IClienteService clienteService, IFuncionarioService funcionarioService, IProdutoService produtoService, IFornecedoraService fornecedoraService, IEstadoService estadoService, ICategoriaService categoriaService,ISaidaService saida)
+        private readonly IEnderecoService enderecoService;
+        public TelaInicial(IClienteService clienteService, IFuncionarioService funcionarioService, IProdutoService produtoService, IFornecedoraService fornecedoraService, IEstadoService estadoService, ICategoriaService categoriaService,ISaidaService saida, IEnderecoService enderecoService)
         {
             InitializeComponent();
             cliente = clienteService;
@@ -21,6 +22,7 @@ namespace WFPresentationLayer
             this.funcionarioService = funcionarioService;
             this.categoriaService = categoriaService;
             this.saidaService = saida;
+            this.enderecoService = enderecoService;
         }
         private void OpenChildForm(Form childForm)
         {
@@ -44,7 +46,7 @@ namespace WFPresentationLayer
 
         private void btnFuncionarios_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new TelaFuncionario(funcionarioService, estadoService));
+            OpenChildForm(new TelaFuncionario(funcionarioService, estadoService, enderecoService));
         }
 
         private void btnFornecedores_Click(object sender, EventArgs e)
@@ -60,7 +62,7 @@ namespace WFPresentationLayer
         private void btnLogout_Click(object sender, EventArgs e)
         {
             this.Hide();
-            TelaLogin telaLogin = new(funcionarioService, cliente, produtoService, fornecedoraService,estadoService,categoriaService,saidaService);
+            TelaLogin telaLogin = new(funcionarioService, cliente, produtoService, fornecedoraService,estadoService,categoriaService,saidaService,enderecoService);
             telaLogin.ShowDialog();
             this.Close();
         }

@@ -62,7 +62,7 @@ namespace DataAccessLayer.Implements
             command.Parameters.AddWithValue("@SOBRENOME", cliente.Sobrenome);
             command.Parameters.AddWithValue("@EMAIL", cliente.Email);
             command.Parameters.AddWithValue("@TELEFONE", cliente.Telefone);
-            //command.Parameters.AddWithValue("@TIPO_CLIENTE_ID", cliente.TipoClienteId);
+            command.Parameters.AddWithValue("@GENERO",cliente.Genero);
             command.Parameters.AddWithValue("@ID", cliente.ID);
             try
             {

@@ -11,13 +11,15 @@ namespace WFPresentationLayer
     {
         private readonly IFuncionarioService funcionarioService;
         private readonly IEstadoService estadoService;
-        public TelaFuncionario(IFuncionarioService funcionario, IEstadoService estadoService)
+        private readonly IEnderecoService enderecoService;
+        public TelaFuncionario(IFuncionarioService funcionario, IEstadoService estadoService, IEnderecoService enderecoService)
         {
             InitializeComponent();
             funcionarioService = funcionario;
             this.dtFuncionario.DoubleClick += dtFuncionario_DoubleClick;
             this.estadoService = estadoService;
             this.dtFuncionario.DefaultCellStyle.ForeColor = Color.Black;
+            this.enderecoService = enderecoService;
         }
 
 
@@ -39,6 +41,7 @@ namespace WFPresentationLayer
             Genero.TryParse(cbGenero.Text, out Genero genero);
             TipoFuncionario.TryParse(cbNivelAcesso.Text, out TipoFuncionario tipo);
             int.TryParse(txtID.Text, out int temp);
+            int.TryParse(txtEnderecoID.Text, out int idEnde);
             Funcionario funcionario = new()
             {
                 ID = temp,
@@ -56,6 +59,7 @@ namespace WFPresentationLayer
             };
             Endereco endereco = new()
             {
+                ID = idEnde,
                 Rua = txtRua.Text,
                 CEP = txtCEP.Text,
                 Bairro = txtBairro.Text,
@@ -91,7 +95,7 @@ namespace WFPresentationLayer
             }
         }
 
-        private void DrawFormWithObject(Funcionario funcionario)
+        private async void DrawFormWithObject(Funcionario funcionario)
         {
             this.txtID.Text = funcionario.ID.ToString();
             this.txtNome.Text = funcionario.Nome;
@@ -105,24 +109,39 @@ namespace WFPresentationLayer
             this.cbGenero.Text = funcionario.Genero.ToString();
             this.cbNivelAcesso.Text = funcionario.Nivel_Acesso.ToString();
             this.txtEnderecoID.Text = funcionario.EnderecoId.ToString();
+            SingleResponse<Endereco> singleResponse = await enderecoService.GetById(funcionario.EnderecoId);
+            if (!singleResponse.HasSuccess)
+            {
+                MessageBox.Show(singleResponse.Message);
+            }
+            this.txtRua.Text = singleResponse.Item.Rua;
+            this.txtBairro.Text = singleResponse.Item.Bairro;
+            this.txtCEP.Text = singleResponse.Item.CEP;
+            this.txtCidade.Text = singleResponse.Item.Cidade;
+            this.txtComplemento.Text = singleResponse.Item.Complemento;
+            this.txtNumero.Text = singleResponse.Item.Numero;
+            this.txtPonto.Text = singleResponse.Item.PontoReferencia;
+
 
         }
         private void dtFuncionario_DoubleClick(object sender, EventArgs e)
         {
             int rowindex = dtFuncionario.CurrentCell.RowIndex;
-            Funcionario funcionarioSelecionado = new();
-            funcionarioSelecionado.ID = Convert.ToInt32(this.dtFuncionario.Rows[rowindex].Cells[0].Value);
-            funcionarioSelecionado.Nome = Convert.ToString(this.dtFuncionario.Rows[rowindex].Cells[1].Value);
-            funcionarioSelecionado.Sobrenome = Convert.ToString(this.dtFuncionario.Rows[rowindex].Cells[2].Value);
-            funcionarioSelecionado.CPF = Convert.ToString(this.dtFuncionario.Rows[rowindex].Cells[3].Value);
-            funcionarioSelecionado.RG = Convert.ToString(this.dtFuncionario.Rows[rowindex].Cells[4].Value);
-            funcionarioSelecionado.DataNascimento = Convert.ToDateTime(dtFuncionario.Rows[rowindex].Cells[5].Value);
-            funcionarioSelecionado.Idade = Convert.ToInt32(dtFuncionario.Rows[rowindex].Cells[6].Value);
-            funcionarioSelecionado.Email = Convert.ToString(dtFuncionario.Rows[rowindex].Cells[7].Value);
-            funcionarioSelecionado.Telefone = Convert.ToString(this.dtFuncionario.Rows[rowindex].Cells[8].Value);
-            funcionarioSelecionado.Genero = (Genero)this.dtFuncionario.Rows[rowindex].Cells[9].Value;
-            funcionarioSelecionado.Nivel_Acesso = (TipoFuncionario)this.dtFuncionario.Rows[rowindex].Cells[10].Value;
-            funcionarioSelecionado.EnderecoId = Convert.ToInt32(this.dtFuncionario.Rows[rowindex].Cells[11].Value);
+            Funcionario funcionarioSelecionado = new()
+            {
+                ID = Convert.ToInt32(this.dtFuncionario.Rows[rowindex].Cells[0].Value),
+                Nome = Convert.ToString(this.dtFuncionario.Rows[rowindex].Cells[1].Value),
+                Sobrenome = Convert.ToString(this.dtFuncionario.Rows[rowindex].Cells[2].Value),
+                CPF = Convert.ToString(this.dtFuncionario.Rows[rowindex].Cells[3].Value),
+                RG = Convert.ToString(this.dtFuncionario.Rows[rowindex].Cells[4].Value),
+                DataNascimento = Convert.ToDateTime(dtFuncionario.Rows[rowindex].Cells[5].Value),
+                Idade = Convert.ToInt32(dtFuncionario.Rows[rowindex].Cells[6].Value),
+                Email = Convert.ToString(dtFuncionario.Rows[rowindex].Cells[7].Value),
+                Telefone = Convert.ToString(this.dtFuncionario.Rows[rowindex].Cells[8].Value),
+                Genero = (Genero)this.dtFuncionario.Rows[rowindex].Cells[9].Value,
+                Nivel_Acesso = (TipoFuncionario)this.dtFuncionario.Rows[rowindex].Cells[10].Value,
+                EnderecoId = Convert.ToInt32(this.dtFuncionario.Rows[rowindex].Cells[11].Value)
+            };
             DrawFormWithObject(funcionarioSelecionado);
         }
 
@@ -173,9 +192,17 @@ namespace WFPresentationLayer
             Response response = await funcionarioService.Update(funcionario);
             if (response.HasSuccess)
             {
-                MessageBox.Show("Sucesso");
-                SincronizarGrid();
-                LimparCampos();
+                response = await enderecoService.Update(funcionario.Endereco);
+                if (!response.HasSuccess)
+                {
+                    MessageBox.Show("Erro ao atualizar o endereço");
+                }
+                else
+                {
+                    MessageBox.Show("Sucesso");
+                    SincronizarGrid();
+                    LimparCampos();
+                }
             }
             else
             {

@@ -74,6 +74,7 @@ namespace DataAccessLayer.Implements
             SqlConnection connection = new(_connection);
             SqlCommand command = new(sql, connection);
             command.Parameters.AddWithValue("@NOME", funcionario.Nome);
+            command.Parameters.AddWithValue("@SOBRENOME", funcionario.Sobrenome);
             command.Parameters.AddWithValue("@EMAIL", funcionario.Email);
             command.Parameters.AddWithValue("@TELEFONE", funcionario.Telefone);
             command.Parameters.AddWithValue("@GENERO", funcionario.Genero);

@@ -54,7 +54,7 @@ namespace DataAccessLayer.Implements
             SqlCommand command = new(sql, connection);
             command.Parameters.AddWithValue("@CEP", endereco.CEP);
             command.Parameters.AddWithValue("@NUMERO_CASA", endereco.Numero);
-            command.Parameters.AddWithValue("@BAIRRO_ID", endereco.Bairro);
+            command.Parameters.AddWithValue("@BAIRRO", endereco.Bairro);
             command.Parameters.AddWithValue("@ESTADO_ID", endereco.Estado.ID);
             command.Parameters.AddWithValue("@CIDADE", endereco.Cidade);
             command.Parameters.AddWithValue("@PONTO_REFERENCIA", endereco.PontoReferencia);
@@ -163,10 +163,10 @@ namespace DataAccessLayer.Implements
                         CEP = Convert.ToString(reader["CEP"]),
                         Rua = Convert.ToString(reader["RUA"]),
                         Complemento = Convert.ToString(reader["COMPLEMENTO"]),
-                        Numero = Convert.ToString(reader["NUMERO"]),
+                        Numero = Convert.ToString(reader["NUMERO_CASA"]),
                         Bairro = Convert.ToString(reader["BAIRRO"]),
                         Cidade = Convert.ToString(reader["CIDADE"]),
-                        Estado = (Estado)reader["ESTADO_ID"],
+                        EstadoID = Convert.ToInt32(reader["ESTADO_ID"]),
                         PontoReferencia = Convert.ToString(reader["PONTO_REFERENCIA"])
                     };
                     return SingleResponseFactory<Endereco>.CreateInstance().CreateSuccessSingleResponse(endereco);

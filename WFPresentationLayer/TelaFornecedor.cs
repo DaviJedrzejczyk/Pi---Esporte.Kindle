@@ -145,6 +145,7 @@ namespace WFPresentationLayer
             txtNome.Clear();
             txtID.Clear();
             txtEmail.Clear();
+            txtRazao.Clear();
         }
 
         

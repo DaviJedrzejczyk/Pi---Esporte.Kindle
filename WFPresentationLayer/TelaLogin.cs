@@ -14,7 +14,8 @@ namespace WFPresentationLayer
         private readonly IEstadoService estadoService;
         private readonly ICategoriaService categoriaService;
         private readonly ISaidaService saidaService;
-        public TelaLogin(IFuncionarioService fu, IClienteService clienteService, IProdutoService produtoService, IFornecedoraService fornecedoraService, IEstadoService estadoService, ICategoriaService categoriaService, ISaidaService saidaService)
+        private readonly IEnderecoService endereco;
+        public TelaLogin(IFuncionarioService fu, IClienteService clienteService, IProdutoService produtoService, IFornecedoraService fornecedoraService, IEstadoService estadoService, ICategoriaService categoriaService, ISaidaService saidaService, IEnderecoService endereco)
         {
             InitializeComponent();
             funcionarioService = fu;
@@ -24,6 +25,7 @@ namespace WFPresentationLayer
             this.estadoService = estadoService;
             this.categoriaService = categoriaService;
             this.saidaService = saidaService;
+            this.endereco = endereco;
         }
         private async void btnLogin_Click(object sender, EventArgs e)
         {
@@ -34,7 +36,7 @@ namespace WFPresentationLayer
                 FuncionarioLogin.id = singleResponse.Item.ID;
                 FuncionarioLogin.nome = singleResponse.Item.Nome;
                 this.Hide();
-                TelaInicial tela = new(clienteService, funcionarioService, produtoService, fornecedoraService, estadoService, categoriaService,saidaService);
+                TelaInicial tela = new(clienteService, funcionarioService, produtoService, fornecedoraService, estadoService, categoriaService,saidaService,endereco);
                 tela.ShowDialog();
                 this.Close();
             }
