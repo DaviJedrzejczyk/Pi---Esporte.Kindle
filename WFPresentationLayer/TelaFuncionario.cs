@@ -30,6 +30,7 @@ namespace WFPresentationLayer
             cbEstado.DisplayMember = "Unidade_Federal";
             cbEstado.ValueMember = "ID";
             SincronizarGrid();
+            StyleDatagridview();
         }
 
         private Funcionario CreateObjectWithForm()
