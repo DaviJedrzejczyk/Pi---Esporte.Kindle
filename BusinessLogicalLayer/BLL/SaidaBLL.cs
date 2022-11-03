@@ -48,23 +48,23 @@ namespace BusinessLogicalLayer.BLL
         {
             return await saidaDAL.GetAll();
         }
-        public async Task<DataResponse<ProdutoSaidaView>> GetAllBySaidaId(ProdutoSaida saida)
+        public async Task<DataResponse<ProdutoSaidaView>> GetAllBySaidaId(int id)
         {
-            return await produtoSaidaDAL.GetAllBySaidaID(saida.ID);
+            return await produtoSaidaDAL.GetAllBySaidaID(id);
         }
-        public async Task<SingleResponse<Saida>> GetById(Saida saida)
+        public async Task<SingleResponse<SaidaView>> GetSaidaViewById(int id)
         {
-            return await saidaDAL.GetById(saida.ID);
-        }
-
-        public async Task<SingleResponse<SaidaView>> GetSaidaViewById(Saida saida)
-        {
-            return await saidaDAL.GetSaidaViewById(saida.ID);
+            return await saidaDAL.GetSaidaViewById(id);
         }
 
         public async Task<SingleResponse<List<SaidaView>>> GetByDate(FilterSaida saida)
         {
             return await saidaDAL.GetByDate(saida);
+        }
+
+        public async Task<SingleResponse<SaidaView>> GetById(int id)
+        {
+            return await saidaDAL.GetById(id);
         }
     }
 }

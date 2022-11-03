@@ -83,7 +83,7 @@ namespace WFPresentationLayer
             this.txtDescricao.Text = produto.Descricao;
             this.txtQtdEstoque.Text = produto.QtdEstoque.ToString();
             this.txtValor.Text = produto.Valor_Unitario.ToString();
-            this.cbFornecedora.Text = produto.Fornecedor.ID.ToString();
+            //this.cbFornecedora.Text = produto.Fornecedor.ID.ToString();
 
         }
         private void dataGridView1_DoubleClick(object sender, EventArgs e)
@@ -136,7 +136,7 @@ namespace WFPresentationLayer
         private async void btnDelete_Click(object sender, EventArgs e)
         {
             Produto produto = CreateObjectWithForm();
-            Response response = await produtoBLL.Insert(produto);
+            Response response = await produtoBLL.Delete(produto);
             if (response.HasSuccess)
             {
                 MessageBox.Show("Sucesso");

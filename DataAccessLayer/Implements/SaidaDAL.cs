@@ -45,7 +45,7 @@ namespace DataAccessLayer.Implements
         }
         public async Task<DataResponse<SaidaView>> GetAll()
         {
-            string sql = $"SELECT S.ID,S.VALOR,S.DATA_SAIDA,S.VALOR_TOTAL,S.DESCONTO,S.FORMA_PAGAMENTO,C.NOME AS CLIENTES,FU.NOME AS FUNCIONARIOS,FP.NOME AS FORMAS_PAGAMENTOS FROM SAIDAS S INNER JOIN CLIENTES C ON S.CLIENTE_ID = C.ID INNER JOIN FUNCIONARIOS FU ON S.FUNCIONARIO_ID = FU.ID";
+            string sql = $"SELECT S.ID,S.VALOR,S.DATA_SAIDA,S.VALOR_TOTAL,S.FORMA_PAGAMENTO,C.NOME AS CLIENTES,FU.NOME AS FUNCIONARIOS,FORMA_PAGAMENTO FROM SAIDAS S INNER JOIN CLIENTES C ON S.CLIENTE_ID = C.ID INNER JOIN FUNCIONARIOS FU ON S.FUNCIONARIOS_ID = FU.ID";
             SqlConnection connection = new(connectionString);
             SqlCommand command = new(sql, connection);
             try
@@ -80,7 +80,7 @@ namespace DataAccessLayer.Implements
             }
         }
 
-        public async Task<SingleResponse<Saida>> GetById(int id)
+        public async Task<SingleResponse<SaidaView>> GetById(int id)
         {
             string sql = $"SELECT ID,VALOR,CLIENTE_ID,FUNCIONARIO_ID,DATA_SAIDA,FORMA_PAGAMENTO,DESCONTO,VALOR_TOTAL FROM SAIDAS WHERE ID = @ID";
             SqlConnection connection = new(connectionString);
@@ -92,23 +92,23 @@ namespace DataAccessLayer.Implements
                 SqlDataReader reader = await command.ExecuteReaderAsync();
                 if (reader.Read())
                 {
-                    Saida saida = new()
+                    SaidaView saida = new()
                     {
                         ID = Convert.ToInt32(reader["ID"]),
                         Valor = Convert.ToDouble(reader["VALOR"]),
-                        ClienteID = Convert.ToInt32(reader["CLIENTE_ID"]),
-                        FuncionarioID = Convert.ToInt32(reader["FUNCIONARIO_ID"]),
+                        Cliente = Convert.ToString(reader["CLIENTE_ID"]),
+                        Funcionario = Convert.ToString(reader["FUNCIONARIO_ID"]),
                         DataSaida = Convert.ToDateTime(reader["DATA_SAIDA"]),
                         FormaPagamento = (FormaPagamento)reader["FORMA_PAGAMENTO"],
-                        Valor_Total = Convert.ToDouble(reader["VALOR_TOTAL"])
+                        ValorTotal = Convert.ToDouble(reader["VALOR_TOTAL"])
                     };
-                    return SingleResponseFactory<Saida>.CreateInstance().CreateSuccessSingleResponse(saida);
+                    return SingleResponseFactory<SaidaView>.CreateInstance().CreateSuccessSingleResponse(saida);
                 }
-                return SingleResponseFactory<Saida>.CreateInstance().CreateFailureSingleResponse();
+                return SingleResponseFactory<SaidaView>.CreateInstance().CreateFailureSingleResponse();
             }
             catch (Exception ex)
             {
-                return SingleResponseFactory<Saida>.CreateInstance().CreateFailureSingleResponse(ex);
+                return SingleResponseFactory<SaidaView>.CreateInstance().CreateFailureSingleResponse(ex);
             }
             finally
             {
