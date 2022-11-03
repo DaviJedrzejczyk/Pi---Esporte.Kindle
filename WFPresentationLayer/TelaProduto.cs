@@ -136,7 +136,7 @@ namespace WFPresentationLayer
         private async void btnDelete_Click(object sender, EventArgs e)
         {
             Produto produto = CreateObjectWithForm();
-            Response response = await produtoBLL.Insert(produto);
+            Response response = await produtoBLL.Delete(produto);
             if (response.HasSuccess)
             {
                 MessageBox.Show("Sucesso");
