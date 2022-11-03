@@ -31,5 +31,10 @@ namespace BusinessLogicalLayer.BLL
         {
             return await enderecoDALService.GetById(id);
         }
+
+        public async Task<Response> Update(Endereco endereco)
+        {
+            return await enderecoDALService.Update(endereco);
+        }
     }
 }

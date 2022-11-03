@@ -62,7 +62,7 @@ namespace WFPresentationLayer
         }
         private void btnAddProduto_Click(object sender, EventArgs e)
         {
-            Produto produto = produtoService.GetById((Produto)cbProduto.SelectedValue).Result.Item;
+            Produto produto = produtoService.GetById(Convert.ToInt32(cbProduto.SelectedValue)).Result.Item;
             bool hasFound = false;
             if (produto != null)
             {
@@ -151,7 +151,7 @@ namespace WFPresentationLayer
                     List<Produto> produtosWithValueAndInventory = new();
                     for (int i = 0; i < produtos.Count; i++)
                     {
-                        produtosWithValueAndInventory.Add(produtoService.GetById(produtos[i]).Result.Item);
+                        produtosWithValueAndInventory.Add(produtoService.GetById(produtos[i].ID).Result.Item);
                         produtosWithValueAndInventory[i].QtdEstoque = produtos[i].QtdEstoque;
                     }
                     DataResponse<Produto> dataResponse = await produtoService.CalculateNewValue(produtos);

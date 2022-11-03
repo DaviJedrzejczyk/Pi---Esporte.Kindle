@@ -13,15 +13,19 @@ namespace BusinessLogicalLayer.Validators.Produtos
     {
         public void ValidateID()
         {
-
+            RuleFor(x => x.ID).NotNull().WithMessage(GenericConstants.MENSAGEM_ERRO_ID_VAZIO);
         }
         public void ValidateNome()
         {
-
+            RuleFor(x => x.Nome).NotNull().WithMessage(GenericConstants.MENSAGEM_ERRO_NOME_VAZIO)
+                                       .MaximumLength(100).WithMessage(GenericConstants.MENSAGEM_ERRO_NOME_MAIOR)
+                                       .MinimumLength(3).WithMessage(GenericConstants.MENSAGEM_ERRO_NOME_MENOR);
         }
         public void ValidateQuantidadeEstoq()
         {
-
+            RuleFor(c => c.QtdEstoque).NotNull().WithMessage("")
+                                      .LessThan(0).WithMessage("")
+                                      .GreaterThan(9999).WithMessage("");
         }
         public void ValidateDescricao()
         {
@@ -32,7 +36,8 @@ namespace BusinessLogicalLayer.Validators.Produtos
     
         public void ValidateValor()
         {
-
+            RuleFor(c => c.Valor_Unitario).NotNull().WithMessage(ProdutoConstants.MENSAGEM_ERRO_VALOR_VAZIO)
+                                          .LessThan(0).WithMessage(ProdutoConstants.MENSAGEM_ERRO_VALOR_MAIOR);
         }
     }
 }

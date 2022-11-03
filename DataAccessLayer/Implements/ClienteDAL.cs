@@ -14,7 +14,7 @@ namespace DataAccessLayer.Implements
 {
     public class ClienteDAL : IClienteDALService
     {
-        private string _connectionString = ConnectionString._connectionString;
+        private readonly string _connectionString = ConnectionString._connectionString;
         public Response Insert(Cliente cliente)
         {
             string sql = $"INSERT INTO CLIENTES (NOME,SOBRENOME,RG,CPF,TELEFONE,EMAIL,GENERO,DATA_NASCIMENTO,IDADE) VALUES (@NOME,@SOBRENOME,@RG,@CPF,@TELEFONE,@EMAIL,@GENERO,@DATA_NASCIMENTO,@IDADE)";
@@ -26,7 +26,6 @@ namespace DataAccessLayer.Implements
             command.Parameters.AddWithValue("@CPF", cliente.CPF);
             command.Parameters.AddWithValue("@TELEFONE", cliente.Telefone);
             command.Parameters.AddWithValue("@EMAIL", cliente.Email);
-            //command.Parameters.AddWithValue("@TIPO_CLIENTE_ID", cliente.TipoClienteId);
             command.Parameters.AddWithValue("@GENERO", cliente.Genero);
             command.Parameters.AddWithValue("@DATA_NASCIMENTO", cliente.DataNascimento);
             command.Parameters.AddWithValue("@IDADE", cliente.Idade);
@@ -63,7 +62,7 @@ namespace DataAccessLayer.Implements
             command.Parameters.AddWithValue("@SOBRENOME", cliente.Sobrenome);
             command.Parameters.AddWithValue("@EMAIL", cliente.Email);
             command.Parameters.AddWithValue("@TELEFONE", cliente.Telefone);
-            //command.Parameters.AddWithValue("@TIPO_CLIENTE_ID", cliente.TipoClienteId);
+            command.Parameters.AddWithValue("@GENERO",cliente.Genero);
             command.Parameters.AddWithValue("@ID", cliente.ID);
             try
             {
@@ -198,6 +197,41 @@ namespace DataAccessLayer.Implements
             }
         }
 
-      
+        public SingleResponse<Cliente> GetByCpf(string cpf)
+        {
+            string sql = $"SELECT ID,NOME,RG,CPF,TELEFONE,EMAIL,GENERO, DATA_NASCIMENTO FROM CLIENTES WHERE CPF = @CPF";
+            SqlConnection connection = new(_connectionString);
+            SqlCommand command = new(sql, connection);
+            command.Parameters.AddWithValue("@CPF", cpf);
+            try
+            {
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.Read())
+                {
+                    Cliente cliente = new()
+                    {
+                        ID = Convert.ToInt32(reader["ID"]),
+                        Nome = Convert.ToString(reader["NOME"]),
+                        RG = Convert.ToString(reader["RG"]),
+                        CPF = Convert.ToString(reader["CPF"]),
+                        Telefone = Convert.ToString(reader["TELEFONE"]),
+                        Email = Convert.ToString(reader["EMAIL"]),
+                        Genero = (Genero)reader["GENERO"],
+                        DataNascimento = Convert.ToDateTime(reader["DATA_NASCIMENTO"])
+                    };
+                    return SingleResponseFactory<Cliente>.CreateInstance().CreateSuccessSingleResponse(cliente);
+                }
+                return SingleResponseFactory<Cliente>.CreateInstance().CreateFailureSingleResponse("Cliente não encontrado!");
+            }
+            catch (Exception ex)
+            {
+                return SingleResponseFactory<Cliente>.CreateInstance().CreateFailureSingleResponse(ex);
+            }
+            finally
+            {
+                connection.Dispose();
+            }
+        }
     }
 }

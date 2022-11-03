@@ -10,7 +10,6 @@ namespace DataAccessLayer.Interfaces
 {
     public interface IEnderecoDALService
     {
-
         Task<Response> Insert(Endereco endereco);
         Task<Response> Update(Endereco endereco);
         Task<Response> Delete(int id);

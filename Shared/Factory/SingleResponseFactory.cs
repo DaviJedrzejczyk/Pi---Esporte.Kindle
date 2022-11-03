@@ -35,6 +35,14 @@ namespace Shared.Factory
                 Exception = ex,
             };
         }
+        public SingleResponse<T> CreateFailureSingleResponse(string message)
+        {
+            return new SingleResponse<T>()
+            {
+                HasSuccess = false,
+                Message = message
+            };
+        }
         public SingleResponse<T> CreateFailureSingleResponse()
         {
             return new SingleResponse<T>()

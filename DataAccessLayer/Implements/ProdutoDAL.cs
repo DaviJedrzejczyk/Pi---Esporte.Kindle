@@ -163,8 +163,8 @@ namespace DataAccessLayer.Implements
                         Descricao = Convert.ToString(reader["DESCRICAO"]),
                         QtdEstoque = Convert.ToInt32(reader["QTD_ESTOQUE"]),
                         Valor_Unitario = Convert.ToDouble(reader["VALOR"]),
-                        Fornecedor = (Fornecedor)reader["FORNECEDOR_ID"],
-                        Categoria = (Categoria)reader["CATEGORIA_ID"]
+                        FornecedorId = Convert.ToInt32(reader["FORNECEDOR_ID"]),
+                        CategoriaId = Convert.ToInt32(reader["CATEGORIA_ID"])
                         
                     };
 

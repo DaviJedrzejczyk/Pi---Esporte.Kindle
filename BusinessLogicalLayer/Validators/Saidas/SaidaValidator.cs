@@ -17,11 +17,17 @@ namespace BusinessLogicalLayer.Validators.Saidas
         }
         public void ValidateDataSaida()
         {
-
+            RuleFor(x => x.DataSaida).NotNull().WithMessage(GenericConstants.MENSAGEM_ERRO_DATA_VAZIO);
         }
         public void ValidateValorTotal()
         {
-
+            RuleFor(x => x.Valor_Total).NotNull().WithMessage(SaidaConstants.MENSAGEM_ERRO_VALOR_TOTAL_VAZIO)
+                                       .LessThan(0).WithMessage(SaidaConstants.MENSAGEM_ERRO_VALOR_TOTAL_MENOR);
+        }
+        public void ValidateValor()
+        {
+            RuleFor(x => x.Valor).NotNull().WithMessage(SaidaConstants.MENSAGEM_ERRO_VALOR_VAZIO)
+                                 .LessThan(0).WithMessage(SaidaConstants.MENSAGEM_ERRO_VALOR_MENOR);
         }
     }
 }

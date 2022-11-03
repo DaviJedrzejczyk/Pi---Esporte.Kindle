@@ -56,6 +56,7 @@ namespace WFPresentationLayer
                 QtdEstoque = qtd,
                 Valor_Unitario = valor,
                 Fornecedor = (Fornecedor)cbFornecedora.SelectedItem,
+                Categoria = (Categoria)cbCategoria.SelectedItem
             };
             return c;
         }
@@ -93,7 +94,7 @@ namespace WFPresentationLayer
                 ID = Convert.ToInt32(this.dtProduto.Rows[rowindex].Cells[0].Value),
                 Nome = Convert.ToString(this.dtProduto.Rows[rowindex].Cells[1].Value),
                 Descricao = Convert.ToString(this.dtProduto.Rows[rowindex].Cells[2].Value),
-                Fornecedor = (Fornecedor)this.dtProduto.Rows[rowindex].Cells[3].Value,
+                FornecedorId = Convert.ToInt32(dtProduto.Rows[rowindex].Cells[3].Value),
                 QtdEstoque = Convert.ToInt32(this.dtProduto.Rows[rowindex].Cells[4].Value),
                 Valor_Unitario = Convert.ToDouble(dtProduto.Rows[rowindex].Cells[5].Value)
             };
@@ -135,7 +136,7 @@ namespace WFPresentationLayer
         private async void btnDelete_Click(object sender, EventArgs e)
         {
             Produto produto = CreateObjectWithForm();
-            Response response = await produtoBLL.Insert(produto);
+            Response response = await produtoBLL.Delete(produto);
             if (response.HasSuccess)
             {
                 MessageBox.Show("Sucesso");

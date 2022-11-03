@@ -12,7 +12,6 @@ namespace BusinessLogicalLayer.Validators.Funcionarios
         {
             ValidateNome();
             ValidateEmail();
-            ValidateSenha();
             ValidateTelefone();
             ValidateRua();
             ValidateBairro();

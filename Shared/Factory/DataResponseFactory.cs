@@ -26,6 +26,14 @@ namespace Shared.Factory
                 Itens = Itens,
             };
         }
+        public DataResponse<T> CreateFailureResponse(string message)
+        {
+            return new DataResponse<T>()
+            {
+                HasSuccess = false,
+                Message = message,
+            };
+        }
         public DataResponse<T> CreateFailureResponse(Exception ex)
         {
             return new DataResponse<T>()

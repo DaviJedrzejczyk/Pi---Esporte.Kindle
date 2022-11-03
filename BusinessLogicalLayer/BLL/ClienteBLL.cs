@@ -57,5 +57,9 @@ namespace BusinessLogicalLayer.BLL
             return clienteDAL.GetById(id);
         }
 
+        public SingleResponse<Cliente> GetByCpf(string cpf)
+        {
+            return clienteDAL.GetByCpf(cpf);
+        }
     }
 }

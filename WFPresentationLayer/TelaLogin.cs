@@ -13,7 +13,9 @@ namespace WFPresentationLayer
         private readonly IFornecedoraService fornecedoraService;
         private readonly IEstadoService estadoService;
         private readonly ICategoriaService categoriaService;
-        public TelaLogin(IFuncionarioService fu, IClienteService clienteService, IProdutoService produtoService, IFornecedoraService fornecedoraService, IEstadoService estadoService, ICategoriaService categoriaService)
+        private readonly ISaidaService saidaService;
+        private readonly IEnderecoService endereco;
+        public TelaLogin(IFuncionarioService fu, IClienteService clienteService, IProdutoService produtoService, IFornecedoraService fornecedoraService, IEstadoService estadoService, ICategoriaService categoriaService, ISaidaService saidaService, IEnderecoService endereco)
         {
             InitializeComponent();
             funcionarioService = fu;
@@ -22,16 +24,19 @@ namespace WFPresentationLayer
             this.fornecedoraService = fornecedoraService;
             this.estadoService = estadoService;
             this.categoriaService = categoriaService;
+            this.saidaService = saidaService;
+            this.endereco = endereco;
         }
-
-        private async void button1_Click(object sender, EventArgs e)
+        private async void btnLogin_Click(object sender, EventArgs e)
         {
             Funcionario login = new(txtEmail.Text, txtSenha.Text);
             SingleResponse<Funcionario> singleResponse = await funcionarioService.GetLogin(login);
             if (singleResponse.HasSuccess)
             {
+                FuncionarioLogin.id = singleResponse.Item.ID;
+                FuncionarioLogin.nome = singleResponse.Item.Nome;
                 this.Hide();
-                TelaInicial tela = new(clienteService,funcionarioService,produtoService,fornecedoraService,estadoService,categoriaService);
+                TelaInicial tela = new(clienteService, funcionarioService, produtoService, fornecedoraService, estadoService, categoriaService,saidaService,endereco);
                 tela.ShowDialog();
                 this.Close();
             }
