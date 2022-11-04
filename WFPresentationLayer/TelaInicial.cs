@@ -81,5 +81,10 @@ namespace WFPresentationLayer
         {
             OpenChildForm(new TelaVenda(cliente, funcionarioService, fornecedoraService,produtoService, saidaService));
         }
+
+        private void btnHistorico_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new TelaHistoricoSaida(saidaService));
+        }
     }
 }

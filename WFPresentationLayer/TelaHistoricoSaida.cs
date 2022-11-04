@@ -41,6 +41,20 @@ namespace WFPresentationLayer
         private async void TelaHistoricoSaida_Load(object sender, EventArgs e)
         {
             DataResponse<SaidaView> dataResponse = await saidaService.GetAll();
+            if (dataResponse.Itens == null)
+            {
+                string message = "Não há registros de saída, deseja sair?";
+                string title = "Close Window";
+                MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+                DialogResult result = MessageBox.Show(message, title, buttons);
+                if (result == DialogResult.Yes)
+                {
+                    this.Close();
+                    OpenChildForm(new TelaHome());
+                    return;
+                }
+                return;
+            }
             for (int i = 0; i < dataResponse.Itens.Count; i++)
             {
                 dtHistoricoSaida.Rows.Add();
@@ -76,7 +90,7 @@ namespace WFPresentationLayer
             }
         }
 
-        private async void btnInfo_Click(object sender, EventArgs e)
+        private void btnInfo_Click(object sender, EventArgs e)
         {
             if (dtHistoricoSaida.CurrentCell == null)
             {
@@ -94,7 +108,7 @@ namespace WFPresentationLayer
                 btnInfo.Enabled = false;
                 btnInfo.Visible = false;
                 panelButtos.BringToFront();
-                OpenChildForm(new TelaInformacoesAdicionaisSaida(saidaService,saidaService.GetById(index).Result.Item));
+                OpenChildForm(new TelaInformacoesAdicionaisSaida(saidaService,saidaService.GetById(index).Item));
             }
         }
     }

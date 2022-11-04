@@ -35,11 +35,12 @@
             this.btnProdutos = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnVenda = new System.Windows.Forms.Button();
+            this.btnCategoria = new System.Windows.Forms.Button();
             this.panelDesktop = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
-            this.btnCategoria = new System.Windows.Forms.Button();
-            this.btnVenda = new System.Windows.Forms.Button();
+            this.btnHistorico = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -107,6 +108,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(31)))), ((int)(((byte)(88)))));
+            this.panel2.Controls.Add(this.btnHistorico);
             this.panel2.Controls.Add(this.btnVenda);
             this.panel2.Controls.Add(this.btnCategoria);
             this.panel2.Controls.Add(this.btnLogout);
@@ -119,6 +121,28 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(160, 567);
             this.panel2.TabIndex = 1;
+            // 
+            // btnVenda
+            // 
+            this.btnVenda.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnVenda.Location = new System.Drawing.Point(0, 354);
+            this.btnVenda.Name = "btnVenda";
+            this.btnVenda.Size = new System.Drawing.Size(160, 74);
+            this.btnVenda.TabIndex = 6;
+            this.btnVenda.Text = "Venda";
+            this.btnVenda.UseVisualStyleBackColor = true;
+            this.btnVenda.Click += new System.EventHandler(this.btnVenda_Click);
+            // 
+            // btnCategoria
+            // 
+            this.btnCategoria.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnCategoria.Location = new System.Drawing.Point(0, 280);
+            this.btnCategoria.Name = "btnCategoria";
+            this.btnCategoria.Size = new System.Drawing.Size(160, 74);
+            this.btnCategoria.TabIndex = 5;
+            this.btnCategoria.Text = "Categoria";
+            this.btnCategoria.UseVisualStyleBackColor = true;
+            this.btnCategoria.Click += new System.EventHandler(this.btnCategoria_Click);
             // 
             // panelDesktop
             // 
@@ -153,27 +177,16 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // btnCategoria
+            // btnHistorico
             // 
-            this.btnCategoria.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnCategoria.Location = new System.Drawing.Point(0, 280);
-            this.btnCategoria.Name = "btnCategoria";
-            this.btnCategoria.Size = new System.Drawing.Size(160, 74);
-            this.btnCategoria.TabIndex = 5;
-            this.btnCategoria.Text = "Categoria";
-            this.btnCategoria.UseVisualStyleBackColor = true;
-            this.btnCategoria.Click += new System.EventHandler(this.btnCategoria_Click);
-            // 
-            // btnVenda
-            // 
-            this.btnVenda.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnVenda.Location = new System.Drawing.Point(0, 354);
-            this.btnVenda.Name = "btnVenda";
-            this.btnVenda.Size = new System.Drawing.Size(160, 74);
-            this.btnVenda.TabIndex = 6;
-            this.btnVenda.Text = "Venda";
-            this.btnVenda.UseVisualStyleBackColor = true;
-            this.btnVenda.Click += new System.EventHandler(this.btnVenda_Click);
+            this.btnHistorico.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnHistorico.Location = new System.Drawing.Point(0, 428);
+            this.btnHistorico.Name = "btnHistorico";
+            this.btnHistorico.Size = new System.Drawing.Size(160, 74);
+            this.btnHistorico.TabIndex = 7;
+            this.btnHistorico.Text = "Histórico";
+            this.btnHistorico.UseVisualStyleBackColor = true;
+            this.btnHistorico.Click += new System.EventHandler(this.btnHistorico_Click);
             // 
             // TelaInicial
             // 
@@ -205,5 +218,6 @@
         private Button button1;
         private Button btnVenda;
         private Button btnCategoria;
+        private Button btnHistorico;
     }
 }

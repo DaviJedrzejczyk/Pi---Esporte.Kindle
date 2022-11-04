@@ -80,16 +80,16 @@ namespace DataAccessLayer.Implements
             }
         }
 
-        public async Task<SingleResponse<SaidaView>> GetById(int id)
+        public SingleResponse<SaidaView> GetById(int id)
         {
-            string sql = $"SELECT ID,VALOR,CLIENTE_ID,FUNCIONARIO_ID,DATA_SAIDA,FORMA_PAGAMENTO,DESCONTO,VALOR_TOTAL FROM SAIDAS WHERE ID = @ID";
+            string sql = $"SELECT ID,VALOR,CLIENTE_ID,FUNCIONARIOS_ID,DATA_SAIDA,FORMA_PAGAMENTO,VALOR_TOTAL FROM SAIDAS WHERE ID = @ID";
             SqlConnection connection = new(connectionString);
             SqlCommand command = new(sql, connection);
             command.Parameters.AddWithValue("@ID", id);
             try
             {
                 connection.Open();
-                SqlDataReader reader = await command.ExecuteReaderAsync();
+                SqlDataReader reader = command.ExecuteReader();
                 if (reader.Read())
                 {
                     SaidaView saida = new()
@@ -97,7 +97,7 @@ namespace DataAccessLayer.Implements
                         ID = Convert.ToInt32(reader["ID"]),
                         Valor = Convert.ToDouble(reader["VALOR"]),
                         Cliente = Convert.ToString(reader["CLIENTE_ID"]),
-                        Funcionario = Convert.ToString(reader["FUNCIONARIO_ID"]),
+                        Funcionario = Convert.ToString(reader["FUNCIONARIOS_ID"]),
                         DataSaida = Convert.ToDateTime(reader["DATA_SAIDA"]),
                         FormaPagamento = (FormaPagamento)reader["FORMA_PAGAMENTO"],
                         ValorTotal = Convert.ToDouble(reader["VALOR_TOTAL"])

@@ -14,7 +14,7 @@ namespace WFPresentationLayer
             InitializeComponent();
         }
 
-        private async void TelaInformacoesAdicionais_Load(object sender, EventArgs e)
+        private void TelaInformacoesAdicionais_Load(object sender, EventArgs e)
         {
           
             view.produtosSaidas = saida.GetAllBySaidaId(view.ID).Result.Itens;
