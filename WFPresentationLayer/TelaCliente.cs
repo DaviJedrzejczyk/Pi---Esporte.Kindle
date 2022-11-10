@@ -33,6 +33,7 @@ namespace WFPresentationLayer
         private void TelaCliente_Load(object sender, EventArgs e)
         {
             SincronizarGrid();
+            StyleGrid();
             cbGenero.DataSource = Enum.GetNames(typeof(Genero));
         }
 
@@ -174,5 +175,30 @@ namespace WFPresentationLayer
         {
 
         }
+
+        void StyleGrid()
+        {
+
+            dtCliente.BorderStyle = BorderStyle.None;
+            dtCliente.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238, 239, 249);
+            dtCliente.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dtCliente.DefaultCellStyle.SelectionBackColor = Color.Blue;
+            dtCliente.DefaultCellStyle.SelectionForeColor = Color.WhiteSmoke;
+            dtCliente.BackgroundColor = Color.FromArgb(30, 30, 30);
+            dtCliente.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dtCliente.EnableHeadersVisualStyles = false;
+            dtCliente.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dtCliente.ColumnHeadersDefaultCellStyle.Font = new Font("MS Reference Sans Serif", 10);
+            dtCliente.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.FromArgb(37, 37, 38);
+            dtCliente.ColumnHeadersDefaultCellStyle.SelectionForeColor = Color.White;
+            dtCliente.AutoSize = true;
+
+
+
+
+
+        }
+
+
     }
 }
