@@ -33,8 +33,8 @@ namespace WFPresentationLayer
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;
             childForm.Dock = DockStyle.Fill;
-            panelButtos.Controls.Add(childForm);
-            panelButtos.Tag = childForm;
+            panelDesktopSaida.Controls.Add(childForm);
+            panelDesktopSaida.Tag = childForm;
             childForm.BringToFront();
             childForm.Show();
         }
