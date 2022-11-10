@@ -35,8 +35,8 @@ namespace WFPresentationLayer
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;
             childForm.Dock = DockStyle.Fill;
-            tbVendas.Controls.Add(childForm);
-            tbVendas.Tag = childForm;
+            panelDesktopSaida.Controls.Add(childForm);
+            panelDesktopSaida.Tag = childForm;
             childForm.BringToFront();
             childForm.Show();
         }
@@ -111,7 +111,7 @@ namespace WFPresentationLayer
                 int index = Convert.ToInt32(dtHistoricoSaida.Rows[rowindex].Cells[0].Value);
                 btnInformacoes.Enabled = false;
                 btnInformacoes.Visible = false;
-                panelButtos.BringToFront();
+                tbVendas.BringToFront();
                 OpenChildForm(new TelaInformacoesAdicionaisSaida(saidaService, saidaService.GetSaidaViewById(index).Item));
             }
         }

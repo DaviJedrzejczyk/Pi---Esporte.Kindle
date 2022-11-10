@@ -17,7 +17,7 @@ namespace DataAccessLayer.Implements
         private string connectionString = ConnectionString._connectionString;
         public async Task<DataResponse<ProdutoSaidaView>> GetAllBySaidaID(int id)
         {
-            string sql = $"SELECT PS.SAIDA_ID,PS.QUANTIDADE,P.NOME AS PRODUTO,P.VALOR FROM PRODUTOS_SAIDA PS INNER JOIN PRODUTOS P ON PS.PRODUTOS_ID = P.ID WHERE PS.SAIDA_ID = @SAIDA_ID";
+            string sql = $"SELECT PS.SAIDA_ID,PS.QUANTIDADE,PS.VALOR_UNITARIO, P.NOME AS PRODUTO,P.VALOR FROM PRODUTOS_SAIDA PS INNER JOIN PRODUTOS P ON PS.PRODUTOS_ID = P.ID WHERE PS.SAIDA_ID = @SAIDA_ID";
             SqlConnection connection = new(connectionString);
             SqlCommand command = new(sql, connection);
             command.Parameters.AddWithValue("@SAIDA_ID", id);
