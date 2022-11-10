@@ -45,7 +45,7 @@ namespace DataAccessLayer.Implements
         }
         public async Task<DataResponse<SaidaView>> GetAll()
         {
-            string sql = $"SELECT S.ID,S.VALOR,S.DATA_SAIDA,S.VALOR_TOTAL,S.DESCONTO,S.FORMA_PAGAMENTO,C.NOME AS CLIENTES,FU.NOME AS FUNCIONARIOS,FP.NOME AS FORMAS_PAGAMENTOS FROM SAIDAS S INNER JOIN CLIENTES C ON S.CLIENTE_ID = C.ID INNER JOIN FUNCIONARIOS FU ON S.FUNCIONARIO_ID = FU.ID";
+            string sql = $"SELECT S.ID,S.VALOR,S.DATA_SAIDA,S.VALOR_TOTAL,S.FORMA_PAGAMENTO,C.NOME AS CLIENTES,FU.NOME AS FUNCIONARIOS FROM SAIDAS S INNER JOIN CLIENTES C ON S.CLIENTE_ID = C.ID INNER JOIN FUNCIONARIOS FU ON S.FUNCIONARIOS_ID = FU.ID";
             SqlConnection connection = new(connectionString);
             SqlCommand command = new(sql, connection);
             try
@@ -63,7 +63,6 @@ namespace DataAccessLayer.Implements
                         Funcionario = Convert.ToString(reader["FUNCIONARIOS"]),
                         DataSaida = Convert.ToDateTime(reader["DATA_SAIDA"]),
                         FormaPagamento = (FormaPagamento)reader["FORMA_PAGAMENTO"],
-                        ValorTotal = Convert.ToDouble(reader["VALOR_TOTAL"])
                     };
 
                     saidas.Add(saida);

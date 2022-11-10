@@ -12,7 +12,8 @@ namespace WFPresentationLayer
         private readonly ICategoriaService categoriaService;
         private readonly ISaidaService saidaService;
         private readonly IEnderecoService enderecoService;
-        public TelaInicial(IClienteService clienteService, IFuncionarioService funcionarioService, IProdutoService produtoService, IFornecedoraService fornecedoraService, IEstadoService estadoService, ICategoriaService categoriaService,ISaidaService saida, IEnderecoService enderecoService)
+        private readonly IEntradaService entrada;
+        public TelaInicial(IClienteService clienteService, IFuncionarioService funcionarioService, IProdutoService produtoService, IFornecedoraService fornecedoraService, IEstadoService estadoService, ICategoriaService categoriaService, ISaidaService saida, IEnderecoService enderecoService, IEntradaService entrada)
         {
             InitializeComponent();
             cliente = clienteService;
@@ -23,6 +24,7 @@ namespace WFPresentationLayer
             this.categoriaService = categoriaService;
             this.saidaService = saida;
             this.enderecoService = enderecoService;
+            this.entrada = entrada;
         }
         private void OpenChildForm(Form childForm)
         {
@@ -62,7 +64,7 @@ namespace WFPresentationLayer
         private void btnLogout_Click(object sender, EventArgs e)
         {
             this.Hide();
-            TelaLogin telaLogin = new(funcionarioService, cliente, produtoService, fornecedoraService,estadoService,categoriaService,saidaService,enderecoService);
+            TelaLogin telaLogin = new(funcionarioService, cliente, produtoService, fornecedoraService,estadoService,categoriaService,saidaService,enderecoService, entrada);
             telaLogin.ShowDialog();
             this.Close();
         }
@@ -76,10 +78,19 @@ namespace WFPresentationLayer
         {
             OpenChildForm(new TelaCategoria(categoriaService));
         }
-
-        private void btnVenda_Click(object sender, EventArgs e)
+        private void btnVenda_Click_1(object sender, EventArgs e)
         {
-            OpenChildForm(new TelaVenda(cliente, funcionarioService, fornecedoraService,produtoService, saidaService));
+            OpenChildForm(new TelaVenda(cliente, funcionarioService, fornecedoraService, produtoService, saidaService));
+        }
+
+        private void btnEntrada_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new TelaEntrada(fornecedoraService, produtoService, entrada, categoriaService));
+        }
+
+        private void btnHistorico_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new TelaHistoricos(saidaService, entrada));
         }
     }
 }
