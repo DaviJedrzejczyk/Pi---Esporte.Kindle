@@ -17,23 +17,22 @@ namespace DataAccessLayer.Implements
         private string connectionString = ConnectionString._connectionString;
         public async Task<DataResponse<ProdutoSaidaView>> GetAllBySaidaID(int id)
         {
-            string sql = $"SELECT PS.SAIDA_ID,PS.QUANTIDADE,PS.VALOR_UNITARIO,P.NOME AS PRODUTO,P.DESCRICAO,P.VALOR,L.NOME AS LABORATORIOS,TU.NOME AS TIPOS_UNIDADES FROM PRODUTOS_SAIDA PS INNER JOIN PRODUTOS P ON PS.PRODUTO_ID = P.ID INNER JOIN LABORATORIOS L ON P.LABORATORIO_ID = L.ID INNER JOIN TIPOS_UNIDADES TU ON P.TIPO_UNIDADE_ID = TU.ID WHERE PS.SAIDA_ID = @SAIDA_ID";
-            SqlConnection connection = new SqlConnection(connectionString);
-            SqlCommand command = new SqlCommand(sql, connection);
+            string sql = $"SELECT PS.SAIDA_ID,PS.QUANTIDADE,P.NOME AS PRODUTO,P.VALOR FROM PRODUTOS_SAIDA PS INNER JOIN PRODUTOS P ON PS.PRODUTOS_ID = P.ID WHERE PS.SAIDA_ID = @SAIDA_ID";
+            SqlConnection connection = new(connectionString);
+            SqlCommand command = new(sql, connection);
             command.Parameters.AddWithValue("@SAIDA_ID", id);
             try
             {
                 connection.Open();
                 SqlDataReader reader = command.ExecuteReader();
-                List<ProdutoSaidaView> produtoSaidas = new List<ProdutoSaidaView>();
+                List<ProdutoSaidaView> produtoSaidas = new();
                 while (reader.Read())
                 {
-                    ProdutoSaidaView saida = new ProdutoSaidaView();
-                    ProdutoView produtoView = new ProdutoView();
+                    ProdutoSaidaView saida = new();
+                    ProdutoView produtoView = new();
                     saida.ProdutoView = produtoView;
                     saida.SaidaID = Convert.ToInt32(reader["SAIDA_ID"]);
                     saida.ValorUnitario = Convert.ToDouble(reader["VALOR_UNITARIO"]);
-                    saida.ProdutoView.Descricao = Convert.ToString(reader["DESCRICAO"]);
                     saida.ProdutoView.Valor = Convert.ToDouble(reader["VALOR"]);
                     saida.Quantidade = Convert.ToDouble(reader["QUANTIDADE"]);
                     saida.ProdutoView.Nome = Convert.ToString(reader["PRODUTO"]);

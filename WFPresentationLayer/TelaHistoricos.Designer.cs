@@ -28,12 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tbMaster = new System.Windows.Forms.TabControl();
             this.tbVendas = new System.Windows.Forms.TabPage();
-            this.tbEntrada = new System.Windows.Forms.TabPage();
             this.panelDesktopSaida = new System.Windows.Forms.Panel();
             this.dtHistoricoSaida = new System.Windows.Forms.DataGridView();
             this.dtID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,9 +41,10 @@
             this.dtData = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dtFormaPag = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dtValorTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnInfo = new System.Windows.Forms.Button();
-            this.btnTabelaSaida = new System.Windows.Forms.Button();
             this.panelButtos = new System.Windows.Forms.Panel();
+            this.btnInformacoes = new System.Windows.Forms.Button();
+            this.tbEntrada = new System.Windows.Forms.TabPage();
+            this.btnTabelas = new System.Windows.Forms.Button();
             this.tbMaster.SuspendLayout();
             this.tbVendas.SuspendLayout();
             this.panelDesktopSaida.SuspendLayout();
@@ -74,17 +74,6 @@
             this.tbVendas.Text = "Vendas";
             this.tbVendas.UseVisualStyleBackColor = true;
             // 
-            // tbEntrada
-            // 
-            this.tbEntrada.Location = new System.Drawing.Point(4, 24);
-            this.tbEntrada.Name = "tbEntrada";
-            this.tbEntrada.Padding = new System.Windows.Forms.Padding(3);
-            this.tbEntrada.Size = new System.Drawing.Size(792, 422);
-            this.tbEntrada.TabIndex = 1;
-            this.tbEntrada.Text = "Entradas";
-            this.tbEntrada.UseVisualStyleBackColor = true;
-            this.tbEntrada.Click += new System.EventHandler(this.tbEntrada_Click);
-            // 
             // panelDesktopSaida
             // 
             this.panelDesktopSaida.Controls.Add(this.dtHistoricoSaida);
@@ -100,14 +89,14 @@
             this.dtHistoricoSaida.AllowUserToAddRows = false;
             this.dtHistoricoSaida.AllowUserToDeleteRows = false;
             this.dtHistoricoSaida.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtHistoricoSaida.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtHistoricoSaida.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dtHistoricoSaida.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtHistoricoSaida.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dtID,
@@ -116,26 +105,26 @@
             this.dtData,
             this.dtFormaPag,
             this.dtValorTotal});
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtHistoricoSaida.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtHistoricoSaida.DefaultCellStyle = dataGridViewCellStyle2;
             this.dtHistoricoSaida.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtHistoricoSaida.Location = new System.Drawing.Point(0, 0);
             this.dtHistoricoSaida.Name = "dtHistoricoSaida";
             this.dtHistoricoSaida.ReadOnly = true;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtHistoricoSaida.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtHistoricoSaida.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dtHistoricoSaida.RowTemplate.Height = 25;
             this.dtHistoricoSaida.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtHistoricoSaida.Size = new System.Drawing.Size(598, 416);
@@ -177,43 +166,56 @@
             this.dtValorTotal.Name = "dtValorTotal";
             this.dtValorTotal.ReadOnly = true;
             // 
-            // btnInfo
-            // 
-            this.btnInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInfo.Location = new System.Drawing.Point(30, 119);
-            this.btnInfo.Name = "btnInfo";
-            this.btnInfo.Size = new System.Drawing.Size(137, 85);
-            this.btnInfo.TabIndex = 1;
-            this.btnInfo.Text = "Informções da Saída";
-            this.btnInfo.UseVisualStyleBackColor = true;
-            // 
-            // btnTabelaSaida
-            // 
-            this.btnTabelaSaida.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTabelaSaida.Location = new System.Drawing.Point(30, 28);
-            this.btnTabelaSaida.Name = "btnTabelaSaida";
-            this.btnTabelaSaida.Size = new System.Drawing.Size(137, 85);
-            this.btnTabelaSaida.TabIndex = 0;
-            this.btnTabelaSaida.Text = "Tabela Saida";
-            this.btnTabelaSaida.UseVisualStyleBackColor = true;
-            // 
             // panelButtos
             // 
-            this.panelButtos.Controls.Add(this.btnInfo);
-            this.panelButtos.Controls.Add(this.btnTabelaSaida);
+            this.panelButtos.Controls.Add(this.btnTabelas);
+            this.panelButtos.Controls.Add(this.btnInformacoes);
             this.panelButtos.Dock = System.Windows.Forms.DockStyle.Right;
             this.panelButtos.Location = new System.Drawing.Point(598, 0);
             this.panelButtos.Name = "panelButtos";
             this.panelButtos.Size = new System.Drawing.Size(188, 416);
             this.panelButtos.TabIndex = 3;
             // 
-            // TelaHistóricos
+            // btnInformacoes
+            // 
+            this.btnInformacoes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInformacoes.Location = new System.Drawing.Point(24, 144);
+            this.btnInformacoes.Name = "btnInformacoes";
+            this.btnInformacoes.Size = new System.Drawing.Size(139, 97);
+            this.btnInformacoes.TabIndex = 0;
+            this.btnInformacoes.Text = "Informações da Saída";
+            this.btnInformacoes.UseVisualStyleBackColor = true;
+            this.btnInformacoes.Click += new System.EventHandler(this.btnInformacoes_Click);
+            // 
+            // tbEntrada
+            // 
+            this.tbEntrada.Location = new System.Drawing.Point(4, 24);
+            this.tbEntrada.Name = "tbEntrada";
+            this.tbEntrada.Padding = new System.Windows.Forms.Padding(3);
+            this.tbEntrada.Size = new System.Drawing.Size(792, 422);
+            this.tbEntrada.TabIndex = 1;
+            this.tbEntrada.Text = "Entradas";
+            this.tbEntrada.UseVisualStyleBackColor = true;
+            this.tbEntrada.Click += new System.EventHandler(this.tbEntrada_Click);
+            // 
+            // btnTabelas
+            // 
+            this.btnTabelas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTabelas.Location = new System.Drawing.Point(24, 25);
+            this.btnTabelas.Name = "btnTabelas";
+            this.btnTabelas.Size = new System.Drawing.Size(139, 90);
+            this.btnTabelas.TabIndex = 1;
+            this.btnTabelas.Text = "Tabelas Saídas";
+            this.btnTabelas.UseVisualStyleBackColor = true;
+            this.btnTabelas.Click += new System.EventHandler(this.btnTabelas_Click);
+            // 
+            // TelaHistoricos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.tbMaster);
-            this.Name = "TelaHistóricos";
+            this.Name = "TelaHistoricos";
             this.Text = "TelaHistóricos";
             this.Load += new System.EventHandler(this.TelaHistóricos_Load);
             this.tbMaster.ResumeLayout(false);
@@ -238,8 +240,8 @@
         private DataGridViewTextBoxColumn dtFormaPag;
         private DataGridViewTextBoxColumn dtValorTotal;
         private Panel panelButtos;
-        private Button btnInfo;
-        private Button btnTabelaSaida;
         private TabPage tbEntrada;
+        private Button btnInformacoes;
+        private Button btnTabelas;
     }
 }
