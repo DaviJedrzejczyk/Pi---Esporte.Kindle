@@ -22,9 +22,8 @@ namespace WFPresentationLayer
             txtData.Text = view.DataSaida.ToString();
             txtFormaPagamento.Text = view.FormaPagamento.ToString();
             txtFuncionario.Text = view.Funcionario;
+            txtValor.Text = view.Valor.ToString();
             txtID.Text = view.ID.ToString();
-            txtValorTotal.Text = view.ValorTotal.ToString();
-
             for (int i = 0; i < view.produtosSaidas.Count; i++)
             {
                 dtInfoSaida.Rows.Add();

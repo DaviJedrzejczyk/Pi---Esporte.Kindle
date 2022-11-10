@@ -52,9 +52,9 @@ namespace BusinessLogicalLayer.BLL
         {
             return await produtoSaidaDAL.GetAllBySaidaID(id);
         }
-        public async Task<SingleResponse<SaidaView>> GetSaidaViewById(int id)
+        public SingleResponse<SaidaView> GetSaidaViewById(int id)
         {
-            return await saidaDAL.GetSaidaViewById(id);
+            return saidaDAL.GetSaidaViewById(id);
         }
 
         public async Task<SingleResponse<List<SaidaView>>> GetByDate(FilterSaida saida)

@@ -70,7 +70,7 @@ namespace WFPresentationLayer
         private async void btnTabelaSaida_Click(object sender, EventArgs e)
         {
             btnInfo.Enabled = true;
-            btnInfo.Visible = false;
+            btnInfo.Visible = true;
             if (currentChildForm != null)
             {
                 panelButtos.SendToBack();
@@ -108,7 +108,7 @@ namespace WFPresentationLayer
                 btnInfo.Enabled = false;
                 btnInfo.Visible = false;
                 panelButtos.BringToFront();
-                OpenChildForm(new TelaInformacoesAdicionaisSaida(saidaService,saidaService.GetById(index).Item));
+                OpenChildForm(new TelaInformacoesAdicionaisSaida(saidaService,saidaService.GetSaidaViewById(index).Item));
             }
         }
     }
