@@ -1,4 +1,6 @@
-﻿using BusinessLogicalLayer.Interfaces;
+﻿using BusinessLogicalLayer.BLL;
+using BusinessLogicalLayer.Interfaces;
+using DataAccessLayer.Implements;
 using Entities;
 using Shared;
 using System;
@@ -90,7 +92,12 @@ namespace WFPresentationLayer
             }
             for (int i = 0; i < data.Itens.Count; i++)
             {
-                
+                dtEntradas.Rows.Add();
+                dtEntradas.Rows[i].Cells["IdEntrada"].Value = data.Itens[i].ID;
+                dtEntradas.Rows[i].Cells["FornecedorEntrada"].Value = data.Itens[i].Fornecedor;
+                dtEntradas.Rows[i].Cells["FuncionarioEntrada"].Value = data.Itens[i].Funcionario;
+                dtEntradas.Rows[i].Cells["DataEntrada"].Value = data.Itens[i].DataEntrada;
+                dtEntradas.Rows[i].Cells["ValorEntrada"].Value = data.Itens[i].Valor;
             }
         }
 
@@ -136,6 +143,50 @@ namespace WFPresentationLayer
                     dtHistoricoSaida.Rows[i].Cells["dtFormaPag"].Value = dataResponse.Itens[i].FormaPagamento;
                     dtHistoricoSaida.Rows[i].Cells["dtValorTotal"].Value = dataResponse.Itens[i].ValorTotal;
                 }
+            }
+        }
+
+        private async void btnTabelaEntrada_Click(object sender, EventArgs e)
+        {
+            btnInfoEntrada.Enabled = true;
+            btnInfoEntrada.Visible = true;
+            if (currentChildForm != null)
+            {
+                panelDesktopEntrada.SendToBack();
+                currentChildForm.Close();
+                dtEntradas.Rows.Clear();
+                DataResponse<EntradaView> dataResponse = await entradaService.GetAll();
+                for (int i = 0; i < dataResponse.Itens.Count; i++)
+                {
+                    dtEntradas.Rows.Add();
+                    dtEntradas.Rows[i].Cells["IdEntrada"].Value = dataResponse.Itens[i].ID;
+                    dtEntradas.Rows[i].Cells["FornecedorEntrada"].Value = dataResponse.Itens[i].Fornecedor;
+                    dtEntradas.Rows[i].Cells["FuncionarioEntrada"].Value = dataResponse.Itens[i].Funcionario;
+                    dtEntradas.Rows[i].Cells["DataEntrada"].Value = dataResponse.Itens[i].DataEntrada;
+                    dtEntradas.Rows[i].Cells["ValorEntrada"].Value = dataResponse.Itens[i].Valor;
+                }
+            }
+        }
+
+        private void btnInfoEntrada_Click(object sender, EventArgs e)
+        {
+            if (dtEntradas.CurrentCell == null)
+            {
+                MessageBox.Show("Não é possivel ver as informações adicionais de uma Entrada não selecionada");
+                return;
+            }
+            string message = "Você realmente  ver as informações adicionais desta Entrada?";
+            string title = "Close Window";
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result = MessageBox.Show(message, title, buttons);
+            if (result == DialogResult.Yes)
+            {
+                int rowindex = dtEntradas.CurrentCell.RowIndex;
+                int index = Convert.ToInt32(dtEntradas.Rows[rowindex].Cells[0].Value);
+                btnInfoEntrada.Enabled = false;
+                btnInfoEntrada.Visible = false;
+                panelDesktopEntrada.BringToFront();
+                //OpenChildForm(new FormInformacoesAdicionaisEntrada(entradaBLL.GetByID(index).Item));
             }
         }
     }

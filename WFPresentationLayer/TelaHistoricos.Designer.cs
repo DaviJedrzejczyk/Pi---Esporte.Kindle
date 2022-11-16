@@ -31,10 +31,6 @@
             this.tbMaster = new System.Windows.Forms.TabControl();
             this.tbVendas = new System.Windows.Forms.TabPage();
             this.panelDesktopSaida = new System.Windows.Forms.Panel();
-            this.panelButtos = new System.Windows.Forms.Panel();
-            this.btnTabelas = new System.Windows.Forms.Button();
-            this.btnInformacoes = new System.Windows.Forms.Button();
-            this.tbEntrada = new System.Windows.Forms.TabPage();
             this.dtHistoricoSaida = new System.Windows.Forms.DataGridView();
             this.dtID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dtCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,11 +38,34 @@
             this.dtData = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dtFormaPag = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dtValorTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panelButtos = new System.Windows.Forms.Panel();
+            this.btnTabelas = new System.Windows.Forms.Button();
+            this.btnInformacoes = new System.Windows.Forms.Button();
+            this.tbEntrada = new System.Windows.Forms.TabPage();
+            this.panelDesktopEntrada = new System.Windows.Forms.Panel();
+            this.dtEntradas = new System.Windows.Forms.DataGridView();
+            this.IdEntrada = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FornecedorEntrada = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FuncionarioEntrada = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DataEntrada = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ValorEntrada = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panelButtons = new System.Windows.Forms.Panel();
+            this.btnTabelaEntrada = new System.Windows.Forms.Button();
+            this.btnInfoEntrada = new System.Windows.Forms.Button();
+            this.lblDataEntrada = new System.Windows.Forms.Label();
+            this.lblDataSaida = new System.Windows.Forms.Label();
+            this.btnFilter = new System.Windows.Forms.Button();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.tbMaster.SuspendLayout();
             this.tbVendas.SuspendLayout();
             this.panelDesktopSaida.SuspendLayout();
-            this.panelButtos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtHistoricoSaida)).BeginInit();
+            this.panelButtos.SuspendLayout();
+            this.tbEntrada.SuspendLayout();
+            this.panelDesktopEntrada.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtEntradas)).BeginInit();
+            this.panelButtons.SuspendLayout();
             this.SuspendLayout();
             // 
             // tbMaster
@@ -80,49 +99,6 @@
             this.panelDesktopSaida.Name = "panelDesktopSaida";
             this.panelDesktopSaida.Size = new System.Drawing.Size(786, 416);
             this.panelDesktopSaida.TabIndex = 0;
-            // 
-            // panelButtos
-            // 
-            this.panelButtos.Controls.Add(this.btnTabelas);
-            this.panelButtos.Controls.Add(this.btnInformacoes);
-            this.panelButtos.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelButtos.Location = new System.Drawing.Point(598, 0);
-            this.panelButtos.Name = "panelButtos";
-            this.panelButtos.Size = new System.Drawing.Size(188, 416);
-            this.panelButtos.TabIndex = 3;
-            // 
-            // btnTabelas
-            // 
-            this.btnTabelas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTabelas.Location = new System.Drawing.Point(24, 25);
-            this.btnTabelas.Name = "btnTabelas";
-            this.btnTabelas.Size = new System.Drawing.Size(139, 90);
-            this.btnTabelas.TabIndex = 1;
-            this.btnTabelas.Text = "Tabelas Saídas";
-            this.btnTabelas.UseVisualStyleBackColor = true;
-            this.btnTabelas.Click += new System.EventHandler(this.btnTabelas_Click);
-            // 
-            // btnInformacoes
-            // 
-            this.btnInformacoes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInformacoes.Location = new System.Drawing.Point(24, 144);
-            this.btnInformacoes.Name = "btnInformacoes";
-            this.btnInformacoes.Size = new System.Drawing.Size(139, 97);
-            this.btnInformacoes.TabIndex = 0;
-            this.btnInformacoes.Text = "Informações da Saída";
-            this.btnInformacoes.UseVisualStyleBackColor = true;
-            this.btnInformacoes.Click += new System.EventHandler(this.btnInformacoes_Click);
-            // 
-            // tbEntrada
-            // 
-            this.tbEntrada.Location = new System.Drawing.Point(4, 24);
-            this.tbEntrada.Name = "tbEntrada";
-            this.tbEntrada.Padding = new System.Windows.Forms.Padding(3);
-            this.tbEntrada.Size = new System.Drawing.Size(792, 422);
-            this.tbEntrada.TabIndex = 1;
-            this.tbEntrada.Text = "Entradas";
-            this.tbEntrada.UseVisualStyleBackColor = true;
-            this.tbEntrada.Click += new System.EventHandler(this.tbEntrada_Click);
             // 
             // dtHistoricoSaida
             // 
@@ -182,6 +158,190 @@
             this.dtValorTotal.Name = "dtValorTotal";
             this.dtValorTotal.ReadOnly = true;
             // 
+            // panelButtos
+            // 
+            this.panelButtos.Controls.Add(this.btnTabelas);
+            this.panelButtos.Controls.Add(this.btnInformacoes);
+            this.panelButtos.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panelButtos.Location = new System.Drawing.Point(598, 0);
+            this.panelButtos.Name = "panelButtos";
+            this.panelButtos.Size = new System.Drawing.Size(188, 416);
+            this.panelButtos.TabIndex = 3;
+            // 
+            // btnTabelas
+            // 
+            this.btnTabelas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTabelas.Location = new System.Drawing.Point(24, 25);
+            this.btnTabelas.Name = "btnTabelas";
+            this.btnTabelas.Size = new System.Drawing.Size(139, 90);
+            this.btnTabelas.TabIndex = 1;
+            this.btnTabelas.Text = "Tabelas Saídas";
+            this.btnTabelas.UseVisualStyleBackColor = true;
+            this.btnTabelas.Click += new System.EventHandler(this.btnTabelas_Click);
+            // 
+            // btnInformacoes
+            // 
+            this.btnInformacoes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInformacoes.Location = new System.Drawing.Point(24, 144);
+            this.btnInformacoes.Name = "btnInformacoes";
+            this.btnInformacoes.Size = new System.Drawing.Size(139, 97);
+            this.btnInformacoes.TabIndex = 0;
+            this.btnInformacoes.Text = "Informações da Saída";
+            this.btnInformacoes.UseVisualStyleBackColor = true;
+            this.btnInformacoes.Click += new System.EventHandler(this.btnInformacoes_Click);
+            // 
+            // tbEntrada
+            // 
+            this.tbEntrada.Controls.Add(this.panelDesktopEntrada);
+            this.tbEntrada.Controls.Add(this.panelButtons);
+            this.tbEntrada.Location = new System.Drawing.Point(4, 24);
+            this.tbEntrada.Name = "tbEntrada";
+            this.tbEntrada.Padding = new System.Windows.Forms.Padding(3);
+            this.tbEntrada.Size = new System.Drawing.Size(792, 422);
+            this.tbEntrada.TabIndex = 1;
+            this.tbEntrada.Text = "Entradas";
+            this.tbEntrada.UseVisualStyleBackColor = true;
+            this.tbEntrada.Click += new System.EventHandler(this.tbEntrada_Click);
+            // 
+            // panelDesktopEntrada
+            // 
+            this.panelDesktopEntrada.Controls.Add(this.dtEntradas);
+            this.panelDesktopEntrada.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelDesktopEntrada.Location = new System.Drawing.Point(3, 3);
+            this.panelDesktopEntrada.Name = "panelDesktopEntrada";
+            this.panelDesktopEntrada.Size = new System.Drawing.Size(653, 416);
+            this.panelDesktopEntrada.TabIndex = 1;
+            // 
+            // dtEntradas
+            // 
+            this.dtEntradas.AllowUserToAddRows = false;
+            this.dtEntradas.AllowUserToDeleteRows = false;
+            this.dtEntradas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtEntradas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtEntradas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IdEntrada,
+            this.FornecedorEntrada,
+            this.FuncionarioEntrada,
+            this.DataEntrada,
+            this.ValorEntrada});
+            this.dtEntradas.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtEntradas.Location = new System.Drawing.Point(0, 0);
+            this.dtEntradas.Name = "dtEntradas";
+            this.dtEntradas.ReadOnly = true;
+            this.dtEntradas.RowTemplate.Height = 25;
+            this.dtEntradas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtEntradas.Size = new System.Drawing.Size(653, 416);
+            this.dtEntradas.TabIndex = 0;
+            // 
+            // IdEntrada
+            // 
+            this.IdEntrada.HeaderText = "ID";
+            this.IdEntrada.Name = "IdEntrada";
+            this.IdEntrada.ReadOnly = true;
+            // 
+            // FornecedorEntrada
+            // 
+            this.FornecedorEntrada.HeaderText = "Fornecedor";
+            this.FornecedorEntrada.Name = "FornecedorEntrada";
+            this.FornecedorEntrada.ReadOnly = true;
+            // 
+            // FuncionarioEntrada
+            // 
+            this.FuncionarioEntrada.HeaderText = "Funcionários";
+            this.FuncionarioEntrada.Name = "FuncionarioEntrada";
+            this.FuncionarioEntrada.ReadOnly = true;
+            // 
+            // DataEntrada
+            // 
+            this.DataEntrada.HeaderText = "Data";
+            this.DataEntrada.Name = "DataEntrada";
+            this.DataEntrada.ReadOnly = true;
+            // 
+            // ValorEntrada
+            // 
+            this.ValorEntrada.HeaderText = "Valor";
+            this.ValorEntrada.Name = "ValorEntrada";
+            this.ValorEntrada.ReadOnly = true;
+            // 
+            // panelButtons
+            // 
+            this.panelButtons.Controls.Add(this.btnTabelaEntrada);
+            this.panelButtons.Controls.Add(this.btnInfoEntrada);
+            this.panelButtons.Controls.Add(this.lblDataEntrada);
+            this.panelButtons.Controls.Add(this.lblDataSaida);
+            this.panelButtons.Controls.Add(this.btnFilter);
+            this.panelButtons.Controls.Add(this.dateTimePicker2);
+            this.panelButtons.Controls.Add(this.dateTimePicker1);
+            this.panelButtons.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panelButtons.Location = new System.Drawing.Point(656, 3);
+            this.panelButtons.Name = "panelButtons";
+            this.panelButtons.Size = new System.Drawing.Size(133, 416);
+            this.panelButtons.TabIndex = 0;
+            // 
+            // btnTabelaEntrada
+            // 
+            this.btnTabelaEntrada.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTabelaEntrada.Location = new System.Drawing.Point(2, 38);
+            this.btnTabelaEntrada.Name = "btnTabelaEntrada";
+            this.btnTabelaEntrada.Size = new System.Drawing.Size(128, 46);
+            this.btnTabelaEntrada.TabIndex = 6;
+            this.btnTabelaEntrada.Text = "Tabela Entrada";
+            this.btnTabelaEntrada.UseVisualStyleBackColor = true;
+            this.btnTabelaEntrada.Click += new System.EventHandler(this.btnTabelaEntrada_Click);
+            // 
+            // btnInfoEntrada
+            // 
+            this.btnInfoEntrada.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInfoEntrada.Location = new System.Drawing.Point(3, 90);
+            this.btnInfoEntrada.Name = "btnInfoEntrada";
+            this.btnInfoEntrada.Size = new System.Drawing.Size(128, 46);
+            this.btnInfoEntrada.TabIndex = 5;
+            this.btnInfoEntrada.Text = "Informações da Entrada";
+            this.btnInfoEntrada.UseVisualStyleBackColor = true;
+            this.btnInfoEntrada.Click += new System.EventHandler(this.btnInfoEntrada_Click);
+            // 
+            // lblDataEntrada
+            // 
+            this.lblDataEntrada.AutoSize = true;
+            this.lblDataEntrada.Location = new System.Drawing.Point(3, 139);
+            this.lblDataEntrada.Name = "lblDataEntrada";
+            this.lblDataEntrada.Size = new System.Drawing.Size(77, 15);
+            this.lblDataEntrada.TabIndex = 4;
+            this.lblDataEntrada.Text = "Data Entrada:";
+            // 
+            // lblDataSaida
+            // 
+            this.lblDataSaida.AutoSize = true;
+            this.lblDataSaida.Location = new System.Drawing.Point(3, 211);
+            this.lblDataSaida.Name = "lblDataSaida";
+            this.lblDataSaida.Size = new System.Drawing.Size(65, 15);
+            this.lblDataSaida.TabIndex = 3;
+            this.lblDataSaida.Text = "Data Saída:";
+            // 
+            // btnFilter
+            // 
+            this.btnFilter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFilter.Location = new System.Drawing.Point(2, 280);
+            this.btnFilter.Name = "btnFilter";
+            this.btnFilter.Size = new System.Drawing.Size(128, 34);
+            this.btnFilter.TabIndex = 2;
+            this.btnFilter.Text = "Filtrar Entradas";
+            this.btnFilter.UseVisualStyleBackColor = true;
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Location = new System.Drawing.Point(0, 229);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(128, 23);
+            this.dateTimePicker2.TabIndex = 1;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(0, 157);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(128, 23);
+            this.dateTimePicker1.TabIndex = 0;
+            // 
             // TelaHistoricos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -194,8 +354,13 @@
             this.tbMaster.ResumeLayout(false);
             this.tbVendas.ResumeLayout(false);
             this.panelDesktopSaida.ResumeLayout(false);
-            this.panelButtos.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtHistoricoSaida)).EndInit();
+            this.panelButtos.ResumeLayout(false);
+            this.tbEntrada.ResumeLayout(false);
+            this.panelDesktopEntrada.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dtEntradas)).EndInit();
+            this.panelButtons.ResumeLayout(false);
+            this.panelButtons.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -216,5 +381,20 @@
         private DataGridViewTextBoxColumn dtData;
         private DataGridViewTextBoxColumn dtFormaPag;
         private DataGridViewTextBoxColumn dtValorTotal;
+        private Panel panelDesktopEntrada;
+        private DataGridView dtEntradas;
+        private DataGridViewTextBoxColumn IdEntrada;
+        private DataGridViewTextBoxColumn FornecedorEntrada;
+        private DataGridViewTextBoxColumn FuncionarioEntrada;
+        private DataGridViewTextBoxColumn DataEntrada;
+        private DataGridViewTextBoxColumn ValorEntrada;
+        private Panel panelButtons;
+        private Button btnTabelaEntrada;
+        private Button btnInfoEntrada;
+        private Label lblDataEntrada;
+        private Label lblDataSaida;
+        private Button btnFilter;
+        private DateTimePicker dateTimePicker2;
+        private DateTimePicker dateTimePicker1;
     }
 }
