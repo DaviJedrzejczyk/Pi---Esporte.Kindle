@@ -18,17 +18,6 @@ namespace BusinessLogicalLayer.Validators.Funcionarios
             ValidateRG();
             ValidateDataNascimento();
             ValidateTelefone();
-            ValidateIdEndereco();
-            ValidateRua();
-            ValidateBairro();
-            ValidateCidade();
-            ValidateCep();
-            ValidatePontoReferencia();
-            ValidateComplemento();
-            ValidateNumero();
-            ValidateNomeCompleto();
-            ValidateNomeAbreviado();
-            ValidateIdEstado();
         }
     }
 }

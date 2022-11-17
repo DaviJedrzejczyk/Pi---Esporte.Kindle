@@ -32,7 +32,6 @@
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.lblCnpj = new System.Windows.Forms.Label();
-            this.txtCNPJ = new System.Windows.Forms.TextBox();
             this.dtFornecedor = new System.Windows.Forms.DataGridView();
             this.ForneID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ForneRazao = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,11 +51,14 @@
             this.ckIsAtivo = new System.Windows.Forms.CheckBox();
             this.txtRazao = new System.Windows.Forms.TextBox();
             this.lblRazaoSocial = new System.Windows.Forms.Label();
+            this.mskCNPJ = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtFornecedor)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCadastrar
             // 
+            this.btnCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCadastrar.ForeColor = System.Drawing.Color.White;
             this.btnCadastrar.Location = new System.Drawing.Point(28, 369);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(95, 52);
@@ -67,6 +69,8 @@
             // 
             // btnUpdate
             // 
+            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdate.ForeColor = System.Drawing.Color.White;
             this.btnUpdate.Location = new System.Drawing.Point(129, 369);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(95, 52);
@@ -77,6 +81,8 @@
             // 
             // btnDelete
             // 
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete.ForeColor = System.Drawing.Color.White;
             this.btnDelete.Location = new System.Drawing.Point(230, 369);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(95, 52);
@@ -94,13 +100,6 @@
             this.lblCnpj.Size = new System.Drawing.Size(37, 15);
             this.lblCnpj.TabIndex = 3;
             this.lblCnpj.Text = "CNPJ:";
-            // 
-            // txtCNPJ
-            // 
-            this.txtCNPJ.Location = new System.Drawing.Point(97, 93);
-            this.txtCNPJ.Name = "txtCNPJ";
-            this.txtCNPJ.Size = new System.Drawing.Size(100, 23);
-            this.txtCNPJ.TabIndex = 4;
             // 
             // dtFornecedor
             // 
@@ -267,12 +266,21 @@
             this.lblRazaoSocial.TabIndex = 17;
             this.lblRazaoSocial.Text = "Razão Social:";
             // 
+            // mskCNPJ
+            // 
+            this.mskCNPJ.Location = new System.Drawing.Point(97, 93);
+            this.mskCNPJ.Mask = "00, 000, 000/0001-00";
+            this.mskCNPJ.Name = "mskCNPJ";
+            this.mskCNPJ.Size = new System.Drawing.Size(100, 23);
+            this.mskCNPJ.TabIndex = 19;
+            // 
             // TelaFornecedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
             this.ClientSize = new System.Drawing.Size(932, 497);
+            this.Controls.Add(this.mskCNPJ);
             this.Controls.Add(this.txtRazao);
             this.Controls.Add(this.lblRazaoSocial);
             this.Controls.Add(this.ckIsAtivo);
@@ -285,7 +293,6 @@
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.lblNome);
             this.Controls.Add(this.dtFornecedor);
-            this.Controls.Add(this.txtCNPJ);
             this.Controls.Add(this.lblCnpj);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnUpdate);
@@ -305,7 +312,6 @@
         private Button btnUpdate;
         private Button btnDelete;
         private Label lblCnpj;
-        private TextBox txtCNPJ;
         private DataGridView dtFornecedor;
         private TextBox txtNome;
         private Label lblNome;
@@ -325,5 +331,6 @@
         private DataGridViewTextBoxColumn ForneEmail;
         private DataGridViewTextBoxColumn ForneTelefone;
         private DataGridViewTextBoxColumn ForneIsAtivo;
+        private MaskedTextBox mskCNPJ;
     }
 }

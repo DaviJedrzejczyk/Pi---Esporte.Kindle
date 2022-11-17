@@ -92,5 +92,6 @@ namespace WFPresentationLayer
         {
             OpenChildForm(new TelaHistoricos(saidaService, entrada));
         }
+
     }
 }

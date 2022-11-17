@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.cbGenero = new System.Windows.Forms.ComboBox();
-            this.txtTelefone = new System.Windows.Forms.TextBox();
             this.lblTelefone = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.lblEmail = new System.Windows.Forms.Label();
@@ -61,6 +60,7 @@
             this.lblIdade = new System.Windows.Forms.Label();
             this.mskdCPF = new System.Windows.Forms.MaskedTextBox();
             this.mskDataNasc = new System.Windows.Forms.MaskedTextBox();
+            this.mskTelefone = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtCliente)).BeginInit();
             this.SuspendLayout();
             // 
@@ -72,13 +72,6 @@
             this.cbGenero.Name = "cbGenero";
             this.cbGenero.Size = new System.Drawing.Size(166, 23);
             this.cbGenero.TabIndex = 35;
-            // 
-            // txtTelefone
-            // 
-            this.txtTelefone.Location = new System.Drawing.Point(115, 256);
-            this.txtTelefone.Name = "txtTelefone";
-            this.txtTelefone.Size = new System.Drawing.Size(100, 23);
-            this.txtTelefone.TabIndex = 34;
             // 
             // lblTelefone
             // 
@@ -352,12 +345,21 @@
             this.mskDataNasc.Size = new System.Drawing.Size(54, 23);
             this.mskDataNasc.TabIndex = 42;
             // 
+            // mskTelefone
+            // 
+            this.mskTelefone.Location = new System.Drawing.Point(115, 256);
+            this.mskTelefone.Mask = "(00) 0 00000-0000";
+            this.mskTelefone.Name = "mskTelefone";
+            this.mskTelefone.Size = new System.Drawing.Size(100, 23);
+            this.mskTelefone.TabIndex = 43;
+            // 
             // TelaCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
             this.ClientSize = new System.Drawing.Size(1045, 486);
+            this.Controls.Add(this.mskTelefone);
             this.Controls.Add(this.mskDataNasc);
             this.Controls.Add(this.mskdCPF);
             this.Controls.Add(this.txtIdade);
@@ -366,7 +368,6 @@
             this.Controls.Add(this.lblID);
             this.Controls.Add(this.dtCliente);
             this.Controls.Add(this.cbGenero);
-            this.Controls.Add(this.txtTelefone);
             this.Controls.Add(this.lblTelefone);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.lblEmail);
@@ -394,7 +395,6 @@
         #endregion
 
         private ComboBox cbGenero;
-        private TextBox txtTelefone;
         private Label lblTelefone;
         private TextBox txtEmail;
         private Label lblEmail;
@@ -426,5 +426,6 @@
         private Label lblIdade;
         private MaskedTextBox mskdCPF;
         private MaskedTextBox mskDataNasc;
+        private MaskedTextBox mskTelefone;
     }
 }

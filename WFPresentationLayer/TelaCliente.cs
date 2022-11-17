@@ -50,7 +50,7 @@ namespace WFPresentationLayer
                 Nome = txtNome.Text,
                 Sobrenome = txtSobrenome.Text,
                 CPF = mskdCPF.Text,
-                Telefone = txtTelefone.Text,
+                Telefone = mskTelefone.Text,
                 Email = txtEmail.Text,
                 RG = txtRG.Text,
                 Genero = genero,
@@ -87,7 +87,7 @@ namespace WFPresentationLayer
             this.txtRG.Text = cliente.RG;
             this.txtEmail.Text = cliente.Email;
             this.txtIdade.Text = cliente.Idade.ToString();
-            this.txtTelefone.Text = cliente.Telefone;
+            this.mskTelefone.Text = cliente.Telefone;
             this.mskDataNasc.Text = cliente.DataNascimento.ToString();
             this.cbGenero.Text = cliente.Genero.ToString();
 
@@ -95,17 +95,19 @@ namespace WFPresentationLayer
         private void dtCliente_DoubleClick(object sender, EventArgs e)
         {
             int rowindex = dtCliente.CurrentCell.RowIndex;
-            Cliente clienteSelecionado = new();
-            clienteSelecionado.ID = Convert.ToInt32(this.dtCliente.Rows[rowindex].Cells[0].Value);
-            clienteSelecionado.Nome = Convert.ToString(this.dtCliente.Rows[rowindex].Cells[1].Value);
-            clienteSelecionado.Sobrenome = Convert.ToString(this.dtCliente.Rows[rowindex].Cells[2].Value);
-            clienteSelecionado.CPF = Convert.ToString(this.dtCliente.Rows[rowindex].Cells[3].Value);
-            clienteSelecionado.RG = Convert.ToString(this.dtCliente.Rows[rowindex].Cells[4].Value);
-            clienteSelecionado.Email = Convert.ToString(dtCliente.Rows[rowindex].Cells[5].Value);
-            clienteSelecionado.Idade = Convert.ToInt32(dtCliente.Rows[rowindex].Cells[6].Value);
-            clienteSelecionado.DataNascimento = Convert.ToDateTime(dtCliente.Rows[rowindex].Cells[7].Value);
-            clienteSelecionado.Telefone = Convert.ToString(this.dtCliente.Rows[rowindex].Cells[8].Value);
-            clienteSelecionado.Genero = (Genero)this.dtCliente.Rows[rowindex].Cells[9].Value;
+            Cliente clienteSelecionado = new()
+            {
+                ID = Convert.ToInt32(this.dtCliente.Rows[rowindex].Cells[0].Value),
+                Nome = Convert.ToString(this.dtCliente.Rows[rowindex].Cells[1].Value),
+                Sobrenome = Convert.ToString(this.dtCliente.Rows[rowindex].Cells[2].Value),
+                CPF = Convert.ToString(this.dtCliente.Rows[rowindex].Cells[3].Value),
+                RG = Convert.ToString(this.dtCliente.Rows[rowindex].Cells[4].Value),
+                Email = Convert.ToString(dtCliente.Rows[rowindex].Cells[5].Value),
+                Idade = Convert.ToInt32(dtCliente.Rows[rowindex].Cells[6].Value),
+                DataNascimento = Convert.ToDateTime(dtCliente.Rows[rowindex].Cells[7].Value),
+                Telefone = Convert.ToString(this.dtCliente.Rows[rowindex].Cells[8].Value),
+                Genero = (Genero)this.dtCliente.Rows[rowindex].Cells[9].Value
+            };
             DrawFormWithObject(clienteSelecionado);
 
         }
@@ -115,13 +117,13 @@ namespace WFPresentationLayer
             Response response = _cliente.Insert(cliente);
             if (response.HasSuccess)
             {
-                MessageBox.Show("Sucesso");
+                MessageBox.Show(response.Message);
                 SincronizarGrid();
                 LimparCampos();
             }
             else
             {
-                MessageBox.Show("Falha");
+                MessageBox.Show(response.Message);
             }
         }
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -130,13 +132,13 @@ namespace WFPresentationLayer
             Response response = _cliente.Update(cliente);
             if (response.HasSuccess)
             {
-                MessageBox.Show("sucesso");
+                MessageBox.Show(response.Message);
                 SincronizarGrid();
                 LimparCampos();
             }
             else
             {
-                MessageBox.Show("Falha");
+                MessageBox.Show(response.Message);
             }
         }
 
@@ -146,13 +148,13 @@ namespace WFPresentationLayer
             Response response = _cliente.Delete(cliente.ID);
             if (response.HasSuccess)
             {
-                MessageBox.Show("Sucesso");
+                MessageBox.Show(response.Message);
                 SincronizarGrid();
                 LimparCampos();
             }
             else
             {
-                MessageBox.Show("Falha");
+                MessageBox.Show(response.Message);
             }
 
         }
@@ -160,7 +162,7 @@ namespace WFPresentationLayer
         {
             mskdCPF.Clear();
             mskDataNasc.Clear();
-            txtTelefone.Clear();
+            mskTelefone.Clear();
             txtIdade.Clear();
             txtNome.Clear();
             txtRG.Clear();

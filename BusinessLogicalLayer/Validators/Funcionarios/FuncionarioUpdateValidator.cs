@@ -13,15 +13,7 @@ namespace BusinessLogicalLayer.Validators.Funcionarios
             ValidateNome();
             ValidateEmail();
             ValidateTelefone();
-            ValidateRua();
-            ValidateBairro();
-            ValidateCidade();
-            ValidateCep();
-            ValidatePontoReferencia();
-            ValidateComplemento();
-            ValidateNumero();
-            ValidateNomeCompleto();
-            ValidateNomeAbreviado();
+
         }
     }
 }

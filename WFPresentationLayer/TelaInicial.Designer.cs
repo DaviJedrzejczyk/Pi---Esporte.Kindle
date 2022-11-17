@@ -260,9 +260,12 @@
             this.Controls.Add(this.panelDesktop);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.Name = "TelaInicial";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TelaInicial";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);

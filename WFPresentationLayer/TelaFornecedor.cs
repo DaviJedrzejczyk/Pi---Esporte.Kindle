@@ -35,7 +35,7 @@ namespace WFPresentationLayer
             this.txtID.Text = fornecedor.ID.ToString();
             this.txtRazao.Text = fornecedor.Razao_Social;
             this.txtNome.Text = fornecedor.Nome_Contato;
-            this.txtCNPJ.Text = fornecedor.Cnpj;
+            this.mskCNPJ.Text = fornecedor.Cnpj;
             this.txtEmail.Text = fornecedor.Email;
             this.txtTelefone.Text = fornecedor.Telefone;
             this.ckIsAtivo.Checked = fornecedor.IsAtivo;
@@ -47,7 +47,7 @@ namespace WFPresentationLayer
             Fornecedor f = new()
             {
                 ID = temp,
-                Cnpj = txtCNPJ.Text,
+                Cnpj = mskCNPJ.Text,
                 Razao_Social = txtRazao.Text,
                 Nome_Contato = txtNome.Text,
                 Telefone = txtTelefone.Text,
@@ -140,7 +140,7 @@ namespace WFPresentationLayer
         }
         private void LimparCampos()
         {
-            txtCNPJ.Clear();
+            mskCNPJ.Clear();
             txtTelefone.Clear();
             txtNome.Clear();
             txtID.Clear();
