@@ -37,7 +37,7 @@ namespace WFPresentationLayer
             this.txtNome.Text = fornecedor.Nome_Contato;
             this.mskCNPJ.Text = fornecedor.Cnpj;
             this.txtEmail.Text = fornecedor.Email;
-            this.txtTelefone.Text = fornecedor.Telefone;
+            this.mskTelefone.Text = fornecedor.Telefone;
             this.ckIsAtivo.Checked = fornecedor.IsAtivo;
 
         }
@@ -50,7 +50,7 @@ namespace WFPresentationLayer
                 Cnpj = mskCNPJ.Text,
                 Razao_Social = txtRazao.Text,
                 Nome_Contato = txtNome.Text,
-                Telefone = txtTelefone.Text,
+                Telefone = mskTelefone.Text,
                 Email = txtEmail.Text,
                 IsAtivo = ckIsAtivo.Checked
             };
@@ -141,7 +141,7 @@ namespace WFPresentationLayer
         private void LimparCampos()
         {
             mskCNPJ.Clear();
-            txtTelefone.Clear();
+            mskTelefone.Clear();
             txtNome.Clear();
             txtID.Clear();
             txtEmail.Clear();

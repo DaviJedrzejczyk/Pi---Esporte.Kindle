@@ -60,7 +60,6 @@
             this.lblRG = new System.Windows.Forms.Label();
             this.txtRG = new System.Windows.Forms.TextBox();
             this.lblCPF = new System.Windows.Forms.Label();
-            this.txtCPF = new System.Windows.Forms.TextBox();
             this.lblData = new System.Windows.Forms.Label();
             this.txtData = new System.Windows.Forms.TextBox();
             this.lblGenero = new System.Windows.Forms.Label();
@@ -69,7 +68,6 @@
             this.lblRua = new System.Windows.Forms.Label();
             this.txtRua = new System.Windows.Forms.TextBox();
             this.lblTelefone = new System.Windows.Forms.Label();
-            this.txtTelefone = new System.Windows.Forms.TextBox();
             this.txtIdade = new System.Windows.Forms.TextBox();
             this.lblIdade = new System.Windows.Forms.Label();
             this.lblBairro = new System.Windows.Forms.Label();
@@ -79,7 +77,6 @@
             this.lblEstado = new System.Windows.Forms.Label();
             this.cbEstado = new System.Windows.Forms.ComboBox();
             this.lblCep = new System.Windows.Forms.Label();
-            this.txtCEP = new System.Windows.Forms.TextBox();
             this.lblPonto = new System.Windows.Forms.Label();
             this.txtPonto = new System.Windows.Forms.TextBox();
             this.lblComplemento = new System.Windows.Forms.Label();
@@ -88,6 +85,9 @@
             this.txtEnderecoID = new System.Windows.Forms.TextBox();
             this.lblNumero = new System.Windows.Forms.Label();
             this.txtNumero = new System.Windows.Forms.TextBox();
+            this.mskdCPF = new System.Windows.Forms.MaskedTextBox();
+            this.mskCEP = new System.Windows.Forms.MaskedTextBox();
+            this.mskTelefone = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtFuncionario)).BeginInit();
             this.SuspendLayout();
             // 
@@ -373,13 +373,6 @@
             this.lblCPF.TabIndex = 21;
             this.lblCPF.Text = "CPF:";
             // 
-            // txtCPF
-            // 
-            this.txtCPF.Location = new System.Drawing.Point(89, 283);
-            this.txtCPF.Name = "txtCPF";
-            this.txtCPF.Size = new System.Drawing.Size(100, 23);
-            this.txtCPF.TabIndex = 20;
-            // 
             // lblData
             // 
             this.lblData.AutoSize = true;
@@ -452,13 +445,6 @@
             this.lblTelefone.Size = new System.Drawing.Size(55, 15);
             this.lblTelefone.TabIndex = 30;
             this.lblTelefone.Text = "Telefone:";
-            // 
-            // txtTelefone
-            // 
-            this.txtTelefone.Location = new System.Drawing.Point(225, 140);
-            this.txtTelefone.Name = "txtTelefone";
-            this.txtTelefone.Size = new System.Drawing.Size(100, 23);
-            this.txtTelefone.TabIndex = 29;
             // 
             // txtIdade
             // 
@@ -541,13 +527,6 @@
             this.lblCep.TabIndex = 41;
             this.lblCep.Text = "CEP:";
             // 
-            // txtCEP
-            // 
-            this.txtCEP.Location = new System.Drawing.Point(415, 163);
-            this.txtCEP.Name = "txtCEP";
-            this.txtCEP.Size = new System.Drawing.Size(100, 23);
-            this.txtCEP.TabIndex = 40;
-            // 
             // lblPonto
             // 
             this.lblPonto.AutoSize = true;
@@ -617,12 +596,39 @@
             this.txtNumero.Size = new System.Drawing.Size(116, 23);
             this.txtNumero.TabIndex = 49;
             // 
+            // mskdCPF
+            // 
+            this.mskdCPF.Location = new System.Drawing.Point(89, 282);
+            this.mskdCPF.Mask = "000,000,000-00";
+            this.mskdCPF.Name = "mskdCPF";
+            this.mskdCPF.Size = new System.Drawing.Size(100, 23);
+            this.mskdCPF.TabIndex = 51;
+            // 
+            // mskCEP
+            // 
+            this.mskCEP.Location = new System.Drawing.Point(413, 163);
+            this.mskCEP.Mask = "00000-000";
+            this.mskCEP.Name = "mskCEP";
+            this.mskCEP.Size = new System.Drawing.Size(100, 23);
+            this.mskCEP.TabIndex = 52;
+            // 
+            // mskTelefone
+            // 
+            this.mskTelefone.Location = new System.Drawing.Point(225, 140);
+            this.mskTelefone.Mask = "(00) 0 00000-0000";
+            this.mskTelefone.Name = "mskTelefone";
+            this.mskTelefone.Size = new System.Drawing.Size(100, 23);
+            this.mskTelefone.TabIndex = 53;
+            // 
             // TelaFuncionario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
             this.ClientSize = new System.Drawing.Size(900, 519);
+            this.Controls.Add(this.mskTelefone);
+            this.Controls.Add(this.mskCEP);
+            this.Controls.Add(this.mskdCPF);
             this.Controls.Add(this.lblNumero);
             this.Controls.Add(this.txtNumero);
             this.Controls.Add(this.txtEnderecoID);
@@ -632,7 +638,6 @@
             this.Controls.Add(this.lblPonto);
             this.Controls.Add(this.txtPonto);
             this.Controls.Add(this.lblCep);
-            this.Controls.Add(this.txtCEP);
             this.Controls.Add(this.cbEstado);
             this.Controls.Add(this.lblEstado);
             this.Controls.Add(this.lblCidade);
@@ -642,7 +647,6 @@
             this.Controls.Add(this.txtIdade);
             this.Controls.Add(this.lblIdade);
             this.Controls.Add(this.lblTelefone);
-            this.Controls.Add(this.txtTelefone);
             this.Controls.Add(this.lblRua);
             this.Controls.Add(this.txtRua);
             this.Controls.Add(this.lblNivelAcesso);
@@ -651,7 +655,6 @@
             this.Controls.Add(this.lblData);
             this.Controls.Add(this.txtData);
             this.Controls.Add(this.lblCPF);
-            this.Controls.Add(this.txtCPF);
             this.Controls.Add(this.lblRG);
             this.Controls.Add(this.txtRG);
             this.Controls.Add(this.lblConfSenha);
@@ -701,7 +704,6 @@
         private Label lblRG;
         private TextBox txtRG;
         private Label lblCPF;
-        private TextBox txtCPF;
         private Label lblData;
         private TextBox txtData;
         private Label lblGenero;
@@ -710,7 +712,6 @@
         private Label lblRua;
         private TextBox txtRua;
         private Label lblTelefone;
-        private TextBox txtTelefone;
         private TextBox txtIdade;
         private Label lblIdade;
         private DataGridViewTextBoxColumn FuncionarioID;
@@ -732,7 +733,6 @@
         private Label lblEstado;
         private ComboBox cbEstado;
         private Label lblCep;
-        private TextBox txtCEP;
         private Label lblPonto;
         private TextBox txtPonto;
         private Label lblComplemento;
@@ -741,5 +741,8 @@
         private TextBox txtEnderecoID;
         private Label lblNumero;
         private TextBox txtNumero;
+        private MaskedTextBox mskdCPF;
+        private MaskedTextBox mskCEP;
+        private MaskedTextBox mskTelefone;
     }
 }

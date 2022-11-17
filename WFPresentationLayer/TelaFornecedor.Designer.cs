@@ -42,7 +42,6 @@
             this.ForneIsAtivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.lblNome = new System.Windows.Forms.Label();
-            this.txtTelefone = new System.Windows.Forms.TextBox();
             this.lblTelefone = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.lblEmail = new System.Windows.Forms.Label();
@@ -52,6 +51,7 @@
             this.txtRazao = new System.Windows.Forms.TextBox();
             this.lblRazaoSocial = new System.Windows.Forms.Label();
             this.mskCNPJ = new System.Windows.Forms.MaskedTextBox();
+            this.mskTelefone = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtFornecedor)).BeginInit();
             this.SuspendLayout();
             // 
@@ -184,13 +184,6 @@
             this.lblNome.TabIndex = 6;
             this.lblNome.Text = "Nome:";
             // 
-            // txtTelefone
-            // 
-            this.txtTelefone.Location = new System.Drawing.Point(97, 151);
-            this.txtTelefone.Name = "txtTelefone";
-            this.txtTelefone.Size = new System.Drawing.Size(100, 23);
-            this.txtTelefone.TabIndex = 9;
-            // 
             // lblTelefone
             // 
             this.lblTelefone.AutoSize = true;
@@ -274,12 +267,21 @@
             this.mskCNPJ.Size = new System.Drawing.Size(100, 23);
             this.mskCNPJ.TabIndex = 19;
             // 
+            // mskTelefone
+            // 
+            this.mskTelefone.Location = new System.Drawing.Point(97, 151);
+            this.mskTelefone.Mask = "(00) 0 00000-0000";
+            this.mskTelefone.Name = "mskTelefone";
+            this.mskTelefone.Size = new System.Drawing.Size(100, 23);
+            this.mskTelefone.TabIndex = 44;
+            // 
             // TelaFornecedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
             this.ClientSize = new System.Drawing.Size(932, 497);
+            this.Controls.Add(this.mskTelefone);
             this.Controls.Add(this.mskCNPJ);
             this.Controls.Add(this.txtRazao);
             this.Controls.Add(this.lblRazaoSocial);
@@ -288,7 +290,6 @@
             this.Controls.Add(this.lblID);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.lblEmail);
-            this.Controls.Add(this.txtTelefone);
             this.Controls.Add(this.lblTelefone);
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.lblNome);
@@ -315,7 +316,6 @@
         private DataGridView dtFornecedor;
         private TextBox txtNome;
         private Label lblNome;
-        private TextBox txtTelefone;
         private Label lblTelefone;
         private TextBox txtEmail;
         private Label lblEmail;
@@ -332,5 +332,6 @@
         private DataGridViewTextBoxColumn ForneTelefone;
         private DataGridViewTextBoxColumn ForneIsAtivo;
         private MaskedTextBox mskCNPJ;
+        private MaskedTextBox mskTelefone;
     }
 }

@@ -47,21 +47,21 @@ namespace WFPresentationLayer
                 ID = temp,
                 Nome = txtNome.Text,
                 Sobrenome = txtSobrenome.Text,
-                CPF = txtCPF.Text,
+                CPF = mskdCPF.Text,
                 Email = txtEmail.Text,
                 RG = txtRG.Text,
                 Genero = genero,
                 DataNascimento = dt,
                 Senha = txtSenha.Text,
                 Nivel_Acesso = tipo,
-                Telefone = txtTelefone.Text,
+                Telefone = mskTelefone.Text,
 
             };
             Endereco endereco = new()
             {
                 ID = idEnde,
                 Rua = txtRua.Text,
-                CEP = txtCEP.Text,
+                CEP = mskCEP.Text,
                 Bairro = txtBairro.Text,
                 Numero = txtNumero.Text,
                 Cidade = txtCidade.Text,
@@ -100,11 +100,11 @@ namespace WFPresentationLayer
             this.txtID.Text = funcionario.ID.ToString();
             this.txtNome.Text = funcionario.Nome;
             this.txtSobrenome.Text = funcionario.Sobrenome;
-            this.txtCPF.Text = funcionario.CPF;
+            this.mskdCPF.Text = funcionario.CPF;
             this.txtRG.Text = funcionario.RG;
             this.txtEmail.Text = funcionario.Email;
             this.txtIdade.Text = funcionario.Idade.ToString();
-            this.txtTelefone.Text = funcionario.Telefone;
+            this.mskTelefone.Text = funcionario.Telefone;
             this.txtData.Text = funcionario.DataNascimento.ToString();
             this.cbGenero.Text = funcionario.Genero.ToString();
             this.cbNivelAcesso.Text = funcionario.Nivel_Acesso.ToString();
@@ -116,7 +116,7 @@ namespace WFPresentationLayer
             }
             this.txtRua.Text = singleResponse.Item.Rua;
             this.txtBairro.Text = singleResponse.Item.Bairro;
-            this.txtCEP.Text = singleResponse.Item.CEP;
+            this.mskCEP.Text = singleResponse.Item.CEP;
             this.txtCidade.Text = singleResponse.Item.Cidade;
             this.txtComplemento.Text = singleResponse.Item.Complemento;
             this.txtNumero.Text = singleResponse.Item.Numero;
@@ -147,9 +147,9 @@ namespace WFPresentationLayer
 
         private void LimparCampos()
         {
-            txtCPF.Clear();
+            mskdCPF.Clear();
             txtData.Clear();
-            txtTelefone.Clear();
+            mskTelefone.Clear();
             txtIdade.Clear();
             txtNome.Clear();
             txtRG.Clear();
@@ -162,7 +162,7 @@ namespace WFPresentationLayer
             txtRua.Clear();
             txtPonto.Clear();
             txtBairro.Clear();
-            txtCEP.Clear();
+            mskCEP.Clear();
             txtCidade.Clear();
             txtComplemento.Clear();
             txtEnderecoID.Clear();
