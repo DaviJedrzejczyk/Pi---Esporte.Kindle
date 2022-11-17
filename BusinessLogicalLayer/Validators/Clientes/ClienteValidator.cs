@@ -45,14 +45,13 @@ namespace BusinessLogicalLayer.Validators.Clientes
         {
             RuleFor(c => c.Telefone).NotNull().WithMessage(GenericConstants.MENSAGEM_ERRO_TELEFONE_VAZIO)
                                     .MaximumLength(14).WithMessage(GenericConstants.MENSAGEM_ERRO_TELEFONE_MAIOR)
-                                    .MinimumLength(9).WithMessage(GenericConstants.MENSAGEM_ERRO_TELEFONE_MENOR);
+                                    .MinimumLength(8).WithMessage(GenericConstants.MENSAGEM_ERRO_TELEFONE_MENOR);
         }
         public void ValidateRG()
         {
             RuleFor(c => c.RG).NotNull().WithMessage(GenericConstants.MENSAGEM_ERRO_RG_VAZIO)
                               .MaximumLength(9).WithMessage(GenericConstants.MENSAGEM_ERRO_RG_MAIOR)
-                              .MinimumLength(9).WithMessage(GenericConstants.MENSAGEM_ERRO_RG_MENOR)
-                              /*.IsRgValid().WithMessage(GenericConstants.MENSAGEM_ERRO_RG_FORMATO_INVALIDO)*/;
+                              .MinimumLength(7).WithMessage(GenericConstants.MENSAGEM_ERRO_RG_MENOR);
         }
 
     }

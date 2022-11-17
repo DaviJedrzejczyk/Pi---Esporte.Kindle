@@ -33,7 +33,6 @@
             this.lblTelefone = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.lblEmail = new System.Windows.Forms.Label();
-            this.txtDataNasc = new System.Windows.Forms.TextBox();
             this.lblDataNasc = new System.Windows.Forms.Label();
             this.txtRG = new System.Windows.Forms.TextBox();
             this.lblRg = new System.Windows.Forms.Label();
@@ -61,6 +60,7 @@
             this.txtIdade = new System.Windows.Forms.TextBox();
             this.lblIdade = new System.Windows.Forms.Label();
             this.mskdCPF = new System.Windows.Forms.MaskedTextBox();
+            this.mskDataNasc = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtCliente)).BeginInit();
             this.SuspendLayout();
             // 
@@ -106,13 +106,6 @@
             this.lblEmail.Size = new System.Drawing.Size(39, 15);
             this.lblEmail.TabIndex = 31;
             this.lblEmail.Text = "Email:";
-            // 
-            // txtDataNasc
-            // 
-            this.txtDataNasc.Location = new System.Drawing.Point(161, 198);
-            this.txtDataNasc.Name = "txtDataNasc";
-            this.txtDataNasc.Size = new System.Drawing.Size(100, 23);
-            this.txtDataNasc.TabIndex = 30;
             // 
             // lblDataNasc
             // 
@@ -188,6 +181,7 @@
             // 
             // btnUpdate
             // 
+            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdate.Location = new System.Drawing.Point(121, 363);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(108, 35);
@@ -198,6 +192,7 @@
             // 
             // btnRemove
             // 
+            this.btnRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRemove.Location = new System.Drawing.Point(235, 363);
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.Size = new System.Drawing.Size(108, 35);
@@ -208,6 +203,7 @@
             // 
             // btnCadastrar
             // 
+            this.btnCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCadastrar.Location = new System.Drawing.Point(7, 363);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(108, 35);
@@ -324,7 +320,7 @@
             // 
             // txtIdade
             // 
-            this.txtIdade.Location = new System.Drawing.Point(267, 198);
+            this.txtIdade.Location = new System.Drawing.Point(221, 198);
             this.txtIdade.Name = "txtIdade";
             this.txtIdade.ReadOnly = true;
             this.txtIdade.Size = new System.Drawing.Size(49, 23);
@@ -334,7 +330,7 @@
             // 
             this.lblIdade.AutoSize = true;
             this.lblIdade.ForeColor = System.Drawing.Color.White;
-            this.lblIdade.Location = new System.Drawing.Point(267, 180);
+            this.lblIdade.Location = new System.Drawing.Point(221, 180);
             this.lblIdade.Name = "lblIdade";
             this.lblIdade.Size = new System.Drawing.Size(39, 15);
             this.lblIdade.TabIndex = 39;
@@ -348,12 +344,21 @@
             this.mskdCPF.Size = new System.Drawing.Size(100, 23);
             this.mskdCPF.TabIndex = 41;
             // 
+            // mskDataNasc
+            // 
+            this.mskDataNasc.Location = new System.Drawing.Point(161, 196);
+            this.mskDataNasc.Mask = "00/00/0000";
+            this.mskDataNasc.Name = "mskDataNasc";
+            this.mskDataNasc.Size = new System.Drawing.Size(54, 23);
+            this.mskDataNasc.TabIndex = 42;
+            // 
             // TelaCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
             this.ClientSize = new System.Drawing.Size(1045, 486);
+            this.Controls.Add(this.mskDataNasc);
             this.Controls.Add(this.mskdCPF);
             this.Controls.Add(this.txtIdade);
             this.Controls.Add(this.lblIdade);
@@ -365,7 +370,6 @@
             this.Controls.Add(this.lblTelefone);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.lblEmail);
-            this.Controls.Add(this.txtDataNasc);
             this.Controls.Add(this.lblDataNasc);
             this.Controls.Add(this.txtRG);
             this.Controls.Add(this.lblRg);
@@ -394,7 +398,6 @@
         private Label lblTelefone;
         private TextBox txtEmail;
         private Label lblEmail;
-        private TextBox txtDataNasc;
         private Label lblDataNasc;
         private TextBox txtRG;
         private Label lblRg;
@@ -422,5 +425,6 @@
         private TextBox txtIdade;
         private Label lblIdade;
         private MaskedTextBox mskdCPF;
+        private MaskedTextBox mskDataNasc;
     }
 }

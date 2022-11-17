@@ -41,7 +41,7 @@ namespace WFPresentationLayer
             int temp;
             DateTime dt;
             Genero genero;
-            DateTime.TryParse(txtDataNasc.Text, out dt);
+            DateTime.TryParse(mskDataNasc.Text, out dt);
             Genero.TryParse(cbGenero.Text, out genero);
             int.TryParse(txtID.Text, out temp);
             Cliente c = new()
@@ -88,7 +88,7 @@ namespace WFPresentationLayer
             this.txtEmail.Text = cliente.Email;
             this.txtIdade.Text = cliente.Idade.ToString();
             this.txtTelefone.Text = cliente.Telefone;
-            this.txtDataNasc.Text = cliente.DataNascimento.ToString();
+            this.mskDataNasc.Text = cliente.DataNascimento.ToString();
             this.cbGenero.Text = cliente.Genero.ToString();
 
         }
@@ -159,7 +159,7 @@ namespace WFPresentationLayer
         private void LimparCampos()
         {
             mskdCPF.Clear();
-            txtDataNasc.Clear();
+            mskDataNasc.Clear();
             txtTelefone.Clear();
             txtIdade.Clear();
             txtNome.Clear();

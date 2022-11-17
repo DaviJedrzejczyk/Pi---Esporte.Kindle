@@ -1,4 +1,5 @@
 ﻿using BusinessLogicalLayer.Constants;
+using BusinessLogicalLayer.Validators.GenericValidators;
 using Entities;
 using FluentValidation;
 using System;
@@ -25,7 +26,8 @@ namespace BusinessLogicalLayer.Validators.Fornecedoras
         {
             RuleFor(x => x.Cnpj).NotNull().WithMessage(FornecedorConstants.MENSAGEM_ERRO_CNPJ_VAZIO)
                                 .MaximumLength(14).WithMessage(FornecedorConstants.MENSAGEM_ERRO_CNPJ_MAIOR)
-                                .MinimumLength(13).WithMessage(FornecedorConstants.MENSAGEM_ERRO_CNPJ_MENOR);
+                                .MinimumLength(13).WithMessage(FornecedorConstants.MENSAGEM_ERRO_CNPJ_MENOR)
+                                .IsCNPJ().WithMessage(FornecedorConstants.MENSAGEM_ERRO_CNPJ_MAIOR);
         }
         public void ValidateEmail()
         {

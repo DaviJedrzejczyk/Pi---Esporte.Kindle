@@ -23,9 +23,9 @@ namespace BusinessLogicalLayer.Validators.Produtos
         }
         public void ValidateQuantidadeEstoq()
         {
-            RuleFor(c => c.QtdEstoque).NotNull().WithMessage("")
-                                      .LessThan(0).WithMessage("")
-                                      .GreaterThan(9999).WithMessage("");
+            RuleFor(c => c.QtdEstoque).NotNull().WithMessage(ProdutoConstants.MENSAGEM_ERRO_QUANTIDADE_ESTOQUE_VAZIO)
+                                      .LessThan(0).WithMessage(ProdutoConstants.MENSAGEM_ERRO_QUANTIDADE_ESTOQUE_MENOR)
+                                      .GreaterThan(9999).WithMessage(ProdutoConstants.MENSAGEM_ERRO_QUANTIDADE_ESTOQUE_MAIOR);
         }
         public void ValidateDescricao()
         {
