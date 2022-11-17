@@ -50,18 +50,18 @@ namespace BusinessLogicalLayer.BLL
             }
             return response;
         }
-        public async Task<DataResponse<ProdutoEntradaView>> GetAllEntradaById(ProdutoEntrada produtoEntrada)
+        public DataResponse<ProdutoEntradaView> GetAllEntradaById(int id)
         {
-            return await produtoEntradaDAL.GetAllByEntradaID(produtoEntrada.ID);
+            return produtoEntradaDAL.GetAllByEntradaID(id);
         }
         public async Task<DataResponse<EntradaView>> GetAll()
         {
             return await entradaDAL.GetAll();
         }
 
-        public async Task<SingleResponse<EntradaView>> GetById(Entrada entrada)
+        public async Task<SingleResponse<EntradaView>> GetById(int entrada)
         {
-            return await entradaDAL.GetById(entrada.ID);
+            return await entradaDAL.GetById(entrada);
         }
 
         public async Task<SingleResponse<List<EntradaView>>> GetByDate(FilterEntrada entrada)

@@ -186,7 +186,7 @@ namespace WFPresentationLayer
                 btnInfoEntrada.Enabled = false;
                 btnInfoEntrada.Visible = false;
                 panelDesktopEntrada.BringToFront();
-                //OpenChildForm(new FormInformacoesAdicionaisEntrada(entradaBLL.GetByID(index).Item));
+                OpenChildForm(new TelaInformacoesAdicionaisEntrada(entradaService.GetById(index).Result.Item, entradaService));
             }
         }
     }

@@ -125,7 +125,7 @@ namespace WFPresentationLayer
         private async void btnRegistrar_Click(object sender, EventArgs e)
         {
 
-            if (cbFornecedor.SelectedIndex <= -1)
+            if (cbFornecedor.SelectedIndex != -1)
             {
                 if (produtos.Count != 0)
                 {
@@ -140,13 +140,14 @@ namespace WFPresentationLayer
                         produtoEntradas.Add(produtoEntrada);
                         valor += produtos[i].QtdEstoque * produtos[i].Valor_Unitario;
                     }
+                    int idForne = Convert.ToInt32(cbFornecedor.SelectedValue);
                     Entrada entrada = new()
                     {
                         produtosEntradas = produtoEntradas,
                         DataEntrada = dtEntrada.Value,
                         Valor = valor,
-                        Fornecedor = (Fornecedor)cbFornecedor.SelectedValue,
-                        //Pegar o id do funcionario
+                        FornecedorID = idForne,
+                        FuncionarioId = FuncionarioLogin.id,   
                     };
                     List<Produto> produtosWithValueAndInventory = new();
                     for (int i = 0; i < produtos.Count; i++)

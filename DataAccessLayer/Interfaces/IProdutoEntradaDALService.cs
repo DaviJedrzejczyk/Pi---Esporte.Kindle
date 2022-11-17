@@ -11,6 +11,6 @@ namespace DataAccessLayer.Interfaces
     public interface IProdutoEntradaDALService
     {
         Task<Response> Insert(ProdutoEntrada produtosEntrada);
-        Task<DataResponse<ProdutoEntradaView>> GetAllByEntradaID(int id);
+        DataResponse<ProdutoEntradaView> GetAllByEntradaID(int id);
     }
 }

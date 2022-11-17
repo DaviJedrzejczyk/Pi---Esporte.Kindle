@@ -12,8 +12,9 @@ namespace BusinessLogicalLayer.Interfaces
     public interface IEntradaService
     {
         Task<SingleResponse<List<EntradaView>>> GetByDate(FilterEntrada entrada);
+        DataResponse<ProdutoEntradaView> GetAllEntradaById(int id);
         Task<Response> Insert(Entrada entrada);
         Task<DataResponse<EntradaView>> GetAll();
-        Task<SingleResponse<EntradaView>> GetById(Entrada entrada);
+        Task<SingleResponse<EntradaView>> GetById(int entrada);
     }
 }
