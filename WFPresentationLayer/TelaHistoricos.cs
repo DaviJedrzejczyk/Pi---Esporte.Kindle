@@ -2,6 +2,7 @@
 using BusinessLogicalLayer.Interfaces;
 using DataAccessLayer.Implements;
 using Entities;
+using Entities.Filters;
 using Shared;
 using System;
 using System.Collections.Generic;
@@ -27,7 +28,7 @@ namespace WFPresentationLayer
             InitializeComponent();
         }
 
-        private void OpenChildForm(Form childForm)
+        private void OpenChildFormSaida(Form childForm)
         {
             if (currentChildForm != null)
             {
@@ -42,6 +43,21 @@ namespace WFPresentationLayer
             childForm.BringToFront();
             childForm.Show();
         }
+        private void OpenChildFormEntrada(Form childForm)
+        {
+                if (currentChildForm != null)
+                {
+                    currentChildForm.Close();
+                }
+                currentChildForm = childForm;
+                childForm.TopLevel = false;
+                childForm.FormBorderStyle = FormBorderStyle.None;
+                childForm.Dock = DockStyle.Fill;
+                panelDesktopEntrada.Controls.Add(childForm);
+                panelDesktopEntrada.Tag = childForm;
+                childForm.BringToFront();
+                childForm.Show();
+        }
 
         private async void TelaHistóricos_Load(object sender, EventArgs e)
         {
@@ -55,7 +71,7 @@ namespace WFPresentationLayer
                 if (result == DialogResult.Yes)
                 {
                     this.Close();
-                    OpenChildForm(new TelaHome());
+                    OpenChildFormSaida(new TelaHome());
                     return;
                 }
                 return;
@@ -70,11 +86,6 @@ namespace WFPresentationLayer
                 dtHistoricoSaida.Rows[i].Cells["dtFormaPag"].Value = dataResponse.Itens[i].FormaPagamento;
                 dtHistoricoSaida.Rows[i].Cells["dtValorTotal"].Value = dataResponse.Itens[i].ValorTotal;
             }
-         
-        }
-
-        private async void tbEntrada_Click(object sender, EventArgs e)
-        {
             DataResponse<EntradaView> data = await entradaService.GetAll();
             if (data.Itens == null)
             {
@@ -85,7 +96,7 @@ namespace WFPresentationLayer
                 if (result == DialogResult.Yes)
                 {
                     this.Close();
-                    OpenChildForm(new TelaHome());
+                    OpenChildFormSaida(new TelaHome());
                     return;
                 }
                 return;
@@ -99,8 +110,8 @@ namespace WFPresentationLayer
                 dtEntradas.Rows[i].Cells["DataEntrada"].Value = data.Itens[i].DataEntrada;
                 dtEntradas.Rows[i].Cells["ValorEntrada"].Value = data.Itens[i].Valor;
             }
-        }
 
+        }
         private void btnInformacoes_Click(object sender, EventArgs e)
         {
             if (dtHistoricoSaida.CurrentCell == null)
@@ -119,7 +130,7 @@ namespace WFPresentationLayer
                 btnInformacoes.Enabled = false;
                 btnInformacoes.Visible = false;
                 tbVendas.BringToFront();
-                OpenChildForm(new TelaInformacoesAdicionaisSaida(saidaService, saidaService.GetSaidaViewById(index).Item));
+                OpenChildFormSaida(new TelaInformacoesAdicionaisSaida(saidaService, saidaService.GetSaidaViewById(index).Item));
             }
         }
 
@@ -186,8 +197,29 @@ namespace WFPresentationLayer
                 btnInfoEntrada.Enabled = false;
                 btnInfoEntrada.Visible = false;
                 panelDesktopEntrada.BringToFront();
-                OpenChildForm(new TelaInformacoesAdicionaisEntrada(entradaService.GetById(index).Result.Item, entradaService));
+                OpenChildFormEntrada(new TelaInformacoesAdicionaisEntrada(entradaService.GetById(index).Result.Item, entradaService));
             }
+        }
+
+        private async void btnFilter_Click(object sender, EventArgs e)
+        {
+            dtEntradas.Rows.Clear();
+            FilterEntrada filtersEntrada = new()
+            {
+                Inicio = dateEntrada.Value,
+                Fim = dateSaida.Value
+            };
+            SingleResponse<List<EntradaView>> singleResponseFilterEntrada = await entradaService.GetByDate(filtersEntrada);
+            for (int i = 0; i < singleResponseFilterEntrada.Item.Count; i++)
+            {
+                dtEntradas.Rows.Add();
+                dtEntradas.Rows[i].Cells["IdEntrada"].Value = singleResponseFilterEntrada.Item[i].ID;
+                dtEntradas.Rows[i].Cells["FornecedorEntrada"].Value = singleResponseFilterEntrada.Item[i].Fornecedor;
+                dtEntradas.Rows[i].Cells["FuncionarioEntrada"].Value = singleResponseFilterEntrada.Item[i].Funcionario;
+                dtEntradas.Rows[i].Cells["DataEntrada"].Value = singleResponseFilterEntrada.Item[i].DataEntrada;
+                dtEntradas.Rows[i].Cells["ValorEntrada"].Value = singleResponseFilterEntrada.Item[i].Valor;
+            }
+
         }
     }
 }

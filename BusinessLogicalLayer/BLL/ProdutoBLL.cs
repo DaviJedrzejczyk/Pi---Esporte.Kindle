@@ -58,7 +58,7 @@ namespace BusinessLogicalLayer.BLL
                 singleResponse = await produtoDAL.GetById(produtos[i].ID);
                 if (singleResponse.HasSuccess)
                 {
-                    produtos[i].Valor_Unitario = ((singleResponse.Item.Valor_Unitario * singleResponse.Item.QtdEstoque) + (produtos[i].Valor_Unitario * produtos[i].QtdEstoque) / (produtos[i].QtdEstoque + singleResponse.Item.QtdEstoque));
+                    produtos[i].Valor_Unitario = ((singleResponse.Item.Valor_Unitario * singleResponse.Item.QtdEstoque) + (produtos[i].Valor_Unitario * produtos[i].QtdEstoque)) / (produtos[i].QtdEstoque + singleResponse.Item.QtdEstoque);
                     produtos[i].Valor_Unitario = Math.Round(produtos[i].Valor_Unitario,2);
                 }
                 else

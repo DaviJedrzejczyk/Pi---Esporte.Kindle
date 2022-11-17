@@ -30,12 +30,6 @@
         {
             this.lblID = new System.Windows.Forms.Label();
             this.dtProduto = new System.Windows.Forms.DataGridView();
-            this.ProdutoID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ProdutoNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ProdutoDescricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ProdutoFornecedora = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ProdutoQtdEstoque = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ProdutoValor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cbFornecedora = new System.Windows.Forms.ComboBox();
             this.txtID = new System.Windows.Forms.TextBox();
             this.txtNome = new System.Windows.Forms.TextBox();
@@ -52,6 +46,13 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.lblCategoria = new System.Windows.Forms.Label();
             this.cbCategoria = new System.Windows.Forms.ComboBox();
+            this.ProdutoID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProdutoNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProdutoDescricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProdutoFornecedora = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CatProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProdutoQtdEstoque = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProdutoValor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dtProduto)).BeginInit();
             this.SuspendLayout();
             // 
@@ -76,6 +77,7 @@
             this.ProdutoNome,
             this.ProdutoDescricao,
             this.ProdutoFornecedora,
+            this.CatProduto,
             this.ProdutoQtdEstoque,
             this.ProdutoValor});
             this.dtProduto.Location = new System.Drawing.Point(238, 12);
@@ -86,42 +88,6 @@
             this.dtProduto.Size = new System.Drawing.Size(550, 426);
             this.dtProduto.TabIndex = 1;
             this.dtProduto.DoubleClick += new System.EventHandler(this.dataGridView1_DoubleClick);
-            // 
-            // ProdutoID
-            // 
-            this.ProdutoID.HeaderText = "ID";
-            this.ProdutoID.Name = "ProdutoID";
-            this.ProdutoID.ReadOnly = true;
-            // 
-            // ProdutoNome
-            // 
-            this.ProdutoNome.HeaderText = "Nome";
-            this.ProdutoNome.Name = "ProdutoNome";
-            this.ProdutoNome.ReadOnly = true;
-            // 
-            // ProdutoDescricao
-            // 
-            this.ProdutoDescricao.HeaderText = "Descrição";
-            this.ProdutoDescricao.Name = "ProdutoDescricao";
-            this.ProdutoDescricao.ReadOnly = true;
-            // 
-            // ProdutoFornecedora
-            // 
-            this.ProdutoFornecedora.HeaderText = "Fornecedora";
-            this.ProdutoFornecedora.Name = "ProdutoFornecedora";
-            this.ProdutoFornecedora.ReadOnly = true;
-            // 
-            // ProdutoQtdEstoque
-            // 
-            this.ProdutoQtdEstoque.HeaderText = "Quantidade em Estoque";
-            this.ProdutoQtdEstoque.Name = "ProdutoQtdEstoque";
-            this.ProdutoQtdEstoque.ReadOnly = true;
-            // 
-            // ProdutoValor
-            // 
-            this.ProdutoValor.HeaderText = "Valor do Produto";
-            this.ProdutoValor.Name = "ProdutoValor";
-            this.ProdutoValor.ReadOnly = true;
             // 
             // cbFornecedora
             // 
@@ -267,6 +233,48 @@
             this.cbCategoria.Size = new System.Drawing.Size(121, 23);
             this.cbCategoria.TabIndex = 17;
             // 
+            // ProdutoID
+            // 
+            this.ProdutoID.HeaderText = "ID";
+            this.ProdutoID.Name = "ProdutoID";
+            this.ProdutoID.ReadOnly = true;
+            // 
+            // ProdutoNome
+            // 
+            this.ProdutoNome.HeaderText = "Nome";
+            this.ProdutoNome.Name = "ProdutoNome";
+            this.ProdutoNome.ReadOnly = true;
+            // 
+            // ProdutoDescricao
+            // 
+            this.ProdutoDescricao.HeaderText = "Descrição";
+            this.ProdutoDescricao.Name = "ProdutoDescricao";
+            this.ProdutoDescricao.ReadOnly = true;
+            // 
+            // ProdutoFornecedora
+            // 
+            this.ProdutoFornecedora.HeaderText = "Fornecedora";
+            this.ProdutoFornecedora.Name = "ProdutoFornecedora";
+            this.ProdutoFornecedora.ReadOnly = true;
+            // 
+            // CatProduto
+            // 
+            this.CatProduto.HeaderText = "Categoria";
+            this.CatProduto.Name = "CatProduto";
+            this.CatProduto.ReadOnly = true;
+            // 
+            // ProdutoQtdEstoque
+            // 
+            this.ProdutoQtdEstoque.HeaderText = "Quantidade em Estoque";
+            this.ProdutoQtdEstoque.Name = "ProdutoQtdEstoque";
+            this.ProdutoQtdEstoque.ReadOnly = true;
+            // 
+            // ProdutoValor
+            // 
+            this.ProdutoValor.HeaderText = "Valor do Produto";
+            this.ProdutoValor.Name = "ProdutoValor";
+            this.ProdutoValor.ReadOnly = true;
+            // 
             // TelaProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -315,16 +323,17 @@
         private TextBox txtValor;
         private Label lblValorUnitario;
         private Label lblForne;
-        private DataGridViewTextBoxColumn ProdutoID;
-        private DataGridViewTextBoxColumn ProdutoNome;
-        private DataGridViewTextBoxColumn ProdutoDescricao;
-        private DataGridViewTextBoxColumn ProdutoFornecedora;
-        private DataGridViewTextBoxColumn ProdutoQtdEstoque;
-        private DataGridViewTextBoxColumn ProdutoValor;
         private Button btnCadastrar;
         private Button btnUpdate;
         private Button btnDelete;
         private Label lblCategoria;
         private ComboBox cbCategoria;
+        private DataGridViewTextBoxColumn ProdutoID;
+        private DataGridViewTextBoxColumn ProdutoNome;
+        private DataGridViewTextBoxColumn ProdutoDescricao;
+        private DataGridViewTextBoxColumn ProdutoFornecedora;
+        private DataGridViewTextBoxColumn CatProduto;
+        private DataGridViewTextBoxColumn ProdutoQtdEstoque;
+        private DataGridViewTextBoxColumn ProdutoValor;
     }
 }

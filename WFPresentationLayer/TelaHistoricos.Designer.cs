@@ -55,8 +55,8 @@
             this.lblDataEntrada = new System.Windows.Forms.Label();
             this.lblDataSaida = new System.Windows.Forms.Label();
             this.btnFilter = new System.Windows.Forms.Button();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateSaida = new System.Windows.Forms.DateTimePicker();
+            this.dateEntrada = new System.Windows.Forms.DateTimePicker();
             this.tbMaster.SuspendLayout();
             this.tbVendas.SuspendLayout();
             this.panelDesktopSaida.SuspendLayout();
@@ -201,7 +201,6 @@
             this.tbEntrada.TabIndex = 1;
             this.tbEntrada.Text = "Entradas";
             this.tbEntrada.UseVisualStyleBackColor = true;
-            this.tbEntrada.Click += new System.EventHandler(this.tbEntrada_Click);
             // 
             // panelDesktopEntrada
             // 
@@ -270,8 +269,8 @@
             this.panelButtons.Controls.Add(this.lblDataEntrada);
             this.panelButtons.Controls.Add(this.lblDataSaida);
             this.panelButtons.Controls.Add(this.btnFilter);
-            this.panelButtons.Controls.Add(this.dateTimePicker2);
-            this.panelButtons.Controls.Add(this.dateTimePicker1);
+            this.panelButtons.Controls.Add(this.dateSaida);
+            this.panelButtons.Controls.Add(this.dateEntrada);
             this.panelButtons.Dock = System.Windows.Forms.DockStyle.Right;
             this.panelButtons.Location = new System.Drawing.Point(656, 3);
             this.panelButtons.Name = "panelButtons";
@@ -327,20 +326,21 @@
             this.btnFilter.TabIndex = 2;
             this.btnFilter.Text = "Filtrar Entradas";
             this.btnFilter.UseVisualStyleBackColor = true;
+            this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
             // 
-            // dateTimePicker2
+            // dateSaida
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(0, 229);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(128, 23);
-            this.dateTimePicker2.TabIndex = 1;
+            this.dateSaida.Location = new System.Drawing.Point(0, 229);
+            this.dateSaida.Name = "dateSaida";
+            this.dateSaida.Size = new System.Drawing.Size(128, 23);
+            this.dateSaida.TabIndex = 1;
             // 
-            // dateTimePicker1
+            // dateEntrada
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(0, 157);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(128, 23);
-            this.dateTimePicker1.TabIndex = 0;
+            this.dateEntrada.Location = new System.Drawing.Point(0, 157);
+            this.dateEntrada.Name = "dateEntrada";
+            this.dateEntrada.Size = new System.Drawing.Size(128, 23);
+            this.dateEntrada.TabIndex = 0;
             // 
             // TelaHistoricos
             // 
@@ -394,7 +394,7 @@
         private Label lblDataEntrada;
         private Label lblDataSaida;
         private Button btnFilter;
-        private DateTimePicker dateTimePicker2;
-        private DateTimePicker dateTimePicker1;
+        private DateTimePicker dateSaida;
+        private DateTimePicker dateEntrada;
     }
 }

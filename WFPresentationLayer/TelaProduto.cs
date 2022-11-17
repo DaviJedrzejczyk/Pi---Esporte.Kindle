@@ -31,7 +31,7 @@ namespace WFPresentationLayer
             this.dtProduto.DefaultCellStyle.ForeColor = Color.Black;
           
         }
-        private async void TelaProduto_Load(object sender, EventArgs e)
+        private void TelaProduto_Load(object sender, EventArgs e)
         {
             cbFornecedora.DataSource = fornecedoraService.GetAll().Itens;
             cbFornecedora.DisplayMember = "Nome_Contato";
@@ -73,7 +73,8 @@ namespace WFPresentationLayer
                 dtProduto.Rows[i].Cells["ProdutoDescricao"].Value = dataResponse.Itens[i].Descricao;
                 dtProduto.Rows[i].Cells["ProdutoQtdEstoque"].Value = dataResponse.Itens[i].QtdEstoque;
                 dtProduto.Rows[i].Cells["ProdutoValor"].Value = dataResponse.Itens[i].Valor_Unitario;
-                dtProduto.Rows[i].Cells["ProdutoFornecedora"].Value = dataResponse.Itens[i].FornecedorId;
+                dtProduto.Rows[i].Cells["ProdutoFornecedora"].Value = dataResponse.Itens[i].Fornecedor.Nome_Contato;
+                dtProduto.Rows[i].Cells["CatProduto"].Value = dataResponse.Itens[i].Categoria.Nome;
             }
         }
         private void DrawFormWithObject(Produto produto)
@@ -89,14 +90,23 @@ namespace WFPresentationLayer
         private void dataGridView1_DoubleClick(object sender, EventArgs e)
         {
             int rowindex = dtProduto.CurrentCell.RowIndex;
+            Fornecedor fornecedor = new()
+            {
+                Nome_Contato = Convert.ToString(this.dtProduto.Rows[rowindex].Cells[3].Value)
+            };
+            Categoria categoria = new()
+            {
+                Nome = Convert.ToString(this.dtProduto.Rows[rowindex].Cells[3].Value),
+            };
             Produto produtoSelecionado = new()
             {
                 ID = Convert.ToInt32(this.dtProduto.Rows[rowindex].Cells[0].Value),
                 Nome = Convert.ToString(this.dtProduto.Rows[rowindex].Cells[1].Value),
                 Descricao = Convert.ToString(this.dtProduto.Rows[rowindex].Cells[2].Value),
-                FornecedorId = Convert.ToInt32(dtProduto.Rows[rowindex].Cells[3].Value),
-                QtdEstoque = Convert.ToInt32(this.dtProduto.Rows[rowindex].Cells[4].Value),
-                Valor_Unitario = Convert.ToDouble(dtProduto.Rows[rowindex].Cells[5].Value)
+                Fornecedor = fornecedor,
+                Categoria = categoria,
+                QtdEstoque = Convert.ToInt32(this.dtProduto.Rows[rowindex].Cells[5].Value),
+                Valor_Unitario = Convert.ToDouble(dtProduto.Rows[rowindex].Cells[6].Value)
             };
             DrawFormWithObject(produtoSelecionado);
         }

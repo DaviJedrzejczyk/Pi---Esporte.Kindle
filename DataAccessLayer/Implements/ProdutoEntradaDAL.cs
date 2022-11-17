@@ -16,7 +16,7 @@ namespace DataAccessLayer.Implements
         private string connectionString = ConnectionString._connectionString;
         public DataResponse<ProdutoEntradaView> GetAllByEntradaID(int id)
         {
-            string sql = $"SELECT PE.ENTRADA_ID,PE.QUANTIDADE,PE.VALOR_UNITARIO,P.NOME AS PRODUTO,P.DESCRICAO,P.VALOR,L.NOME AS LABORATORIOS,TU.NOME AS TIPOS_UNIDADES FROM PRODUTOS_ENTRADAS PE INNER JOIN PRODUTOS P ON PE.PRODUTO_ID = P.ID INNER JOIN LABORATORIOS L ON P.LABORATORIO_ID = L.ID INNER JOIN TIPOS_UNIDADES TU ON P.TIPO_UNIDADE_ID = TU.ID WHERE PE.ENTRADA_ID = @ENTRADA_ID";
+            string sql = $"SELECT PE.ENTRADA_ID,PE.QUANTIDADE,PE.VALOR_UNITARIO,P.NOME AS PRODUTO,P.DESCRICAO,P.VALOR FROM PRODUTOS_ENTRADAS PE INNER JOIN PRODUTOS P ON PE.PRODUTO_ID = P.ID WHERE PE.ENTRADA_ID = @ENTRADA_ID";
             SqlConnection connection = new SqlConnection(connectionString);
             SqlCommand command = new SqlCommand(sql, connection);
             command.Parameters.AddWithValue("@ENTRADA_ID", id);

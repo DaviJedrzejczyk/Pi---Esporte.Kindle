@@ -109,7 +109,7 @@ namespace DataAccessLayer.Implements
 
         public async Task<DataResponse<Produto>> GetAll()
         {
-            string sql = $"SELECT ID,NOME,DESCRICAO,QTD_ESTOQUE,VALOR,FORNECEDOR_ID,CATEGORIA_ID FROM PRODUTOS";
+            string sql = $"SELECT P.ID,P.NOME,P.DESCRICAO,P.QTD_ESTOQUE,P.VALOR,FO.NOME_CONTATO AS FORNECEDOR,CAT.NOME AS CATEGORIA FROM PRODUTOS P INNER JOIN FORNECEDORES FO ON P.FORNECEDOR_ID = FO.ID INNER JOIN CATEGORIAS CAT ON P.CATEGORIA_ID = CAT.ID ";
             SqlConnection connection = new(connectionString);
             SqlCommand command = new(sql, connection);
             try
@@ -119,6 +119,14 @@ namespace DataAccessLayer.Implements
                 List<Produto> produtos = new();
                 while (reader.Read())
                 {
+                    Fornecedor fornecedor = new()
+                    {
+                        Nome_Contato = Convert.ToString(reader["FORNECEDOR"])
+                    };
+                    Categoria categoria = new()
+                    {
+                        Nome = Convert.ToString(reader["CATEGORIA"])
+                    };
                     Produto produto = new()
                     {
                         ID = Convert.ToInt32(reader["ID"]),
@@ -126,8 +134,8 @@ namespace DataAccessLayer.Implements
                         Descricao = Convert.ToString(reader["DESCRICAO"]),
                         QtdEstoque = Convert.ToInt32(reader["QTD_ESTOQUE"]),
                         Valor_Unitario = Convert.ToDouble(reader["VALOR"]),
-                        FornecedorId = Convert.ToInt32(reader["FORNECEDOR_ID"]),
-                        CategoriaId = Convert.ToInt32(reader["CATEGORIA_ID"])
+                        Fornecedor = fornecedor,
+                        Categoria = categoria
                     };
 
                     produtos.Add(produto);
