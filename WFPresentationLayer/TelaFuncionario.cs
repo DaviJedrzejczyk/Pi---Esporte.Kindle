@@ -23,21 +23,7 @@ namespace WFPresentationLayer
             this.enderecoService = enderecoService;
         }
 
-        private void OpenChildForm(Form childForm)
-        {
-            if (currentChildForm != null)
-            {
-                currentChildForm.Close();
-            }
-            currentChildForm = childForm;
-            childForm.TopLevel = false;
-            childForm.FormBorderStyle = FormBorderStyle.None;
-            childForm.Dock = DockStyle.Fill;
-            panelDesktopFuncionario.Controls.Add(childForm);
-            panelDesktopFuncionario.Tag = childForm;
-            childForm.BringToFront();
-            childForm.Show();
-        }
+        
         private void TelaFuncionario_Load(object sender, EventArgs e)
         {
             
@@ -248,26 +234,6 @@ namespace WFPresentationLayer
             dtFuncionario.AutoSize = true;
         }
 
-        private void btnInformacoesFunc_Click(object sender, EventArgs e)
-        {
-            if (dtFuncionario.CurrentCell == null)
-            {
-                MessageBox.Show("Não é possivel ver as informações adicionais de um Funcionário não selecionado!");
-                return;
-            }
-            string message = "Você realmente  ver as informações adicionais deste Funcionário?";
-            string title = "Close Window";
-            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
-            DialogResult result = MessageBox.Show(message, title, buttons);
-            if (result == DialogResult.Yes)
-            {
-                int rowindex = dtFuncionario.CurrentCell.RowIndex;
-                int index = Convert.ToInt32(dtFuncionario.Rows[rowindex].Cells[0].Value);
-                btnInformacoesFunc.Enabled = false;
-                btnInformacoesFunc.Visible = false;
-                tbFuncionario.BringToFront();
-                OpenChildForm(new TelaInfoAdicionaisFuncionario());
-            }
-        }
+        
     }
 }
