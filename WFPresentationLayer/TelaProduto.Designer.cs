@@ -63,7 +63,7 @@
             this.btnCategoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCategoria.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnCategoria.ForeColor = System.Drawing.Color.White;
-            this.btnCategoria.Location = new System.Drawing.Point(1556, 727);
+            this.btnCategoria.Location = new System.Drawing.Point(1499, 727);
             this.btnCategoria.Name = "btnCategoria";
             this.btnCategoria.Size = new System.Drawing.Size(193, 71);
             this.btnCategoria.TabIndex = 111;
@@ -286,12 +286,12 @@
             this.CatProduto,
             this.ProdutoQtdEstoque,
             this.ProdutoValor});
-            this.dtProduto.Location = new System.Drawing.Point(625, 82);
+            this.dtProduto.Location = new System.Drawing.Point(643, 82);
             this.dtProduto.Name = "dtProduto";
             this.dtProduto.ReadOnly = true;
             this.dtProduto.RowTemplate.Height = 25;
             this.dtProduto.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtProduto.Size = new System.Drawing.Size(1124, 639);
+            this.dtProduto.Size = new System.Drawing.Size(1049, 639);
             this.dtProduto.TabIndex = 1;
             this.dtProduto.DoubleClick += new System.EventHandler(this.dataGridView1_DoubleClick);
             // 
@@ -311,7 +311,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
-            this.ClientSize = new System.Drawing.Size(1904, 1041);
+            this.ClientSize = new System.Drawing.Size(1728, 902);
             this.Controls.Add(this.btnCategoria);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnUpdate);

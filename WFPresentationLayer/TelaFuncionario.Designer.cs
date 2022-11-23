@@ -106,12 +106,12 @@
             this.FuncionarioGenero,
             this.FuncionarioNivelAcesso,
             this.FuncionarioEndereco});
-            this.dtFuncionario.Location = new System.Drawing.Point(827, 103);
+            this.dtFuncionario.Location = new System.Drawing.Point(767, 96);
             this.dtFuncionario.Name = "dtFuncionario";
             this.dtFuncionario.ReadOnly = true;
             this.dtFuncionario.RowTemplate.Height = 25;
             this.dtFuncionario.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtFuncionario.Size = new System.Drawing.Size(1051, 717);
+            this.dtFuncionario.Size = new System.Drawing.Size(924, 724);
             this.dtFuncionario.TabIndex = 145;
             // 
             // FuncionarioID
@@ -600,7 +600,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
-            this.ClientSize = new System.Drawing.Size(1904, 1041);
+            this.ClientSize = new System.Drawing.Size(1728, 902);
             this.Controls.Add(this.dtFuncionario);
             this.Controls.Add(this.mskDataNasc);
             this.Controls.Add(this.mskTelefone);

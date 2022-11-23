@@ -204,12 +204,12 @@
             this.ClienteTelefone,
             this.ClienteGenero});
             this.dtCliente.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.dtCliente.Location = new System.Drawing.Point(712, 77);
+            this.dtCliente.Location = new System.Drawing.Point(711, 77);
             this.dtCliente.Name = "dtCliente";
             this.dtCliente.ReadOnly = true;
             this.dtCliente.RowTemplate.Height = 25;
             this.dtCliente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtCliente.Size = new System.Drawing.Size(1123, 746);
+            this.dtCliente.Size = new System.Drawing.Size(959, 746);
             this.dtCliente.TabIndex = 36;
             this.dtCliente.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtCliente_CellContentClick);
             this.dtCliente.DoubleClick += new System.EventHandler(this.dtCliente_DoubleClick);
@@ -395,7 +395,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
-            this.ClientSize = new System.Drawing.Size(1904, 1041);
+            this.ClientSize = new System.Drawing.Size(1728, 902);
             this.Controls.Add(this.lblGenero);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnUpdate);

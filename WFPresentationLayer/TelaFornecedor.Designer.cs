@@ -78,12 +78,12 @@
             this.ForneCNPJ,
             this.ForneEmail,
             this.ForneTelefone});
-            this.dtFornecedor.Location = new System.Drawing.Point(654, 27);
+            this.dtFornecedor.Location = new System.Drawing.Point(675, 27);
             this.dtFornecedor.Name = "dtFornecedor";
             this.dtFornecedor.ReadOnly = true;
             this.dtFornecedor.RowTemplate.Height = 25;
             this.dtFornecedor.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtFornecedor.Size = new System.Drawing.Size(1106, 761);
+            this.dtFornecedor.Size = new System.Drawing.Size(998, 761);
             this.dtFornecedor.TabIndex = 5;
             this.dtFornecedor.DoubleClick += new System.EventHandler(this.dtFornecedor_DoubleClick);
             // 
@@ -278,7 +278,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
-            this.ClientSize = new System.Drawing.Size(1904, 1041);
+            this.ClientSize = new System.Drawing.Size(1728, 902);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnCadastrar);

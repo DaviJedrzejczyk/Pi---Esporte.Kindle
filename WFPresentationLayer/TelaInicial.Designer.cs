@@ -52,7 +52,7 @@
             this.btnClientes.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnClientes.FlatAppearance.BorderSize = 0;
             this.btnClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClientes.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnClientes.ForeColor = System.Drawing.Color.LightGray;
             this.btnClientes.Image = ((System.Drawing.Image)(resources.GetObject("btnClientes.Image")));
             this.btnClientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -70,7 +70,7 @@
             this.btnFuncionarios.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnFuncionarios.FlatAppearance.BorderSize = 0;
             this.btnFuncionarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFuncionarios.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnFuncionarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnFuncionarios.ForeColor = System.Drawing.Color.LightGray;
             this.btnFuncionarios.Image = ((System.Drawing.Image)(resources.GetObject("btnFuncionarios.Image")));
             this.btnFuncionarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -88,7 +88,7 @@
             this.btnFornecedores.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnFornecedores.FlatAppearance.BorderSize = 0;
             this.btnFornecedores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFornecedores.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnFornecedores.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnFornecedores.ForeColor = System.Drawing.Color.LightGray;
             this.btnFornecedores.Image = ((System.Drawing.Image)(resources.GetObject("btnFornecedores.Image")));
             this.btnFornecedores.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -106,7 +106,7 @@
             this.btnProdutos.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnProdutos.FlatAppearance.BorderSize = 0;
             this.btnProdutos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProdutos.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnProdutos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnProdutos.ForeColor = System.Drawing.Color.LightGray;
             this.btnProdutos.Image = ((System.Drawing.Image)(resources.GetObject("btnProdutos.Image")));
             this.btnProdutos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -123,11 +123,11 @@
             // 
             this.btnLogout.FlatAppearance.BorderSize = 0;
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogout.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnLogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnLogout.ForeColor = System.Drawing.Color.LightGray;
             this.btnLogout.Image = ((System.Drawing.Image)(resources.GetObject("btnLogout.Image")));
             this.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLogout.Location = new System.Drawing.Point(3, 521);
+            this.btnLogout.Location = new System.Drawing.Point(3, 895);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(42, 43);
             this.btnLogout.TabIndex = 4;
@@ -148,7 +148,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 100);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(160, 567);
+            this.panel2.Size = new System.Drawing.Size(160, 941);
             this.panel2.TabIndex = 1;
             // 
             // btnHistorico
@@ -156,7 +156,7 @@
             this.btnHistorico.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnHistorico.FlatAppearance.BorderSize = 0;
             this.btnHistorico.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHistorico.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnHistorico.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnHistorico.ForeColor = System.Drawing.Color.LightGray;
             this.btnHistorico.Image = ((System.Drawing.Image)(resources.GetObject("btnHistorico.Image")));
             this.btnHistorico.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -175,7 +175,7 @@
             this.btnEntrada.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnEntrada.FlatAppearance.BorderSize = 0;
             this.btnEntrada.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEntrada.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnEntrada.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnEntrada.ForeColor = System.Drawing.Color.LightGray;
             this.btnEntrada.Image = ((System.Drawing.Image)(resources.GetObject("btnEntrada.Image")));
             this.btnEntrada.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -194,7 +194,7 @@
             this.btnVenda.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnVenda.FlatAppearance.BorderSize = 0;
             this.btnVenda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVenda.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnVenda.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnVenda.ForeColor = System.Drawing.Color.LightGray;
             this.btnVenda.Image = ((System.Drawing.Image)(resources.GetObject("btnVenda.Image")));
             this.btnVenda.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -214,7 +214,7 @@
             this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDesktop.Location = new System.Drawing.Point(160, 100);
             this.panelDesktop.Name = "panelDesktop";
-            this.panelDesktop.Size = new System.Drawing.Size(860, 567);
+            this.panelDesktop.Size = new System.Drawing.Size(1744, 941);
             this.panelDesktop.TabIndex = 2;
             // 
             // panel1
@@ -224,7 +224,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1020, 100);
+            this.panel1.Size = new System.Drawing.Size(1904, 100);
             this.panel1.TabIndex = 0;
             // 
             // button1
@@ -256,7 +256,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1020, 667);
+            this.ClientSize = new System.Drawing.Size(1904, 1041);
             this.Controls.Add(this.panelDesktop);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
