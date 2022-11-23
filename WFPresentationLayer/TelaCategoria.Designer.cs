@@ -51,7 +51,7 @@
             this.btnCadastrar.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnCadastrar.ForeColor = System.Drawing.Color.White;
             this.btnCadastrar.Location = new System.Drawing.Point(1, 480);
-            this.btnCadastrar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCadastrar.Margin = new System.Windows.Forms.Padding(4);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(147, 74);
             this.btnCadastrar.TabIndex = 0;
@@ -70,7 +70,7 @@
             this.CategoriaNome,
             this.CategoriaDescricao});
             this.dtCategoria.Location = new System.Drawing.Point(469, 17);
-            this.dtCategoria.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtCategoria.Margin = new System.Windows.Forms.Padding(4);
             this.dtCategoria.Name = "dtCategoria";
             this.dtCategoria.ReadOnly = true;
             this.dtCategoria.RowTemplate.Height = 25;
@@ -115,7 +115,7 @@
             this.txtNome.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtNome.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtNome.Location = new System.Drawing.Point(93, 167);
-            this.txtNome.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNome.Margin = new System.Windows.Forms.Padding(4);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(143, 28);
             this.txtNome.TabIndex = 5;
@@ -138,7 +138,7 @@
             this.txtDesc.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtDesc.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtDesc.Location = new System.Drawing.Point(93, 224);
-            this.txtDesc.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDesc.Margin = new System.Windows.Forms.Padding(4);
             this.txtDesc.Multiline = true;
             this.txtDesc.Name = "txtDesc";
             this.txtDesc.Size = new System.Drawing.Size(260, 109);
@@ -164,7 +164,7 @@
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnUpdate.ForeColor = System.Drawing.Color.White;
             this.btnUpdate.Location = new System.Drawing.Point(157, 480);
-            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(147, 74);
             this.btnUpdate.TabIndex = 8;
@@ -179,7 +179,7 @@
             this.btnDelete.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnDelete.ForeColor = System.Drawing.Color.White;
             this.btnDelete.Location = new System.Drawing.Point(313, 480);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(4);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(147, 74);
             this.btnDelete.TabIndex = 9;
@@ -189,6 +189,7 @@
             // 
             // txtID
             // 
+            this.txtID.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtID.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtID.Location = new System.Drawing.Point(93, 111);
             this.txtID.Name = "txtID";
@@ -213,7 +214,7 @@
             this.Controls.Add(this.dtCategoria);
             this.Controls.Add(this.btnCadastrar);
             this.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "TelaCategoria";

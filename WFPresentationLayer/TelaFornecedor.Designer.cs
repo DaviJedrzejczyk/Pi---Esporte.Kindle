@@ -30,6 +30,12 @@
         {
             this.lblCnpj = new System.Windows.Forms.Label();
             this.dtFornecedor = new System.Windows.Forms.DataGridView();
+            this.ForneID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ForneRazao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ForneNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ForneCNPJ = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ForneEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ForneTelefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.lblNome = new System.Windows.Forms.Label();
             this.lblTelefone = new System.Windows.Forms.Label();
@@ -41,12 +47,6 @@
             this.lblRazaoSocial = new System.Windows.Forms.Label();
             this.mskCNPJ = new System.Windows.Forms.MaskedTextBox();
             this.mskTelefone = new System.Windows.Forms.MaskedTextBox();
-            this.ForneID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ForneRazao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ForneNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ForneCNPJ = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ForneEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ForneTelefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnCadastrar = new System.Windows.Forms.Button();
@@ -87,112 +87,6 @@
             this.dtFornecedor.TabIndex = 5;
             this.dtFornecedor.DoubleClick += new System.EventHandler(this.dtFornecedor_DoubleClick);
             // 
-            // txtNome
-            // 
-            this.txtNome.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtNome.Location = new System.Drawing.Point(172, 272);
-            this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(166, 28);
-            this.txtNome.TabIndex = 7;
-            // 
-            // lblNome
-            // 
-            this.lblNome.AutoSize = true;
-            this.lblNome.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblNome.ForeColor = System.Drawing.Color.White;
-            this.lblNome.Location = new System.Drawing.Point(105, 272);
-            this.lblNome.Name = "lblNome";
-            this.lblNome.Size = new System.Drawing.Size(61, 21);
-            this.lblNome.TabIndex = 6;
-            this.lblNome.Text = "Nome:";
-            // 
-            // lblTelefone
-            // 
-            this.lblTelefone.AutoSize = true;
-            this.lblTelefone.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblTelefone.ForeColor = System.Drawing.Color.White;
-            this.lblTelefone.Location = new System.Drawing.Point(86, 309);
-            this.lblTelefone.Name = "lblTelefone";
-            this.lblTelefone.Size = new System.Drawing.Size(80, 21);
-            this.lblTelefone.TabIndex = 8;
-            this.lblTelefone.Text = "Telefone:";
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtEmail.Location = new System.Drawing.Point(172, 340);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(166, 28);
-            this.txtEmail.TabIndex = 11;
-            // 
-            // lblEmail
-            // 
-            this.lblEmail.AutoSize = true;
-            this.lblEmail.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblEmail.ForeColor = System.Drawing.Color.White;
-            this.lblEmail.Location = new System.Drawing.Point(111, 343);
-            this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(55, 21);
-            this.lblEmail.TabIndex = 10;
-            this.lblEmail.Text = "Email:";
-            // 
-            // txtID
-            // 
-            this.txtID.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtID.Location = new System.Drawing.Point(172, 170);
-            this.txtID.Name = "txtID";
-            this.txtID.ReadOnly = true;
-            this.txtID.Size = new System.Drawing.Size(70, 28);
-            this.txtID.TabIndex = 15;
-            // 
-            // lblID
-            // 
-            this.lblID.AutoSize = true;
-            this.lblID.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblID.ForeColor = System.Drawing.Color.White;
-            this.lblID.Location = new System.Drawing.Point(134, 173);
-            this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(31, 21);
-            this.lblID.TabIndex = 14;
-            this.lblID.Text = "ID:";
-            // 
-            // txtRazao
-            // 
-            this.txtRazao.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtRazao.Location = new System.Drawing.Point(172, 204);
-            this.txtRazao.Name = "txtRazao";
-            this.txtRazao.Size = new System.Drawing.Size(166, 28);
-            this.txtRazao.TabIndex = 18;
-            // 
-            // lblRazaoSocial
-            // 
-            this.lblRazaoSocial.AutoSize = true;
-            this.lblRazaoSocial.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblRazaoSocial.ForeColor = System.Drawing.Color.White;
-            this.lblRazaoSocial.Location = new System.Drawing.Point(56, 204);
-            this.lblRazaoSocial.Name = "lblRazaoSocial";
-            this.lblRazaoSocial.Size = new System.Drawing.Size(109, 21);
-            this.lblRazaoSocial.TabIndex = 17;
-            this.lblRazaoSocial.Text = "Razão Social:";
-            // 
-            // mskCNPJ
-            // 
-            this.mskCNPJ.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.mskCNPJ.Location = new System.Drawing.Point(172, 238);
-            this.mskCNPJ.Mask = "00, 000, 000/0001-00";
-            this.mskCNPJ.Name = "mskCNPJ";
-            this.mskCNPJ.Size = new System.Drawing.Size(166, 28);
-            this.mskCNPJ.TabIndex = 19;
-            // 
-            // mskTelefone
-            // 
-            this.mskTelefone.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.mskTelefone.Location = new System.Drawing.Point(172, 306);
-            this.mskTelefone.Mask = "(00) 0 00000-0000";
-            this.mskTelefone.Name = "mskTelefone";
-            this.mskTelefone.Size = new System.Drawing.Size(166, 28);
-            this.mskTelefone.TabIndex = 44;
-            // 
             // ForneID
             // 
             this.ForneID.HeaderText = "ID";
@@ -228,6 +122,118 @@
             this.ForneTelefone.HeaderText = "Telefone";
             this.ForneTelefone.Name = "ForneTelefone";
             this.ForneTelefone.ReadOnly = true;
+            // 
+            // txtNome
+            // 
+            this.txtNome.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtNome.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtNome.Location = new System.Drawing.Point(172, 272);
+            this.txtNome.Name = "txtNome";
+            this.txtNome.Size = new System.Drawing.Size(166, 28);
+            this.txtNome.TabIndex = 7;
+            // 
+            // lblNome
+            // 
+            this.lblNome.AutoSize = true;
+            this.lblNome.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblNome.ForeColor = System.Drawing.Color.White;
+            this.lblNome.Location = new System.Drawing.Point(105, 272);
+            this.lblNome.Name = "lblNome";
+            this.lblNome.Size = new System.Drawing.Size(61, 21);
+            this.lblNome.TabIndex = 6;
+            this.lblNome.Text = "Nome:";
+            // 
+            // lblTelefone
+            // 
+            this.lblTelefone.AutoSize = true;
+            this.lblTelefone.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblTelefone.ForeColor = System.Drawing.Color.White;
+            this.lblTelefone.Location = new System.Drawing.Point(86, 309);
+            this.lblTelefone.Name = "lblTelefone";
+            this.lblTelefone.Size = new System.Drawing.Size(80, 21);
+            this.lblTelefone.TabIndex = 8;
+            this.lblTelefone.Text = "Telefone:";
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtEmail.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtEmail.Location = new System.Drawing.Point(172, 340);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(166, 28);
+            this.txtEmail.TabIndex = 11;
+            // 
+            // lblEmail
+            // 
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblEmail.ForeColor = System.Drawing.Color.White;
+            this.lblEmail.Location = new System.Drawing.Point(111, 343);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(55, 21);
+            this.lblEmail.TabIndex = 10;
+            this.lblEmail.Text = "Email:";
+            // 
+            // txtID
+            // 
+            this.txtID.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtID.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtID.Location = new System.Drawing.Point(172, 170);
+            this.txtID.Name = "txtID";
+            this.txtID.ReadOnly = true;
+            this.txtID.Size = new System.Drawing.Size(70, 28);
+            this.txtID.TabIndex = 15;
+            // 
+            // lblID
+            // 
+            this.lblID.AutoSize = true;
+            this.lblID.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblID.ForeColor = System.Drawing.Color.White;
+            this.lblID.Location = new System.Drawing.Point(134, 173);
+            this.lblID.Name = "lblID";
+            this.lblID.Size = new System.Drawing.Size(31, 21);
+            this.lblID.TabIndex = 14;
+            this.lblID.Text = "ID:";
+            // 
+            // txtRazao
+            // 
+            this.txtRazao.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtRazao.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtRazao.Location = new System.Drawing.Point(172, 204);
+            this.txtRazao.Name = "txtRazao";
+            this.txtRazao.Size = new System.Drawing.Size(166, 28);
+            this.txtRazao.TabIndex = 18;
+            // 
+            // lblRazaoSocial
+            // 
+            this.lblRazaoSocial.AutoSize = true;
+            this.lblRazaoSocial.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblRazaoSocial.ForeColor = System.Drawing.Color.White;
+            this.lblRazaoSocial.Location = new System.Drawing.Point(56, 204);
+            this.lblRazaoSocial.Name = "lblRazaoSocial";
+            this.lblRazaoSocial.Size = new System.Drawing.Size(109, 21);
+            this.lblRazaoSocial.TabIndex = 17;
+            this.lblRazaoSocial.Text = "Razão Social:";
+            // 
+            // mskCNPJ
+            // 
+            this.mskCNPJ.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.mskCNPJ.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.mskCNPJ.Location = new System.Drawing.Point(172, 238);
+            this.mskCNPJ.Mask = "00, 000, 000/0001-00";
+            this.mskCNPJ.Name = "mskCNPJ";
+            this.mskCNPJ.Size = new System.Drawing.Size(166, 28);
+            this.mskCNPJ.TabIndex = 19;
+            // 
+            // mskTelefone
+            // 
+            this.mskTelefone.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.mskTelefone.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.mskTelefone.Location = new System.Drawing.Point(172, 306);
+            this.mskTelefone.Mask = "(00) 0 00000-0000";
+            this.mskTelefone.Name = "mskTelefone";
+            this.mskTelefone.Size = new System.Drawing.Size(166, 28);
+            this.mskTelefone.TabIndex = 44;
             // 
             // btnDelete
             // 
