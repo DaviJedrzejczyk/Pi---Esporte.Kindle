@@ -30,6 +30,9 @@
         {
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.dtCategoria = new System.Windows.Forms.DataGridView();
+            this.CategoriaID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CategoriaNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CategoriaDescricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblID = new System.Windows.Forms.Label();
             this.txtID = new System.Windows.Forms.TextBox();
             this.txtNome = new System.Windows.Forms.TextBox();
@@ -38,9 +41,6 @@
             this.lblDescricao = new System.Windows.Forms.Label();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
-            this.CategoriaID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CategoriaNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CategoriaDescricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dtCategoria)).BeginInit();
             this.SuspendLayout();
             // 
@@ -73,9 +73,28 @@
             this.dtCategoria.TabIndex = 1;
             this.dtCategoria.DoubleClick += new System.EventHandler(this.dtCategoria_DoubleClick);
             // 
+            // CategoriaID
+            // 
+            this.CategoriaID.HeaderText = "ID";
+            this.CategoriaID.Name = "CategoriaID";
+            this.CategoriaID.ReadOnly = true;
+            // 
+            // CategoriaNome
+            // 
+            this.CategoriaNome.HeaderText = "Nome";
+            this.CategoriaNome.Name = "CategoriaNome";
+            this.CategoriaNome.ReadOnly = true;
+            // 
+            // CategoriaDescricao
+            // 
+            this.CategoriaDescricao.HeaderText = "Descrição";
+            this.CategoriaDescricao.Name = "CategoriaDescricao";
+            this.CategoriaDescricao.ReadOnly = true;
+            // 
             // lblID
             // 
             this.lblID.AutoSize = true;
+            this.lblID.ForeColor = System.Drawing.Color.White;
             this.lblID.Location = new System.Drawing.Point(23, 70);
             this.lblID.Name = "lblID";
             this.lblID.Size = new System.Drawing.Size(21, 15);
@@ -86,7 +105,7 @@
             // 
             this.txtID.Location = new System.Drawing.Point(65, 67);
             this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(101, 23);
+            this.txtID.Size = new System.Drawing.Size(46, 23);
             this.txtID.TabIndex = 3;
             // 
             // txtNome
@@ -99,6 +118,7 @@
             // lblNome
             // 
             this.lblNome.AutoSize = true;
+            this.lblNome.ForeColor = System.Drawing.Color.White;
             this.lblNome.Location = new System.Drawing.Point(1, 99);
             this.lblNome.Name = "lblNome";
             this.lblNome.Size = new System.Drawing.Size(43, 15);
@@ -108,18 +128,20 @@
             // txtDesc
             // 
             this.txtDesc.Location = new System.Drawing.Point(65, 130);
+            this.txtDesc.Multiline = true;
             this.txtDesc.Name = "txtDesc";
-            this.txtDesc.Size = new System.Drawing.Size(101, 23);
+            this.txtDesc.Size = new System.Drawing.Size(183, 79);
             this.txtDesc.TabIndex = 7;
             // 
             // lblDescricao
             // 
             this.lblDescricao.AutoSize = true;
+            this.lblDescricao.ForeColor = System.Drawing.Color.White;
             this.lblDescricao.Location = new System.Drawing.Point(1, 133);
             this.lblDescricao.Name = "lblDescricao";
-            this.lblDescricao.Size = new System.Drawing.Size(58, 15);
+            this.lblDescricao.Size = new System.Drawing.Size(61, 15);
             this.lblDescricao.TabIndex = 6;
-            this.lblDescricao.Text = "Descrição";
+            this.lblDescricao.Text = "Descrição:";
             // 
             // btnUpdate
             // 
@@ -141,28 +163,11 @@
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // CategoriaID
-            // 
-            this.CategoriaID.HeaderText = "ID";
-            this.CategoriaID.Name = "CategoriaID";
-            this.CategoriaID.ReadOnly = true;
-            // 
-            // CategoriaNome
-            // 
-            this.CategoriaNome.HeaderText = "Nome";
-            this.CategoriaNome.Name = "CategoriaNome";
-            this.CategoriaNome.ReadOnly = true;
-            // 
-            // CategoriaDescricao
-            // 
-            this.CategoriaDescricao.HeaderText = "Descrição";
-            this.CategoriaDescricao.Name = "CategoriaDescricao";
-            this.CategoriaDescricao.ReadOnly = true;
-            // 
             // TelaCategoria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
             this.ClientSize = new System.Drawing.Size(682, 436);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnUpdate);

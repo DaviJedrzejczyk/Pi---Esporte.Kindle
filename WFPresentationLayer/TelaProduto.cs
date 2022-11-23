@@ -20,6 +20,7 @@ namespace WFPresentationLayer
         private readonly IProdutoService produtoBLL;
         private readonly IFornecedoraService fornecedoraService;
         private readonly ICategoriaService categoriaService;
+        private Form currentChildForm;
         [Inject()]
         public TelaProduto(IProdutoService produto, IFornecedoraService fornecedoraService2, ICategoriaService categoriaService)
         {
@@ -72,7 +73,7 @@ namespace WFPresentationLayer
                 dtProduto.Rows[i].Cells["ProdutoNome"].Value = dataResponse.Itens[i].Nome;
                 dtProduto.Rows[i].Cells["ProdutoDescricao"].Value = dataResponse.Itens[i].Descricao;
                 dtProduto.Rows[i].Cells["ProdutoQtdEstoque"].Value = dataResponse.Itens[i].QtdEstoque;
-                dtProduto.Rows[i].Cells["ProdutoValor"].Value = dataResponse.Itens[i].Valor_Unitario;
+                dtProduto.Rows[i].Cells["ProdutoValor"].Value = dataResponse.Itens[i].Valor_Unitario.ToString("C2");
                 dtProduto.Rows[i].Cells["ProdutoFornecedora"].Value = dataResponse.Itens[i].Fornecedor.Nome_Contato;
                 dtProduto.Rows[i].Cells["CatProduto"].Value = dataResponse.Itens[i].Categoria.Nome;
             }
@@ -83,7 +84,7 @@ namespace WFPresentationLayer
             this.txtNome.Text = produto.Nome;
             this.txtDescricao.Text = produto.Descricao;
             this.txtQtdEstoque.Text = produto.QtdEstoque.ToString();
-            this.txtValor.Text = produto.Valor_Unitario.ToString();
+            this.txtValor.Text = produto.Valor_Unitario.ToString("C2");
             this.cbFornecedora.Text = produto.Fornecedor.ID.ToString();
 
         }
@@ -166,6 +167,11 @@ namespace WFPresentationLayer
             txtValor.Clear();
             txtDescricao.Clear();
             txtID.Clear();
+        }
+        private void btnCategoria_Click(object sender, EventArgs e)
+        {
+            TelaCategoria telaCategoria = new(categoriaService);
+            telaCategoria.ShowDialog();
         }
     }
 }
