@@ -28,6 +28,7 @@ namespace WFPresentationLayer
         private void TelaCategoria_Load(object sender, EventArgs e)
         {
             SincronizarGrid();
+            StyleDatagridview();
         }
 
         private Categoria CreateObjectWithForm()
@@ -130,6 +131,22 @@ namespace WFPresentationLayer
             txtNome.Clear();
             txtID.Clear();
             txtDesc.Clear();
+        }
+        void StyleDatagridview()
+        {
+            dtCategoria.BorderStyle = BorderStyle.None;
+            dtCategoria.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238, 239, 249);
+            dtCategoria.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dtCategoria.DefaultCellStyle.SelectionBackColor = Color.Blue;
+            dtCategoria.DefaultCellStyle.SelectionForeColor = Color.WhiteSmoke;
+            dtCategoria.BackgroundColor = Color.FromArgb(30, 30, 30);
+            dtCategoria.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dtCategoria.EnableHeadersVisualStyles = false;
+            dtCategoria.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dtCategoria.ColumnHeadersDefaultCellStyle.Font = new Font("Microsoft YaHei UI", 12);
+            dtCategoria.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.FromArgb(37, 37, 38);
+            dtCategoria.ColumnHeadersDefaultCellStyle.SelectionForeColor = Color.White;
+            dtCategoria.AutoSize = true;
         }
     }
 }

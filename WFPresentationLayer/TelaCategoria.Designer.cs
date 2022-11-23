@@ -34,13 +34,13 @@
             this.CategoriaNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CategoriaDescricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblID = new System.Windows.Forms.Label();
-            this.txtID = new System.Windows.Forms.TextBox();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.lblNome = new System.Windows.Forms.Label();
             this.txtDesc = new System.Windows.Forms.TextBox();
             this.lblDescricao = new System.Windows.Forms.Label();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
+            this.txtID = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtCategoria)).BeginInit();
             this.SuspendLayout();
             // 
@@ -103,22 +103,12 @@
             this.lblID.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblID.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblID.ForeColor = System.Drawing.Color.White;
-            this.lblID.Location = new System.Drawing.Point(93, 56);
+            this.lblID.Location = new System.Drawing.Point(93, 87);
             this.lblID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblID.Name = "lblID";
             this.lblID.Size = new System.Drawing.Size(31, 21);
             this.lblID.TabIndex = 2;
             this.lblID.Text = "ID:";
-            // 
-            // txtID
-            // 
-            this.txtID.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtID.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtID.Location = new System.Drawing.Point(93, 90);
-            this.txtID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(64, 28);
-            this.txtID.TabIndex = 3;
             // 
             // txtNome
             // 
@@ -136,7 +126,7 @@
             this.lblNome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblNome.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblNome.ForeColor = System.Drawing.Color.White;
-            this.lblNome.Location = new System.Drawing.Point(93, 133);
+            this.lblNome.Location = new System.Drawing.Point(93, 142);
             this.lblNome.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNome.Name = "lblNome";
             this.lblNome.Size = new System.Drawing.Size(61, 21);
@@ -147,7 +137,7 @@
             // 
             this.txtDesc.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtDesc.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtDesc.Location = new System.Drawing.Point(93, 244);
+            this.txtDesc.Location = new System.Drawing.Point(93, 224);
             this.txtDesc.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtDesc.Multiline = true;
             this.txtDesc.Name = "txtDesc";
@@ -160,7 +150,7 @@
             this.lblDescricao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblDescricao.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblDescricao.ForeColor = System.Drawing.Color.White;
-            this.lblDescricao.Location = new System.Drawing.Point(93, 210);
+            this.lblDescricao.Location = new System.Drawing.Point(93, 199);
             this.lblDescricao.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDescricao.Name = "lblDescricao";
             this.lblDescricao.Size = new System.Drawing.Size(87, 21);
@@ -197,19 +187,28 @@
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
+            // txtID
+            // 
+            this.txtID.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtID.Location = new System.Drawing.Point(93, 111);
+            this.txtID.Name = "txtID";
+            this.txtID.ReadOnly = true;
+            this.txtID.Size = new System.Drawing.Size(55, 28);
+            this.txtID.TabIndex = 16;
+            // 
             // TelaCategoria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
             this.ClientSize = new System.Drawing.Size(974, 610);
+            this.Controls.Add(this.txtID);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.txtDesc);
             this.Controls.Add(this.lblDescricao);
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.lblNome);
-            this.Controls.Add(this.txtID);
             this.Controls.Add(this.lblID);
             this.Controls.Add(this.dtCategoria);
             this.Controls.Add(this.btnCadastrar);
@@ -235,12 +234,12 @@
         private DataGridViewTextBoxColumn CategoriaNome;
         private DataGridViewTextBoxColumn CategoriaDescricao;
         private Label lblID;
-        private TextBox txtID;
         private TextBox txtNome;
         private Label lblNome;
         private TextBox txtDesc;
         private Label lblDescricao;
         private Button btnUpdate;
         private Button btnDelete;
+        private TextBox txtID;
     }
 }
