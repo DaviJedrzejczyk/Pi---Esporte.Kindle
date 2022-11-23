@@ -12,6 +12,7 @@ namespace WFPresentationLayer
         private readonly IFuncionarioService funcionarioService;
         private readonly IEstadoService estadoService;
         private readonly IEnderecoService enderecoService;
+        private Form currentChildForm;
         public TelaFuncionario(IFuncionarioService funcionario, IEstadoService estadoService, IEnderecoService enderecoService)
         {
             InitializeComponent();
@@ -22,7 +23,21 @@ namespace WFPresentationLayer
             this.enderecoService = enderecoService;
         }
 
-
+        private void OpenChildForm(Form childForm)
+        {
+            if (currentChildForm != null)
+            {
+                currentChildForm.Close();
+            }
+            currentChildForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            panelDesktopFuncionario.Controls.Add(childForm);
+            panelDesktopFuncionario.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+        }
         private void TelaFuncionario_Load(object sender, EventArgs e)
         {
             
@@ -37,14 +52,11 @@ namespace WFPresentationLayer
 
         private Funcionario CreateObjectWithForm()
         {
-            DateTime.TryParse(txtData.Text, out DateTime dt);
+            DateTime.TryParse(mskDataNasc.Text, out DateTime dt);
             Genero.TryParse(cbGenero.Text, out Genero genero);
             TipoFuncionario.TryParse(cbNivelAcesso.Text, out TipoFuncionario tipo);
-            int.TryParse(txtID.Text, out int temp);
-            int.TryParse(txtEnderecoID.Text, out int idEnde);
             Funcionario funcionario = new()
             {
-                ID = temp,
                 Nome = txtNome.Text,
                 Sobrenome = txtSobrenome.Text,
                 CPF = mskdCPF.Text,
@@ -59,7 +71,6 @@ namespace WFPresentationLayer
             };
             Endereco endereco = new()
             {
-                ID = idEnde,
                 Rua = txtRua.Text,
                 CEP = mskCEP.Text,
                 Bairro = txtBairro.Text,
@@ -97,18 +108,15 @@ namespace WFPresentationLayer
 
         private async void DrawFormWithObject(Funcionario funcionario)
         {
-            this.txtID.Text = funcionario.ID.ToString();
             this.txtNome.Text = funcionario.Nome;
             this.txtSobrenome.Text = funcionario.Sobrenome;
             this.mskdCPF.Text = funcionario.CPF;
             this.txtRG.Text = funcionario.RG;
             this.txtEmail.Text = funcionario.Email;
-            this.txtIdade.Text = funcionario.Idade.ToString();
             this.mskTelefone.Text = funcionario.Telefone;
-            this.txtData.Text = funcionario.DataNascimento.ToString();
+            this.mskDataNasc.Text = funcionario.DataNascimento.ToString();
             this.cbGenero.Text = funcionario.Genero.ToString();
             this.cbNivelAcesso.Text = funcionario.Nivel_Acesso.ToString();
-            this.txtEnderecoID.Text = funcionario.EnderecoId.ToString();
             SingleResponse<Endereco> singleResponse = await enderecoService.GetById(funcionario.EnderecoId);
             if (!singleResponse.HasSuccess)
             {
@@ -148,13 +156,11 @@ namespace WFPresentationLayer
         private void LimparCampos()
         {
             mskdCPF.Clear();
-            txtData.Clear();
+            mskDataNasc.Clear();
             mskTelefone.Clear();
-            txtIdade.Clear();
             txtNome.Clear();
             txtRG.Clear();
             txtSobrenome.Clear();
-            txtID.Clear();
             txtEmail.Clear();
             txtRua.Clear();
             txtConfSenha.Clear();
@@ -165,7 +171,6 @@ namespace WFPresentationLayer
             mskCEP.Clear();
             txtCidade.Clear();
             txtComplemento.Clear();
-            txtEnderecoID.Clear();
         }
 
 
@@ -243,6 +248,26 @@ namespace WFPresentationLayer
             dtFuncionario.AutoSize = true;
         }
 
-        
+        private void btnInformacoesFunc_Click(object sender, EventArgs e)
+        {
+            if (dtFuncionario.CurrentCell == null)
+            {
+                MessageBox.Show("Não é possivel ver as informações adicionais de um Funcionário não selecionado!");
+                return;
+            }
+            string message = "Você realmente  ver as informações adicionais deste Funcionário?";
+            string title = "Close Window";
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result = MessageBox.Show(message, title, buttons);
+            if (result == DialogResult.Yes)
+            {
+                int rowindex = dtFuncionario.CurrentCell.RowIndex;
+                int index = Convert.ToInt32(dtFuncionario.Rows[rowindex].Cells[0].Value);
+                btnInformacoesFunc.Enabled = false;
+                btnInformacoesFunc.Visible = false;
+                tbFuncionario.BringToFront();
+                OpenChildForm(new TelaInfoAdicionaisFuncionario());
+            }
+        }
     }
 }
