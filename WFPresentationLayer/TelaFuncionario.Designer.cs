@@ -188,34 +188,38 @@
             // 
             // mskDataNasc
             // 
-            this.mskDataNasc.Location = new System.Drawing.Point(130, 318);
+            this.mskDataNasc.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.mskDataNasc.Location = new System.Drawing.Point(130, 347);
             this.mskDataNasc.Mask = "00/00/0000";
             this.mskDataNasc.Name = "mskDataNasc";
-            this.mskDataNasc.Size = new System.Drawing.Size(117, 23);
+            this.mskDataNasc.Size = new System.Drawing.Size(117, 28);
             this.mskDataNasc.TabIndex = 144;
             // 
             // mskTelefone
             // 
-            this.mskTelefone.Location = new System.Drawing.Point(130, 465);
+            this.mskTelefone.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.mskTelefone.Location = new System.Drawing.Point(130, 503);
             this.mskTelefone.Mask = "(00) 0 00000-0000";
             this.mskTelefone.Name = "mskTelefone";
-            this.mskTelefone.Size = new System.Drawing.Size(117, 23);
+            this.mskTelefone.Size = new System.Drawing.Size(117, 28);
             this.mskTelefone.TabIndex = 143;
             // 
             // mskCEP
             // 
+            this.mskCEP.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.mskCEP.Location = new System.Drawing.Point(470, 120);
             this.mskCEP.Mask = "00000-000";
             this.mskCEP.Name = "mskCEP";
-            this.mskCEP.Size = new System.Drawing.Size(100, 23);
+            this.mskCEP.Size = new System.Drawing.Size(100, 28);
             this.mskCEP.TabIndex = 142;
             // 
             // mskdCPF
             // 
-            this.mskdCPF.Location = new System.Drawing.Point(130, 268);
+            this.mskdCPF.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.mskdCPF.Location = new System.Drawing.Point(130, 294);
             this.mskdCPF.Mask = "000,000,000-00";
             this.mskdCPF.Name = "mskdCPF";
-            this.mskdCPF.Size = new System.Drawing.Size(117, 23);
+            this.mskdCPF.Size = new System.Drawing.Size(117, 28);
             this.mskdCPF.TabIndex = 141;
             // 
             // lblNumero
@@ -223,7 +227,7 @@
             this.lblNumero.AutoSize = true;
             this.lblNumero.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblNumero.ForeColor = System.Drawing.Color.White;
-            this.lblNumero.Location = new System.Drawing.Point(469, 294);
+            this.lblNumero.Location = new System.Drawing.Point(469, 317);
             this.lblNumero.Name = "lblNumero";
             this.lblNumero.Size = new System.Drawing.Size(77, 21);
             this.lblNumero.TabIndex = 140;
@@ -231,9 +235,10 @@
             // 
             // txtNumero
             // 
-            this.txtNumero.Location = new System.Drawing.Point(470, 318);
+            this.txtNumero.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtNumero.Location = new System.Drawing.Point(470, 341);
             this.txtNumero.Name = "txtNumero";
-            this.txtNumero.Size = new System.Drawing.Size(100, 23);
+            this.txtNumero.Size = new System.Drawing.Size(100, 28);
             this.txtNumero.TabIndex = 139;
             // 
             // lblComplemento
@@ -241,7 +246,7 @@
             this.lblComplemento.AutoSize = true;
             this.lblComplemento.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblComplemento.ForeColor = System.Drawing.Color.White;
-            this.lblComplemento.Location = new System.Drawing.Point(469, 394);
+            this.lblComplemento.Location = new System.Drawing.Point(470, 426);
             this.lblComplemento.Name = "lblComplemento";
             this.lblComplemento.Size = new System.Drawing.Size(123, 21);
             this.lblComplemento.TabIndex = 138;
@@ -249,9 +254,10 @@
             // 
             // txtComplemento
             // 
-            this.txtComplemento.Location = new System.Drawing.Point(470, 418);
+            this.txtComplemento.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtComplemento.Location = new System.Drawing.Point(471, 450);
             this.txtComplemento.Name = "txtComplemento";
-            this.txtComplemento.Size = new System.Drawing.Size(163, 23);
+            this.txtComplemento.Size = new System.Drawing.Size(163, 28);
             this.txtComplemento.TabIndex = 137;
             // 
             // lblPonto
@@ -259,7 +265,7 @@
             this.lblPonto.AutoSize = true;
             this.lblPonto.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblPonto.ForeColor = System.Drawing.Color.White;
-            this.lblPonto.Location = new System.Drawing.Point(467, 344);
+            this.lblPonto.Location = new System.Drawing.Point(467, 371);
             this.lblPonto.Name = "lblPonto";
             this.lblPonto.Size = new System.Drawing.Size(169, 21);
             this.lblPonto.TabIndex = 136;
@@ -267,9 +273,10 @@
             // 
             // txtPonto
             // 
-            this.txtPonto.Location = new System.Drawing.Point(470, 368);
+            this.txtPonto.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtPonto.Location = new System.Drawing.Point(471, 395);
             this.txtPonto.Name = "txtPonto";
-            this.txtPonto.Size = new System.Drawing.Size(162, 23);
+            this.txtPonto.Size = new System.Drawing.Size(162, 28);
             this.txtPonto.TabIndex = 135;
             // 
             // lblCep
@@ -286,10 +293,11 @@
             // cbEstado
             // 
             this.cbEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbEstado.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cbEstado.FormattingEnabled = true;
             this.cbEstado.Location = new System.Drawing.Point(648, 120);
             this.cbEstado.Name = "cbEstado";
-            this.cbEstado.Size = new System.Drawing.Size(100, 23);
+            this.cbEstado.Size = new System.Drawing.Size(100, 29);
             this.cbEstado.TabIndex = 133;
             // 
             // lblEstado
@@ -308,7 +316,7 @@
             this.lblCidade.AutoSize = true;
             this.lblCidade.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblCidade.ForeColor = System.Drawing.Color.White;
-            this.lblCidade.Location = new System.Drawing.Point(470, 244);
+            this.lblCidade.Location = new System.Drawing.Point(470, 262);
             this.lblCidade.Name = "lblCidade";
             this.lblCidade.Size = new System.Drawing.Size(67, 21);
             this.lblCidade.TabIndex = 131;
@@ -316,9 +324,10 @@
             // 
             // txtCidade
             // 
-            this.txtCidade.Location = new System.Drawing.Point(470, 268);
+            this.txtCidade.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtCidade.Location = new System.Drawing.Point(470, 286);
             this.txtCidade.Name = "txtCidade";
-            this.txtCidade.Size = new System.Drawing.Size(162, 23);
+            this.txtCidade.Size = new System.Drawing.Size(162, 28);
             this.txtCidade.TabIndex = 130;
             // 
             // lblBairro
@@ -326,7 +335,7 @@
             this.lblBairro.AutoSize = true;
             this.lblBairro.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblBairro.ForeColor = System.Drawing.Color.White;
-            this.lblBairro.Location = new System.Drawing.Point(470, 194);
+            this.lblBairro.Location = new System.Drawing.Point(470, 204);
             this.lblBairro.Name = "lblBairro";
             this.lblBairro.Size = new System.Drawing.Size(59, 21);
             this.lblBairro.TabIndex = 129;
@@ -334,9 +343,10 @@
             // 
             // txtBairro
             // 
-            this.txtBairro.Location = new System.Drawing.Point(470, 218);
+            this.txtBairro.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtBairro.Location = new System.Drawing.Point(470, 228);
             this.txtBairro.Name = "txtBairro";
-            this.txtBairro.Size = new System.Drawing.Size(162, 23);
+            this.txtBairro.Size = new System.Drawing.Size(162, 28);
             this.txtBairro.TabIndex = 128;
             // 
             // lblTelefone
@@ -344,7 +354,7 @@
             this.lblTelefone.AutoSize = true;
             this.lblTelefone.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblTelefone.ForeColor = System.Drawing.Color.White;
-            this.lblTelefone.Location = new System.Drawing.Point(130, 441);
+            this.lblTelefone.Location = new System.Drawing.Point(130, 479);
             this.lblTelefone.Name = "lblTelefone";
             this.lblTelefone.Size = new System.Drawing.Size(80, 21);
             this.lblTelefone.TabIndex = 127;
@@ -363,9 +373,10 @@
             // 
             // txtRua
             // 
+            this.txtRua.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtRua.Location = new System.Drawing.Point(470, 170);
             this.txtRua.Name = "txtRua";
-            this.txtRua.Size = new System.Drawing.Size(162, 23);
+            this.txtRua.Size = new System.Drawing.Size(162, 28);
             this.txtRua.TabIndex = 125;
             // 
             // lblNivelAcesso
@@ -373,7 +384,7 @@
             this.lblNivelAcesso.AutoSize = true;
             this.lblNivelAcesso.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblNivelAcesso.ForeColor = System.Drawing.Color.White;
-            this.lblNivelAcesso.Location = new System.Drawing.Point(130, 391);
+            this.lblNivelAcesso.Location = new System.Drawing.Point(130, 420);
             this.lblNivelAcesso.Name = "lblNivelAcesso";
             this.lblNivelAcesso.Size = new System.Drawing.Size(133, 21);
             this.lblNivelAcesso.TabIndex = 124;
@@ -382,10 +393,11 @@
             // cbNivelAcesso
             // 
             this.cbNivelAcesso.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbNivelAcesso.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cbNivelAcesso.FormattingEnabled = true;
-            this.cbNivelAcesso.Location = new System.Drawing.Point(130, 415);
+            this.cbNivelAcesso.Location = new System.Drawing.Point(130, 444);
             this.cbNivelAcesso.Name = "cbNivelAcesso";
-            this.cbNivelAcesso.Size = new System.Drawing.Size(117, 23);
+            this.cbNivelAcesso.Size = new System.Drawing.Size(117, 29);
             this.cbNivelAcesso.TabIndex = 123;
             // 
             // lblGenero
@@ -393,7 +405,7 @@
             this.lblGenero.AutoSize = true;
             this.lblGenero.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblGenero.ForeColor = System.Drawing.Color.White;
-            this.lblGenero.Location = new System.Drawing.Point(130, 344);
+            this.lblGenero.Location = new System.Drawing.Point(130, 373);
             this.lblGenero.Name = "lblGenero";
             this.lblGenero.Size = new System.Drawing.Size(70, 21);
             this.lblGenero.TabIndex = 122;
@@ -404,7 +416,7 @@
             this.lblData.AutoSize = true;
             this.lblData.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblData.ForeColor = System.Drawing.Color.White;
-            this.lblData.Location = new System.Drawing.Point(130, 294);
+            this.lblData.Location = new System.Drawing.Point(130, 323);
             this.lblData.Name = "lblData";
             this.lblData.Size = new System.Drawing.Size(170, 21);
             this.lblData.TabIndex = 121;
@@ -415,7 +427,7 @@
             this.lblCPF.AutoSize = true;
             this.lblCPF.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblCPF.ForeColor = System.Drawing.Color.White;
-            this.lblCPF.Location = new System.Drawing.Point(130, 244);
+            this.lblCPF.Location = new System.Drawing.Point(130, 270);
             this.lblCPF.Name = "lblCPF";
             this.lblCPF.Size = new System.Drawing.Size(44, 21);
             this.lblCPF.TabIndex = 120;
@@ -426,7 +438,7 @@
             this.lblRG.AutoSize = true;
             this.lblRG.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblRG.ForeColor = System.Drawing.Color.White;
-            this.lblRG.Location = new System.Drawing.Point(130, 194);
+            this.lblRG.Location = new System.Drawing.Point(130, 215);
             this.lblRG.Name = "lblRG";
             this.lblRG.Size = new System.Drawing.Size(36, 21);
             this.lblRG.TabIndex = 119;
@@ -434,9 +446,10 @@
             // 
             // txtRG
             // 
-            this.txtRG.Location = new System.Drawing.Point(130, 218);
+            this.txtRG.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtRG.Location = new System.Drawing.Point(130, 239);
             this.txtRG.Name = "txtRG";
-            this.txtRG.Size = new System.Drawing.Size(117, 23);
+            this.txtRG.Size = new System.Drawing.Size(117, 28);
             this.txtRG.TabIndex = 118;
             // 
             // lblConfSenha
@@ -444,7 +457,7 @@
             this.lblConfSenha.AutoSize = true;
             this.lblConfSenha.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblConfSenha.ForeColor = System.Drawing.Color.White;
-            this.lblConfSenha.Location = new System.Drawing.Point(293, 194);
+            this.lblConfSenha.Location = new System.Drawing.Point(293, 210);
             this.lblConfSenha.Name = "lblConfSenha";
             this.lblConfSenha.Size = new System.Drawing.Size(143, 21);
             this.lblConfSenha.TabIndex = 117;
@@ -452,9 +465,10 @@
             // 
             // txtConfSenha
             // 
-            this.txtConfSenha.Location = new System.Drawing.Point(297, 218);
+            this.txtConfSenha.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtConfSenha.Location = new System.Drawing.Point(297, 234);
             this.txtConfSenha.Name = "txtConfSenha";
-            this.txtConfSenha.Size = new System.Drawing.Size(139, 23);
+            this.txtConfSenha.Size = new System.Drawing.Size(139, 28);
             this.txtConfSenha.TabIndex = 116;
             // 
             // lblSenha
@@ -462,7 +476,7 @@
             this.lblSenha.AutoSize = true;
             this.lblSenha.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblSenha.ForeColor = System.Drawing.Color.White;
-            this.lblSenha.Location = new System.Drawing.Point(297, 144);
+            this.lblSenha.Location = new System.Drawing.Point(297, 160);
             this.lblSenha.Name = "lblSenha";
             this.lblSenha.Size = new System.Drawing.Size(61, 21);
             this.lblSenha.TabIndex = 115;
@@ -470,9 +484,10 @@
             // 
             // txtSenha
             // 
-            this.txtSenha.Location = new System.Drawing.Point(297, 168);
+            this.txtSenha.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtSenha.Location = new System.Drawing.Point(297, 184);
             this.txtSenha.Name = "txtSenha";
-            this.txtSenha.Size = new System.Drawing.Size(139, 23);
+            this.txtSenha.Size = new System.Drawing.Size(139, 28);
             this.txtSenha.TabIndex = 114;
             // 
             // lblEmail
@@ -480,7 +495,7 @@
             this.lblEmail.AutoSize = true;
             this.lblEmail.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblEmail.ForeColor = System.Drawing.Color.White;
-            this.lblEmail.Location = new System.Drawing.Point(297, 94);
+            this.lblEmail.Location = new System.Drawing.Point(293, 103);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(55, 21);
             this.lblEmail.TabIndex = 113;
@@ -488,9 +503,10 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(297, 118);
+            this.txtEmail.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtEmail.Location = new System.Drawing.Point(297, 127);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(139, 23);
+            this.txtEmail.Size = new System.Drawing.Size(139, 28);
             this.txtEmail.TabIndex = 112;
             // 
             // lblSobrenome
@@ -498,7 +514,7 @@
             this.lblSobrenome.AutoSize = true;
             this.lblSobrenome.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblSobrenome.ForeColor = System.Drawing.Color.White;
-            this.lblSobrenome.Location = new System.Drawing.Point(130, 146);
+            this.lblSobrenome.Location = new System.Drawing.Point(130, 160);
             this.lblSobrenome.Name = "lblSobrenome";
             this.lblSobrenome.Size = new System.Drawing.Size(102, 21);
             this.lblSobrenome.TabIndex = 111;
@@ -506,9 +522,10 @@
             // 
             // txtSobrenome
             // 
-            this.txtSobrenome.Location = new System.Drawing.Point(130, 170);
+            this.txtSobrenome.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtSobrenome.Location = new System.Drawing.Point(130, 184);
             this.txtSobrenome.Name = "txtSobrenome";
-            this.txtSobrenome.Size = new System.Drawing.Size(117, 23);
+            this.txtSobrenome.Size = new System.Drawing.Size(117, 28);
             this.txtSobrenome.TabIndex = 110;
             // 
             // lblNome
@@ -516,7 +533,7 @@
             this.lblNome.AutoSize = true;
             this.lblNome.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblNome.ForeColor = System.Drawing.Color.White;
-            this.lblNome.Location = new System.Drawing.Point(130, 96);
+            this.lblNome.Location = new System.Drawing.Point(130, 103);
             this.lblNome.Name = "lblNome";
             this.lblNome.Size = new System.Drawing.Size(61, 21);
             this.lblNome.TabIndex = 109;
@@ -524,18 +541,20 @@
             // 
             // txtNome
             // 
-            this.txtNome.Location = new System.Drawing.Point(130, 120);
+            this.txtNome.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtNome.Location = new System.Drawing.Point(130, 127);
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(117, 23);
+            this.txtNome.Size = new System.Drawing.Size(117, 28);
             this.txtNome.TabIndex = 108;
             // 
             // cbGenero
             // 
             this.cbGenero.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbGenero.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cbGenero.FormattingEnabled = true;
-            this.cbGenero.Location = new System.Drawing.Point(130, 368);
+            this.cbGenero.Location = new System.Drawing.Point(130, 397);
             this.cbGenero.Name = "cbGenero";
-            this.cbGenero.Size = new System.Drawing.Size(117, 23);
+            this.cbGenero.Size = new System.Drawing.Size(117, 29);
             this.cbGenero.TabIndex = 107;
             // 
             // btnDelete
