@@ -88,7 +88,7 @@
             // 
             // panelSaidaInfo
             // 
-            this.panelSaidaInfo.BackColor = System.Drawing.Color.RoyalBlue;
+            this.panelSaidaInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
             this.panelSaidaInfo.Controls.Add(this.txtData);
             this.panelSaidaInfo.Controls.Add(this.label7);
             this.panelSaidaInfo.Controls.Add(this.txtFuncionario);
@@ -106,75 +106,87 @@
             // txtData
             // 
             this.txtData.Enabled = false;
-            this.txtData.Location = new System.Drawing.Point(338, 43);
+            this.txtData.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtData.Location = new System.Drawing.Point(610, 43);
             this.txtData.Name = "txtData";
-            this.txtData.Size = new System.Drawing.Size(123, 23);
+            this.txtData.Size = new System.Drawing.Size(123, 28);
             this.txtData.TabIndex = 6;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(12, 4);
+            this.label7.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(26, 46);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(18, 15);
+            this.label7.Size = new System.Drawing.Size(31, 21);
             this.label7.TabIndex = 13;
-            this.label7.Text = "ID";
+            this.label7.Text = "ID:";
             // 
             // txtFuncionario
             // 
             this.txtFuncionario.Enabled = false;
-            this.txtFuncionario.Location = new System.Drawing.Point(230, 43);
+            this.txtFuncionario.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtFuncionario.Location = new System.Drawing.Point(452, 43);
             this.txtFuncionario.Name = "txtFuncionario";
-            this.txtFuncionario.Size = new System.Drawing.Size(100, 23);
+            this.txtFuncionario.Size = new System.Drawing.Size(100, 28);
             this.txtFuncionario.TabIndex = 2;
             // 
             // txtID
             // 
             this.txtID.Enabled = false;
-            this.txtID.Location = new System.Drawing.Point(12, 22);
+            this.txtID.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtID.Location = new System.Drawing.Point(59, 43);
             this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(44, 23);
+            this.txtID.Size = new System.Drawing.Size(44, 28);
             this.txtID.TabIndex = 12;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(230, 25);
+            this.label2.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(346, 44);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(70, 15);
+            this.label2.Size = new System.Drawing.Size(104, 21);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Funcionario";
+            this.label2.Text = "Funcionario:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Location = new System.Drawing.Point(338, 25);
+            this.label4.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(558, 43);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(31, 15);
+            this.label4.Size = new System.Drawing.Size(50, 21);
             this.label4.TabIndex = 7;
-            this.label4.Text = "Data";
+            this.label4.Text = "Data:";
             // 
             // txtFornecedor
             // 
             this.txtFornecedor.Enabled = false;
-            this.txtFornecedor.Location = new System.Drawing.Point(96, 43);
+            this.txtFornecedor.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtFornecedor.Location = new System.Drawing.Point(212, 43);
             this.txtFornecedor.Name = "txtFornecedor";
-            this.txtFornecedor.Size = new System.Drawing.Size(128, 23);
+            this.txtFornecedor.Size = new System.Drawing.Size(128, 28);
             this.txtFornecedor.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(96, 25);
+            this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(109, 46);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(67, 15);
+            this.label1.Size = new System.Drawing.Size(101, 21);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Fornecedor";
+            this.label1.Text = "Fornecedor:";
             // 
             // panelPagamentoInfo
             // 
-            this.panelPagamentoInfo.BackColor = System.Drawing.Color.RoyalBlue;
+            this.panelPagamentoInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
             this.panelPagamentoInfo.Controls.Add(this.label8);
             this.panelPagamentoInfo.Controls.Add(this.txtValorTotal);
             this.panelPagamentoInfo.Dock = System.Windows.Forms.DockStyle.Right;
@@ -186,20 +198,23 @@
             // label8
             // 
             this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label8.ForeColor = System.Drawing.Color.White;
             this.label8.Location = new System.Drawing.Point(9, 25);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(62, 15);
+            this.label8.Size = new System.Drawing.Size(97, 21);
             this.label8.TabIndex = 15;
-            this.label8.Text = "Valor Total";
+            this.label8.Text = "Valor Total:";
             // 
             // txtValorTotal
             // 
             this.txtValorTotal.BackColor = System.Drawing.SystemColors.Window;
             this.txtValorTotal.Enabled = false;
+            this.txtValorTotal.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtValorTotal.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtValorTotal.Location = new System.Drawing.Point(9, 43);
+            this.txtValorTotal.Location = new System.Drawing.Point(6, 54);
             this.txtValorTotal.Name = "txtValorTotal";
-            this.txtValorTotal.Size = new System.Drawing.Size(100, 23);
+            this.txtValorTotal.Size = new System.Drawing.Size(100, 28);
             this.txtValorTotal.TabIndex = 14;
             // 
             // TelaInformacoesAdicionaisEntrada
