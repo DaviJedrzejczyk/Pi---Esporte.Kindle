@@ -14,7 +14,7 @@ namespace WFPresentationLayer
            
             ApplicationConfiguration.Initialize();
             FormResolve.Wire(FormModule.Craete());
-            Application.Run(FormResolve.Resolve<TelaInicial>());
+            Application.Run(FormResolve.Resolve<TelaLogin>());
         }
     }
 }

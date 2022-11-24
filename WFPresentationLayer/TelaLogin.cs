@@ -1,3 +1,4 @@
+using BusinessLogicalLayer.Extensions;
 using BusinessLogicalLayer.Interfaces;
 using Entities;
 using Ninject;
@@ -16,6 +17,7 @@ namespace WFPresentationLayer
         private readonly ISaidaService saidaService;
         private readonly IEnderecoService endereco;
         private readonly IEntradaService entrada;
+        Hash hash = new();
         public TelaLogin(IFuncionarioService fu, IClienteService clienteService, IProdutoService produtoService, IFornecedoraService fornecedoraService, IEstadoService estadoService, ICategoriaService categoriaService, ISaidaService saidaService, IEnderecoService endereco, IEntradaService entrada)
         {
             InitializeComponent();
@@ -29,22 +31,62 @@ namespace WFPresentationLayer
             this.endereco = endereco;
             this.entrada = entrada;
         }
-        private async void btnLogin_Click(object sender, EventArgs e)
+        private void checkSenha_CheckedChanged(object sender, EventArgs e)
         {
-            Funcionario login = new(txtEmail.Text, txtSenha.Text);
-            SingleResponse<Funcionario> singleResponse = await funcionarioService.GetLogin(login);
-            if (singleResponse.HasSuccess)
+            if (checkSenha.Checked)
             {
-                FuncionarioLogin.id = singleResponse.Item.ID;
-                FuncionarioLogin.nome = singleResponse.Item.Nome;
-                this.Hide();
-                TelaInicial tela = new(clienteService, funcionarioService, produtoService, fornecedoraService, estadoService, categoriaService,saidaService,endereco, entrada);
-                tela.ShowDialog();
-                this.Close();
+                txtSenha.UseSystemPasswordChar = false;
             }
             else
             {
-                MessageBox.Show("Erro");
+                txtSenha.UseSystemPasswordChar = true;
+            }
+        }
+
+        private void btnFechar_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+
+        private async void btnLogin_Click_1(object sender, EventArgs e)
+        {
+            if (txtEmail.Text.Equals("adm@adm.com") && txtSenha.Text.Equals("123456"))
+            {
+                Funcionario login = new(txtEmail.Text, txtSenha.Text);
+                SingleResponse<Funcionario> singleResponse = await funcionarioService.GetLogin(login);
+                if (singleResponse.HasSuccess)
+                {
+                    FuncionarioLogin.id = singleResponse.Item.ID;
+                    FuncionarioLogin.nome = singleResponse.Item.Nome;
+                    this.Hide();
+                    TelaInicial tela = new(clienteService, funcionarioService, produtoService, fornecedoraService, estadoService, categoriaService, saidaService, endereco, entrada);
+                    tela.ShowDialog();
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Erro");
+                }
+            }
+            else
+            {
+                string email = txtEmail.Text;
+                string senha = hash.ComputeSha256Hash(txtSenha.Text);
+                Funcionario login = new(email, senha);
+                SingleResponse<Funcionario> singleResponse = await funcionarioService.GetLogin(login);
+                if (singleResponse.HasSuccess)
+                {
+                    FuncionarioLogin.id = singleResponse.Item.ID;
+                    FuncionarioLogin.nome = singleResponse.Item.Nome;
+                    this.Hide();
+                    TelaInicial tela = new(clienteService, funcionarioService, produtoService, fornecedoraService, estadoService, categoriaService, saidaService, endereco, entrada);
+                    tela.ShowDialog();
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Erro");
+                }
             }
         }
     }

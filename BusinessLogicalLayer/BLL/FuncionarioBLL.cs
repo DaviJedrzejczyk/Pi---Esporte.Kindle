@@ -49,7 +49,7 @@ namespace BusinessLogicalLayer.BLL
             return response;
         }
 
-        public async Task<Response> Update(Funcionario funcionario)
+        public Response Update(Funcionario funcionario)
         {
             FuncionarioUpdateValidator updateValidator = new();
             Response response = updateValidator.Validate(funcionario).ToResponse();
@@ -57,7 +57,7 @@ namespace BusinessLogicalLayer.BLL
             {
                 return response;
             }
-            return await funcionarioDAL.Update(funcionario);
+            return funcionarioDAL.Update(funcionario);
         }
         public async Task<Response> Delete(Funcionario funcionario)
         {

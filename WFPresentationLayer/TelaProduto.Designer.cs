@@ -82,6 +82,7 @@
             this.btnDelete.TabIndex = 109;
             this.btnDelete.Text = "Deletar";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click_1);
             // 
             // btnUpdate
             // 
@@ -93,8 +94,9 @@
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(193, 71);
             this.btnUpdate.TabIndex = 108;
-            this.btnUpdate.Text = "Update";
+            this.btnUpdate.Text = "Atualizar";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click_1);
             // 
             // btnCadastrar
             // 
@@ -108,6 +110,7 @@
             this.btnCadastrar.TabIndex = 107;
             this.btnCadastrar.Text = "Cadastrar";
             this.btnCadastrar.UseVisualStyleBackColor = true;
+            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click_1);
             // 
             // lblCategoria
             // 
@@ -311,7 +314,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
-            this.ClientSize = new System.Drawing.Size(1728, 902);
+            this.ClientSize = new System.Drawing.Size(1715, 902);
             this.Controls.Add(this.btnCategoria);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnUpdate);

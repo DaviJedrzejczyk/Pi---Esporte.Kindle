@@ -114,72 +114,15 @@ namespace WFPresentationLayer
 
         private async void btnRegistrarVenda_Click(object sender, EventArgs e)
         {
-            if (cliente != null && cliente.ID != 0)
-            {
-                if (produtos.Count != 0)
-                {
-                    List<ProdutoSaida> produtoSaidas = new();
-                    double valor = 0;
-                    for (int i = 0; i < produtos.Count; i++)
-                    {
-                        ProdutoSaida produtoSaida = new()
-                        {
-                            ProdutoId = produtos[i].ID,
-                            Quantidade = produtos[i].QtdEstoque,
-                            ValorUnitario = produtos[i].Valor_Unitario
-                        };
-                        produtoSaidas.Add(produtoSaida);
-                        valor += Math.Round((produtos[i].QtdEstoque * produtos[i].Valor_Unitario), 2);
-                    }
-                  
-                    FormaPagamento.TryParse(cbFormaPag.Text, out FormaPagamento pagamento);
-                    Saida saida = new();
-                    saida.produtoSaidas = produtoSaidas;
-                    saida.DataSaida = dateTelaVenda.Value;
-                    saida.Valor = valor;
-                    saida.FormaPagamento = pagamento;
-                    saida.Valor_Total = valor;
-                    saida.ClienteID = cliente.ID;
-                    saida.FuncionarioID = FuncionarioLogin.id;
-                    DataResponse<Produto> dataResponse = produtoService.CalculateInventory(produtos);
-                    if (dataResponse.HasSuccess)
-                    {
-                        Response response = await saidaService.Insert(saida);
-                        if (response.HasSuccess)
-                        {
-                            for (int i = 0; i < produtos.Count; i++)
-                            {
-                                await produtoService.UpdateValueAndInventory(dataResponse.Itens[i]);
-                            }
-                            dtTelaVenda.Rows.Clear();
-                            produtos.Clear();
-                            cliente = null;
-                            txtQtdItens.Text = "";
-                            txtTotPag.Text = "";
-                            txtValor.Text = "";
-                            txtCliente.Text = "";
-                            txtCpf.Text = "";
-                        }
-                        MessageBox.Show(response.Message);
-                    }
-                    else
-                    {
-                        MessageBox.Show(dataResponse.Message);
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Não é possivel fazer a venda se não há Produtos");
-                }
-            }
-            else
-            {
-                MessageBox.Show("Não é possivel fazer uma venda se não há Cliente");
-
-            }
+            
         }
 
         private void btnAddCliente_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnAddCliente_Click_1(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtCpf.Text.Replace(".", "").Replace("-", "")))
             {
@@ -238,6 +181,86 @@ namespace WFPresentationLayer
             }
         }
 
-      
+        private void btnAdicionarProduto_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnRetirarProduto_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private async void btnRegistrarVenda_Click_1(object sender, EventArgs e)
+        {
+            if (cliente != null && cliente.ID != 0)
+            {
+                if (produtos.Count != 0)
+                {
+                    List<ProdutoSaida> produtoSaidas = new();
+                    double valor = 0;
+                    for (int i = 0; i < produtos.Count; i++)
+                    {
+                        ProdutoSaida produtoSaida = new()
+                        {
+                            ProdutoId = produtos[i].ID,
+                            Quantidade = produtos[i].QtdEstoque,
+                            ValorUnitario = produtos[i].Valor_Unitario
+                        };
+                        produtoSaidas.Add(produtoSaida);
+                        valor += Math.Round((produtos[i].QtdEstoque * produtos[i].Valor_Unitario), 2);
+                    }
+
+                    FormaPagamento.TryParse(cbFormaPag.Text, out FormaPagamento pagamento);
+                    Saida saida = new();
+                    saida.produtoSaidas = produtoSaidas;
+                    saida.DataSaida = dateTelaVenda.Value;
+                    saida.Valor = valor;
+                    saida.FormaPagamento = pagamento;
+                    saida.Valor_Total = valor;
+                    saida.ClienteID = cliente.ID;
+                    saida.FuncionarioID = FuncionarioLogin.id;
+                    DataResponse<Produto> dataResponse = produtoService.CalculateInventory(produtos);
+                    if (dataResponse.HasSuccess)
+                    {
+                        Response response = await saidaService.Insert(saida);
+                        if (response.HasSuccess)
+                        {
+                            for (int i = 0; i < produtos.Count; i++)
+                            {
+                                await produtoService.UpdateValueAndInventory(dataResponse.Itens[i]);
+                            }
+                            dtTelaVenda.Rows.Clear();
+                            produtos.Clear();
+                            cliente = null;
+                            txtQtdItens.Text = "";
+                            txtTotPag.Text = "";
+                            txtValor.Text = "";
+                            txtCliente.Text = "";
+                            txtCpf.Text = "";
+                        }
+                        MessageBox.Show(response.Message);
+                    }
+                    else
+                    {
+                        MessageBox.Show(dataResponse.Message);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Não é possivel fazer a venda se não há Produtos");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Não é possivel fazer uma venda se não há Cliente");
+
+            }
+        }
+
+        private void btnCadastrarCliente_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -68,9 +68,9 @@ namespace DataAccessLayer.Implements
             }
         }
 
-        public async Task<Response> Update(Funcionario funcionario)
+        public Response Update(Funcionario funcionario)
         {
-            string sql = $"UPDATE FUNCIONARIOS SET NOME = @NOME,SOBRENOME = @SOBRENOME, EMAIL = @EMAIL, TELEFONE = @TELEFONE, GENERO = @GENERO,NIVEL_ACESSO = @NIVEL_ACESSO WHERE ID = @ID";
+            string sql = $"UPDATE FUNCIONARIOS SET NOME = @NOME, SOBRENOME = @SOBRENOME, EMAIL = @EMAIL, TELEFONE = @TELEFONE, GENERO = @GENERO WHERE ID = @ID";
             SqlConnection connection = new(_connection);
             SqlCommand command = new(sql, connection);
             command.Parameters.AddWithValue("@NOME", funcionario.Nome);
@@ -78,12 +78,12 @@ namespace DataAccessLayer.Implements
             command.Parameters.AddWithValue("@EMAIL", funcionario.Email);
             command.Parameters.AddWithValue("@TELEFONE", funcionario.Telefone);
             command.Parameters.AddWithValue("@GENERO", funcionario.Genero);
-            command.Parameters.AddWithValue("@NIVEL_ACESSO", funcionario.Nivel_Acesso);
             command.Parameters.AddWithValue("@ID", funcionario.ID);
+
             try
             {
                 connection.Open();
-                int qtdRegistrosAlterados = await command.ExecuteNonQueryAsync();
+                int qtdRegistrosAlterados = command.ExecuteNonQuery();
                 if (qtdRegistrosAlterados != 1)
                 {
                     return ResponseFactory.CreateInstance().CreateFailureResponse();

@@ -312,7 +312,7 @@
             this.btnProduto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProduto.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnProduto.ForeColor = System.Drawing.Color.White;
-            this.btnProduto.Location = new System.Drawing.Point(1252, 737);
+            this.btnProduto.Location = new System.Drawing.Point(1239, 737);
             this.btnProduto.Name = "btnProduto";
             this.btnProduto.Size = new System.Drawing.Size(229, 59);
             this.btnProduto.TabIndex = 18;
@@ -325,7 +325,7 @@
             this.btnFornecedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFornecedor.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnFornecedor.ForeColor = System.Drawing.Color.White;
-            this.btnFornecedor.Location = new System.Drawing.Point(1487, 737);
+            this.btnFornecedor.Location = new System.Drawing.Point(1474, 737);
             this.btnFornecedor.Name = "btnFornecedor";
             this.btnFornecedor.Size = new System.Drawing.Size(229, 59);
             this.btnFornecedor.TabIndex = 19;
@@ -338,7 +338,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
-            this.ClientSize = new System.Drawing.Size(1728, 902);
+            this.ClientSize = new System.Drawing.Size(1715, 902);
             this.Controls.Add(this.btnFornecedor);
             this.Controls.Add(this.btnProduto);
             this.Controls.Add(this.btnRegistrar);

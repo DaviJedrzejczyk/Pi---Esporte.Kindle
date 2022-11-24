@@ -1,4 +1,5 @@
-﻿using BusinessLogicalLayer.Interfaces;
+﻿using BusinessLogicalLayer.Extensions;
+using BusinessLogicalLayer.Interfaces;
 using Entities;
 using Entities.Enums;
 using Shared;
@@ -41,8 +42,12 @@ namespace WFPresentationLayer
             DateTime.TryParse(mskDataNasc.Text, out DateTime dt);
             Genero.TryParse(cbGenero.Text, out Genero genero);
             TipoFuncionario.TryParse(cbNivelAcesso.Text, out TipoFuncionario tipo);
+            int.TryParse(txtID.Text, out int temp);
+            Hash hash = new();
+            string senha = hash.ComputeSha256Hash(txtSenha.Text);
             Funcionario funcionario = new()
             {
+                ID = temp,
                 Nome = txtNome.Text,
                 Sobrenome = txtSobrenome.Text,
                 CPF = mskdCPF.Text,
@@ -50,7 +55,7 @@ namespace WFPresentationLayer
                 RG = txtRG.Text,
                 Genero = genero,
                 DataNascimento = dt,
-                Senha = txtSenha.Text,
+                Senha = senha,
                 Nivel_Acesso = tipo,
                 Telefone = mskTelefone.Text,
 
@@ -159,9 +164,24 @@ namespace WFPresentationLayer
             txtComplemento.Clear();
         }
 
+        void StyleDatagridview()
+        {
+            dtFuncionario.BorderStyle = BorderStyle.None;
+            dtFuncionario.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238, 239, 249);
+            dtFuncionario.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dtFuncionario.DefaultCellStyle.SelectionBackColor = Color.Blue;
+            dtFuncionario.DefaultCellStyle.SelectionForeColor = Color.WhiteSmoke;
+            dtFuncionario.BackgroundColor = Color.FromArgb(30, 30, 30);
+            dtFuncionario.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dtFuncionario.EnableHeadersVisualStyles = false;
+            dtFuncionario.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dtFuncionario.ColumnHeadersDefaultCellStyle.Font = new Font("MS Reference Sans Serif", 10);
+            dtFuncionario.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.FromArgb(37,37,38);
+            dtFuncionario.ColumnHeadersDefaultCellStyle.SelectionForeColor = Color.White;
+            dtFuncionario.AutoSize = true;
+        }
 
-
-        private async void btnCadastrar_Click(object sender, EventArgs e)
+        private async void btnCadastrar_Click_1(object sender, EventArgs e)
         {
             Funcionario funcionario = CreateObjectWithForm();
             Response response = await funcionarioService.Insert(funcionario);
@@ -177,10 +197,10 @@ namespace WFPresentationLayer
             }
         }
 
-        private async void btnUpdate_Click(object sender, EventArgs e)
+        private async void btnUpdate_Click_1(object sender, EventArgs e)
         {
             Funcionario funcionario = CreateObjectWithForm();
-            Response response = await funcionarioService.Update(funcionario);
+            Response response = funcionarioService.Update(funcionario);
             if (response.HasSuccess)
             {
                 response = await enderecoService.Update(funcionario.Endereco);
@@ -201,7 +221,7 @@ namespace WFPresentationLayer
             }
         }
 
-        private async void btnDelete_Click(object sender, EventArgs e)
+        private async void btnDelete_Click_1(object sender, EventArgs e)
         {
             Funcionario funcionario = CreateObjectWithForm();
             Response response = await funcionarioService.Delete(funcionario);
@@ -216,24 +236,5 @@ namespace WFPresentationLayer
                 MessageBox.Show(response.Message);
             }
         }
-
-        void StyleDatagridview()
-        {
-            dtFuncionario.BorderStyle = BorderStyle.None;
-            dtFuncionario.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238, 239, 249);
-            dtFuncionario.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            dtFuncionario.DefaultCellStyle.SelectionBackColor = Color.Blue;
-            dtFuncionario.DefaultCellStyle.SelectionForeColor = Color.WhiteSmoke;
-            dtFuncionario.BackgroundColor = Color.FromArgb(30, 30, 30);
-            dtFuncionario.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dtFuncionario.EnableHeadersVisualStyles = false;
-            dtFuncionario.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dtFuncionario.ColumnHeadersDefaultCellStyle.Font = new Font("MS Reference Sans Serif", 10);
-            dtFuncionario.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.FromArgb(37,37,38);
-            dtFuncionario.ColumnHeadersDefaultCellStyle.SelectionForeColor = Color.White;
-            dtFuncionario.AutoSize = true;
-        }
-
-        
     }
 }

@@ -44,8 +44,8 @@ namespace BusinessLogicalLayer.Validators.Clientes
         public void ValidateTelefone()
         {
             RuleFor(c => c.Telefone).NotNull().WithMessage(GenericConstants.MENSAGEM_ERRO_TELEFONE_VAZIO)
-                                    .MaximumLength(14).WithMessage(GenericConstants.MENSAGEM_ERRO_TELEFONE_MAIOR)
-                                    .MinimumLength(8).WithMessage(GenericConstants.MENSAGEM_ERRO_TELEFONE_MENOR);
+                                    .MaximumLength(18).WithMessage(GenericConstants.MENSAGEM_ERRO_TELEFONE_MAIOR)
+                                    .MinimumLength(7).WithMessage(GenericConstants.MENSAGEM_ERRO_TELEFONE_MENOR);
         }
         public void ValidateRG()
         {

@@ -318,6 +318,7 @@
             this.btnAddCliente.TabIndex = 55;
             this.btnAddCliente.Text = "Adicionar Cliente";
             this.btnAddCliente.UseVisualStyleBackColor = true;
+            this.btnAddCliente.Click += new System.EventHandler(this.btnAddCliente_Click_1);
             // 
             // btnRetirarProduto
             // 
@@ -331,6 +332,7 @@
             this.btnRetirarProduto.TabIndex = 56;
             this.btnRetirarProduto.Text = "Retirar Produto";
             this.btnRetirarProduto.UseVisualStyleBackColor = true;
+            this.btnRetirarProduto.Click += new System.EventHandler(this.btnRetirarProduto_Click_1);
             // 
             // btnAdicionarProduto
             // 
@@ -344,6 +346,7 @@
             this.btnAdicionarProduto.TabIndex = 57;
             this.btnAdicionarProduto.Text = "Adicionar Produto";
             this.btnAdicionarProduto.UseVisualStyleBackColor = true;
+            this.btnAdicionarProduto.Click += new System.EventHandler(this.btnAdicionarProduto_Click_1);
             // 
             // btnRegistrarVenda
             // 
@@ -357,6 +360,7 @@
             this.btnRegistrarVenda.TabIndex = 58;
             this.btnRegistrarVenda.Text = "Registrar Venda";
             this.btnRegistrarVenda.UseVisualStyleBackColor = true;
+            this.btnRegistrarVenda.Click += new System.EventHandler(this.btnRegistrarVenda_Click_1);
             // 
             // btnCadastrarCliente
             // 
@@ -364,19 +368,20 @@
             this.btnCadastrarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCadastrarCliente.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnCadastrarCliente.ForeColor = System.Drawing.Color.White;
-            this.btnCadastrarCliente.Location = new System.Drawing.Point(1473, 677);
+            this.btnCadastrarCliente.Location = new System.Drawing.Point(1460, 677);
             this.btnCadastrarCliente.Name = "btnCadastrarCliente";
             this.btnCadastrarCliente.Size = new System.Drawing.Size(243, 77);
             this.btnCadastrarCliente.TabIndex = 59;
             this.btnCadastrarCliente.Text = "Cadastrar Cliente";
             this.btnCadastrarCliente.UseVisualStyleBackColor = true;
+            this.btnCadastrarCliente.Click += new System.EventHandler(this.btnCadastrarCliente_Click_1);
             // 
             // TelaVenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
-            this.ClientSize = new System.Drawing.Size(1728, 902);
+            this.ClientSize = new System.Drawing.Size(1715, 902);
             this.Controls.Add(this.btnCadastrarCliente);
             this.Controls.Add(this.btnRegistrarVenda);
             this.Controls.Add(this.btnAdicionarProduto);

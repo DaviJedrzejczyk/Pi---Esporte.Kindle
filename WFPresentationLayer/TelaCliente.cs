@@ -111,53 +111,7 @@ namespace WFPresentationLayer
             DrawFormWithObject(clienteSelecionado);
 
         }
-        private void btnCadastrar_Click(object sender, EventArgs e)
-        {
-            Cliente cliente = CreateObjectWithForm();
-            Response response = _cliente.Insert(cliente);
-            if (response.HasSuccess)
-            {
-                MessageBox.Show(response.Message);
-                SincronizarGrid();
-                LimparCampos();
-            }
-            else
-            {
-                MessageBox.Show(response.Message);
-            }
-        }
-        private void btnUpdate_Click(object sender, EventArgs e)
-        {
-            Cliente cliente = CreateObjectWithForm();
-            Response response = _cliente.Update(cliente);
-            if (response.HasSuccess)
-            {
-                MessageBox.Show(response.Message);
-                SincronizarGrid();
-                LimparCampos();
-            }
-            else
-            {
-                MessageBox.Show(response.Message);
-            }
-        }
-
-        private void btnRemove_Click(object sender, EventArgs e)
-        {
-            Cliente cliente = CreateObjectWithForm();
-            Response response = _cliente.Delete(cliente.ID);
-            if (response.HasSuccess)
-            {
-                MessageBox.Show(response.Message);
-                SincronizarGrid();
-                LimparCampos();
-            }
-            else
-            {
-                MessageBox.Show(response.Message);
-            }
-
-        }
+ 
         private void LimparCampos()
         {
             mskdCPF.Clear();
@@ -175,6 +129,55 @@ namespace WFPresentationLayer
         private void dtCliente_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void btnCadastrar_Click_1(object sender, EventArgs e)
+        {
+            Cliente cliente = CreateObjectWithForm();
+            Response response = _cliente.Insert(cliente);
+            if (response.HasSuccess)
+            {
+                MessageBox.Show(response.Message);
+                SincronizarGrid();
+                LimparCampos();
+            }
+            else
+            {
+                MessageBox.Show(response.Message);
+            }
+        }
+
+        private void btnUpdate_Click_1(object sender, EventArgs e)
+        {
+
+            Cliente cliente = CreateObjectWithForm();
+            Response response = _cliente.Update(cliente);
+            if (response.HasSuccess)
+            {
+                MessageBox.Show(response.Message);
+                SincronizarGrid();
+                LimparCampos();
+            }
+            else
+            {
+                MessageBox.Show(response.Message);
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            Cliente cliente = CreateObjectWithForm();
+            Response response = _cliente.Delete(cliente.ID);
+            if (response.HasSuccess)
+            {
+                MessageBox.Show(response.Message);
+                SincronizarGrid();
+                LimparCampos();
+            }
+            else
+            {
+                MessageBox.Show(response.Message);
+            }
         }
     }
 }

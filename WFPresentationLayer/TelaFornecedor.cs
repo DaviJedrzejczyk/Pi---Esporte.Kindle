@@ -86,54 +86,6 @@ namespace WFPresentationLayer
             };
             DrawFormWithObject(fornecedorSelecionado);
         }
-
-        private async void btnCadastrar_Click(object sender, EventArgs e)
-        {
-            Fornecedor fornecedor = CreateObjectWithForm();
-            Response response = await fornecedoraBLL.Insert(fornecedor);
-            if (response.HasSuccess)
-            {
-                MessageBox.Show("Sucesso");
-                SincronizarGrid();
-                LimparCampos();
-            }
-            else
-            {
-                MessageBox.Show("Erro");
-            }
-        }
-
-        private async void btnUpdate_Click(object sender, EventArgs e)
-        {
-            Fornecedor fornecedor = CreateObjectWithForm();
-            Response response = await fornecedoraBLL.Update(fornecedor);
-            if (response.HasSuccess)
-            {
-                MessageBox.Show("Sucesso");
-                SincronizarGrid();
-                LimparCampos();
-            }
-            else
-            {
-                MessageBox.Show("Erro");
-            }
-        }
-
-        private async void btnDelete_Click(object sender, EventArgs e)
-        {
-            Fornecedor fornecedor = CreateObjectWithForm();
-            Response response = await fornecedoraBLL.Delete(fornecedor.ID);
-            if (response.HasSuccess)
-            {
-                MessageBox.Show("Sucesso");
-                SincronizarGrid();
-                LimparCampos();
-            }
-            else
-            {
-                MessageBox.Show("Erro");
-            }
-        }
         private void LimparCampos()
         {
             mskCNPJ.Clear();
@@ -161,5 +113,52 @@ namespace WFPresentationLayer
             dtFornecedor.AutoSize = true;
         }
 
+        private async void btnCadastrar_Click_1(object sender, EventArgs e)
+        {
+            Fornecedor fornecedor = CreateObjectWithForm();
+            Response response = await fornecedoraBLL.Insert(fornecedor);
+            if (response.HasSuccess)
+            {
+                MessageBox.Show("Sucesso");
+                SincronizarGrid();
+                LimparCampos();
+            }
+            else
+            {
+                MessageBox.Show("Erro");
+            }
+        }
+
+        private async void btnUpdate_Click_1(object sender, EventArgs e)
+        {
+            Fornecedor fornecedor = CreateObjectWithForm();
+            Response response = await fornecedoraBLL.Update(fornecedor);
+            if (response.HasSuccess)
+            {
+                MessageBox.Show("Sucesso");
+                SincronizarGrid();
+                LimparCampos();
+            }
+            else
+            {
+                MessageBox.Show("Erro");
+            }
+        }
+
+        private async void btnDelete_Click_1(object sender, EventArgs e)
+        {
+            Fornecedor fornecedor = CreateObjectWithForm();
+            Response response = await fornecedoraBLL.Delete(fornecedor.ID);
+            if (response.HasSuccess)
+            {
+                MessageBox.Show("Sucesso");
+                SincronizarGrid();
+                LimparCampos();
+            }
+            else
+            {
+                MessageBox.Show("Erro");
+            }
+        }
     }
 }

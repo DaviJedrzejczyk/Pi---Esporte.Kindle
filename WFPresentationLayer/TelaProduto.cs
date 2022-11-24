@@ -114,6 +114,35 @@ namespace WFPresentationLayer
 
         private async void btnCadastrar_Click(object sender, EventArgs e)
         {
+           
+        }
+
+        private async void btnUpdate_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private async void btnDelete_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void LimparCampos()
+        {
+            txtQtdEstoque.Clear();
+            txtNome.Clear();
+            txtValor.Clear();
+            txtDescricao.Clear();
+            txtID.Clear();
+        }
+        private void btnCategoria_Click(object sender, EventArgs e)
+        {
+            TelaCategoria telaCategoria = new(categoriaService);
+            telaCategoria.ShowDialog();
+        }
+
+        private async void btnCadastrar_Click_1(object sender, EventArgs e)
+        {
             Produto produto = CreateObjectWithForm();
             Response response = await produtoBLL.Insert(produto);
             if (response.HasSuccess)
@@ -128,7 +157,7 @@ namespace WFPresentationLayer
             }
         }
 
-        private async void btnUpdate_Click(object sender, EventArgs e)
+        private async void btnUpdate_Click_1(object sender, EventArgs e)
         {
             Produto produto = CreateObjectWithForm();
             Response response = await produtoBLL.Update(produto);
@@ -144,7 +173,7 @@ namespace WFPresentationLayer
             }
         }
 
-        private async void btnDelete_Click(object sender, EventArgs e)
+        private async void btnDelete_Click_1(object sender, EventArgs e)
         {
             Produto produto = CreateObjectWithForm();
             Response response = await produtoBLL.Delete(produto);
@@ -158,20 +187,6 @@ namespace WFPresentationLayer
             {
                 MessageBox.Show("Erro");
             }
-        }
-
-        private void LimparCampos()
-        {
-            txtQtdEstoque.Clear();
-            txtNome.Clear();
-            txtValor.Clear();
-            txtDescricao.Clear();
-            txtID.Clear();
-        }
-        private void btnCategoria_Click(object sender, EventArgs e)
-        {
-            TelaCategoria telaCategoria = new(categoriaService);
-            telaCategoria.ShowDialog();
         }
     }
 }

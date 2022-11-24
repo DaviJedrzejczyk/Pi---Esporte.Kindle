@@ -25,9 +25,9 @@ namespace BusinessLogicalLayer.Validators.Fornecedoras
         public void ValidateCnpj()
         {
             RuleFor(x => x.Cnpj).NotNull().WithMessage(FornecedorConstants.MENSAGEM_ERRO_CNPJ_VAZIO)
-                                .MaximumLength(14).WithMessage(FornecedorConstants.MENSAGEM_ERRO_CNPJ_MAIOR)
-                                .MinimumLength(13).WithMessage(FornecedorConstants.MENSAGEM_ERRO_CNPJ_MENOR)
-                                .IsCNPJ().WithMessage(FornecedorConstants.MENSAGEM_ERRO_CNPJ_MAIOR);
+                                .MaximumLength(100).WithMessage(FornecedorConstants.MENSAGEM_ERRO_CNPJ_MAIOR)
+                                .MinimumLength(5).WithMessage(FornecedorConstants.MENSAGEM_ERRO_CNPJ_MENOR)
+                                /*.IsCNPJ().WithMessage(FornecedorConstants.MENSAGEM_ERRO_CNPJ_MAIOR)*/;
         }
         public void ValidateEmail()
         {
@@ -39,8 +39,8 @@ namespace BusinessLogicalLayer.Validators.Fornecedoras
         public void ValidateTelefone()
         {
             RuleFor(c => c.Telefone).NotNull().WithMessage(GenericConstants.MENSAGEM_ERRO_TELEFONE_VAZIO)
-                                    .MaximumLength(14).WithMessage(GenericConstants.MENSAGEM_ERRO_TELEFONE_MAIOR)
-                                    .MinimumLength(9).WithMessage(GenericConstants.MENSAGEM_ERRO_TELEFONE_MENOR);
+                                    .MaximumLength(18).WithMessage(GenericConstants.MENSAGEM_ERRO_TELEFONE_MAIOR)
+                                    .MinimumLength(7).WithMessage(GenericConstants.MENSAGEM_ERRO_TELEFONE_MENOR);
         }
     }
 }

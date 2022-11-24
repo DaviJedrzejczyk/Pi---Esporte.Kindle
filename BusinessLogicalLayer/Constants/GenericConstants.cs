@@ -14,7 +14,7 @@ namespace BusinessLogicalLayer.Constants
         public const string MENSAGEM_ERRO_EMAIL_MAIOR = "Email deve conter no máximo 100 caracteres";
         public const string MENSAGEM_ERRO_EMAIL_MENOR = "Email deve conter no mínimo 3 caracteres";
         public const string MENSAGEM_ERRO_TELEFONE_VAZIO = "Telefone deve ser informado";
-        public const string MENSAGEM_ERRO_TELEFONE_MAIOR = "Telfone deve conter no maximo 9 digitos";
+        public const string MENSAGEM_ERRO_TELEFONE_MAIOR = "Telefone deve conter no máximo 9 digitos";
         public const string MENSAGEM_ERRO_TELEFONE_MENOR = "Telefone deve conter no mínimo 8 dígitos";
         public const string MENSAGEM_ERRO_CPF_VAZIO = "CPF deve ser informado";
         public const string MENSAGEM_ERRO_CPF_MAIOR = "CPF deve conter no máximo 11 caracteres";

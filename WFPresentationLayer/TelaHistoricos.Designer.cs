@@ -77,7 +77,7 @@
             this.tbMaster.Location = new System.Drawing.Point(0, 0);
             this.tbMaster.Name = "tbMaster";
             this.tbMaster.SelectedIndex = 0;
-            this.tbMaster.Size = new System.Drawing.Size(1728, 902);
+            this.tbMaster.Size = new System.Drawing.Size(1715, 902);
             this.tbMaster.TabIndex = 0;
             // 
             // tbVendas
@@ -86,7 +86,7 @@
             this.tbVendas.Location = new System.Drawing.Point(4, 30);
             this.tbVendas.Name = "tbVendas";
             this.tbVendas.Padding = new System.Windows.Forms.Padding(3);
-            this.tbVendas.Size = new System.Drawing.Size(960, 494);
+            this.tbVendas.Size = new System.Drawing.Size(1707, 868);
             this.tbVendas.TabIndex = 0;
             this.tbVendas.Text = "Vendas";
             this.tbVendas.UseVisualStyleBackColor = true;
@@ -98,7 +98,7 @@
             this.panelDesktopSaida.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDesktopSaida.Location = new System.Drawing.Point(3, 3);
             this.panelDesktopSaida.Name = "panelDesktopSaida";
-            this.panelDesktopSaida.Size = new System.Drawing.Size(954, 488);
+            this.panelDesktopSaida.Size = new System.Drawing.Size(1701, 862);
             this.panelDesktopSaida.TabIndex = 0;
             // 
             // dtHistoricoSaida
@@ -120,7 +120,7 @@
             this.dtHistoricoSaida.ReadOnly = true;
             this.dtHistoricoSaida.RowTemplate.Height = 25;
             this.dtHistoricoSaida.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtHistoricoSaida.Size = new System.Drawing.Size(661, 488);
+            this.dtHistoricoSaida.Size = new System.Drawing.Size(1408, 862);
             this.dtHistoricoSaida.TabIndex = 4;
             // 
             // dtID
@@ -165,9 +165,9 @@
             this.panelButtos.Controls.Add(this.btnTabelas);
             this.panelButtos.Controls.Add(this.btnInformacoes);
             this.panelButtos.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelButtos.Location = new System.Drawing.Point(661, 0);
+            this.panelButtos.Location = new System.Drawing.Point(1408, 0);
             this.panelButtos.Name = "panelButtos";
-            this.panelButtos.Size = new System.Drawing.Size(293, 488);
+            this.panelButtos.Size = new System.Drawing.Size(293, 862);
             this.panelButtos.TabIndex = 3;
             // 
             // btnTabelas
@@ -359,10 +359,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
-            this.ClientSize = new System.Drawing.Size(1728, 902);
+            this.ClientSize = new System.Drawing.Size(1715, 902);
             this.Controls.Add(this.tbMaster);
+            this.MaximizeBox = false;
             this.Name = "TelaHistoricos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TelaHistóricos";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.TelaHistóricos_Load);
             this.tbMaster.ResumeLayout(false);
             this.tbVendas.ResumeLayout(false);

@@ -336,7 +336,7 @@
             // 
             this.mskTelefone.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.mskTelefone.Location = new System.Drawing.Point(306, 437);
-            this.mskTelefone.Mask = "(00) 0 00000-0000";
+            this.mskTelefone.Mask = "(00) 0 00000-000";
             this.mskTelefone.Name = "mskTelefone";
             this.mskTelefone.Size = new System.Drawing.Size(193, 28);
             this.mskTelefone.TabIndex = 43;
@@ -352,6 +352,7 @@
             this.btnDelete.TabIndex = 109;
             this.btnDelete.Text = "Deletar";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnUpdate
             // 
@@ -363,8 +364,9 @@
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(193, 71);
             this.btnUpdate.TabIndex = 108;
-            this.btnUpdate.Text = "Update";
+            this.btnUpdate.Text = "Atualizar";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click_1);
             // 
             // btnCadastrar
             // 
@@ -378,6 +380,7 @@
             this.btnCadastrar.TabIndex = 107;
             this.btnCadastrar.Text = "Cadastrar";
             this.btnCadastrar.UseVisualStyleBackColor = true;
+            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click_1);
             // 
             // lblGenero
             // 
@@ -395,7 +398,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
-            this.ClientSize = new System.Drawing.Size(1728, 902);
+            this.ClientSize = new System.Drawing.Size(1715, 902);
             this.Controls.Add(this.lblGenero);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnUpdate);

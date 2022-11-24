@@ -28,124 +28,111 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtEmail = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.txtSenha = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.btnLogin = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.materialDivider1 = new MaterialSkin.Controls.MaterialDivider();
-            this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
+            this.btnLogin = new System.Windows.Forms.Button();
+            this.lblEmail = new System.Windows.Forms.Label();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtSenha = new System.Windows.Forms.TextBox();
+            this.lblSenha = new System.Windows.Forms.Label();
+            this.checkSenha = new System.Windows.Forms.CheckBox();
+            this.btnFechar = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.Depth = 0;
-            this.txtEmail.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtEmail.Hint = "Email";
-            this.txtEmail.Location = new System.Drawing.Point(58, 66);
-            this.txtEmail.MouseState = MaterialSkin.MouseState.HOVER;
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.PasswordChar = '\0';
-            this.txtEmail.SelectedText = "";
-            this.txtEmail.SelectionLength = 0;
-            this.txtEmail.SelectionStart = 0;
-            this.txtEmail.Size = new System.Drawing.Size(340, 23);
-            this.txtEmail.TabIndex = 5;
-            this.txtEmail.Text = "adm@adm.com";
-            this.txtEmail.UseSystemPasswordChar = false;
-            // 
-            // txtSenha
-            // 
-            this.txtSenha.Depth = 0;
-            this.txtSenha.Hint = "Senha";
-            this.txtSenha.Location = new System.Drawing.Point(58, 113);
-            this.txtSenha.MouseState = MaterialSkin.MouseState.HOVER;
-            this.txtSenha.Name = "txtSenha";
-            this.txtSenha.PasswordChar = '\0';
-            this.txtSenha.SelectedText = "";
-            this.txtSenha.SelectionLength = 0;
-            this.txtSenha.SelectionStart = 0;
-            this.txtSenha.Size = new System.Drawing.Size(340, 23);
-            this.txtSenha.TabIndex = 6;
-            this.txtSenha.Text = "123456";
-            this.txtSenha.UseSystemPasswordChar = true;
             // 
             // btnLogin
             // 
-            this.btnLogin.Depth = 0;
-            this.btnLogin.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnLogin.Location = new System.Drawing.Point(295, 168);
-            this.btnLogin.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogin.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnLogin.ForeColor = System.Drawing.Color.White;
+            this.btnLogin.Location = new System.Drawing.Point(326, 274);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Primary = true;
-            this.btnLogin.Size = new System.Drawing.Size(103, 43);
-            this.btnLogin.TabIndex = 8;
-            this.btnLogin.Text = "LOGIN";
+            this.btnLogin.Size = new System.Drawing.Size(122, 51);
+            this.btnLogin.TabIndex = 0;
+            this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = true;
-            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click_1);
             // 
-            // materialDivider1
+            // lblEmail
             // 
-            this.materialDivider1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialDivider1.Depth = 0;
-            this.materialDivider1.Location = new System.Drawing.Point(12, 257);
-            this.materialDivider1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialDivider1.Name = "materialDivider1";
-            this.materialDivider1.Size = new System.Drawing.Size(445, 2);
-            this.materialDivider1.TabIndex = 9;
-            this.materialDivider1.Text = "materialDivider1";
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblEmail.ForeColor = System.Drawing.Color.White;
+            this.lblEmail.Location = new System.Drawing.Point(90, 115);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(55, 21);
+            this.lblEmail.TabIndex = 2;
+            this.lblEmail.Text = "Email:";
             // 
-            // materialLabel2
+            // txtEmail
             // 
-            this.materialLabel2.AutoSize = true;
-            this.materialLabel2.Depth = 0;
-            this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel2.Location = new System.Drawing.Point(305, 295);
-            this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel2.Name = "materialLabel2";
-            this.materialLabel2.Size = new System.Drawing.Size(69, 19);
-            this.materialLabel2.TabIndex = 11;
-            this.materialLabel2.Text = "Registrar";
+            this.txtEmail.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtEmail.Location = new System.Drawing.Point(170, 112);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(214, 28);
+            this.txtEmail.TabIndex = 1;
             // 
-            // panel1
+            // txtSenha
             // 
-            this.panel1.BackColor = System.Drawing.Color.DimGray;
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(-2, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(500, 40);
-            this.panel1.TabIndex = 12;
+            this.txtSenha.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtSenha.Location = new System.Drawing.Point(170, 156);
+            this.txtSenha.Name = "txtSenha";
+            this.txtSenha.Size = new System.Drawing.Size(214, 28);
+            this.txtSenha.TabIndex = 3;
+            this.txtSenha.UseSystemPasswordChar = true;
             // 
-            // label1
+            // lblSenha
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.DimGray;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.SystemColors.Window;
-            this.label1.Location = new System.Drawing.Point(14, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 21);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Login";
+            this.lblSenha.AutoSize = true;
+            this.lblSenha.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblSenha.ForeColor = System.Drawing.Color.White;
+            this.lblSenha.Location = new System.Drawing.Point(90, 159);
+            this.lblSenha.Name = "lblSenha";
+            this.lblSenha.Size = new System.Drawing.Size(61, 21);
+            this.lblSenha.TabIndex = 4;
+            this.lblSenha.Text = "Senha:";
+            // 
+            // checkSenha
+            // 
+            this.checkSenha.AutoSize = true;
+            this.checkSenha.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.checkSenha.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.checkSenha.Location = new System.Drawing.Point(170, 209);
+            this.checkSenha.Name = "checkSenha";
+            this.checkSenha.Size = new System.Drawing.Size(138, 25);
+            this.checkSenha.TabIndex = 5;
+            this.checkSenha.Text = "Mostrar Senha";
+            this.checkSenha.UseVisualStyleBackColor = true;
+            this.checkSenha.CheckedChanged += new System.EventHandler(this.checkSenha_CheckedChanged);
+            // 
+            // btnFechar
+            // 
+            this.btnFechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFechar.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnFechar.Location = new System.Drawing.Point(49, 271);
+            this.btnFechar.Name = "btnFechar";
+            this.btnFechar.Size = new System.Drawing.Size(122, 51);
+            this.btnFechar.TabIndex = 6;
+            this.btnFechar.Text = "Fechar";
+            this.btnFechar.UseVisualStyleBackColor = true;
+            this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
             // 
             // TelaLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
             this.ClientSize = new System.Drawing.Size(498, 377);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.materialLabel2);
-            this.Controls.Add(this.materialDivider1);
-            this.Controls.Add(this.btnLogin);
+            this.Controls.Add(this.btnFechar);
+            this.Controls.Add(this.checkSenha);
+            this.Controls.Add(this.lblSenha);
             this.Controls.Add(this.txtSenha);
+            this.Controls.Add(this.lblEmail);
             this.Controls.Add(this.txtEmail);
+            this.Controls.Add(this.btnLogin);
+            this.ForeColor = System.Drawing.Color.White;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.Name = "TelaLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -153,12 +140,12 @@
 
         #endregion
 
-        private MaterialSkin.Controls.MaterialSingleLineTextField txtEmail;
-        private MaterialSkin.Controls.MaterialSingleLineTextField txtSenha;
-        private MaterialSkin.Controls.MaterialRaisedButton btnLogin;
-        private MaterialSkin.Controls.MaterialDivider materialDivider1;
-        private MaterialSkin.Controls.MaterialLabel materialLabel2;
-        private Panel panel1;
-        private Label label1;
+        private Button btnLogin;
+        private Label lblEmail;
+        private TextBox txtEmail;
+        private TextBox txtSenha;
+        private Label lblSenha;
+        private CheckBox checkSenha;
+        private Button btnFechar;
     }
 }

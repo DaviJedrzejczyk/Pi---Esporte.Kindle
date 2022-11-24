@@ -52,13 +52,13 @@
             this.btnClientes.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnClientes.FlatAppearance.BorderSize = 0;
             this.btnClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnClientes.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnClientes.ForeColor = System.Drawing.Color.LightGray;
             this.btnClientes.Image = ((System.Drawing.Image)(resources.GetObject("btnClientes.Image")));
             this.btnClientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnClientes.Location = new System.Drawing.Point(0, 0);
             this.btnClientes.Name = "btnClientes";
-            this.btnClientes.Size = new System.Drawing.Size(160, 65);
+            this.btnClientes.Size = new System.Drawing.Size(173, 96);
             this.btnClientes.TabIndex = 0;
             this.btnClientes.Text = "Clientes";
             this.btnClientes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -70,13 +70,13 @@
             this.btnFuncionarios.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnFuncionarios.FlatAppearance.BorderSize = 0;
             this.btnFuncionarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFuncionarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnFuncionarios.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnFuncionarios.ForeColor = System.Drawing.Color.LightGray;
             this.btnFuncionarios.Image = ((System.Drawing.Image)(resources.GetObject("btnFuncionarios.Image")));
             this.btnFuncionarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFuncionarios.Location = new System.Drawing.Point(0, 65);
+            this.btnFuncionarios.Location = new System.Drawing.Point(0, 96);
             this.btnFuncionarios.Name = "btnFuncionarios";
-            this.btnFuncionarios.Size = new System.Drawing.Size(160, 69);
+            this.btnFuncionarios.Size = new System.Drawing.Size(173, 96);
             this.btnFuncionarios.TabIndex = 1;
             this.btnFuncionarios.Text = "Funcionarios";
             this.btnFuncionarios.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -88,13 +88,13 @@
             this.btnFornecedores.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnFornecedores.FlatAppearance.BorderSize = 0;
             this.btnFornecedores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFornecedores.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnFornecedores.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnFornecedores.ForeColor = System.Drawing.Color.LightGray;
             this.btnFornecedores.Image = ((System.Drawing.Image)(resources.GetObject("btnFornecedores.Image")));
             this.btnFornecedores.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFornecedores.Location = new System.Drawing.Point(0, 134);
+            this.btnFornecedores.Location = new System.Drawing.Point(0, 192);
             this.btnFornecedores.Name = "btnFornecedores";
-            this.btnFornecedores.Size = new System.Drawing.Size(160, 72);
+            this.btnFornecedores.Size = new System.Drawing.Size(173, 96);
             this.btnFornecedores.TabIndex = 2;
             this.btnFornecedores.Text = "Fornecedores";
             this.btnFornecedores.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -106,13 +106,13 @@
             this.btnProdutos.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnProdutos.FlatAppearance.BorderSize = 0;
             this.btnProdutos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProdutos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnProdutos.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnProdutos.ForeColor = System.Drawing.Color.LightGray;
             this.btnProdutos.Image = ((System.Drawing.Image)(resources.GetObject("btnProdutos.Image")));
             this.btnProdutos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProdutos.Location = new System.Drawing.Point(0, 206);
+            this.btnProdutos.Location = new System.Drawing.Point(0, 288);
             this.btnProdutos.Name = "btnProdutos";
-            this.btnProdutos.Size = new System.Drawing.Size(160, 74);
+            this.btnProdutos.Size = new System.Drawing.Size(173, 96);
             this.btnProdutos.TabIndex = 3;
             this.btnProdutos.Text = "Produtos";
             this.btnProdutos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -148,7 +148,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 100);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(160, 941);
+            this.panel2.Size = new System.Drawing.Size(173, 941);
             this.panel2.TabIndex = 1;
             // 
             // btnHistorico
@@ -156,14 +156,14 @@
             this.btnHistorico.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnHistorico.FlatAppearance.BorderSize = 0;
             this.btnHistorico.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHistorico.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnHistorico.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnHistorico.ForeColor = System.Drawing.Color.LightGray;
             this.btnHistorico.Image = ((System.Drawing.Image)(resources.GetObject("btnHistorico.Image")));
             this.btnHistorico.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHistorico.Location = new System.Drawing.Point(0, 428);
+            this.btnHistorico.Location = new System.Drawing.Point(0, 576);
             this.btnHistorico.Name = "btnHistorico";
             this.btnHistorico.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.btnHistorico.Size = new System.Drawing.Size(160, 74);
+            this.btnHistorico.Size = new System.Drawing.Size(173, 96);
             this.btnHistorico.TabIndex = 7;
             this.btnHistorico.Text = " Histórico";
             this.btnHistorico.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -175,14 +175,14 @@
             this.btnEntrada.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnEntrada.FlatAppearance.BorderSize = 0;
             this.btnEntrada.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEntrada.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnEntrada.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnEntrada.ForeColor = System.Drawing.Color.LightGray;
             this.btnEntrada.Image = ((System.Drawing.Image)(resources.GetObject("btnEntrada.Image")));
             this.btnEntrada.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEntrada.Location = new System.Drawing.Point(0, 354);
+            this.btnEntrada.Location = new System.Drawing.Point(0, 480);
             this.btnEntrada.Name = "btnEntrada";
             this.btnEntrada.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.btnEntrada.Size = new System.Drawing.Size(160, 74);
+            this.btnEntrada.Size = new System.Drawing.Size(173, 96);
             this.btnEntrada.TabIndex = 6;
             this.btnEntrada.Text = " Entrada";
             this.btnEntrada.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -194,14 +194,14 @@
             this.btnVenda.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnVenda.FlatAppearance.BorderSize = 0;
             this.btnVenda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVenda.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnVenda.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnVenda.ForeColor = System.Drawing.Color.LightGray;
             this.btnVenda.Image = ((System.Drawing.Image)(resources.GetObject("btnVenda.Image")));
             this.btnVenda.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnVenda.Location = new System.Drawing.Point(0, 280);
+            this.btnVenda.Location = new System.Drawing.Point(0, 384);
             this.btnVenda.Name = "btnVenda";
             this.btnVenda.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.btnVenda.Size = new System.Drawing.Size(160, 74);
+            this.btnVenda.Size = new System.Drawing.Size(173, 96);
             this.btnVenda.TabIndex = 5;
             this.btnVenda.Text = "  Venda";
             this.btnVenda.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -212,9 +212,9 @@
             // 
             this.panelDesktop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
             this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelDesktop.Location = new System.Drawing.Point(160, 100);
+            this.panelDesktop.Location = new System.Drawing.Point(173, 100);
             this.panelDesktop.Name = "panelDesktop";
-            this.panelDesktop.Size = new System.Drawing.Size(1744, 941);
+            this.panelDesktop.Size = new System.Drawing.Size(1731, 941);
             this.panelDesktop.TabIndex = 2;
             // 
             // panel1
