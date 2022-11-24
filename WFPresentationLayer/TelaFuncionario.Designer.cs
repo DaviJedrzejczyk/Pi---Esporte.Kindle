@@ -84,6 +84,8 @@
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txtID = new System.Windows.Forms.TextBox();
+            this.lblIDEndereco = new System.Windows.Forms.Label();
+            this.txtEnderecoID = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtFuncionario)).BeginInit();
             this.SuspendLayout();
             // 
@@ -613,11 +615,33 @@
             // 
             // txtID
             // 
+            this.txtID.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtID.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtID.Location = new System.Drawing.Point(130, 69);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(157, 28);
             this.txtID.TabIndex = 146;
+            // 
+            // lblIDEndereco
+            // 
+            this.lblIDEndereco.AutoSize = true;
+            this.lblIDEndereco.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblIDEndereco.ForeColor = System.Drawing.Color.White;
+            this.lblIDEndereco.Location = new System.Drawing.Point(469, 45);
+            this.lblIDEndereco.Name = "lblIDEndereco";
+            this.lblIDEndereco.Size = new System.Drawing.Size(107, 21);
+            this.lblIDEndereco.TabIndex = 149;
+            this.lblIDEndereco.Text = "Endereço ID:";
+            // 
+            // txtEnderecoID
+            // 
+            this.txtEnderecoID.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtEnderecoID.Enabled = false;
+            this.txtEnderecoID.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtEnderecoID.Location = new System.Drawing.Point(469, 69);
+            this.txtEnderecoID.Name = "txtEnderecoID";
+            this.txtEnderecoID.Size = new System.Drawing.Size(101, 28);
+            this.txtEnderecoID.TabIndex = 148;
             // 
             // TelaFuncionario
             // 
@@ -625,6 +649,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
             this.ClientSize = new System.Drawing.Size(1715, 902);
+            this.Controls.Add(this.lblIDEndereco);
+            this.Controls.Add(this.txtEnderecoID);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtID);
             this.Controls.Add(this.dtFuncionario);
@@ -741,5 +767,7 @@
         private Button btnCadastrar;
         private Label label1;
         private TextBox txtID;
+        private Label lblIDEndereco;
+        private TextBox txtEnderecoID;
     }
 }

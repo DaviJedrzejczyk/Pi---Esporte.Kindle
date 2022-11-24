@@ -132,7 +132,7 @@
             this.MaximizeBox = false;
             this.Name = "TelaLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Tela de Login";
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -15,7 +15,7 @@ namespace BusinessLogicalLayer.Interfaces
         Task<Response> Insert(Saida saida);
         Task<DataResponse<SaidaView>> GetAll();
         SingleResponse<SaidaView> GetSaidaViewById(int saida);
-        Task<SingleResponse<Saida>> GetById(Saida saida);
+        SingleResponse<Saida> GetById(int saida);
         Task<DataResponse<ProdutoSaidaView>> GetAllBySaidaId(int saida);
     }
 }

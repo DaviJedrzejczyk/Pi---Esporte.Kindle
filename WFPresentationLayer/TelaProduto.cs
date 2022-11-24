@@ -73,7 +73,7 @@ namespace WFPresentationLayer
                 dtProduto.Rows[i].Cells["ProdutoNome"].Value = dataResponse.Itens[i].Nome;
                 dtProduto.Rows[i].Cells["ProdutoDescricao"].Value = dataResponse.Itens[i].Descricao;
                 dtProduto.Rows[i].Cells["ProdutoQtdEstoque"].Value = dataResponse.Itens[i].QtdEstoque;
-                dtProduto.Rows[i].Cells["ProdutoValor"].Value = dataResponse.Itens[i].Valor_Unitario.ToString("C2");
+                dtProduto.Rows[i].Cells["ProdutoValor"].Value = dataResponse.Itens[i].Valor_Unitario.ToString();
                 dtProduto.Rows[i].Cells["ProdutoFornecedora"].Value = dataResponse.Itens[i].Fornecedor.Nome_Contato;
                 dtProduto.Rows[i].Cells["CatProduto"].Value = dataResponse.Itens[i].Categoria.Nome;
             }
@@ -84,31 +84,18 @@ namespace WFPresentationLayer
             this.txtNome.Text = produto.Nome;
             this.txtDescricao.Text = produto.Descricao;
             this.txtQtdEstoque.Text = produto.QtdEstoque.ToString();
-            this.txtValor.Text = produto.Valor_Unitario.ToString("C2");
-            this.cbFornecedora.Text = produto.Fornecedor.ID.ToString();
+            this.txtValor.Text = produto.Valor_Unitario.ToString();
 
         }
         private void dataGridView1_DoubleClick(object sender, EventArgs e)
         {
             int rowindex = dtProduto.CurrentCell.RowIndex;
-            Fornecedor fornecedor = new()
-            {
-                Nome_Contato = Convert.ToString(this.dtProduto.Rows[rowindex].Cells[3].Value)
-            };
-            Categoria categoria = new()
-            {
-                Nome = Convert.ToString(this.dtProduto.Rows[rowindex].Cells[3].Value),
-            };
-            Produto produtoSelecionado = new()
-            {
-                ID = Convert.ToInt32(this.dtProduto.Rows[rowindex].Cells[0].Value),
-                Nome = Convert.ToString(this.dtProduto.Rows[rowindex].Cells[1].Value),
-                Descricao = Convert.ToString(this.dtProduto.Rows[rowindex].Cells[2].Value),
-                Fornecedor = fornecedor,
-                Categoria = categoria,
-                QtdEstoque = Convert.ToInt32(this.dtProduto.Rows[rowindex].Cells[5].Value),
-                Valor_Unitario = Convert.ToDouble(dtProduto.Rows[rowindex].Cells[6].Value)
-            };
+            Produto produtoSelecionado = new();
+            produtoSelecionado.ID = Convert.ToInt32(this.dtProduto.Rows[rowindex].Cells[0].Value);
+            produtoSelecionado.Nome = Convert.ToString(this.dtProduto.Rows[rowindex].Cells[1].Value);
+            produtoSelecionado.Descricao = Convert.ToString(this.dtProduto.Rows[rowindex].Cells[2].Value);
+            produtoSelecionado.QtdEstoque = Convert.ToInt32(this.dtProduto.Rows[rowindex].Cells[5].Value);
+            produtoSelecionado.Valor_Unitario = Convert.ToDouble(dtProduto.Rows[rowindex].Cells[6].Value);
             DrawFormWithObject(produtoSelecionado);
         }
 
@@ -144,6 +131,11 @@ namespace WFPresentationLayer
         private async void btnCadastrar_Click_1(object sender, EventArgs e)
         {
             Produto produto = CreateObjectWithForm();
+            if (string.IsNullOrWhiteSpace(txtNome.Text))
+            {
+                MessageBox.Show("Nome não pode ser vazio.");
+                return;
+            }
             Response response = await produtoBLL.Insert(produto);
             if (response.HasSuccess)
             {

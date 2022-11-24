@@ -43,84 +43,8 @@ namespace WFPresentationLayer
             cbProduto.ValueMember = "ID";
             cbFormaPag.DataSource = Enum.GetNames(typeof(FormaPagamento));
         }
-        private void btnAdicionarProduto_Click(object sender, EventArgs e)
-        {
-            Produto produto = produtoService.GetById(Convert.ToInt32(cbProduto.SelectedValue)).Result.Item;
-            bool hasFound = false;
-            if (produto != null)
-            {
-                produto.QtdEstoque = (int)nudQtd.Value;
-                for (int i = 0; i < produtos.Count; i++)
-                {
-                    if (produto.ID == produtos[i].ID)
-                    {
-                        hasFound = true;
-                        produtos[i].QtdEstoque += produto.QtdEstoque;
-                        break;
-                    }
-                }
-                if (!hasFound)
-                {
-                    produtos.Add(produto);
-                    dtTelaVenda.Rows.Add();
-                }
-                double valor = 0;
-                for (int i = 0; i < produtos.Count; i++)
-                {
-                    valor += Math.Round((produtos[i].QtdEstoque * produtos[i].Valor_Unitario), 2);
-                    dtTelaVenda.Rows[i].Cells["IDVenda"].Value = produtos[i].ID;
-                    dtTelaVenda.Rows[i].Cells["NomeVenda"].Value = produtos[i].Nome;
-                    dtTelaVenda.Rows[i].Cells["QtdeVenda"].Value = produtos[i].QtdEstoque;
-                    dtTelaVenda.Rows[i].Cells["ValorVenda"].Value = Math.Round(produtos[i].Valor_Unitario, 2);
-                    dtTelaVenda.Rows[i].Cells["TotalVenda"].Value = Math.Round(produtos[i].QtdEstoque * produtos[i].Valor_Unitario, 2);
-
-                }
-                txtQtdItens.Text = produtos.Count.ToString();
-                txtTotPag.Text = valor.ToString();
-                txtValor.Text = valor.ToString();
-            }
-        }
-
-        private void btnRetirarProduto_Click(object sender, EventArgs e)
-        {
-            if (dtTelaVenda.CurrentCell == null)
-            {
-                MessageBox.Show("Não é possivel retirar um produto não selecionado");
-                return;
-            }
-            int rowindex = dtTelaVenda.CurrentCell.RowIndex;
-            produtos.RemoveAt(rowindex);
-            dtTelaVenda.Rows.RemoveAt(rowindex);
-            double valor = 0;
-            for (int i = 0; i < produtos.Count; i++)
-            {
-                dtTelaVenda.Rows[i].Cells["IDVenda"].Value = produtos[i].ID;
-                dtTelaVenda.Rows[i].Cells["NomeVenda"].Value = produtos[i].Nome;
-                dtTelaVenda.Rows[i].Cells["QtdeVenda"].Value = produtos[i].QtdEstoque;
-                dtTelaVenda.Rows[i].Cells["ValorVenda"].Value = Math.Round(produtos[i].Valor_Unitario, 2);
-                dtTelaVenda.Rows[i].Cells["TotalVenda"].Value = Math.Round(produtos[i].QtdEstoque * produtos[i].Valor_Unitario, 2);
-                valor += (produtos[i].QtdEstoque * produtos[i].Valor_Unitario);
-            }
-            txtQtdItens.Text = produtos.Count.ToString();
-            txtTotPag.Text = valor.ToString();
-            txtValor.Text = valor.ToString();
-        }
-
-        private void btnCadastrarCliente_Click(object sender, EventArgs e)
-        {
-            TelaCliente telaCliente = new(clienteService);
-            telaCliente.ShowDialog();
-        }
-
-        private async void btnRegistrarVenda_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void btnAddCliente_Click(object sender, EventArgs e)
-        {
-            
-        }
+     
+     
 
         private void btnAddCliente_Click_1(object sender, EventArgs e)
         {
@@ -183,12 +107,65 @@ namespace WFPresentationLayer
 
         private void btnAdicionarProduto_Click_1(object sender, EventArgs e)
         {
+            Produto produto = produtoService.GetById(Convert.ToInt32(cbProduto.SelectedValue)).Result.Item;
+            bool hasFound = false;
+            if (produto != null)
+            {
+                produto.QtdEstoque = (int)nudQtd.Value;
+                for (int i = 0; i < produtos.Count; i++)
+                {
+                    if (produto.ID == produtos[i].ID)
+                    {
+                        hasFound = true;
+                        produtos[i].QtdEstoque += produto.QtdEstoque;
+                        break;
+                    }
+                }
+                if (!hasFound)
+                {
+                    produtos.Add(produto);
+                    dtTelaVenda.Rows.Add();
+                }
+                double valor = 0;
+                for (int i = 0; i < produtos.Count; i++)
+                {
+                    valor += Math.Round((produtos[i].QtdEstoque * produtos[i].Valor_Unitario), 2);
+                    dtTelaVenda.Rows[i].Cells["IDVenda"].Value = produtos[i].ID;
+                    dtTelaVenda.Rows[i].Cells["NomeVenda"].Value = produtos[i].Nome;
+                    dtTelaVenda.Rows[i].Cells["QtdeVenda"].Value = produtos[i].QtdEstoque;
+                    dtTelaVenda.Rows[i].Cells["ValorVenda"].Value = Math.Round(produtos[i].Valor_Unitario, 2);
+                    dtTelaVenda.Rows[i].Cells["TotalVenda"].Value = Math.Round(produtos[i].QtdEstoque * produtos[i].Valor_Unitario, 2);
 
+                }
+                txtQtdItens.Text = produtos.Count.ToString();
+                txtTotPag.Text = valor.ToString();
+                txtValor.Text = valor.ToString();
+            }
         }
 
         private void btnRetirarProduto_Click_1(object sender, EventArgs e)
         {
-
+            if (dtTelaVenda.CurrentCell == null)
+            {
+                MessageBox.Show("Não é possivel retirar um produto não selecionado");
+                return;
+            }
+            int rowindex = dtTelaVenda.CurrentCell.RowIndex;
+            produtos.RemoveAt(rowindex);
+            dtTelaVenda.Rows.RemoveAt(rowindex);
+            double valor = 0;
+            for (int i = 0; i < produtos.Count; i++)
+            {
+                dtTelaVenda.Rows[i].Cells["IDVenda"].Value = produtos[i].ID;
+                dtTelaVenda.Rows[i].Cells["NomeVenda"].Value = produtos[i].Nome;
+                dtTelaVenda.Rows[i].Cells["QtdeVenda"].Value = produtos[i].QtdEstoque;
+                dtTelaVenda.Rows[i].Cells["ValorVenda"].Value = Math.Round(produtos[i].Valor_Unitario, 2);
+                dtTelaVenda.Rows[i].Cells["TotalVenda"].Value = Math.Round(produtos[i].QtdEstoque * produtos[i].Valor_Unitario, 2);
+                valor += (produtos[i].QtdEstoque * produtos[i].Valor_Unitario);
+            }
+            txtQtdItens.Text = produtos.Count.ToString();
+            txtTotPag.Text = valor.ToString();
+            txtValor.Text = valor.ToString();
         }
 
         private async void btnRegistrarVenda_Click_1(object sender, EventArgs e)
@@ -260,7 +237,8 @@ namespace WFPresentationLayer
 
         private void btnCadastrarCliente_Click_1(object sender, EventArgs e)
         {
-
+            TelaCliente telaCliente = new(clienteService);
+            telaCliente.ShowDialog();
         }
     }
 }

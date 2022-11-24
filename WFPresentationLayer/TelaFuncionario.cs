@@ -13,7 +13,6 @@ namespace WFPresentationLayer
         private readonly IFuncionarioService funcionarioService;
         private readonly IEstadoService estadoService;
         private readonly IEnderecoService enderecoService;
-        private Form currentChildForm;
         public TelaFuncionario(IFuncionarioService funcionario, IEstadoService estadoService, IEnderecoService enderecoService)
         {
             InitializeComponent();
@@ -43,6 +42,7 @@ namespace WFPresentationLayer
             Genero.TryParse(cbGenero.Text, out Genero genero);
             TipoFuncionario.TryParse(cbNivelAcesso.Text, out TipoFuncionario tipo);
             int.TryParse(txtID.Text, out int temp);
+            int.TryParse(txtEnderecoID.Text, out int tuc);
             Hash hash = new();
             string senha = hash.ComputeSha256Hash(txtSenha.Text);
             Funcionario funcionario = new()
@@ -62,6 +62,7 @@ namespace WFPresentationLayer
             };
             Endereco endereco = new()
             {
+                ID = tuc,
                 Rua = txtRua.Text,
                 CEP = mskCEP.Text,
                 Bairro = txtBairro.Text,
@@ -99,6 +100,7 @@ namespace WFPresentationLayer
 
         private async void DrawFormWithObject(Funcionario funcionario)
         {
+            this.txtID.Text = funcionario.ID.ToString();
             this.txtNome.Text = funcionario.Nome;
             this.txtSobrenome.Text = funcionario.Sobrenome;
             this.mskdCPF.Text = funcionario.CPF;
@@ -113,6 +115,7 @@ namespace WFPresentationLayer
             {
                 MessageBox.Show(singleResponse.Message);
             }
+            this.txtEnderecoID.Text = singleResponse.Item.ID.ToString();
             this.txtRua.Text = singleResponse.Item.Rua;
             this.txtBairro.Text = singleResponse.Item.Bairro;
             this.mskCEP.Text = singleResponse.Item.CEP;
@@ -162,6 +165,8 @@ namespace WFPresentationLayer
             mskCEP.Clear();
             txtCidade.Clear();
             txtComplemento.Clear();
+            txtEnderecoID.Clear();
+            txtNumero.Clear();
         }
 
         void StyleDatagridview()

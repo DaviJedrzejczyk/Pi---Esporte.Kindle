@@ -15,6 +15,6 @@ namespace DataAccessLayer.Interfaces
         Task<Response> Insert(Saida saida);
         Task<DataResponse<SaidaView>> GetAll();
         SingleResponse<SaidaView> GetSaidaViewById(int id);
-        Task<SingleResponse<Saida>> GetById(int id);
+        SingleResponse<Saida> GetById(int id);
     }
 }
